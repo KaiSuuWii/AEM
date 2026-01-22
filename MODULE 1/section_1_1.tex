@@ -1,0 +1,281 @@
+\subsection*{1.1 Power Series and Their Convergence}
+
+\subsubsection*{Definition of a Power Series}
+
+A \textbf{power series} is an infinite series of the form
+\[
+    \sum_{n=0}^{\infty} c_n (x-x_0)^n
+\]
+where:
+\begin{itemize}
+    \item $c_n$ are constant coefficients,
+    \item $x_0$ is a fixed real number called the \textbf{center} of the series,
+    \item $(x-x_0)^n$ represents powers of the variable $x$.
+\end{itemize}
+
+Unlike ordinary numerical series, a power series depends on the value of $x$. As a result, a power series may converge for some values of $x$ and diverge for others.
+
+\bigskip
+
+\subsubsection*{General Behavior of Power Series}
+
+For a given power series
+\[
+    \sum_{n=0}^{\infty} c_n (x-x_0)^n,
+\]
+there exists a real number $R \ge 0$, called the \textbf{radius of convergence}, such that:
+
+\[
+    \begin{cases}
+        \text{The series converges absolutely if } |x-x_0| < R, \\
+        \text{The series diverges if } |x-x_0| > R,             \\
+        \text{The series may converge or diverge if } |x-x_0| = R.
+    \end{cases}
+\]
+
+The radius of convergence can be determined from the coefficients of the series through:
+
+\begin{center}
+    \begin{tabular}{cc}
+        \boxed{(a) \quad R = \dfrac{1}{\displaystyle \lim_{n \to \infty} \sqrt[n]{|c_n|}}} &
+        \boxed{(b) \quad R = \dfrac{1}{\displaystyle \lim_{n \to \infty} \left| \dfrac{c_{n+1}}{c_n} \right|}}
+    \end{tabular}
+\end{center}
+
+provided the limit exists.
+
+The interval
+\[
+    (x_0 - R,\, x_0 + R)
+\]
+together with any endpoints where the series converges is called the \textbf{interval of convergence}.
+
+\bigskip
+
+\subsubsection*{Convergence, Divergence, and Absolute Convergence}
+
+Let
+\[
+    \sum_{n=0}^{\infty} c_n (x-x_0)^n
+\]
+be a power series.
+
+\begin{itemize}
+    \item The series is said to \textbf{converge} at a value $x=b$ if the numerical series
+          \[
+              \sum_{n=0}^{\infty} c_n (b-x_0)^n
+          \]
+          converges.
+
+    \item The series \textbf{diverges} at $x=b$ if the corresponding numerical series diverges.
+
+    \item The series is \textbf{absolutely convergent} at $x=b$ if
+          \[
+              \sum_{n=0}^{\infty} \left| a_n (b-x_0)^n \right|
+          \]
+          converges.
+\end{itemize}
+
+\textbf{Important Result:}
+If a power series converges at a point $x=b$, then it converges absolutely for all values of $x$ such that $|x-x_0| < |b-x_0|$.
+
+\bigskip
+
+\subsubsection*{Focus on Convergence of Power Series}
+
+The convergence of a power series depends primarily on the distance of $x$ from the center $x_0$. The farther $x$ is from $x_0$, the more likely the series is to diverge.
+
+To determine where a power series converges, the following steps are followed:
+
+\begin{enumerate}
+    \item Apply a convergence test to find the radius of convergence $R$.
+    \item Determine the interval $|x-x_0| < R$.
+    \item Test the endpoints $x = x_0 \pm R$ separately.
+\end{enumerate}
+
+\bigskip
+
+\subsubsection*{Convergence Tests for Power Series}
+
+\paragraph{1. Ratio Test}
+
+Let the power series be
+\[
+    \sum_{n=0}^{\infty} c_n (x-x_0)^n,
+\]
+and define
+\[
+    a_n = c_n (x-x_0)^n.
+\]
+
+Compute
+\[
+    \lim_{n \to \infty} \left| \frac{a_{n+1}}{a_n} \right|.
+\]
+
+\begin{itemize}
+    \item If the limit is less than 1, the series converges absolutely.
+    \item If the limit is greater than 1, the series diverges.
+    \item If the limit equals 1, the test is inconclusive.
+\end{itemize}
+
+\subsubsection*{Examples: Radius and Interval of Convergence Using the Ratio Test}
+
+\paragraph{Example 1: Power Series of $e^x$}
+
+Consider the power series
+\[
+    \sum_{n=0}^{\infty} \frac{x^n}{n!}.
+\]
+
+Let
+\[
+    a_n = \frac{x^n}{n!}.
+\]
+
+Applying the Ratio Test,
+\[
+    \lim_{n \to \infty} \left| \frac{a_{n+1}}{a_n} \right|
+    = \lim_{n \to \infty} \left| \frac{x^{n+1}}{(n+1)!} \cdot \frac{n!}{x^n} \right|
+    = \lim_{n \to \infty} \frac{|x|}{n+1} = 0.
+\]
+
+Since the limit is zero for all real values of $x$, the series converges for every $x$.
+
+\[
+    \boxed{R = \infty}
+\]
+
+Thus, the interval of convergence is
+\[
+    \boxed{(-\infty, \infty)}.
+\]
+
+\bigskip
+
+\paragraph{Example 2: Geometric Series $\displaystyle \frac{1}{1-x}$}
+
+Consider the power series
+\[
+    \sum_{n=0}^{\infty} x^n.
+\]
+
+Let
+\[
+    a_n = x^n.
+\]
+
+Applying the Ratio Test,
+\[
+    \lim_{n \to \infty} \left| \frac{a_{n+1}}{a_n} \right|
+    = \lim_{n \to \infty} \left| \frac{x^{n+1}}{x^n} \right|
+    = |x|.
+\]
+
+For convergence,
+\[
+    |x| < 1.
+\]
+
+Thus, the radius of convergence is
+\[
+    \boxed{R = 1}.
+\]
+
+\textbf{Endpoint Testing:}
+
+\begin{itemize}
+    \item At $x = -1$:
+          \[
+              \sum_{n=0}^{\infty} (-1)^n \quad \text{diverges}.
+          \]
+
+    \item At $x = 1$:
+          \[
+              \sum_{n=0}^{\infty} 1 \quad \text{diverges}.
+          \]
+\end{itemize}
+
+Hence, the interval of convergence is
+\[
+    \boxed{(-1,\,1)}.
+\]
+
+\bigskip
+
+\paragraph{Example 3: Series Involving Factorials}
+
+Consider the power series
+\[
+    \sum_{n=0}^{\infty} n! \, x^n.
+\]
+
+Let
+\[
+    a_n = n! \, x^n.
+\]
+
+Applying the Ratio Test,
+\[
+    \lim_{n \to \infty} \left| \frac{a_{n+1}}{a_n} \right|
+    = \lim_{n \to \infty} \left| \frac{(n+1)! x^{n+1}}{n! x^n} \right|
+    = \lim_{n \to \infty} (n+1)|x|.
+\]
+
+For convergence,
+\[
+    (n+1)|x| < 1.
+\]
+
+As $n \to \infty$, this inequality holds only when $x = 0$.
+
+\[
+    \boxed{R = 0}.
+\]
+
+Thus, the series converges only at $x = 0$, and the interval of convergence is
+\[
+    \boxed{\{0\}}.
+\]
+
+\bigskip
+
+\textbf{Summary of Results:}
+
+\begin{center}
+    \begin{tabular}{|c|c|c|}
+        \hline
+        \textbf{Series}                     & \textbf{Radius of Convergence} & \textbf{Interval of Convergence} \\
+        \hline
+        $\displaystyle \sum \frac{x^n}{n!}$ & $R = \infty$                   & $(-\infty, \infty)$              \\
+        \hline
+        $\displaystyle \sum x^n$            & $R = 1$                        & $(-1, 1)$                        \\
+        \hline
+        $\displaystyle \sum n! x^n$         & $R = 0$                        & $\{0\}$                          \\
+        \hline
+    \end{tabular}
+\end{center}
+
+
+\paragraph{2. Root Test}
+
+The \textbf{Root Test} may also be applied:
+\[
+    \lim_{n \to \infty} \sqrt[n]{|a_n|}.
+\]
+
+The conclusions are the same as those of the Ratio Test.
+
+\paragraph{3. Endpoint Testing}
+
+Once the radius of convergence $R$ is found, the series must be tested at
+\[
+    x = a - R \quad \text{and} \quad x = a + R.
+\]
+
+At these endpoints, the power series reduces to a numerical series. Common tests used include:
+\begin{itemize}
+    \item $p$-series test
+    \item Alternating series test
+    \item Comparison test
+\end{itemize}

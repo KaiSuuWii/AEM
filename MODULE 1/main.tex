@@ -1,0 +1,63 @@
+\documentclass[12pt]{article}
+
+% Packages
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{enumitem}
+\usepackage{physics}
+\usepackage{tcolorbox}
+
+\geometry{margin=1in}
+\setstretch{1.15}
+
+% Custom boxes for notes
+\tcbset{
+  colback=gray!5,
+  colframe=black!70,
+  arc=3mm,
+  boxrule=0.8pt
+}
+
+\newtcolorbox{conceptbox}{title=Key Concept}
+\newtcolorbox{examplebox}{title=Example}
+\newtcolorbox{noteBox}{title=Engineering Note}
+
+\title{Advanced Engineering Mathematics \\ \large Series}
+\author{\textbf{Engr. Kaiveni Tom Dagcuta} \\ Computer Engineering}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Module 1: Infinite Series}
+
+This lecture introduces the fundamental theory of infinite series as used in Advanced Engineering Mathematics. Emphasis is placed on convergence concepts and power series representations, which are essential in engineering analysis, modeling, and later topics such as differential equations and signal processing.
+
+% Input subsection files
+\input{section_0.tex}
+
+\bigskip
+
+\input{section_1_1.tex}
+
+\bigskip
+
+\input{section_1_2.tex}
+
+\bigskip
+
+\input{section_1_3.tex}
+
+\bigskip
+
+\input{section_1_4.tex}
+
+\bigskip
+
+\input{section_1_5.tex}
+
+\end{document}
