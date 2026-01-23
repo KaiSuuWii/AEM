@@ -1,3 +1,8 @@
+\section*{Infinite Series}
+
+This lecture introduces the fundamental theory of infinite series as used in Advanced Engineering Mathematics. Emphasis is placed on convergence concepts and power series representations, which are essential in engineering analysis, modeling, and later topics such as differential equations and signal processing.
+
+
 \subsection*{Series}
 
 A \textbf{series} is the sum of the terms of a sequence. If $\{a_n\}$ is a sequence, then the corresponding series is written as
@@ -7,11 +12,11 @@ A \textbf{series} is the sum of the terms of a sequence. If $\{a_n\}$ is a seque
 
 The value of a series is determined by the behavior of its \textbf{partial sums}
 \[
-    S_N = \sum_{n=1}^{N} a_n.
+    S_n = \sum_{i=1}^{n} a_i.
 \]
 
 \begin{itemize}
-    \item The series \textbf{converges} if $\displaystyle \lim_{N \to \infty} S_N$ exists and is finite.
+    \item The series \textbf{converges} if $\displaystyle \lim_{n \to \infty} S_n$ exists and is finite.
     \item The series \textbf{diverges} if this limit does not exist or is infinite.
 \end{itemize}
 
@@ -21,79 +26,87 @@ The value of a series is determined by the behavior of its \textbf{partial sums}
 \]
 If this condition is not satisfied, the series must diverge.
 
-\paragraph{Example 1}
-Determine if the series
-\[
-    \sum_{n=1}^{\infty} n
-\]
-converges or diverges.
+\begin{examplebox}
+    \paragraph{Example 1}
+    Determine if the series
+    \[
+        \sum_{n=1}^{\infty} n
+    \]
+    converges or diverges.
 
-\textbf{Solution:} The $n$th partial sum is
-\[
-    s_n = \sum_{i=1}^n i = \frac{n(n+1)}{2}.
-\]
-As $n \to \infty$,
-\[
-    \lim_{n\to\infty} \frac{n(n+1)}{2} = \infty,
-\]
-so the sequence of partial sums diverges and thus the series diverges.
+    \textbf{Solution:} The $n$th partial sum is
+    \[
+        S_n = \sum_{i=1}^n i = \frac{n(n+1)}{2}.
+    \]
+    As $n \to \infty$,
+    \[
+        \lim_{n\to\infty} \frac{n(n+1)}{2} = \infty,
+    \]
+    so the sequence of partial sums diverges and thus the series diverges.
+\end{examplebox}
 
-\paragraph{Example 2}
-Determine if the series
-\[
-    \sum_{n=2}^{\infty} \frac{1}{n^2 - 1}
-\]
-converges or diverges, and if it converges, find its value.
+\begin{examplebox}
+    \paragraph{Example 2}
+    Determine if the series
+    \[
+        \sum_{n=2}^{\infty} \frac{1}{n^2 - 1}
+    \]
+    converges or diverges, and if it converges, find its value.
 
-\textbf{Solution:} A known formula for the partial sums of this series is
-\[
-    s_n = \sum_{i=2}^n \frac{1}{i^2 - 1}
-    = \frac{3}{4} - \frac{1}{2n} - \frac{1}{2(n+1)}.
-\]
-Taking the limit as $n\to\infty$,
-\[
-    \lim_{n\to\infty} s_n = \frac{3}{4}.
-\]
-Thus the series converges and
-\[
-    \sum_{n=2}^{\infty} \frac{1}{n^2 - 1} = \frac{3}{4}.
-\]
+    \textbf{Solution:} A known formula for the partial sums of this series is
+    \[
+        S_n = \sum_{i=2}^n \frac{1}{i^2 - 1}
+        = \frac{3}{4} - \frac{1}{2n} - \frac{1}{2(n+1)}.
+    \]
+    Taking the limit as $n\to\infty$,
+    \[
+        \lim_{n\to\infty} S_n = \frac{3}{4}.
+    \]
+    Thus the series converges and
+    \[
+        \sum_{n=2}^{\infty} \frac{1}{n^2 - 1} = \frac{3}{4}.
+    \]
+\end{examplebox}
 
-\paragraph{Example 3}
-Determine if the series
-\[
-    \sum_{n=0}^{\infty} (-1)^n
-\]
-converges or diverges.
+\begin{examplebox}
+    \paragraph{Example 3}
+    Determine if the series
+    \[
+        \sum_{n=0}^{\infty} (-1)^n
+    \]
+    converges or diverges.
 
-\textbf{Solution:} The partial sums oscillate:
-\[
-    s_0 = 1,\quad
-    s_1 = 0,\quad
-    s_2 = 1,\quad
-    s_3 = 0,\quad \ldots
-\]
-Since the sequence of partial sums does not approach a single value, this series diverges.
+    \textbf{Solution:} The partial sums oscillate:
+    \[
+        s_0 = 1,\quad
+        s_1 = 0,\quad
+        s_2 = 1,\quad
+        s_3 = 0,\quad \ldots
+    \]
+    Since the sequence of partial sums does not approach a single value, this series diverges.
+\end{examplebox}
 
-\paragraph{Example 4}
-Determine if the series
-\[
-    \sum_{n=1}^{\infty} \frac{1}{3^{\,n-1}}
-\]
-converges or diverges. If it converges, find the value.
+\begin{examplebox}
+    \paragraph{Example 4}
+    Determine if the series
+    \[
+        \sum_{n=1}^{\infty} \frac{1}{3^{\,n-1}}
+    \]
+    converges or diverges. If it converges, find the value.
 
-\textbf{Solution:} A formula for the partial sums is
-\[
-    s_n = \sum_{i=1}^{n} \frac{1}{3^{\,i-1}} = \frac{3}{2}\left(1-\frac{1}{3^n}\right).
-\]
-Taking the limit,
-\[
-    \lim_{n\to\infty} s_n = \frac{3}{2}.
-\]
-Therefore, the series converges with
-\[
-    \sum_{n=1}^{\infty} \frac{1}{3^{\,n-1}} = \frac{3}{2}.
-\]
+    \textbf{Solution:} A formula for the partial sums is
+    \[
+        S_n = \sum_{i=1}^{n} \frac{1}{3^{\,i-1}} = \frac{3}{2}\left(1-\frac{1}{3^n}\right).
+    \]
+    Taking the limit,
+    \[
+        \lim_{n\to\infty} S_n = \frac{3}{2}.
+    \]
+    Therefore, the series converges with
+    \[
+        \sum_{n=1}^{\infty} \frac{1}{3^{\,n-1}} = \frac{3}{2}.
+    \]
+\end{examplebox}
 
 \bigskip
 \textbf{Observation:} In Examples 2 and 4, the terms of the series approach zero and the series converges; in Examples 1 and 3, they do not approach a limit that yields a convergent series. Thus, the limit of the series terms is an important preliminary check for convergence before applying tests.

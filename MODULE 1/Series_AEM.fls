@@ -1,7 +1,7 @@
 PWD c:\Users\USER 1\OneDrive\Desktop\USTP-Instructor\2025-2026 2nd sem\ES207\Modules\MODULE 1
 INPUT C:\Users\USER 1\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT c:\Users\USER 1\OneDrive\Desktop\USTP-Instructor\2025-2026 2nd sem\ES207\Modules\MODULE 1\main.tex
-OUTPUT main.log
+INPUT c:\Users\USER 1\OneDrive\Desktop\USTP-Instructor\2025-2026 2nd sem\ES207\Modules\MODULE 1\Series_AEM.tex
+OUTPUT Series_AEM.log
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\tex\latex\base\size12.clo
@@ -106,6 +106,9 @@ INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\tex\latex\l3kernel\expl3.sty
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\tex\latex\l3kernel\expl3.sty
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
+INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\tex\latex\base\fix-cm.sty
+INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\tex\latex\base\fix-cm.sty
+INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\tex\latex\base\ts1enc.def
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\tex\latex\tcolorbox\tcolorbox.sty
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\tex\latex\tcolorbox\tcolorbox.sty
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\tex\latex\pgf\frontendlayer\tikz.sty
@@ -218,10 +221,22 @@ INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\tex\latex\environ\environ.st
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\tex\latex\environ\environ.sty
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\tex\latex\trimspaces\trimspaces.sty
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\tex\latex\trimspaces\trimspaces.sty
-INPUT .\main.aux
-INPUT .\main.aux
-INPUT main.aux
-OUTPUT main.aux
+INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\tex\latex\tcolorbox\tcbbreakable.code.tex
+INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\tex\latex\pdfcol\pdfcol.sty
+INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\tex\latex\pdfcol\pdfcol.sty
+INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\tex\latex\graphics\color.sty
+INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\tex\latex\tcolorbox\tcbskins.code.tex
+INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\tex\latex\tikzfill\tikzfill.image.sty
+INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\tex\latex\tikzfill\tikzfill.image.sty
+INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\tex\latex\tikzfill\tikzfill-common.sty
+INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\tex\latex\tikzfill\tikzfill-common.sty
+INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\tex\latex\tikzfill\tikzlibraryfill.image.code.tex
+INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\tex\latex\tikzfill\tikzlibraryfill.image.code.tex
+INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\tex\latex\tcolorbox\tcbskinsjigsaw.code.tex
+INPUT .\Series_AEM.aux
+INPUT .\Series_AEM.aux
+INPUT Series_AEM.aux
+OUTPUT Series_AEM.aux
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
@@ -230,38 +245,28 @@ INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\tex\latex\epstopdf-pkg\epsto
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
-INPUT .\main.out
-INPUT .\main.out
-INPUT main.out
-INPUT main.out
-INPUT .\main.out
-INPUT .\main.out
-OUTPUT main.out
-OUTPUT main.pdf
+INPUT .\Series_AEM.out
+INPUT .\Series_AEM.out
+INPUT Series_AEM.out
+INPUT Series_AEM.out
+INPUT .\Series_AEM.out
+INPUT .\Series_AEM.out
+OUTPUT Series_AEM.out
+OUTPUT Series_AEM.pdf
+INPUT .\title_page.tex
+INPUT .\title_page.tex
+INPUT title_page.tex
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr17.tfm
+INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr17.tfm
+INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr12.tfm
-INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmmi12.tfm
-INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmsy10.tfm
-INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmex10.tfm
-INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
-INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\umsa.fd
-INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\umsa.fd
-INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\umsa.fd
-INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam10.tfm
-INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam10.tfm
-INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam7.tfm
-INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\umsb.fd
-INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\umsb.fd
-INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\umsb.fd
-INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
-INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
-INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
-INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr17.tfm
-INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
+INPUT C:\Users\USER 1\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
 INPUT .\section_0.tex
 INPUT .\section_0.tex
 INPUT section_0.tex
+INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr17.tfm
+INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr8.tfm
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr6.tfm
@@ -274,14 +279,19 @@ INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmsy6.tf
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmex10.tfm
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex8.tfm
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
+INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\umsa.fd
+INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\umsa.fd
+INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\umsa.fd
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam10.tfm
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam10.tfm
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam7.tfm
+INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\umsb.fd
+INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\umsb.fd
+INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\umsb.fd
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\tcrm1200.tfm
-INPUT C:\Users\USER 1\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
 INPUT .\section_1_1.tex
 INPUT .\section_1_1.tex
 INPUT section_1_1.tex
@@ -297,9 +307,12 @@ INPUT section_1_4.tex
 INPUT .\section_1_5.tex
 INPUT .\section_1_5.tex
 INPUT section_1_5.tex
-INPUT main.aux
-INPUT .\main.out
-INPUT .\main.out
+INPUT .\section_end.tex
+INPUT .\section_end.tex
+INPUT section_end.tex
+INPUT Series_AEM.aux
+INPUT .\Series_AEM.out
+INPUT .\Series_AEM.out
 INPUT C:\Users\USER 1\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1200.pk
 INPUT C:\Users\USER 1\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1200.pk
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb

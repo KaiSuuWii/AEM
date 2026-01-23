@@ -48,152 +48,222 @@ Taylor series converges.
 
 \bigskip
 
-\subsubsection*{Example 1: Taylor Series of $e^x$ About $x_0 = 1$}
+\begin{examplebox}
+    \subsubsection*{Example 1: Taylor Series of $e^x$ About $x_0 = 1$}
 
-Since all derivatives of $e^x$ are equal to $e^x$, we have
-\[
-    f^{(n)}(1) = e.
-\]
+    Since all derivatives of $e^x$ are equal to $e^x$, we have
+    \[
+        f^{(n)}(1) = e.
+    \]
 
-Substituting into the Taylor series formula gives
-\[
-    e^x = e \sum_{n=0}^{\infty} \frac{(x-1)^n}{n!}.
-\]
+    Substituting into the Taylor series formula gives
+    \[
+        e^x = e \sum_{n=0}^{\infty} \frac{(x-1)^n}{n!}.
+    \]
 
-Writing out the first few terms,
-\[
-    e^x = e \left[ 1 + (x-1) + \frac{(x-1)^2}{2!} + \frac{(x-1)^3}{3!} + \cdots \right].
-\]
+    Writing out the first few terms,
+    \[
+        e^x = e \left[ 1 + (x-1) + \frac{(x-1)^2}{2!} + \frac{(x-1)^3}{3!} + \cdots \right].
+    \]
 
-This series converges for all real values of $x$.
-
-\bigskip
-
-\subsubsection*{Example 2: Taylor Series of $\ln x$ About $x_0 = 1$}
-
-Let $f(x) = \ln x$. Its derivatives are
-\[
-    f'(x) = \frac{1}{x}, \quad
-    f''(x) = -\frac{1}{x^2}, \quad
-    f'''(x) = \frac{2}{x^3}, \quad \dots
-\]
-
-Evaluating at $x = 1$,
-\[
-    f^{(n)}(1) = (-1)^{n+1}(n-1)!.
-\]
-
-Substituting into the Taylor series formula yields
-\[
-    \ln x = (x-1) - \frac{(x-1)^2}{2} + \frac{(x-1)^3}{3}
-    - \frac{(x-1)^4}{4} + \cdots
-\]
-
-This series converges for
-\[
-    0 < x \le 2,
-\]
-which corresponds to $|x-1| \le 1$ with endpoint testing.
+    This series converges for all real values of $x$.
+\end{examplebox}
 
 \bigskip
 
-\subsubsection*{Example 3: Polynomial Approximation of $\sqrt{x}$ Near $x = 4$}
+\begin{examplebox}
+    \subsubsection*{Example 2: Taylor Series of $\ln x$ About $x_0 = 1$}
 
-Let
-\[
-    f(x) = \sqrt{x}.
-\]
+    Let $f(x) = \ln x$. Its derivatives are
+    \[
+        f'(x) = \frac{1}{x}, \quad
+        f''(x) = -\frac{1}{x^2}, \quad
+        f'''(x) = \frac{2}{x^3}, \quad \dots
+    \]
 
-Compute derivatives:
-\[
-    f(4) = 2, \quad
-    f'(4) = \frac{1}{4}, \quad
-    f''(4) = -\frac{1}{32}.
-\]
+    Evaluating at $x = 1$,
+    \[
+        f^{(n)}(1) = (-1)^{n+1}(n-1)!.
+    \]
 
-Using these values, the second-degree Taylor polynomial about $x = 4$ is
-\[
-    \sqrt{x} \approx 2 + \frac{1}{4}(x-4) - \frac{1}{64}(x-4)^2.
-\]
+    Substituting into the Taylor series formula yields
+    \[
+        \ln x = (x-1) - \frac{(x-1)^2}{2} + \frac{(x-1)^3}{3}
+        - \frac{(x-1)^4}{4} + \cdots
+    \]
 
-This polynomial provides a good approximation to $\sqrt{x}$ for values of $x$
-close to $4$.
-
-\bigskip
-
-\subsubsection*{Example 4: Taylor Series of $\displaystyle \frac{1}{1+2x}$ About $x_0 = 1$}
-
-Consider the function
-\[
-    f(x) = \frac{1}{1+2x}.
-\]
-
-We want the Taylor series centered at $x = 1$. First, rewrite the function
-in terms of $(x-1)$.
-
-\[
-    1 + 2x = 1 + 2(1 + (x-1)) = 3 + 2(x-1).
-\]
-
-Thus,
-\[
-    f(x) = \frac{1}{3 + 2(x-1)}.
-\]
-
-Factor out the constant term:
-\[
-    f(x) = \frac{1}{3} \cdot \frac{1}{1 + \frac{2}{3}(x-1)}.
-\]
-
-Now use the geometric series formula
-\[
-    \frac{1}{1+u} = \sum_{n=0}^{\infty} (-1)^n u^n
-    \quad \text{for } |u| < 1.
-\]
-
-Let
-\[
-    u = \frac{2}{3}(x-1).
-\]
-
-Then the Taylor series becomes
-\[
-    f(x) = \frac{1}{3}
-    \sum_{n=0}^{\infty} (-1)^n \left(\frac{2}{3}(x-1)\right)^n.
-\]
-
-Writing out the first few terms,
-\[
-    \frac{1}{1+2x}
-    = \frac{1}{3}
-    - \frac{2}{9}(x-1)
-    + \frac{4}{27}(x-1)^2
-    - \frac{8}{81}(x-1)^3
-    + \cdots
-\]
+    This series converges for
+    \[
+        0 < x \le 2,
+    \]
+    which corresponds to $|x-1| \le 1$ with endpoint testing.
+\end{examplebox}
 
 \bigskip
 
-\textbf{Interval of Convergence:}
+\begin{examplebox}
+    \subsubsection*{Example 3: Polynomial Approximation of $\sqrt{x}$ Near $x = 4$}
 
-The geometric series converges when
-\[
-    \left| \frac{2}{3}(x-1) \right| < 1.
-\]
+    Let
+    \[
+        f(x) = \sqrt{x}.
+    \]
 
-Solving,
-\[
-    |x-1| < \frac{3}{2}.
-\]
+    Compute derivatives:
+    \[
+        f(4) = 2, \quad
+        f'(4) = \frac{1}{4}, \quad
+        f''(4) = -\frac{1}{32}.
+    \]
 
-Thus, the radius of convergence is
-\[
-    \boxed{R = \frac{3}{2}},
-\]
-and the interval of convergence is
-\[
-    \boxed{\left(-\frac{1}{2},\, \frac{5}{2}\right)}.
-\]
+    Using these values, the second-degree Taylor polynomial about $x = 4$ is
+    \[
+        \sqrt{x} \approx 2 + \frac{1}{4}(x-4) - \frac{1}{64}(x-4)^2.
+    \]
+
+    This polynomial provides a good approximation to $\sqrt{x}$ for values of $x$
+    close to $4$.
+\end{examplebox}
+
+\newpage
+
+\begin{examplebox}
+    \subsubsection*{Example 4: Taylor Series of $\displaystyle \frac{1}{1+2x}$ About $x_0 = 1$}
+
+    Consider the function
+    \[
+        f(x) = \frac{1}{1+2x}.
+    \]
+
+    We want the Taylor series centered at $x = 1$. First, rewrite the function
+    in terms of $(x-1)$.
+
+    \[
+        1 + 2x = 1 + 2(1 + (x-1)) = 3 + 2(x-1).
+    \]
+
+    Thus,
+    \[
+        f(x) = \frac{1}{3 + 2(x-1)}.
+    \]
+
+    Factor out the constant term:
+    \[
+        f(x) = \frac{1}{3} \cdot \frac{1}{1 + \frac{2}{3}(x-1)}.
+    \]
+
+    Now use the geometric series formula
+    \[
+        \frac{1}{1+u} = \sum_{n=0}^{\infty} (-1)^n u^n
+        \quad \text{for } |u| < 1.
+    \]
+
+    Let
+    \[
+        u = \frac{2}{3}(x-1).
+    \]
+
+    Then the Taylor series becomes
+    \[
+        f(x) = \frac{1}{3}
+        \sum_{n=0}^{\infty} (-1)^n \left(\frac{2}{3}(x-1)\right)^n.
+    \]
+
+    Writing out the first few terms,
+    \[
+        \frac{1}{1+2x}
+        = \frac{1}{3}
+        - \frac{2}{9}(x-1)
+        + \frac{4}{27}(x-1)^2
+        - \frac{8}{81}(x-1)^3
+        + \cdots
+    \]
+\end{examplebox}
+
+\newpage
+
+\begin{examplebox}
+
+    \textbf{Interval of Convergence:}
+
+    The geometric series converges when
+    \[
+        \left| \frac{2}{3}(x-1) \right| < 1.
+    \]
+
+    Solving,
+    \[
+        |x-1| < \frac{3}{2}.
+    \]
+
+    Thus, the radius of convergence is
+    \[
+        \boxed{R = \frac{3}{2}},
+    \]
+    and the interval of convergence is
+    \[
+        \boxed{\left(-\frac{1}{2},\, \frac{5}{2}\right)}.
+    \]
+\end{examplebox}
+
+\bigskip
+
+\begin{examplebox}
+    \subsubsection*{Example 5: Taylor Series of a Polynomial About a Nonzero Center}
+
+    Find the Taylor series for
+    \[
+        f(x) = x^3 - 10x^2 + 6
+    \]
+    about $x_0 = 3$.
+
+    \bigskip
+
+    \textbf{Step 1: Compute the derivatives}
+
+    \[
+        \begin{aligned}
+            f(x)       & = x^3 - 10x^2 + 6,             \\
+            f'(x)      & = 3x^2 - 20x,                  \\
+            f''(x)     & = 6x - 20,                     \\
+            f'''(x)    & = 6,                           \\
+            f^{(n)}(x) & = 0 \quad \text{for } n \ge 4.
+        \end{aligned}
+    \]
+
+    \bigskip
+
+    \textbf{Step 2: Evaluate the derivatives at $x = 3$}
+
+    \[
+        \begin{aligned}
+            f(3)    & = -57, \\
+            f'(3)   & = -33, \\
+            f''(3)  & = -2,  \\
+            f'''(3) & = 6.
+        \end{aligned}
+    \]
+
+    \bigskip
+
+    \textbf{Step 3: Construct the Taylor series}
+
+    The Taylor series about $x_0 = 3$ is given by
+    \[
+        f(x) = \sum_{n=0}^{\infty} \frac{f^{(n)}(3)}{n!}(x-3)^n.
+    \]
+
+    Since all derivatives of order $4$ and higher are zero, the series terminates
+    after the cubic term.
+
+    \[
+        \begin{aligned}
+            x^3 - 10x^2 + 6
+             & = f(3) + f'(3)(x-3) + \frac{f''(3)}{2!}(x-3)^2 + \frac{f'''(3)}{3!}(x-3)^3 \\
+             & = -57 - 33(x-3) - (x-3)^2 + (x-3)^3.
+        \end{aligned}
+    \]
+\end{examplebox}
 
 \subsubsection*{Convergence and Validity of Taylor Series}
 
@@ -209,7 +279,3 @@ Therefore, convergence is essential in determining where a Taylor series can be
 used as a valid representation or approximation of a function.
 
 \bigskip
-
-\subsubsection*{Special Case: Maclaurin Series}
-
-When $x_0 = 0$, the Taylor series is called a \textbf{Maclaurin series}:

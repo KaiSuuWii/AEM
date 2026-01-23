@@ -1,0 +1,125 @@
+
+\subsection*{1.5 Common Series and Power Series Formulas}
+
+This section summarizes the most frequently used series formulas encountered in
+Module 1. These formulas are used as building blocks for constructing Taylor and
+Maclaurin series and for analyzing convergence.
+
+\bigskip
+\begin{conceptbox}
+    \subsubsection*{1. Geometric Series}
+
+    \[
+        \sum_{n=0}^{\infty} c_n \quad \text{where} \ c_n = ar^n
+    \]
+
+    \begin{itemize}
+        \item Converges if $|r| < 1$
+        \item Diverges if $|r| \ge 1$
+    \end{itemize}
+
+    When convergent,
+    \[
+        \sum_{n=0}^{\infty} ar^n = \frac{a}{1-r}.
+    \]
+\end{conceptbox}
+
+\bigskip
+
+\begin{conceptbox}
+    \subsubsection*{2. Harmonic Series}
+
+    \[
+        \sum_{n=1}^{\infty} \frac{1}{n}
+    \]
+
+    This series diverges, even though
+    \[
+        \lim_{n \to \infty} \frac{1}{n} = 0.
+    \]
+\end{conceptbox}
+
+\bigskip
+
+\begin{conceptbox}
+    \subsubsection*{3. $p$-Series}
+
+    \[
+        \sum_{n=1}^{\infty} \frac{1}{n^p}
+    \]
+
+    \begin{itemize}
+        \item Converges if $p > 1$
+        \item Diverges if $p \le 1$
+    \end{itemize}
+\end{conceptbox}
+
+\bigskip
+
+\begin{conceptbox}
+    \subsubsection*{4. Taylor Series Formula}
+
+    If a function $f(x)$ has derivatives of all orders at $x=a$, then its Taylor series
+    about $x=a$ is
+    \[
+        f(x) = \sum_{n=0}^{\infty} \frac{f^{(n)}(a)}{n!}(x-a)^n.
+    \]
+\end{conceptbox}
+
+\bigskip
+
+\begin{conceptbox}
+    \subsubsection*{5. Maclaurin Series Formula}
+
+    The Maclaurin series is the Taylor series centered at $a=0$:
+    \[
+        f(x) = \sum_{n=0}^{\infty} \frac{f^{(n)}(0)}{n!}x^n.
+    \]
+\end{conceptbox}
+
+\bigskip
+
+\begin{conceptbox}
+    \subsubsection*{6. Common Maclaurin Series}
+
+    \paragraph{$e^x$}
+    \[
+        e^x = \sum_{n=0}^{\infty} \frac{x^n}{n!},
+        \qquad R = \infty
+    \]
+
+    \paragraph{$\sin x$}
+    \[
+        \sin x = \sum_{n=0}^{\infty} (-1)^n \frac{x^{2n+1}}{(2n+1)!},
+        \qquad R = \infty
+    \]
+
+    \paragraph{$\cos x$}
+    \[
+        \cos x = \sum_{n=0}^{\infty} (-1)^n \frac{x^{2n}}{(2n)!},
+        \qquad R = \infty
+    \]
+
+    \paragraph{$\displaystyle \frac{1}{1-x}$}
+    \[
+        \frac{1}{1-x} = \sum_{n=0}^{\infty} x^n,
+        \qquad |x| < 1
+    \]
+
+    \paragraph{$\ln(1+x)$}
+    \[
+        \ln(1+x) = \sum_{n=1}^{\infty} (-1)^{n+1} \frac{x^n}{n},
+        \qquad -1 < x \le 1
+    \]
+\end{conceptbox}
+
+\bigskip
+
+\subsubsection*{7. Using Series Formulas}
+
+\begin{itemize}
+    \item Known series may be shifted using $(x-a)$.
+    \item Constants may be factored out of a series.
+    \item Algebraic substitutions can be used to generate new series.
+    \item The interval of convergence must always be adjusted accordingly.
+\end{itemize}

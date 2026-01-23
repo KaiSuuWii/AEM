@@ -8,7 +8,9 @@
 \usepackage{setspace}
 \usepackage{enumitem}
 \usepackage{physics}
+\usepackage{fix-cm}  
 \usepackage{tcolorbox}
+\tcbuselibrary{breakable,skins}
 
 \geometry{margin=1in}
 \setstretch{1.15}
@@ -21,21 +23,40 @@
   boxrule=0.8pt
 }
 
-\newtcolorbox{conceptbox}{title=Key Concept}
-\newtcolorbox{examplebox}{title=Example}
-\newtcolorbox{noteBox}{title=Engineering Note}
+\newtcolorbox{conceptbox}{
+    colback=green!5,
+    colframe=green!50!black,
+    title=Key Concept,
+    fonttitle=\bfseries
+}
 
+\newtcolorbox{examplebox}{
+    breakable,
+    enhanced,
+    colback=blue!5,
+    colframe=blue!60!black,
+    title=Example,
+    fonttitle=\bfseries,
+    boxsep=6pt,
+    arc=2mm
+}
+
+\newtcolorbox{noteBox}{
+    colback=yellow!10,
+    colframe=yellow!50!black,
+    title=Engineering Note,
+    fonttitle=\bfseries
+}
 \title{Advanced Engineering Mathematics \\ \large Series}
 \author{\textbf{Engr. Kaiveni Tom Dagcuta} \\ Computer Engineering}
 \date{}
 
 \begin{document}
 
-\maketitle
+% Input title page
+\input{title_page.tex}
 
-\section*{Module 1: Infinite Series}
-
-This lecture introduces the fundamental theory of infinite series as used in Advanced Engineering Mathematics. Emphasis is placed on convergence concepts and power series representations, which are essential in engineering analysis, modeling, and later topics such as differential equations and signal processing.
+\newpage
 
 % Input subsection files
 \input{section_0.tex}
@@ -59,5 +80,9 @@ This lecture introduces the fundamental theory of infinite series as used in Adv
 \bigskip
 
 \input{section_1_5.tex}
+
+\bigskip
+
+\input{section_end.tex}
 
 \end{document}
