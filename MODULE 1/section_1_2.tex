@@ -1,31 +1,144 @@
 \subsection*{1.2 Divergence of Series}
 
-A series $\sum a_n$ is said to \textbf{diverge} if the sequence of partial sums does not approach a finite limit.
+A series $\sum a_n$ is said to \textbf{diverge} if the sequence of partial sums
+\[
+    S_n = a_1 + a_2 + \cdots + a_n
+\]
+does not approach a finite limit as $n \to \infty$.
+
+\bigskip
+
+\paragraph{Important Observation}
+A necessary condition for convergence is
+\[
+    \lim_{n \to \infty} a_n = 0.
+\]
+If this limit does not exist or is not zero, the series \textbf{must diverge}.
+However, this condition alone does not guarantee convergence.
+
+\bigskip
 
 \paragraph{Key Divergence Tests}
 \begin{itemize}
     \item $n$th-Term Test for Divergence
     \item Harmonic Series
+    \item Comparison with Known Divergent Series
 \end{itemize}
 
+\bigskip
+
+\subsubsection*{1. $n$th-Term Test for Divergence}
+
+If
+\[
+    \lim_{n \to \infty} a_n \neq 0 \quad \text{or does not exist},
+\]
+then the series
+\[
+    \sum_{n=1}^{\infty} a_n
+\]
+\textbf{diverges}.
+
+\textbf{Important Note:}
+If $\lim_{n \to \infty} a_n = 0$, the test is inconclusive.
+
+\bigskip
+
 \paragraph{Example 1: $n$th-Term Test}
+
 \[
     \sum_{n=1}^{\infty} \frac{n}{n+1}
 \]
+
 Since
 \[
     \lim_{n \to \infty} \frac{n}{n+1} = 1 \neq 0,
 \]
-the series diverges.
+the series diverges by the $n$th-term test.
 
-\paragraph{Example 2: Harmonic Series}
+\bigskip
+
+\paragraph{Example 2: Oscillating Terms}
+
 \[
-    \sum_{n=1}^{\infty} \frac{1}{n}
+    \sum_{n=1}^{\infty} (-1)^n
 \]
-This series diverges even though $a_n \to 0$.
 
-\paragraph{Example 3: Comparison}
+Here, the sequence $a_n = (-1)^n$ does not approach a limit. Therefore, the
+series diverges by the $n$th-term test.
+
+\bigskip
+
+\subsubsection*{2. Harmonic Series}
+
+The \textbf{harmonic series} is defined as
+\[
+    \sum_{n=1}^{\infty} \frac{1}{n}.
+\]
+
+Although
+\[
+    \lim_{n \to \infty} \frac{1}{n} = 0,
+\]
+the harmonic series \textbf{diverges}.
+
+This example shows that the condition $\lim_{n \to \infty} a_n = 0$ is necessary
+but not sufficient for convergence.
+
+\bigskip
+
+\paragraph{Example 3: Constant Multiple of the Harmonic Series}
+
+\[
+    \sum_{n=1}^{\infty} \frac{5}{n}
+\]
+
+Since this is a constant multiple of the harmonic series, it also diverges.
+
+\bigskip
+
+\subsubsection*{3. Comparison with Divergent Series}
+
+If $0 \le a_n \le b_n$ for all sufficiently large $n$ and
+\[
+    \sum b_n \quad \text{diverges},
+\]
+then
+\[
+    \sum a_n \quad \text{also diverges}.
+\]
+
+\bigskip
+
+\paragraph{Example 4: Comparison Test}
+
 \[
     \sum_{n=1}^{\infty} \frac{1}{\sqrt{n}}
 \]
-This is a $p$-series with $p = \frac{1}{2} < 1$, hence it diverges.
+
+This is a $p$-series with $p = \frac{1}{2} < 1$, which diverges. Therefore,
+any series comparable to it will also diverge.
+
+\bigskip
+
+\paragraph{Example 5: Rational Function}
+
+\[
+    \sum_{n=1}^{\infty} \frac{n+1}{n}
+\]
+
+Since
+\[
+    \frac{n+1}{n} = 1 + \frac{1}{n},
+\]
+and the terms do not approach zero, the series diverges by the $n$th-term test.
+
+\bigskip
+
+\subsubsection*{Summary of Divergence Results}
+
+\begin{itemize}
+    \item If $\lim_{n \to \infty} a_n \neq 0$, the series diverges.
+    \item The harmonic series diverges even though its terms approach zero.
+    \item Series comparable to divergent $p$-series with $p \le 1$ diverge.
+\end{itemize}

@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1769142352.61786 "c:/Users/USER 1/OneDrive/Desktop/USTP-Instructor/2025-2026 2nd sem/ES207/Modules/MODULE 1/main.tex" "main.pdf" "main" 1769142353.58027 0
+["pdflatex"] 1769142799.28119 "c:/Users/USER 1/OneDrive/Desktop/USTP-Instructor/2025-2026 2nd sem/ES207/Modules/MODULE 1/main.tex" "main.pdf" "main" 1769142800.40741 0
   "C:/Users/USER" 1709884038 19148 013e94a827d08c3fa77f8035c991e252 ""
   "C:/Users/USER 1/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1769117802 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/USER 1/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk" 1731399259 14064 fa86831697447cf26bd07f257639a709 ""
@@ -157,12 +157,12 @@
   "C:/Users/USER 1/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "c:/Users/USER" 1709884038 19148 013e94a827d08c3fa77f8035c991e252 ""
   "c:/Users/USER 1/OneDrive/Desktop/USTP-Instructor/2025-2026 2nd sem/ES207/Modules/MODULE 1/main.tex" 1769122406 1334 8b65a986da46dc6609e463447facd543 ""
-  "main.aux" 1769142353 3410 dfb779fc4355957a40d939e098536230 "pdflatex"
-  "main.out" 1769142353 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "main.aux" 1769142800 3778 755fe6c6d6290126d2800519f9077165 "pdflatex"
+  "main.out" 1769142800 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   "main.tex" 1769122406 1334 8b65a986da46dc6609e463447facd543 ""
   "section_0.tex" 1769130102 2751 f01f2b326174d8342cf02f41273de231 ""
   "section_1_1.tex" 1769142350 12281 62ad4b2636ff06dd11c03844f71c9b03 ""
-  "section_1_2.tex" 1769121430 763 39c9290356818256435e549dc20641ab ""
+  "section_1_2.tex" 1769142797 3036 d8b21286dfece2f656ad2f34e45085c1 ""
   "section_1_3.tex" 1769121430 768 22b7b15c52faf5a79f69542a140407b6 ""
   "section_1_4.tex" 1769121430 631 72c6f08091b3ffa661e032f88f9ad933 ""
   "section_1_5.tex" 1769121430 652 f64ab7d4101449b5b693d6905afb5904 ""
