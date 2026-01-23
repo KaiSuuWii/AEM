@@ -44,6 +44,8 @@ The radius of convergence can be determined from the coefficients of the series 
 
 provided the limit exists.
 
+\bigskip
+
 The interval
 \[
     (x_0 - R,\, x_0 + R)
@@ -71,7 +73,7 @@ be a power series.
 
     \item The series is \textbf{absolutely convergent} at $x=b$ if
           \[
-              \sum_{n=0}^{\infty} \left| a_n (b-x_0)^n \right|
+              \sum_{n=0}^{\infty} \left| c_n (b-x_0)^n \right|
           \]
           converges.
 \end{itemize}
@@ -266,16 +268,263 @@ The \textbf{Root Test} may also be applied:
 
 The conclusions are the same as those of the Ratio Test.
 
-\paragraph{3. Endpoint Testing}
+\paragraph{Example 4: Power Series with Exponential Coefficients}
 
-Once the radius of convergence $R$ is found, the series must be tested at
+Consider the power series
 \[
-    x = a - R \quad \text{and} \quad x = a + R.
+    \sum_{n=0}^{\infty} \frac{(2x)^n}{n}.
 \]
 
-At these endpoints, the power series reduces to a numerical series. Common tests used include:
+Let
+\[
+    a_n = \frac{(2x)^n}{n}.
+\]
+
+Apply the Root Test:
+\[
+    \lim_{n \to \infty} \sqrt[n]{|a_n|}
+    = \lim_{n \to \infty} \sqrt[n]{\frac{|2x|^n}{n}}
+    = |2x| \cdot \lim_{n \to \infty} \sqrt[n]{\frac{1}{n}}.
+\]
+
+Since
+\[
+    \lim_{n \to \infty} \sqrt[n]{\frac{1}{n}} = 1,
+\]
+we obtain
+\[
+    \lim_{n \to \infty} \sqrt[n]{|a_n|} = |2x|.
+\]
+
+For convergence,
+\[
+    |2x| < 1 \quad \Rightarrow \quad |x| < \frac{1}{2}.
+\]
+
+Thus, the radius of convergence is
+\[
+    \boxed{R = \frac{1}{2}}.
+\]
+
+\bigskip
+
+\textbf{Endpoint Testing:}
+
 \begin{itemize}
-    \item $p$-series test
-    \item Alternating series test
-    \item Comparison test
+    \item At $x = \frac{1}{2}$:
+          \[
+              \sum_{n=0}^{\infty} \frac{1}{n} \quad \text{diverges}.
+          \]
+
+    \item At $x = -\frac{1}{2}$:
+          \[
+              \sum_{n=0}^{\infty} \frac{(-1)^n}{n} \quad \text{converges (alternating series)}.
+          \]
 \end{itemize}
+
+Hence, the interval of convergence is
+\[
+    \boxed{\left[-\frac{1}{2},\, \frac{1}{2}\right)}.
+\]
+
+\bigskip
+
+\paragraph{Example 5: Power Series with Polynomial Growth}
+
+Consider the power series
+\[
+    \sum_{n=0}^{\infty} n^2 x^n.
+\]
+
+Let
+\[
+    a_n = n^2 x^n.
+\]
+
+Apply the Root Test:
+\[
+    \lim_{n \to \infty} \sqrt[n]{|a_n|}
+    = \lim_{n \to \infty} \sqrt[n]{n^2 |x|^n}
+    = |x| \cdot \lim_{n \to \infty} \sqrt[n]{n^2}.
+\]
+
+Since
+\[
+    \lim_{n \to \infty} \sqrt[n]{n^2} = 1,
+\]
+we have
+\[
+    \lim_{n \to \infty} \sqrt[n]{|a_n|} = |x|.
+\]
+
+For convergence,
+\[
+    |x| < 1.
+\]
+
+Thus, the radius of convergence is
+\[
+    \boxed{R = 1}.
+\]
+
+\bigskip
+
+\textbf{Endpoint Testing:}
+
+\begin{itemize}
+    \item At $x = 1$:
+          \[
+              \sum_{n=0}^{\infty} n^2 \quad \text{diverges}.
+          \]
+
+    \item At $x = -1$:
+          \[
+              \sum_{n=0}^{\infty} (-1)^n n^2 \quad \text{diverges}.
+          \]
+\end{itemize}
+
+Hence, the interval of convergence is
+\[
+    \boxed{(-1,\,1)}.
+\]
+
+\bigskip
+
+\paragraph{Example 6: Power Series with Factorials in the Denominator}
+
+Consider the power series
+\[
+    \sum_{n=0}^{\infty} \frac{x^n}{(n!)^2}.
+\]
+
+Let
+\[
+    a_n = \frac{x^n}{(n!)^2}.
+\]
+
+Apply the Root Test:
+\[
+    \lim_{n \to \infty} \sqrt[n]{|a_n|}
+    = \lim_{n \to \infty} \frac{|x|}{(n!)^{2/n}}.
+\]
+
+Since $(n!)^{1/n} \to \infty$ as $n \to \infty$, it follows that
+\[
+    \lim_{n \to \infty} \sqrt[n]{|a_n|} = 0
+\]
+for all real $x$.
+
+Therefore, the series converges for all $x$, and
+\[
+    \boxed{R = \infty}.
+\]
+
+The interval of convergence is
+\[
+    \boxed{(-\infty, \infty)}.
+\]
+
+\subsubsection*{Endpoint Testing: Common Tests and When to Use Them}
+
+After finding the radius of convergence $R$, the power series must be tested at the
+endpoints
+\[
+    x = x_0 - R \quad \text{and} \quad x = x_0 + R.
+\]
+
+At each endpoint, the power series becomes a numerical series. Since the Ratio and Root
+Tests are inconclusive at endpoints, other convergence tests must be used.
+
+\bigskip
+
+\paragraph{1. $p$-Series Test}
+
+A series of the form
+\[
+    \sum_{n=1}^{\infty} \frac{1}{n^p}
+\]
+is called a \textbf{$p$-series}.
+
+\begin{itemize}
+    \item The series converges if $p > 1$.
+    \item The series diverges if $p \le 1$.
+\end{itemize}
+
+\textbf{When to use:}
+This test is used when the endpoint series simplifies to a rational expression involving
+powers of $n$, such as
+\[
+    \sum \frac{1}{n^2}, \quad \sum \frac{1}{\sqrt{n}}, \quad \sum \frac{1}{n}.
+\]
+
+\textbf{Example:}
+\[
+    \sum_{n=1}^{\infty} \frac{1}{n^2} \quad \text{converges} \qquad (p = 2 > 1),
+\]
+\[
+    \sum_{n=1}^{\infty} \frac{1}{n} \quad \text{diverges} \qquad (p = 1).
+\]
+
+\bigskip
+
+\paragraph{2. Alternating Series Test}
+
+An alternating series has the form
+\[
+    \sum_{n=1}^{\infty} (-1)^n b_n \quad \text{or} \quad \sum_{n=1}^{\infty} (-1)^{n+1} b_n,
+\]
+where $b_n > 0$ for all $n$.
+
+The series converges if:
+\begin{enumerate}
+    \item $b_n$ is decreasing, and
+    \item $\lim_{n \to \infty} b_n = 0$.
+\end{enumerate}
+
+\textbf{When to use:}
+This test is used when substituting an endpoint produces alternating signs, typically
+from terms such as $(-1)^n$.
+
+\textbf{Important Note:}
+An alternating series may converge even if it does not converge absolutely.
+
+\textbf{Example:}
+\[
+    \sum_{n=1}^{\infty} \frac{(-1)^n}{n} \quad \text{converges (conditionally)}.
+\]
+
+\bigskip
+
+\paragraph{3. Comparison Test}
+
+Let $\sum a_n$ and $\sum b_n$ be series with $0 \le a_n \le b_n$ for all sufficiently large $n$.
+
+\begin{itemize}
+    \item If $\sum b_n$ converges, then $\sum a_n$ converges.
+    \item If $\sum a_n$ diverges, then $\sum b_n$ diverges.
+\end{itemize}
+
+\textbf{When to use:}
+This test is used when the endpoint series resembles a known series (such as a $p$-series)
+but does not match it exactly.
+
+\textbf{Example:}
+\[
+    \sum_{n=1}^{\infty} \frac{1}{n^2 + 1}
+    \quad \text{converges by comparison with } \sum \frac{1}{n^2}.
+\]
+
+\bigskip
+
+\paragraph{Choosing the Appropriate Test}
+
+At an endpoint:
+\begin{itemize}
+    \item If the series resembles $\dfrac{1}{n^p}$, use the \textbf{$p$-series test}.
+    \item If the series alternates in sign, try the \textbf{Alternating Series Test} first.
+    \item If the series resembles a known convergent or divergent series but is not exact,
+          use the \textbf{Comparison Test}.
+\end{itemize}
+
+Each endpoint must be tested \textbf{independently}. A power series may converge at one
+endpoint and diverge at the other.
