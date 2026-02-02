@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.1.23)  23 JAN 2026 14:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.1.23)  2 FEB 2026 11:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"c:/Users/USER 1/OneDrive/Desktop/USTP-Instructor/2025-2026 2nd sem/ES207/Modules/MODULE 1/Series_AEM.tex"
-(c:/Users/USER 1/OneDrive/Desktop/USTP-Instructor/2025-2026 2nd sem/ES207/Modules/MODULE 1/Series_AEM.tex
+**"c:/Users/USER 1/OneDrive/Desktop/USTP-Instructor/2025-2026 2nd sem/ES207/Modules/MODULE 1/main.tex"
+(c:/Users/USER 1/OneDrive/Desktop/USTP-Instructor/2025-2026 2nd sem/ES207/Modules/MODULE 1/main.tex
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-29>
 (C:\Users\USER 1\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
@@ -665,8 +665,8 @@ File: tikzlibraryfill.image.code.tex 2023/08/08 v1.0.1 Image filling library
 \l__tikzfill_img_box=\box80
 )) (C:\Users\USER 1\AppData\Local\Programs\MiKTeX\tex/latex/tcolorbox\tcbskinsjigsaw.code.tex
 Library (tcolorbox): 'tcbskinsjigsaw.code.tex' version '6.9.0'
-)) (Series_AEM.aux)
-\openout1 = `Series_AEM.aux'.
+)) (main.aux)
+\openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 57.
 LaTeX Font Info:    ... okay on input line 57.
@@ -706,9 +706,9 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
 Package hyperref Info: Link coloring OFF on input line 57.
- (Series_AEM.out) (Series_AEM.out)
+ (main.out) (main.out)
 \@outlinefile=\write4
-\openout4 = `Series_AEM.out'.
+\openout4 = `main.out'.
 
 
 *geometry* driver: auto-detecting
@@ -766,26 +766,26 @@ l.46 \end{examplebox}
 
 Package tcolorbox Warning: Using nobreak failed. Try to enlarge `lines before break' or set page breaks manually on input line 156.
 
-[6] [7] [8] [9] [10] [11]) (section_1_2.tex [12] [13] [14]) (section_1_3.tex [15]) (section_1_4.tex [16] [17] [18] [19] [20]) (section_1_5.tex [21] [22]) (section_end.tex [23] [24]) [25] (quiz.tex [26]
+[6] [7] [8] [9] [10] [11]) (section_1_2.tex [12] [13] [14]) (section_1_3.tex [15]) (section_1_4.tex [16] [17] [18] [19] [20]) (section_1_5.tex [21] [22]) (section_end.tex [23] [24]) [25] (quiz.tex) [26] (quiz_solutions.tex
 NOTE: coordinate (2Y3.0e0],3Y0.0e0]) has been dropped because it is unbounded (in y). (see also unbounded coords=jump). 
-[27] [28] [29]) [30] (Series_AEM.aux)
+[27] [28] [29]) [30] (main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-29>
  ***********
-Package rerunfilecheck Info: File `Series_AEM.out' has not changed.
+Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 35871 strings out of 467871
- 859137 string characters out of 5417856
- 1389086 words of memory out of 5000000
- 64078 multiletter control sequences out of 15000+600000
+ 35877 strings out of 467871
+ 859236 string characters out of 5417856
+ 1388601 words of memory out of 5000000
+ 64081 multiletter control sequences out of 15000+600000
  635126 words of font info for 67 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 98i,15n,118p,823b,2056s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 98i,15n,118p,817b,2056s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\USER 1\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/USER 1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/USER 1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/USER 1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/USER 1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/USER 1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/USER 1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/USER 1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/USER 1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/USER 1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/USER 1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on Series_AEM.pdf (31 pages, 215571 bytes).
+Output written on main.pdf (31 pages, 215637 bytes).
 PDF statistics:
  319 PDF objects out of 1000 (max. 8388607)
  130 named destinations out of 1000 (max. 500000)

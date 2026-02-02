@@ -1,7 +1,7 @@
 PWD c:\Users\USER 1\OneDrive\Desktop\USTP-Instructor\2025-2026 2nd sem\ES207\Modules\MODULE 1
 INPUT C:\Users\USER 1\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT c:\Users\USER 1\OneDrive\Desktop\USTP-Instructor\2025-2026 2nd sem\ES207\Modules\MODULE 1\Series_AEM.tex
-OUTPUT Series_AEM.log
+INPUT c:\Users\USER 1\OneDrive\Desktop\USTP-Instructor\2025-2026 2nd sem\ES207\Modules\MODULE 1\main.tex
+OUTPUT main.log
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\tex\latex\base\size12.clo
@@ -291,10 +291,10 @@ INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\tex\latex\tikzfill\tikzfill-
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\tex\latex\tikzfill\tikzlibraryfill.image.code.tex
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\tex\latex\tikzfill\tikzlibraryfill.image.code.tex
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\tex\latex\tcolorbox\tcbskinsjigsaw.code.tex
-INPUT .\Series_AEM.aux
-INPUT .\Series_AEM.aux
-INPUT Series_AEM.aux
-OUTPUT Series_AEM.aux
+INPUT .\main.aux
+INPUT .\main.aux
+INPUT main.aux
+OUTPUT main.aux
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
@@ -303,14 +303,14 @@ INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\tex\latex\epstopdf-pkg\epsto
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
-INPUT .\Series_AEM.out
-INPUT .\Series_AEM.out
-INPUT Series_AEM.out
-INPUT Series_AEM.out
-INPUT .\Series_AEM.out
-INPUT .\Series_AEM.out
-OUTPUT Series_AEM.out
-OUTPUT Series_AEM.pdf
+INPUT .\main.out
+INPUT .\main.out
+INPUT main.out
+INPUT main.out
+INPUT .\main.out
+INPUT .\main.out
+OUTPUT main.out
+OUTPUT main.pdf
 INPUT .\title_page.tex
 INPUT .\title_page.tex
 INPUT title_page.tex
@@ -371,9 +371,12 @@ INPUT section_end.tex
 INPUT .\quiz.tex
 INPUT .\quiz.tex
 INPUT quiz.tex
-INPUT Series_AEM.aux
-INPUT .\Series_AEM.out
-INPUT .\Series_AEM.out
+INPUT .\quiz_solutions.tex
+INPUT .\quiz_solutions.tex
+INPUT quiz_solutions.tex
+INPUT main.aux
+INPUT .\main.out
+INPUT .\main.out
 INPUT C:\Users\USER 1\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1200.pk
 INPUT C:\Users\USER 1\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1200.pk
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb
