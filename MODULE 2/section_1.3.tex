@@ -1,0 +1,230 @@
+
+\subsection{Why Power Series Solutions Work}
+
+\subsubsection{Power Series Assumption}
+We know that:
+\begin{itemize}
+    \item Analytic functions can be represented as power series.
+    \item Power series can be differentiated and integrated term-by-term within their radius of convergence.
+\end{itemize}
+
+Hence, near an ordinary point $x_0$, we may \emph{assume} a solution of the form
+\begin{equation}
+    y(x) = \sum_{n=0}^{\infty} a_n (x - x_0)^n.
+\end{equation}
+
+This assumption is not a guess—it is justified by the theory of power series.
+
+\subsubsection{Derivatives of the Assumed Solution}
+
+Differentiating term-by-term,
+\begin{align}
+    y'(x)  & = \sum_{n=1}^{\infty} n a_n (x - x_0)^{n-1},      \\
+    y''(x) & = \sum_{n=2}^{\infty} n(n-1) a_n (x - x_0)^{n-2}.
+\end{align}
+
+These expressions are substituted directly into the differential equation.
+
+\subsubsection{Method of Solution}
+
+The power series method about an ordinary point follows a systematic process:
+
+\begin{enumerate}[label=\arabic*.]
+    \item Assume a power series solution centered at $x_0$.
+    \item Compute $y'$ and $y''$.
+    \item Substitute into the differential equation.
+    \item Rewrite all terms using the same power of $(x - x_0)$.
+    \item Equate coefficients of like powers.
+    \item Obtain a \textbf{recurrence relation} for $a_n$.
+    \item Use initial conditions (if given) to find constants.
+\end{enumerate}
+\begin{examplebox}
+    Solve the differential equation
+    \[
+        y'' - y = 0
+    \]
+    about the ordinary point $x_0 = 0$ using a power series.
+
+
+    \textbf{Step 1: Assume a power series solution}
+    \[
+        y = \sum_{n=0}^{\infty} a_n x^n.
+    \]
+
+    \textbf{Step 2: Compute derivatives}
+    \begin{align*}
+        y'  & = \sum_{n=1}^{\infty} n a_n x^{n-1},      \\
+        y'' & = \sum_{n=2}^{\infty} n(n-1) a_n x^{n-2}.
+    \end{align*}
+
+    \textbf{Step 3: Substitute into the equation}
+    \[
+        \sum_{n=2}^{\infty} n(n-1) a_n x^{n-2}
+        - \sum_{n=0}^{\infty} a_n x^n = 0.
+    \]
+
+    \textbf{Step 4: Align powers of $x$}
+
+    Re-index the first sum by letting $n \to n+2$:
+    \[
+        \sum_{n=0}^{\infty} (n+2)(n+1)a_{n+2} x^n
+        - \sum_{n=0}^{\infty} a_n x^n = 0.
+    \]
+
+    \textbf{Step 5: Equate coefficients}
+    \[
+        (n+2)(n+1)a_{n+2} - a_n = 0.
+    \]
+
+    \textbf{Recurrence Relation:}
+    \[
+        a_{n+2} = \frac{a_n}{(n+2)(n+1)}.
+    \]
+
+    \textbf{Structure of the Solution}
+
+    The recurrence relation shows that:
+    \begin{itemize}
+        \item Even-indexed coefficients depend only on $a_0$.
+        \item Odd-indexed coefficients depend only on $a_1$.
+    \end{itemize}
+
+    Thus, the general solution is a linear combination of two power series:
+    \[
+        y(x) = a_0 \left( 1 + \frac{x^2}{2!} + \frac{x^4}{4!} + \cdots \right)
+        + a_1 \left( x + \frac{x^3}{3!} + \frac{x^5}{5!} + \cdots \right).
+    \]
+
+\end{examplebox}
+
+\begin{noteBox}
+    These series are recognized as the Maclaurin series for $\cosh x$ and $\sinh x$, respectively.
+\end{noteBox}
+
+\textbf{Another Example:}
+
+\begin{examplebox}
+    Solve the differential equation
+    \[
+        (1 + x)y'' - xy' - y = 0
+    \]
+    about $x_0 = 0$.
+
+    Since
+    \[
+        p(x) = 1 + x \quad \text{and} \quad p(0) = 1 \neq 0,
+    \]
+    the point $x_0 = 0$ is an \textbf{ordinary point}. Hence, a power series solution about $x = 0$ exists. \\
+
+    \textbf{Step 1: Power Series Assumption}
+
+    Assume a solution of the form
+    \[
+        y(x) = \sum_{n=0}^{\infty} a_n x^n.
+    \]
+
+    Then,
+    \begin{align}
+        y'(x)  & = \sum_{n=1}^{\infty} n a_n x^{n-1},     \\
+        y''(x) & = \sum_{n=2}^{\infty} n(n-1)a_n x^{n-2}.
+    \end{align}
+
+    \textbf{Step 2: Substitution into the Differential Equation}
+
+    Substituting into
+    \[
+        (1 + x)y'' - xy' - y = 0,
+    \]
+    we obtain
+    \begin{align*}
+         & (1+x)\sum_{n=2}^{\infty} n(n-1)a_n x^{n-2}
+        - x\sum_{n=1}^{\infty} n a_n x^{n-1}
+        - \sum_{n=0}^{\infty} a_n x^n = 0.
+    \end{align*}
+
+    Distributing terms,
+    \begin{align*}
+        \sum_{n=2}^{\infty} n(n-1)a_n x^{n-2}
+        + \sum_{n=2}^{\infty} n(n-1)a_n x^{n-1}
+        - \sum_{n=1}^{\infty} n a_n x^n
+        - \sum_{n=0}^{\infty} a_n x^n = 0.
+    \end{align*}
+
+    \textbf{Step 3: Reindexing the Series}
+
+    Rewrite each sum in terms of $x^n$:
+    \begin{align*}
+        \sum_{n=0}^{\infty} (n+2)(n+1)a_{n+2} x^n
+        + \sum_{n=1}^{\infty} n(n-1)a_n x^n
+        - \sum_{n=1}^{\infty} n a_n x^n
+        - \sum_{n=0}^{\infty} a_n x^n = 0.
+    \end{align*}
+
+    \textbf{Step 4: Coefficient Comparison}
+
+    For $n = 0$:
+    \[
+        2a_2 - a_0 = 0
+        \quad \Rightarrow \quad
+        a_2 = \frac{a_0}{2}.
+    \]
+
+    For $n \ge 1$:
+    \[
+        (n+2)(n+1)a_{n+2}
+        + \big[n(n-1) - n - 1\big]a_n = 0.
+    \]
+
+    Simplifying,
+    \[
+        n(n-1) - n - 1 = n^2 - 2n - 1.
+    \]
+
+    Thus, the recurrence relation is
+    \[
+        \boxed{
+            a_{n+2} =
+            \frac{2n + 1 - n^2}{(n+2)(n+1)}\,a_n,
+            \qquad n \ge 0.
+        }
+    \]
+
+    \textbf{Step 5: Structure of the Solution}
+
+    \begin{itemize}
+        \item Even-indexed coefficients depend only on $a_0$.
+        \item Odd-indexed coefficients depend only on $a_1$.
+    \end{itemize}
+
+    Hence, the general solution about $x = 0$ is
+    \[
+        y(x) = a_0 y_1(x) + a_1 y_2(x),
+    \]
+    where $y_1$ and $y_2$ are linearly independent power series solutions.
+\end{examplebox}
+
+\begin{noteBox}
+    Variable-coefficient equations generally lead to non-terminating recurrence relations. Even when closed-form solutions do not exist, power series solutions remain valid within their radius of convergence.
+\end{noteBox}
+
+
+\subsubsection{Radius of Convergence}
+
+We know that:
+\begin{itemize}
+    \item Power series solutions converge within a radius determined by the nearest singularity.
+    \item The solution is guaranteed to be valid at least up to the closest point where $P(x)$ or $Q(x)$ becomes non-analytic.
+\end{itemize}
+
+\begin{conceptbox}
+    For an ordinary point, the power series solution always exists and converges in some neighborhood of the point.
+\end{conceptbox}
+
+% \subsection{Summary}
+
+% \begin{itemize}
+%     \item Ordinary points allow direct application of power series methods.
+%     \item The method converts differential equations into algebraic recurrence relations.
+%     \item Solutions naturally connect to Taylor and Maclaurin series from Chapter 15.
+%     \item This technique forms the foundation for solving more complex equations near singular points.
+% \end{itemize}
