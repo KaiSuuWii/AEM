@@ -1,0 +1,112 @@
+\section{Solutions About Singular Points}
+
+In the previous section, we developed power series solutions under the assumption that the expansion point is an ordinary point. However, many important differential equations arising in engineering and physics fail to satisfy this assumption.
+
+\begin{conceptbox}
+    A \textbf{singular point} of a differential equation is a point where the leading coefficient $p(x)$ vanishes or where the coefficient functions become non-analytic.
+\end{conceptbox}
+
+At such points, the standard power series method generally fails, and modified techniques are required.
+
+\subsection{Classification of Singular Points}
+
+Consider the second-order linear differential equation
+\[
+    p(x)y'' + q(x)y' + r(x)y = 0.
+\]
+
+A point $x = x_0$ is a \textbf{singular point} if $p(x_0) = 0$.
+
+Not all singular points behave in the same way. We distinguish between two important types.
+
+\subsubsection{Regular Singular Points}
+
+\begin{conceptbox}
+    A point $x = x_0$ is called a \textbf{regular singular point} if
+    \[
+        (x-x_0)\frac{q(x)}{p(x)} \quad \text{and} \quad (x-x_0)^2\frac{r(x)}{p(x)}
+    \]
+    are analytic at $x_0$.
+\end{conceptbox}
+
+At a regular singular point, the failure of analyticity is mild and controlled. Although standard power series solutions fail, solutions of a modified form may still exist.
+
+\begin{examplebox}
+    Determine the nature of the point $x = 0$ for the differential equation
+    \[
+        x^2 y'' + x y' - y = 0.
+    \]
+
+
+    \textbf{Step 1: Identify the coefficient functions}
+
+    Here,
+    \[
+        p(x) = x^2, \quad q(x) = x, \quad r(x) = -1.
+    \]
+
+    Since $p(0) = 0$, the point $x = 0$ is a singular point.
+
+    \textbf{Step 2: Test for regular singularity}
+
+    Compute
+    \[
+        (x-0)\frac{q(x)}{p(x)} = x \cdot \frac{x}{x^2} = 1,
+    \]
+    \[
+        (x-0)^2\frac{r(x)}{p(x)} = x^2 \cdot \frac{-1}{x^2} = -1.
+    \]
+
+    Both expressions are constants and therefore analytic at $x = 0$.
+
+    \textbf{Conclusion:}
+    \[
+        \boxed{x = 0 \text{ is a regular singular point.}}
+    \]
+\end{examplebox}
+
+\subsubsection{Irregular Singular Points}
+
+\begin{conceptbox}
+    A point $x = x_0$ is an \textbf{irregular singular point} if it is singular but not regular singular.
+\end{conceptbox}
+
+At irregular singular points, the behavior of solutions can be highly unstable, and no general power series method is guaranteed to work.
+
+\begin{noteBox}
+    Most physically meaningful differential equations encountered in engineering have at most regular singular points.
+\end{noteBox}
+
+\begin{examplebox}
+    Determine the nature of the point $x = 0$ for the differential equation
+    \[
+        x^3 y'' + y' + x y = 0.
+    \]
+
+
+    \textbf{Step 1: Identify the coefficient functions}
+
+    \[
+        p(x) = x^3, \quad q(x) = 1, \quad r(x) = x.
+    \]
+
+    Since $p(0) = 0$, the point $x = 0$ is a singular point.
+
+    \textbf{Step 2: Test for regular singularity}
+
+    Compute
+    \[
+        (x-0)\frac{q(x)}{p(x)} = x \cdot \frac{1}{x^3} = \frac{1}{x^2},
+    \]
+    \[
+        (x-0)^2\frac{r(x)}{p(x)} = x^2 \cdot \frac{x}{x^3} = 1.
+    \]
+
+    The expression $\frac{1}{x^2}$ is not analytic at $x = 0$.
+
+    \textbf{Conclusion:}
+    \[
+        \boxed{x = 0 \text{ is an irregular singular point.}}
+    \]
+
+\end{examplebox}

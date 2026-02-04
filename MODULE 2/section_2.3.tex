@@ -1,0 +1,763 @@
+\subsection{Frobenius Method}
+
+At regular singular points, ordinary power series solutions are often insufficient to capture the full behavior of solutions. To address this limitation, a generalized series expansion is introduced.
+
+\subsubsection{Motivation for the Frobenius Method}
+
+To accommodate singular behavior at the expansion point, we extend the standard power series assumption.
+
+\begin{conceptbox}
+    Instead of assuming a solution of the form
+    \[
+        y = \sum_{n=0}^{\infty} a_n (x-x_0)^n,
+    \]
+    we allow solutions of the form
+    \[
+        y = \sum_{n=0}^{\infty} a_n (x-x_0)^{n+r},
+    \]
+    where $r$ is a constant to be determined.
+\end{conceptbox}
+
+This generalized assumption forms the basis of the \textbf{Frobenius Method}.
+
+\begin{noteBox}
+    The exponent $r$ allows the solution to absorb singular behavior that ordinary power series cannot capture.
+\end{noteBox}
+
+
+\subsubsection{Assumed Form of the Frobenius Solution}
+
+Let $x = x_0$ be a regular singular point of the second-order linear differential equation
+\[
+    p(x)y'' + q(x)y' + r(x)y = 0.
+\]
+
+At such a point, dividing the equation by $p(x)$ introduces coefficients that may contain singular terms. As a result, ordinary power series solutions of the form
+\[
+    y = \sum_{n=0}^{\infty} a_n (x-x_0)^n
+\]
+are often too restrictive.
+
+To overcome this limitation, we assume a more general series form.
+
+\begin{conceptbox}
+    A \textbf{Frobenius solution} about $x=x_0$ is assumed in the form
+    \[
+        y(x) = \sum_{n=0}^{\infty} a_n (x-x_0)^{n+r},
+        \qquad a_0 \neq 0,
+    \]
+    where $r$ is a constant to be determined.
+\end{conceptbox}
+
+The exponent $r$ allows the solution to include non-integer or negative powers of $(x-x_0)$, which are essential for capturing the behavior of solutions near singular points.
+
+\begin{itemize}
+    \item If $r = 0$, the Frobenius series reduces to an ordinary power series.
+    \item If $r > 0$, the solution vanishes at the singular point.
+    \item If $r < 0$, the solution becomes unbounded as $x \to x_0$.
+\end{itemize}
+
+The condition $a_0 \neq 0$ ensures that $(x-x_0)^r$ is the dominant term near the singular point and prevents redundancy in the choice of $r$.
+
+\begin{noteBox}
+    Choosing $a_0 = 0$ would simply shift the index of the series and fail to capture the leading behavior of the solution.
+\end{noteBox}
+
+\subsubsection*{Example 1: Why the Exponent $r$ Is Necessary}
+
+\begin{examplebox}
+    Consider the differential equation
+    \[
+        x^2 y'' + y = 0
+    \]
+    about the point $x_0 = 0$.
+
+    Here, $p(x)=x^2$, so $x=0$ is a regular singular point.
+
+    If we attempt an ordinary power series solution,
+    \[
+        y = \sum_{n=0}^{\infty} a_n x^n,
+    \]
+    substitution leads to recurrence relations that force all coefficients to vanish except the trivial solution.
+
+    However, if we instead assume a Frobenius form,
+    \[
+        y = \sum_{n=0}^{\infty} a_n x^{n+r},
+    \]
+    the lowest-power term captures the singular behavior introduced by the $x^2$ coefficient, allowing nontrivial solutions to emerge.
+\end{examplebox}
+
+\begin{noteBox}
+    The failure of the ordinary series is not due to the equation lacking solutions, but due to the inability of integer powers alone to represent them.
+\end{noteBox}
+
+\subsubsection*{Example 2: Interpretation of the Leading Term}
+
+\begin{examplebox}
+    Assume a Frobenius solution of the form
+    \[
+        y(x) = a_0 (x-x_0)^r + a_1 (x-x_0)^{r+1} + \cdots.
+    \]
+
+
+    Near $x=x_0$, the dominant behavior of the solution is governed by
+    \[
+        y(x) \approx a_0 (x-x_0)^r.
+    \]
+
+    Thus:
+    \begin{itemize}
+        \item If $r>0$, the solution approaches zero at the singular point.
+        \item If $r=0$, the solution approaches a finite nonzero constant.
+        \item If $r<0$, the solution diverges as $x \to x_0$.
+    \end{itemize}
+\end{examplebox}
+\begin{conceptbox}
+    The exponent $r$ determines the qualitative behavior of the solution near the singular point.
+\end{conceptbox}
+
+\subsubsection{Derivatives of the Frobenius Series}
+
+Differentiating term-by-term,
+\begin{align}
+    y'(x)  & = \sum_{n=0}^{\infty} (n+r)a_n (x-x_0)^{n+r-1},        \\
+    y''(x) & = \sum_{n=0}^{\infty} (n+r)(n+r-1)a_n (x-x_0)^{n+r-2}.
+\end{align}
+
+These expressions are substituted into the differential equation.
+
+\begin{noteBox}
+    The presence of $r$ shifts the lowest power of $(x-x_0)$ and allows cancellation of singular terms introduced by dividing by $p(x)$.
+\end{noteBox}
+
+\begin{examplebox}
+    Consider the differential equation
+    \[
+        x^2 y'' + x y' - y = 0
+    \]
+    about the point $x_0 = 0$.
+
+
+
+    \textbf{Step 1: Assume a Frobenius series solution}
+
+    Assume
+    \[
+        y(x) = \sum_{n=0}^{\infty} a_n x^{n+r}, \qquad a_0 \neq 0.
+    \]
+
+    Then the derivatives are
+    \begin{align*}
+        y'(x)  & = \sum_{n=0}^{\infty} (n+r)a_n x^{n+r-1},        \\
+        y''(x) & = \sum_{n=0}^{\infty} (n+r)(n+r-1)a_n x^{n+r-2}.
+    \end{align*}
+
+    \textbf{Step 2: Substitute into the differential equation}
+
+    Substitute into
+    \[
+        x^2 y'' + x y' - y = 0:
+    \]
+    \begin{align*}
+        x^2\sum_{n=0}^{\infty} (n+r)(n+r-1)a_n x^{n+r-2}
+        + x\sum_{n=0}^{\infty} (n+r)a_n x^{n+r-1}
+        - \sum_{n=0}^{\infty} a_n x^{n+r} = 0.
+    \end{align*}
+
+    Simplify each term so all powers are $x^{n+r}$:
+    \[
+        \sum_{n=0}^{\infty} (n+r)(n+r-1)a_n x^{n+r}
+        + \sum_{n=0}^{\infty} (n+r)a_n x^{n+r}
+        - \sum_{n=0}^{\infty} a_n x^{n+r} = 0.
+    \]
+
+    Combine the sums:
+    \[
+        \sum_{n=0}^{\infty}
+        \Big[(n+r)(n+r-1) + (n+r) - 1\Big] a_n \, x^{n+r} = 0.
+    \]
+
+    Inside the bracket,
+    \[
+        (n+r)(n+r-1) + (n+r) - 1
+        = (n+r)\big((n+r-1)+1\big) - 1
+        = (n+r)^2 - 1.
+    \]
+
+    Thus,
+    \[
+        \sum_{n=0}^{\infty} \big((n+r)^2 - 1\big)a_n x^{n+r} = 0.
+    \]
+
+    \textbf{Step 3: Indicial equation (lowest power term)}
+
+    The lowest power occurs at $n=0$, giving the coefficient of $x^r$:
+    \[
+        (r^2 - 1)a_0 = 0.
+    \]
+
+    Since $a_0 \neq 0$, we must have
+    \[
+        r^2 - 1 = 0
+        \quad\Longrightarrow\quad
+        \boxed{r = 1 \ \text{or}\ r = -1.}
+    \]
+
+    \textbf{Step 4: Determine coefficients (recurrence/constraints)}
+
+    From
+    \[
+        \big((n+r)^2 - 1\big)a_n = 0 \qquad \text{for all } n\ge 0,
+    \]
+    we see that for each chosen $r$, the coefficient $a_n$ can be nonzero only when
+    \[
+        (n+r)^2 - 1 = 0.
+    \]
+
+    \medskip
+    \noindent\textbf{Case 1: $r=1$}
+
+    Then
+    \[
+        (n+1)^2 - 1 = 0
+        \quad\Longrightarrow\quad
+        n^2+2n=0
+        \quad\Longrightarrow\quad
+        n(n+2)=0.
+    \]
+    For $n\ge 0$, the only solution is $n=0$.
+    Hence, $a_0$ may be nonzero and all $a_n=0$ for $n\ge 1$.
+
+    Therefore,
+    \[
+        \boxed{y_1(x)=a_0 x^{1}=a_0 x.}
+    \]
+
+    \medskip
+    \noindent\textbf{Case 2: $r=-1$}
+
+    Then
+    \[
+        (n-1)^2 - 1 = 0
+        \quad\Longrightarrow\quad
+        n^2-2n=0
+        \quad\Longrightarrow\quad
+        n(n-2)=0.
+    \]
+    For $n\ge 0$, this allows $n=0$ and $n=2$.
+
+    Thus, $a_0$ and $a_2$ may be nonzero, while all other $a_n=0$.
+
+    So,
+    \[
+        y_2(x)=a_0 x^{-1}+a_2 x^{2-1}
+        = a_0 x^{-1} + a_2 x.
+    \]
+
+    But the $x$ term is already represented by $y_1$, so an independent solution is
+    \[
+        \boxed{y_2(x)=b_0 x^{-1}.}
+    \]
+
+    \textbf{Step 5: General solution}
+
+    Two linearly independent solutions are
+    \[
+        y_1(x)=x,
+        \qquad
+        y_2(x)=x^{-1}.
+    \]
+
+    Hence the general solution is
+    \[
+        \boxed{
+            y(x)=C_1 x + C_2 \frac{1}{x}.
+        }
+    \]
+\end{examplebox}
+
+\begin{examplebox}
+    Suppose a Frobenius solution near $x_0=0$ has the form
+    \[
+        y(x) = a_0 x^r + a_1 x^{r+1} + a_2 x^{r+2} + \cdots.
+    \]
+
+    \textbf{Step 1: Identify the dominant term as $x \to 0$.}
+
+    The Frobenius series is
+    \[
+        y(x) = a_0 x^r + a_1 x^{r+1} + a_2 x^{r+2} + \cdots.
+    \]
+    As $x \to 0$, higher powers of $x$ (such as $x^{r+1}, x^{r+2},\dots$) become smaller in magnitude relative to $x^r$.
+    Therefore, the leading (dominant) term is
+    \[
+        \boxed{a_0 x^r}.
+    \]
+
+    \bigskip
+
+    \textbf{Step 2: Explain how the sign of $r$ affects the behavior near $x=0$.}
+
+    Since the dominant behavior is controlled by $x^r$:
+    \begin{itemize}
+        \item If $r>0$, then $x^r \to 0$ as $x \to 0$, so $y(x)\to 0$ (the solution vanishes at the singular point).
+        \item If $r=0$, then $x^r = 1$, so $y(x)\to a_0$ (the solution approaches a finite nonzero constant, assuming $a_0\neq 0$).
+        \item If $r<0$, then $x^r \to \infty$ as $x \to 0$, so the solution becomes unbounded (blows up) near the singular point.
+    \end{itemize}
+
+    \bigskip
+
+    \textbf{Step 3: State why the condition $a_0 \neq 0$ is necessary.}
+
+    The Frobenius method chooses $r$ so that the first nonzero term of the series is the $a_0 x^r$ term.
+    If $a_0=0$, then the series effectively starts at a higher power:
+    \[
+        y(x)=a_1 x^{r+1}+a_2 x^{r+2}+\cdots,
+    \]
+    which means the exponent $r$ no longer represents the true leading behavior. In that case, we could re-index the series and replace $r$ with a larger value.
+
+    Thus, requiring
+    \[
+        \boxed{a_0 \neq 0}
+    \]
+    ensures that $x^r$ is genuinely the dominant term and that the exponent $r$ is meaningful and uniquely determined by the differential equation.
+\end{examplebox}
+
+\subsubsection{The Indicial Equation}
+
+After substitution, all terms are rewritten so that they involve powers of $(x-x_0)^{n+r}$.
+
+The coefficient of the \emph{lowest power} of $(x-x_0)$ must vanish. This requirement leads to an algebraic equation in $r$, called the \textbf{indicial equation}.
+
+\begin{conceptbox}
+    The \textbf{indicial equation} determines the allowable values of $r$ for which a Frobenius solution exists.
+\end{conceptbox}
+
+Solving the indicial equation yields one or more possible values of $r$, each corresponding to a potential solution.
+
+\begin{examplebox}
+    Determine the indicial equation for the differential equation
+    \[
+        x^2 y'' + x y' - y = 0
+    \]
+    about the point $x_0 = 0$.
+
+
+    \textbf{Step 1: Verify that $x=0$ is a regular singular point.}
+
+    Here,
+    \[
+        p(x)=x^2, \quad q(x)=x, \quad r(x)=-1,
+    \]
+    and since
+    \[
+        x\frac{q(x)}{p(x)} = 1,
+        \qquad
+        x^2\frac{r(x)}{p(x)} = -1,
+    \]
+    both expressions are analytic at $x=0$, the point is a regular singular point.
+
+    \bigskip
+
+    \textbf{Step 2: Assume a Frobenius solution.}
+
+    Assume
+    \[
+        y(x) = \sum_{n=0}^{\infty} a_n x^{n+r}, \qquad a_0 \neq 0.
+    \]
+
+    Then
+    \begin{align*}
+        y'(x)  & = \sum_{n=0}^{\infty} (n+r)a_n x^{n+r-1},        \\
+        y''(x) & = \sum_{n=0}^{\infty} (n+r)(n+r-1)a_n x^{n+r-2}.
+    \end{align*}
+
+    \bigskip
+
+    \textbf{Step 3: Substitute into the differential equation.}
+
+    Substituting into
+    \[
+        x^2 y'' + x y' - y = 0,
+    \]
+    gives
+    \begin{align*}
+        x^2 \sum_{n=0}^{\infty} (n+r)(n+r-1)a_n x^{n+r-2}
+        + x \sum_{n=0}^{\infty} (n+r)a_n x^{n+r-1}
+        - \sum_{n=0}^{\infty} a_n x^{n+r} = 0.
+    \end{align*}
+
+    Simplifying each term,
+    \[
+        \sum_{n=0}^{\infty}
+        \Big[(n+r)(n+r-1) + (n+r) - 1\Big] a_n x^{n+r} = 0.
+    \]
+
+    \bigskip
+
+    \textbf{Step 4: Identify the lowest power of $x$.}
+
+    The lowest power of $x$ occurs when $n=0$, giving the term proportional to $x^r$:
+    \[
+        \big[r(r-1) + r - 1\big] a_0 x^r.
+    \]
+
+    Since $a_0 \neq 0$, the coefficient of $x^r$ must vanish.
+
+    \bigskip
+
+    \textbf{Step 5: Form the indicial equation.}
+
+    \[
+        r(r-1) + r - 1 = 0
+        \quad \Longrightarrow \quad
+        \boxed{r^2 - 1 = 0.}
+    \]
+
+    \textbf{Indicial roots:}
+    \[
+        \boxed{r = 1, \quad r = -1.}
+    \]
+\end{examplebox}
+\begin{noteBox}
+    Each root of the indicial equation corresponds to a possible Frobenius solution near the regular singular point.
+\end{noteBox}
+
+\subsubsection{Cases for the Roots of the Indicial Equation}
+
+Let $r_1$ and $r_2$ be the roots of the indicial equation, with $r_1 \ge r_2$.
+
+\begin{itemize}
+    \item If $r_1 - r_2$ is not an integer, two linearly independent Frobenius solutions exist.
+    \item If $r_1 = r_2$, only one Frobenius solution is guaranteed; a second solution may involve logarithmic terms.
+    \item If $r_1 - r_2$ is a positive integer, the second solution may or may not exist in Frobenius form and often requires special treatment.
+\end{itemize}
+
+\begin{conceptbox}
+    The nature of the roots of the indicial equation determines the structure of the solution space.
+\end{conceptbox}
+
+\subsubsection{Recurrence Relation}
+
+Once a value of $r$ is chosen, equating coefficients of like powers of $(x-x_0)^{n+r}$ produces a recurrence relation of the form
+\[
+    a_{n+k} = F(n,r)\,a_n,
+\]
+which determines all coefficients in terms of $a_0$.
+
+\begin{examplebox}
+    Derive the recurrence relation for the differential equation
+    \[
+        x^2 y'' + x y' - y = 0
+    \]
+    about the regular singular point $x_0 = 0$.
+
+
+    From the indicial equation, the roots are
+    \[
+        r = 1 \quad \text{and} \quad r = -1.
+    \]
+    We now derive the recurrence relation for each case.
+
+    \bigskip
+
+    \textbf{Step 1: General coefficient equation}
+
+    From the Frobenius substitution and simplification, we obtained
+    \[
+        \sum_{n=0}^{\infty} \big((n+r)^2 - 1\big)a_n x^{n+r} = 0.
+    \]
+
+    Since the series is identically zero, the coefficient of each power of $x^{n+r}$ must vanish:
+    \[
+        \big((n+r)^2 - 1\big)a_n = 0, \qquad n \ge 0.
+    \]
+
+    \bigskip
+
+    \textbf{Step 2: Case $r = 1$}
+
+    Substitute $r=1$:
+    \[
+        \big((n+1)^2 - 1\big)a_n = 0
+        \quad \Longrightarrow \quad
+        (n^2 + 2n)a_n = 0.
+    \]
+
+    For $n \ge 1$, this forces
+    \[
+        a_n = 0.
+    \]
+
+    Thus, only $a_0$ remains arbitrary, and the Frobenius solution reduces to
+    \[
+        y_1(x) = a_0 x.
+    \]
+
+    \bigskip
+
+    \textbf{Step 3: Case $r = -1$}
+
+    Substitute $r=-1$:
+    \[
+        \big((n-1)^2 - 1\big)a_n = 0
+        \quad \Longrightarrow \quad
+        (n^2 - 2n)a_n = 0.
+    \]
+
+    This allows nonzero coefficients when
+    \[
+        n = 0 \quad \text{or} \quad n = 2.
+    \]
+
+    Hence, the Frobenius solution takes the form
+    \[
+        y_2(x) = a_0 x^{-1} + a_2 x.
+    \]
+
+    Since the $x$ term is already represented by the $r=1$ solution, the second independent solution is
+    \[
+        y_2(x) = b_0 x^{-1}.
+    \]
+\end{examplebox}
+\bigskip
+
+\begin{noteBox}
+    In this example, the recurrence relation does not generate an infinite series. Instead, it restricts which coefficients may be nonzero. In many problems, the recurrence relation generates infinitely many coefficients, producing a full power series solution.
+\end{noteBox}
+
+
+\subsubsection{Interpretation and Scope}
+
+The Frobenius Method provides a systematic way to construct solutions near regular singular points.
+
+\begin{noteBox}
+    Frobenius solutions are local solutions. Their validity is restricted to a neighborhood of the singular point and depends on the nature of the coefficient functions.
+\end{noteBox}
+
+\subsubsection{Practice Problems}
+
+The following problems are intended to reinforce the application of the Frobenius Method at regular singular points. For each problem:
+
+\begin{itemize}
+    \item Identify the type of singular point.
+    \item Assume a Frobenius series solution.
+    \item Derive the indicial equation.
+    \item Obtain the recurrence relation.
+\end{itemize}
+
+\smallskip
+
+\noindent\textbf{Problem 1: Cauchy--Euler Type Equation}
+
+Solve the differential equation
+\[
+    x^2 y'' - 2x y' + 2y = 0
+\]
+about the point $x_0 = 0$ using the Frobenius Method.
+
+
+\begin{examplebox}
+    \textbf{Step 1: Frobenius form}
+    \[
+        y=\sum_{n=0}^{\infty}a_n x^{n+r},\quad a_0\neq 0,
+    \]
+    \[
+        y'=\sum_{n=0}^{\infty}(n+r)a_n x^{n+r-1},\qquad
+        y''=\sum_{n=0}^{\infty}(n+r)(n+r-1)a_n x^{n+r-2}.
+    \]
+
+    \textbf{Step 2: Substitute}
+    \begin{align*}
+        x^2 y'' - 2x y' + 2y
+         & =\sum_{n=0}^{\infty}(n+r)(n+r-1)a_n x^{n+r}
+        -2\sum_{n=0}^{\infty}(n+r)a_n x^{n+r}
+        +2\sum_{n=0}^{\infty}a_n x^{n+r}                                   \\
+         & =\sum_{n=0}^{\infty}\Big[(n+r)(n+r-1)-2(n+r)+2\Big]a_n x^{n+r}.
+    \end{align*}
+
+    Thus, for all $n\ge 0$,
+    \[
+        \Big[(n+r)(n+r-1)-2(n+r)+2\Big]a_n=0.
+    \]
+
+    \textbf{Step 3: Indicial equation (lowest power $n=0$)}
+    \[
+        r(r-1)-2r+2=0
+        \quad\Longrightarrow\quad
+        r^2-3r+2=0
+        \quad\Longrightarrow\quad
+        \boxed{r=1,\ 2.}
+    \]
+
+    \textbf{Step 4: Solutions}
+    This is an Cauchy--Euler equation, so the Frobenius solutions reduce to power functions:
+    \[
+        \boxed{y(x)=C_1 x + C_2 x^2.}
+    \]
+\end{examplebox}
+
+
+\noindent\textbf{Problem 2: Regular Singular Point with Infinite Series}
+
+Solve
+\[
+    x^2 y'' + x y' + (x^2 - 1)y = 0
+\]
+about $x_0 = 0$.
+
+\begin{examplebox}
+    \textbf{Step 1: Frobenius form}
+    \[
+        y=\sum_{n=0}^{\infty}a_n x^{n+r},\quad a_0\neq 0,
+    \]
+    \[
+        y'=\sum_{n=0}^{\infty}(n+r)a_n x^{n+r-1},\qquad
+        y''=\sum_{n=0}^{\infty}(n+r)(n+r-1)a_n x^{n+r-2}.
+    \]
+
+    \textbf{Step 2: Substitute and simplify}
+    \begin{align*}
+        x^2y''   & = \sum_{n=0}^{\infty}(n+r)(n+r-1)a_n x^{n+r},                      \\
+        xy'      & = \sum_{n=0}^{\infty}(n+r)a_n x^{n+r},                             \\
+        (x^2-1)y & = \sum_{n=0}^{\infty}a_n x^{n+r+2}-\sum_{n=0}^{\infty}a_n x^{n+r}.
+    \end{align*}
+
+    So,
+    \[
+        \sum_{n=0}^{\infty}\Big((n+r)^2-1\Big)a_n x^{n+r}
+        +\sum_{n=0}^{\infty}a_n x^{n+r+2}=0.
+    \]
+
+    Reindex the last sum ($n\to n-2$):
+    \[
+        \sum_{n=2}^{\infty}a_{n-2}x^{n+r}.
+    \]
+
+    Hence,
+    \[
+        \Big((r)^2-1\Big)a_0 x^{r}
+        +\Big((r+1)^2-1\Big)a_1 x^{r+1}
+        +\sum_{n=2}^{\infty}\Big(\big((n+r)^2-1\big)a_n+a_{n-2}\Big)x^{n+r}=0.
+    \]
+
+    \textbf{Step 3: Indicial equation}
+    From the lowest power term $x^{r}$:
+    \[
+        (r^2-1)a_0=0
+        \quad\Longrightarrow\quad
+        \boxed{r=\pm 1.}
+    \]
+
+    Also, the $x^{r+1}$ term gives
+    \[
+        \big((r+1)^2-1\big)a_1=0.
+    \]
+    For both $r=1$ and $r=-1$, this coefficient is nonzero, so
+    \[
+        \boxed{a_1=0.}
+    \]
+
+    \textbf{Step 4: Recurrence relation ($n\ge 2$)}
+    \[
+        \big((n+r)^2-1\big)a_n+a_{n-2}=0
+        \quad\Longrightarrow\quad
+        \boxed{
+            a_n=-\frac{a_{n-2}}{(n+r)^2-1},\qquad n\ge 2.
+        }
+    \]
+
+    This generates two series (even indices only) for each choice of $r$.
+
+    \medskip
+    \noindent\textbf{Case 1: $r=1$}
+
+    For $n\ge 2$,
+    \[
+        a_n=-\frac{a_{n-2}}{(n+1)^2-1}
+        =-\frac{a_{n-2}}{n(n+2)}.
+    \]
+
+    Starting with $a_0$:
+    \[
+        a_2=-\frac{a_0}{2\cdot 4}=-\frac{a_0}{8},\qquad
+        a_4=-\frac{a_2}{4\cdot 6}=\frac{a_0}{192},\ \dots
+    \]
+
+    So one solution is
+    \[
+        \boxed{
+            y_1(x)=a_0\left(x-\frac{x^3}{8}+\frac{x^5}{192}-\cdots\right).
+        }
+    \]
+
+    \medskip
+    \noindent\textbf{Case 2: $r=-1$}
+
+    For $n\ge 2$,
+    \[
+        a_n=-\frac{a_{n-2}}{(n-1)^2-1}
+        =-\frac{a_{n-2}}{n(n-2)}.
+    \]
+
+    Here, at $n=2$ the denominator is $2\cdot 0$, so the recurrence breaks.
+    This signals that the second independent solution requires special treatment (often involving logarithmic terms).
+
+    \begin{noteBox}
+        This is the integer-difference complication: the indicial roots differ by an integer ($1-(-1)=2$). In such cases, only one Frobenius series is guaranteed; the second solution may involve a logarithm.
+    \end{noteBox}
+
+    Thus, the Frobenius method guarantees the series solution for $r=1$ above, and the second independent solution is not obtained directly from the same recurrence.
+
+\end{examplebox}
+
+
+\noindent\textbf{Problem 3: Integer Difference Between Indicial Roots}
+
+Solve
+\[
+    x^2 y'' + 3x y' + y = 0
+\]
+about $x_0 = 0$.
+
+\begin{examplebox}
+    \textbf{Step 1: Frobenius form}
+    \[
+        y=\sum_{n=0}^{\infty}a_n x^{n+r},\quad a_0\neq 0,
+    \]
+    \[
+        y'=\sum_{n=0}^{\infty}(n+r)a_n x^{n+r-1},\qquad
+        y''=\sum_{n=0}^{\infty}(n+r)(n+r-1)a_n x^{n+r-2}.
+    \]
+
+    \textbf{Step 2: Substitute}
+    \begin{align*}
+        x^2y'' + 3xy' + y
+         & =\sum_{n=0}^{\infty}(n+r)(n+r-1)a_n x^{n+r}
+        +3\sum_{n=0}^{\infty}(n+r)a_n x^{n+r}
+        +\sum_{n=0}^{\infty}a_n x^{n+r}                                    \\
+         & =\sum_{n=0}^{\infty}\Big[(n+r)(n+r-1)+3(n+r)+1\Big]a_n x^{n+r}.
+    \end{align*}
+
+    Thus, for all $n\ge 0$,
+    \[
+        \Big[(n+r)(n+r-1)+3(n+r)+1\Big]a_n=0.
+    \]
+
+    \textbf{Step 3: Indicial equation (lowest power $n=0$)}
+    \[
+        \begin{array}{c}
+            r(r-1)+3r+1 = 0 \\
+            r^2+2r+1   = 0  \\
+            \boxed{(r+1)^2 = 0 \;\Rightarrow\; r = -1 \text{ (double root)}}
+        \end{array}
+    \]
+    \textbf{Step 4: Solutions}
+    This is an Euler--Cauchy equation. The double root indicates the second solution involves a logarithm:
+    \[
+        \boxed{
+            y(x)=C_1 x^{-1} + C_2 x^{-1}\ln x.
+        }
+    \]
+
+\end{examplebox}

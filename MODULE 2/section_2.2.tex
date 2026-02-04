@@ -1,0 +1,115 @@
+\subsection{Why Ordinary Power Series Fail}
+
+At a singular point, dividing the equation by $p(x)$ introduces non-analytic terms into the coefficients. As a result:
+\begin{itemize}
+    \item Standard power series substitutions lead to undefined expressions, or
+    \item Recurrence relations fail to determine coefficients uniquely.
+\end{itemize}
+
+\begin{conceptbox}
+    The breakdown of the ordinary power series method is caused by the behavior of the coefficients, not by the solution itself.
+\end{conceptbox}
+
+This observation motivates the search for a more flexible form of series solution.
+
+\begin{examplebox}
+    \textbf{Proof via Example: Ordinary power series may fail at a singular point.}
+
+    Consider the differential equation
+    \[
+        x^2 y'' + x y' - y = 0
+    \]
+    about the point $x_0 = 0$.
+
+
+    \textbf{Step 1: Show that $x=0$ is singular.}
+
+    Here $p(x)=x^2$, so $p(0)=0$. Hence $x=0$ is a singular point.
+
+    \bigskip
+
+    \textbf{Step 2: Attempt an ordinary power series solution.}
+
+    Assume (ordinary power series)
+    \[
+        y = \sum_{n=0}^{\infty} a_n x^n,
+        \qquad
+        y'=\sum_{n=1}^{\infty} n a_n x^{n-1},
+        \qquad
+        y''=\sum_{n=2}^{\infty} n(n-1)a_n x^{n-2}.
+    \]
+
+    Substitute into the ODE:
+    \[
+        x^2\sum_{n=2}^{\infty} n(n-1)a_n x^{n-2}
+        + x\sum_{n=1}^{\infty} n a_n x^{n-1}
+        -\sum_{n=0}^{\infty} a_n x^n =0.
+    \]
+
+    Simplify each term:
+    \[
+        \sum_{n=2}^{\infty} n(n-1)a_n x^{n}
+        +\sum_{n=1}^{\infty} n a_n x^{n}
+        -\sum_{n=0}^{\infty} a_n x^{n}=0.
+    \]
+
+    Now combine into one series (noting the $n=0$ term explicitly):
+    \[
+        (-a_0) + \sum_{n=1}^{\infty}\big(n(n-1)+n-1\big)a_n x^n = 0.
+    \]
+
+    Since the power series is identically zero, every coefficient must be zero.
+
+    \bigskip
+
+    \textbf{Step 3: Coefficient comparison.}
+
+    For $x^0$:
+    \[
+        -a_0=0 \quad\Rightarrow\quad a_0=0.
+    \]
+
+    For $n\ge 1$:
+    \[
+        \big(n(n-1)+n-1\big)a_n = 0
+        \quad\Rightarrow\quad
+        (n^2-1)a_n=0.
+    \]
+
+    Thus:
+    \[
+        (n^2-1)a_n = 0
+        \Rightarrow
+        \begin{cases}
+            a_n=0,               & n\neq 1, \\
+            a_1\ \text{is free}, & n=1.
+        \end{cases}
+    \]
+
+    So the ordinary power series solution becomes
+    \[
+        y = a_1 x.
+    \]
+
+    \bigskip
+
+    \textbf{Step 4: Why this shows the ordinary power series method fails.}
+
+    A second-order linear differential equation should admit two linearly independent solutions.
+    However, the ordinary power series assumption around $x=0$ produced only \emph{one} solution,
+    \[
+        y = a_1 x,
+    \]
+    and forced all other coefficients to be zero. \\
+
+    The loss of the second independent solution is not because the differential equation has only one solution, but because the assumed form
+    \[
+        y=\sum_{n=0}^{\infty}a_n x^n
+    \]
+    is too restrictive at a singular point.
+    \\
+
+    \textbf{Conclusion:}
+    At singular points, dividing by $p(x)$ introduces non-analytic coefficients, and ordinary power series may fail to capture the full solution space. This motivates the need for a more flexible series form (Frobenius method), which allows non-integer exponents.
+
+\end{examplebox}

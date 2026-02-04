@@ -359,6 +359,15 @@ INPUT section_1.2.tex
 INPUT .\section_1.3.tex
 INPUT .\section_1.3.tex
 INPUT section_1.3.tex
+INPUT .\section_2.1.tex
+INPUT .\section_2.1.tex
+INPUT section_2.1.tex
+INPUT .\section_2.2.tex
+INPUT .\section_2.2.tex
+INPUT section_2.2.tex
+INPUT .\section_2.3.tex
+INPUT .\section_2.3.tex
+INPUT section_2.3.tex
 INPUT main.aux
 INPUT .\main.out
 INPUT .\main.out

@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1770046912.91753 "c:/Users/USER 1/OneDrive/Desktop/USTP-Instructor/2025-2026 2nd sem/ES207/Modules/MODULE 2/main.tex" "main.pdf" "main" 1770046914.53179 0
+["pdflatex"] 1770171046.16164 "c:/Users/USER 1/OneDrive/Desktop/USTP-Instructor/2025-2026 2nd sem/ES207/Modules/MODULE 2/main.tex" "main.pdf" "main" 1770171048.23979 0
   "C:/Users/USER" 1709884038 19148 013e94a827d08c3fa77f8035c991e252 ""
   "C:/Users/USER 1/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1769146674 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/USER 1/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk" 1731399259 14064 fa86831697447cf26bd07f257639a709 ""
@@ -213,13 +213,16 @@
   "C:/Users/USER 1/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/USER 1/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "c:/Users/USER" 1709884038 19148 013e94a827d08c3fa77f8035c991e252 ""
-  "c:/Users/USER 1/OneDrive/Desktop/USTP-Instructor/2025-2026 2nd sem/ES207/Modules/MODULE 2/main.tex" 1770045763 1697 32169b6e008dcc8ccdf0b11f0b5a7b3e ""
-  "main.aux" 1770046914 1713 558daa58ac386d4a48db5634c500f46f "pdflatex"
-  "main.out" 1770046914 1978 2d04c2e515b4ea95fa735351fad1be99 "pdflatex"
-  "main.tex" 1770045763 1697 32169b6e008dcc8ccdf0b11f0b5a7b3e ""
+  "c:/Users/USER 1/OneDrive/Desktop/USTP-Instructor/2025-2026 2nd sem/ES207/Modules/MODULE 2/main.tex" 1770102068 1786 3e5d79812ad2d51193270f9729b25557 ""
+  "main.aux" 1770171047 3708 632791c10fb8c9a98afd706decd2c54a "pdflatex"
+  "main.out" 1770171048 4954 a7f05c05437f628ba45b162c2bb3b301 "pdflatex"
+  "main.tex" 1770102068 1786 3e5d79812ad2d51193270f9729b25557 ""
   "section_1.1.tex" 1770046805 3534 b82358a907ff93f5b8e511301fb3850e ""
   "section_1.2.tex" 1770045750 929 be73c25f6f171f2ce6772cd601a73ff8 ""
-  "section_1.3.tex" 1770046910 6826 7744113956f38dc0ad26c747e2f6e604 ""
+  "section_1.3.tex" 1770171045 10986 6af2d0d4b17fc21d92c518362d70536c ""
+  "section_2.1.tex" 1770102339 3417 24efd84787d59dbf1cb8c05a4d46e4ba ""
+  "section_2.2.tex" 1770102796 3385 799338af693d58f6ab32aeac102f4aae ""
+  "section_2.3.tex" 1770169459 22096 bfc0d85c9db9948d538f946313ab3a89 ""
   "title_page.tex" 1770004020 345 af35e325b543e89e3594194783142a4e ""
   (generated)
   "main.aux"
