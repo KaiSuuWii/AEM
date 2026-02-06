@@ -1,0 +1,65 @@
+\subsection{Hypergeometric Functions}
+
+Hypergeometric functions are among the most general special functions. Many other special functions (such as Bessel, Legendre, and Hermite functions) can be written as special cases of hypergeometric functions.
+
+\subsubsection{Hypergeometric Differential Equation}
+
+The hypergeometric equation is
+\[
+    x(1-x)y'' + \big[c-(a+b+1)x\big]y' - ab\,y = 0,
+\]
+where $a$, $b$, and $c$ are constants.
+
+\begin{conceptbox}
+    The solution of the hypergeometric equation is called the \textbf{Gaussian hypergeometric function}, written as
+    \[
+        {}_2F_1(a,b;c;x).
+    \]
+\end{conceptbox}
+
+\subsubsection{Series Definition}
+
+The hypergeometric function is defined by the power series
+\[
+    {}_2F_1(a,b;c;x)
+    =
+    \sum_{n=0}^{\infty}
+    \frac{(a)_n(b)_n}{(c)_n}
+    \frac{x^n}{n!},
+\]
+where $(a)_n$ is the \textbf{Pochhammer symbol} defined as
+\[
+    (a)_n = a(a+1)(a+2)\cdots(a+n-1),
+    \qquad (a)_0 = 1.
+\]
+
+\subsubsection{Importance of Hypergeometric Functions}
+
+\begin{noteBox}
+    The hypergeometric function is a ``master function'' because many special functions can be expressed as hypergeometric series.
+\end{noteBox}
+
+\subsubsection{Applications of Hypergeometric Functions}
+
+Hypergeometric functions appear in:
+\begin{itemize}
+    \item Advanced mathematical physics models,
+    \item Fluid dynamics and relativity,
+    \item Engineering problems involving complex boundary conditions,
+    \item Reduction of many differential equations into a single general form.
+\end{itemize}
+
+\subsection*{Summary of Special Functions}
+
+\begin{itemize}
+    \item Bessel functions arise in cylindrical coordinate systems.
+    \item Legendre functions arise in spherical coordinate systems.
+    \item Hermite and Laguerre polynomials arise in quantum mechanical systems.
+    \item Airy functions model turning-point behavior in wave propagation.
+    \item Chebyshev polynomials are essential in approximation and numerical analysis.
+    \item Hypergeometric functions provide a general framework that includes many other special functions.
+\end{itemize}
+
+\begin{conceptbox}
+    Special functions form the bridge between differential equation theory and real-world engineering applications.
+\end{conceptbox}

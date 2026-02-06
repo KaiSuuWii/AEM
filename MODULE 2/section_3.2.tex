@@ -1,0 +1,50 @@
+
+\subsection{Legendre Functions}
+
+Legendre functions arise naturally in problems with spherical symmetry, such as gravitational fields, electrostatic potentials, and wave propagation in spherical coordinates.
+
+\subsubsection{Legendre's Differential Equation}
+
+The Legendre equation is
+\[
+    (1-x^2)y'' - 2xy' + n(n+1)y = 0.
+\]
+
+\begin{conceptbox}
+    The solutions of Legendre's equation are called \textbf{Legendre functions}. When $n$ is a nonnegative integer, the polynomial solutions are called \textbf{Legendre polynomials}, denoted by $P_n(x)$.
+\end{conceptbox}
+
+\subsubsection{Legendre Polynomials}
+
+For integer $n$, the solution $P_n(x)$ is a polynomial of degree $n$. The first few Legendre polynomials are:
+\[
+    P_0(x)=1,
+    \qquad
+    P_1(x)=x,
+    \qquad
+    P_2(x)=\frac{1}{2}(3x^2-1),
+    \qquad
+    P_3(x)=\frac{1}{2}(5x^3-3x).
+\]
+
+\subsubsection{Orthogonality Property}
+
+Legendre polynomials satisfy the orthogonality condition
+\[
+    \int_{-1}^{1} P_m(x)P_n(x)\,dx = 0
+    \qquad \text{for } m\neq n.
+\]
+
+\begin{noteBox}
+    Orthogonality is crucial in Fourier-type expansions and in solving boundary value problems using series methods.
+\end{noteBox}
+
+\subsubsection{Applications of Legendre Functions}
+
+Legendre functions appear in:
+\begin{itemize}
+    \item Electrostatic potential problems (Laplace's equation in spherical coordinates),
+    \item Gravitational field modeling,
+    \item Spherical harmonics,
+    \item Quantum mechanics (angular momentum).
+\end{itemize}
