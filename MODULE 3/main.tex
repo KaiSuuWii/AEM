@@ -1,0 +1,66 @@
+\documentclass[12pt]{article}
+
+% Packages
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{enumitem}
+\usepackage{physics}
+\usepackage{fix-cm}  
+\usepackage{tcolorbox}
+\usepackage{xcolor}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\tcbuselibrary{breakable,skins}
+
+\geometry{margin=1in}
+\setstretch{1.15}
+
+% Custom boxes for notes
+\tcbset{
+  colback=gray!5,
+  colframe=black!70,
+  arc=3mm,
+  boxrule=0.8pt
+}
+
+\newtcolorbox{conceptbox}{
+    colback=green!5,
+    colframe=green!50!black,
+    title=Key Concept,
+    fonttitle=\bfseries
+}
+
+\newtcolorbox{examplebox}{
+    breakable,
+    enhanced,
+    colback=blue!5,
+    colframe=blue!60!black,
+    title=Example,
+    fonttitle=\bfseries,
+    boxsep=6pt,
+    arc=2mm
+}
+
+\newtcolorbox{noteBox}{
+    colback=yellow!10,
+    colframe=yellow!50!black,
+    title=Engineering Note,
+    fonttitle=\bfseries
+}
+\title{Advanced Engineering Mathematics \\ \large Series}
+\author{\textbf{Engr. Kaiveni Tom Dagcuta} \\ Computer Engineering}
+\date{}
+
+\begin{document}
+
+% Input title page
+\input{title_page.tex}
+
+\newpage
+
+\input{section_1.1.tex}
+
+\end{document}
