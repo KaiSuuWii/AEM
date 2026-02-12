@@ -1,0 +1,35 @@
+\subsection{Properties of Dot Product}
+
+Let $\mathbf{a},\mathbf{b},\mathbf{c}\in\mathbb{R}^n$ and let $k$ be a scalar.
+
+\begin{conceptbox}
+    The dot product satisfies the following key properties:
+    \begin{enumerate}[label=(\alph*)]
+        \item \textbf{Commutativity:} $\mathbf{a}\cdot\mathbf{b}=\mathbf{b}\cdot\mathbf{a}$
+        \item \textbf{Distributivity:} $\mathbf{a}\cdot(\mathbf{b}+\mathbf{c})=\mathbf{a}\cdot\mathbf{b}+\mathbf{a}\cdot\mathbf{c}$
+        \item \textbf{Scalar Linearity:} $(k\mathbf{a})\cdot\mathbf{b}=k(\mathbf{a}\cdot\mathbf{b})=\mathbf{a}\cdot(k\mathbf{b})$
+        \item \textbf{Positive Definiteness:} $\mathbf{a}\cdot\mathbf{a}\ge 0$, and $\mathbf{a}\cdot\mathbf{a}=0$ iff $\mathbf{a}=\mathbf{0}$
+    \end{enumerate}
+\end{conceptbox}
+
+\begin{examplebox}
+    Let $\mathbf{a}=[2,1]$, $\mathbf{b}=[-1,3]$, and $\mathbf{c}=[4,0]$.
+
+    Compute $\mathbf{a}\cdot(\mathbf{b}+\mathbf{c})$:
+    \[
+        \mathbf{b}+\mathbf{c}=[-1+4,3+0]=[3,3]
+    \]
+    \[
+        \mathbf{a}\cdot(\mathbf{b}+\mathbf{c})=[2,1]\cdot[3,3]=2(3)+1(3)=9.
+    \]
+
+    Now compute $\mathbf{a}\cdot\mathbf{b}+\mathbf{a}\cdot\mathbf{c}$:
+    \[
+        \mathbf{a}\cdot\mathbf{b}=2(-1)+1(3)=1,\qquad
+        \mathbf{a}\cdot\mathbf{c}=2(4)+1(0)=8
+    \]
+    \[
+        \mathbf{a}\cdot\mathbf{b}+\mathbf{a}\cdot\mathbf{c}=1+8=9.
+    \]
+    So distributivity is verified.
+\end{examplebox}
