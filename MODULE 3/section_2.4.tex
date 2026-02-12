@@ -1,0 +1,34 @@
+\subsection{Projection and Components}
+
+\subsubsection{Scalar Component of $\mathbf{a}$ in the Direction of $\mathbf{b}$}
+
+\begin{conceptbox}
+    If $\mathbf{b}\ne\mathbf{0}$, the \textbf{scalar projection} (component) of $\mathbf{a}$ onto $\mathbf{b}$ is
+    \[
+        \mathrm{comp}_{\mathbf{b}}(\mathbf{a})=\frac{\mathbf{a}\cdot\mathbf{b}}{\|\mathbf{b}\|}.
+    \]
+    If $\mathbf{b}$ is a unit vector, then $\mathrm{comp}_{\mathbf{b}}(\mathbf{a})=\mathbf{a}\cdot\mathbf{b}$.
+\end{conceptbox}
+
+\subsubsection{Vector Projection of $\mathbf{a}$ onto $\mathbf{b}$}
+
+\begin{conceptbox}
+    If $\mathbf{b}\ne\mathbf{0}$, the \textbf{vector projection} of $\mathbf{a}$ onto $\mathbf{b}$ is
+    \[
+        \mathrm{proj}_{\mathbf{b}}(\mathbf{a})=\left(\frac{\mathbf{a}\cdot\mathbf{b}}{\|\mathbf{b}\|^2}\right)\mathbf{b}.
+    \]
+\end{conceptbox}
+
+\begin{examplebox}
+    Let $\mathbf{a}=[3,4]$ and $\mathbf{b}=[1,2]$.
+
+    Compute:
+    \[
+        \mathbf{a}\cdot\mathbf{b}=3(1)+4(2)=11,\qquad
+        \|\mathbf{b}\|^2=1^2+2^2=5.
+    \]
+    So,
+    \[
+        \mathrm{proj}_{\mathbf{b}}(\mathbf{a})=\left(\frac{11}{5}\right)[1,2]=\left[\frac{11}{5},\frac{22}{5}\right].
+    \]
+\end{examplebox}
