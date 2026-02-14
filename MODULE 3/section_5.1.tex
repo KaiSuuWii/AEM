@@ -1,0 +1,61 @@
+\section{Vector Spaces}
+
+\subsection{Definition and Examples}
+
+Vector spaces generalize the idea of vectors beyond geometry. In engineering, vector spaces appear in signal processing,
+control systems, machine learning, and circuit analysis.
+
+\begin{conceptbox}
+    A \textbf{vector space} is a set $V$ of objects called vectors, together with two operations:
+    \begin{itemize}
+        \item vector addition
+        \item scalar multiplication
+    \end{itemize}
+    such that the following axioms are satisfied:
+    \begin{enumerate}[label=(\alph*)]
+        \item $\mathbf{u}+\mathbf{v}\in V$
+        \item $\mathbf{u}+\mathbf{v}=\mathbf{v}+\mathbf{u}$
+        \item $(\mathbf{u}+\mathbf{v})+\mathbf{w}=\mathbf{u}+(\mathbf{v}+\mathbf{w})$
+        \item There exists a zero vector $\mathbf{0}$ such that $\mathbf{v}+\mathbf{0}=\mathbf{v}$
+        \item For every $\mathbf{v}$, there exists $-\mathbf{v}$ such that $\mathbf{v}+(-\mathbf{v})=\mathbf{0}$
+        \item $c\mathbf{v}\in V$ for scalar $c$
+        \item $c(\mathbf{u}+\mathbf{v})=c\mathbf{u}+c\mathbf{v}$
+        \item $(c+d)\mathbf{v}=c\mathbf{v}+d\mathbf{v}$
+        \item $c(d\mathbf{v})=(cd)\mathbf{v}$
+        \item $1\mathbf{v}=\mathbf{v}$
+    \end{enumerate}
+\end{conceptbox}
+
+\subsubsection{Common Examples of Vector Spaces}
+
+\begin{itemize}
+    \item $\mathbb{R}^n$ (all real-valued vectors with $n$ components)
+    \item The set of all polynomials of degree $\le n$
+    \item The set of all $m\times n$ matrices
+    \item The set of all continuous functions on an interval
+\end{itemize}
+
+\begin{examplebox}
+    Show that $\mathbb{R}^2$ is a vector space.
+
+    Let $\mathbf{u}=[u_1,u_2]$ and $\mathbf{v}=[v_1,v_2]$.
+
+    Addition is defined by:
+    \[
+        \mathbf{u}+\mathbf{v}=[u_1+v_1,u_2+v_2]
+    \]
+    which is still in $\mathbb{R}^2$.
+
+    Scalar multiplication is defined by:
+    \[
+        c\mathbf{u}=[cu_1,cu_2]
+    \]
+    which is also still in $\mathbb{R}^2$.
+
+    All axioms are satisfied because addition and multiplication follow the usual arithmetic rules of real numbers.
+    Hence, $\mathbb{R}^2$ is a vector space.
+\end{examplebox}
+
+\begin{noteBox}
+    Vector spaces are the mathematical foundation behind eigenvalues, Fourier transforms, signals, machine learning models, and robotics kinematics.
+\end{noteBox}

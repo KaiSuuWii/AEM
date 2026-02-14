@@ -1,0 +1,83 @@
+\subsection{Worked Example in $\mathbb{R}^2$}
+
+\begin{examplebox}
+    Use Gram-Schmidt to convert the vectors
+    \[
+        \mathbf{v}_1=[1,1],\qquad \mathbf{v}_2=[2,0]
+    \]
+    into an orthogonal and orthonormal set.
+
+    \textbf{Step 1: Set the first orthogonal vector}
+    \[
+        \mathbf{u}_1=\mathbf{v}_1=[1,1].
+    \]
+
+    \textbf{Step 2: Compute the projection of $\mathbf{v}_2$ onto $\mathbf{u}_1$}
+
+    First compute dot products:
+    \[
+        \mathbf{v}_2\cdot\mathbf{u}_1=[2,0]\cdot[1,1]=2(1)+0(1)=2
+    \]
+    \[
+        \mathbf{u}_1\cdot\mathbf{u}_1=[1,1]\cdot[1,1]=1+1=2.
+    \]
+
+    Thus:
+    \[
+        \mathrm{proj}_{\mathbf{u}_1}(\mathbf{v}_2)
+        =
+        \left(\frac{2}{2}\right)\mathbf{u}_1
+        =
+        1[1,1]
+        =
+        [1,1].
+    \]
+
+    \textbf{Step 3: Compute $\mathbf{u}_2$}
+    \[
+        \mathbf{u}_2=\mathbf{v}_2-\mathrm{proj}_{\mathbf{u}_1}(\mathbf{v}_2)
+        =
+        [2,0]-[1,1]
+        =
+        [1,-1].
+    \]
+
+    So the orthogonal set is:
+    \[
+        \{\mathbf{u}_1,\mathbf{u}_2\}=\{[1,1],[1,-1]\}.
+    \]
+
+    \textbf{Step 4: Normalize to get an orthonormal set}
+
+    Compute magnitudes:
+    \[
+        \|\mathbf{u}_1\|=\sqrt{1^2+1^2}=\sqrt{2},
+        \qquad
+        \|\mathbf{u}_2\|=\sqrt{1^2+(-1)^2}=\sqrt{2}.
+    \]
+
+    Thus:
+    \[
+        \mathbf{e}_1=\frac{\mathbf{u}_1}{\|\mathbf{u}_1\|}
+        =
+        \frac{1}{\sqrt{2}}[1,1]
+        =
+        \left[\frac{1}{\sqrt{2}},\frac{1}{\sqrt{2}}\right]
+    \]
+
+    \[
+        \mathbf{e}_2=\frac{\mathbf{u}_2}{\|\mathbf{u}_2\|}
+        =
+        \frac{1}{\sqrt{2}}[1,-1]
+        =
+        \left[\frac{1}{\sqrt{2}},-\frac{1}{\sqrt{2}}\right].
+    \]
+
+    Therefore, the orthonormal set is:
+    \[
+        \left\{
+        \left[\frac{1}{\sqrt{2}},\frac{1}{\sqrt{2}}\right],
+        \left[\frac{1}{\sqrt{2}},-\frac{1}{\sqrt{2}}\right]
+        \right\}.
+    \]
+\end{examplebox}

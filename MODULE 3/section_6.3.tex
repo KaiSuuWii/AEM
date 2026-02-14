@@ -1,0 +1,49 @@
+\subsection{Gram-Schmidt Algorithm}
+
+Suppose we are given a set of linearly independent vectors:
+\[
+    \{\mathbf{v}_1,\mathbf{v}_2,\dots,\mathbf{v}_n\}.
+\]
+
+The goal is to generate an orthogonal set:
+\[
+    \{\mathbf{u}_1,\mathbf{u}_2,\dots,\mathbf{u}_n\}
+\]
+that spans the same subspace.
+
+\subsubsection{Step-by-Step Process}
+
+\begin{conceptbox}
+    The Gram-Schmidt process is defined as:
+    \[
+        \mathbf{u}_1 = \mathbf{v}_1
+    \]
+    \[
+        \mathbf{u}_2 = \mathbf{v}_2 - \mathrm{proj}_{\mathbf{u}_1}(\mathbf{v}_2)
+    \]
+    \[
+        \mathbf{u}_3 = \mathbf{v}_3 - \mathrm{proj}_{\mathbf{u}_1}(\mathbf{v}_3) - \mathrm{proj}_{\mathbf{u}_2}(\mathbf{v}_3)
+    \]
+    and so on.
+\end{conceptbox}
+
+In general:
+\[
+    \mathbf{u}_k
+    =
+    \mathbf{v}_k
+    -
+    \sum_{j=1}^{k-1}\mathrm{proj}_{\mathbf{u}_j}(\mathbf{v}_k).
+\]
+
+\subsubsection{Why It Works}
+
+Each new vector $\mathbf{u}_k$ is obtained by subtracting from $\mathbf{v}_k$ its components in the directions
+of all previous $\mathbf{u}_1,\mathbf{u}_2,\dots,\mathbf{u}_{k-1}$.
+
+Thus, the remaining part is orthogonal to all previous vectors.
+
+\begin{noteBox}
+    Gram-Schmidt is like ``removing overlap'' from vectors.
+    It forces the new vector to be perpendicular to all previously formed vectors.
+\end{noteBox}

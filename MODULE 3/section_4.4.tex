@@ -1,0 +1,72 @@
+\subsection{Distance and Projections}
+
+Distance formulas are important in geometry, physics, and engineering analysis.
+Vectors allow us to compute distances systematically in 2D and 3D.
+
+\subsubsection{Distance Between Two Points}
+
+\begin{conceptbox}
+    The distance between two points
+    \[
+        P(x_1,y_1,z_1),\qquad Q(x_2,y_2,z_2)
+    \]
+    is:
+    \[
+        d(P,Q)=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2+(z_2-z_1)^2}.
+    \]
+\end{conceptbox}
+
+\begin{examplebox}
+    Find the distance between $P(1,-2,4)$ and $Q(5,1,-2)$.
+
+    \[
+        d=\sqrt{(5-1)^2+(1-(-2))^2+(-2-4)^2}
+    \]
+
+    \[
+        d=\sqrt{4^2+3^2+(-6)^2}
+        =\sqrt{16+9+36}
+        =\sqrt{61}.
+    \]
+\end{examplebox}
+
+\subsubsection{Distance from a Point to a Plane}
+
+\begin{conceptbox}
+    The distance from a point $P(x_0,y_0,z_0)$ to the plane
+    \[
+        Ax+By+Cz=D
+    \]
+    is:
+    \[
+        d=\frac{|Ax_0+By_0+Cz_0-D|}{\sqrt{A^2+B^2+C^2}}.
+    \]
+\end{conceptbox}
+
+\begin{examplebox}
+    Find the distance from the point $P(2,-1,3)$ to the plane
+    \[
+        2x-y+2z=6.
+    \]
+
+    Here, $A=2$, $B=-1$, $C=2$, $D=6$.
+
+    \[
+        d=\frac{|2(2)+(-1)(-1)+2(3)-6|}{\sqrt{2^2+(-1)^2+2^2}}
+    \]
+
+    \[
+        d=\frac{|4+1+6-6|}{\sqrt{4+1+4}}
+        =
+        \frac{|5|}{\sqrt{9}}
+        =
+        \frac{5}{3}.
+    \]
+
+    Thus, the point is $\frac{5}{3}$ units away from the plane.
+\end{examplebox}
+
+\begin{noteBox}
+    Distance to a plane is useful in robotics (distance to a surface), computer graphics (collision detection),
+    and mechanical design (clearance checking).
+\end{noteBox}

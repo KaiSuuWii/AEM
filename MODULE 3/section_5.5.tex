@@ -1,0 +1,60 @@
+\subsection{Basis and Dimension}
+
+\subsubsection{Basis}
+
+\begin{conceptbox}
+    A set of vectors $\{\mathbf{v}_1,\mathbf{v}_2,\dots,\mathbf{v}_k\}$ is a \textbf{basis} for a vector space $V$ if:
+    \begin{enumerate}[label=(\alph*)]
+        \item The vectors span $V$
+        \item The vectors are linearly independent
+    \end{enumerate}
+\end{conceptbox}
+
+This means every vector in $V$ can be written uniquely as a linear combination of the basis vectors.
+
+\subsubsection{Dimension}
+
+\begin{conceptbox}
+    The \textbf{dimension} of a vector space is the number of vectors in any basis of the space.
+\end{conceptbox}
+
+For example:
+\[
+    \dim(\mathbb{R}^2)=2,\qquad \dim(\mathbb{R}^3)=3.
+\]
+
+\begin{examplebox}
+    Show that the vectors
+    \[
+        \mathbf{v}_1=[1,0],\qquad \mathbf{v}_2=[0,1]
+    \]
+    form a basis for $\mathbb{R}^2$.
+
+    \textbf{Step 1: Check spanning.}
+
+    Any vector $[x,y]\in\mathbb{R}^2$ can be written as:
+    \[
+        [x,y]=x[1,0]+y[0,1].
+    \]
+    So they span $\mathbb{R}^2$.
+
+    \textbf{Step 2: Check independence.}
+
+    Solve:
+    \[
+        c_1[1,0]+c_2[0,1]=[0,0].
+    \]
+
+    This implies:
+    \[
+        c_1=0,\qquad c_2=0.
+    \]
+
+    So they are linearly independent.
+
+    Thus $\{\mathbf{v}_1,\mathbf{v}_2\}$ is a basis for $\mathbb{R}^2$ and $\dim(\mathbb{R}^2)=2$.
+\end{examplebox}
+
+\begin{noteBox}
+    A basis is like a coordinate system. In engineering, it is used in signal decomposition, Fourier series, state-space models, and machine learning feature spaces.
+\end{noteBox}

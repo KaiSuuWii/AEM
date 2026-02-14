@@ -402,6 +402,67 @@ INPUT section_3.4.tex
 INPUT .\section_3.5.tex
 INPUT .\section_3.5.tex
 INPUT section_3.5.tex
+INPUT .\section_4.1.tex
+INPUT .\section_4.1.tex
+INPUT section_4.1.tex
+INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx10.tfm
+INPUT .\section_4.2.tex
+INPUT .\section_4.2.tex
+INPUT section_4.2.tex
+INPUT .\section_4.3.tex
+INPUT .\section_4.3.tex
+INPUT section_4.3.tex
+INPUT .\section_4.4.tex
+INPUT .\section_4.4.tex
+INPUT section_4.4.tex
+INPUT .\section_4.5.tex
+INPUT .\section_4.5.tex
+INPUT section_4.5.tex
+INPUT .\section_5.1.tex
+INPUT .\section_5.1.tex
+INPUT section_5.1.tex
+INPUT .\section_5.2.tex
+INPUT .\section_5.2.tex
+INPUT section_5.2.tex
+INPUT .\section_5.3.tex
+INPUT .\section_5.3.tex
+INPUT section_5.3.tex
+INPUT .\section_5.4.tex
+INPUT .\section_5.4.tex
+INPUT section_5.4.tex
+INPUT .\section_5.5.tex
+INPUT .\section_5.5.tex
+INPUT section_5.5.tex
+INPUT .\section_5.6.tex
+INPUT .\section_5.6.tex
+INPUT section_5.6.tex
+INPUT .\section_6.1.tex
+INPUT .\section_6.1.tex
+INPUT section_6.1.tex
+INPUT .\section_6.2.tex
+INPUT .\section_6.2.tex
+INPUT section_6.2.tex
+INPUT .\section_6.3.tex
+INPUT .\section_6.3.tex
+INPUT section_6.3.tex
+INPUT .\section_6.4.tex
+INPUT .\section_6.4.tex
+INPUT section_6.4.tex
+INPUT .\section_6.5.tex
+INPUT .\section_6.5.tex
+INPUT section_6.5.tex
+INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmmi12.tfm
+INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmsy10.tfm
+INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmex10.tfm
+INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
+INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx7.tfm
+INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam10.tfm
+INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam7.tfm
+INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
+INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
+INPUT .\section_6.6.tex
+INPUT .\section_6.6.tex
+INPUT section_6.6.tex
 INPUT main.aux
 INPUT .\main.out
 INPUT .\main.out
@@ -415,12 +476,18 @@ INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmex10.pfb
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi12.pfb
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi12.pfb
+INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi6.pfb
+INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi6.pfb
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi8.pfb
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi8.pfb
+INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr10.pfb
+INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr10.pfb
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr12.pfb
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr12.pfb
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr17.pfb
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr17.pfb
+INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr6.pfb
+INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr6.pfb
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr8.pfb
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr8.pfb
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb

@@ -1,0 +1,91 @@
+\subsection{Equations of Planes}
+
+A plane is a flat two-dimensional surface that extends infinitely in three dimensions.
+In 3D geometry, planes are commonly described using a point and a normal vector.
+
+\subsubsection{Plane Equation Using a Normal Vector}
+
+\begin{conceptbox}
+    A plane passing through point $P(x_0,y_0,z_0)$ with normal vector
+    \[
+        \mathbf{n}=[A,B,C]
+    \]
+    is given by the equation:
+    \[
+        \mathbf{n}\cdot(\mathbf{r}-\mathbf{r}_0)=0,
+    \]
+    where $\mathbf{r}=[x,y,z]$ and $\mathbf{r}_0=[x_0,y_0,z_0]$.
+\end{conceptbox}
+
+Expanding:
+\[
+    [A,B,C]\cdot[x-x_0,\;y-y_0,\;z-z_0]=0
+\]
+\[
+    A(x-x_0)+B(y-y_0)+C(z-z_0)=0.
+\]
+
+This simplifies to the standard plane equation:
+\[
+    Ax+By+Cz=D,
+\]
+where $D=Ax_0+By_0+Cz_0$.
+
+\subsubsection{Plane Equation in Standard Form}
+
+\begin{conceptbox}
+    The standard equation of a plane is:
+    \[
+        Ax+By+Cz=D,
+    \]
+    where $\mathbf{n}=[A,B,C]$ is the normal vector of the plane.
+\end{conceptbox}
+
+\subsubsection{Parametric Form of a Plane}
+
+A plane can also be expressed using two non-parallel direction vectors $\mathbf{u}$ and $\mathbf{v}$:
+
+\begin{conceptbox}
+    If a plane passes through point $P$ and contains direction vectors $\mathbf{u}$ and $\mathbf{v}$,
+    then the plane can be written as:
+    \[
+        \mathbf{r}=\mathbf{r}_0+s\mathbf{u}+t\mathbf{v},
+    \]
+    where $s,t\in\mathbb{R}$.
+\end{conceptbox}
+
+\begin{examplebox}
+    Find the plane passing through $P(1,2,3)$ with normal vector $\mathbf{n}=[2,-1,4]$.
+
+    Using:
+    \[
+        \mathbf{n}\cdot(\mathbf{r}-\mathbf{r}_0)=0,
+    \]
+    we have:
+    \[
+        [2,-1,4]\cdot[x-1,y-2,z-3]=0.
+    \]
+
+    Expanding:
+    \[
+        2(x-1) - (y-2) + 4(z-3)=0
+    \]
+
+    \[
+        2x-2-y+2+4z-12=0
+    \]
+
+    \[
+        2x-y+4z-12=0.
+    \]
+
+    Thus, the equation of the plane is:
+    \[
+        2x-y+4z=12.
+    \]
+\end{examplebox}
+
+\begin{noteBox}
+    In engineering, planes are used in structural mechanics, CAD modeling, robotics orientation,
+    and describing surfaces in 3D space.
+\end{noteBox}

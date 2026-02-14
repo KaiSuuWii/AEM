@@ -1,0 +1,53 @@
+\section{Gram-Schmidt Orthogonalization}
+
+\subsection{Motivation and Concept}
+
+In many engineering and mathematical applications, it is useful to represent vectors using
+\textbf{orthogonal} or \textbf{orthonormal} bases instead of arbitrary bases.
+
+This is because orthogonal bases make computations easier, especially in:
+\begin{itemize}
+    \item projections
+    \item least squares approximation
+    \item Fourier analysis
+    \item signal processing
+    \item numerical computations
+\end{itemize}
+
+\begin{conceptbox}
+    A set of vectors $\{\mathbf{v}_1,\mathbf{v}_2,\dots,\mathbf{v}_k\}$ is called
+    \textbf{orthogonal} if
+    \[
+        \mathbf{v}_i\cdot\mathbf{v}_j = 0 \quad \text{for } i\neq j.
+    \]
+\end{conceptbox}
+
+\begin{conceptbox}
+    A set of vectors is called \textbf{orthonormal} if:
+    \begin{enumerate}[label=(\alph*)]
+        \item the vectors are orthogonal, and
+        \item each vector has magnitude 1.
+    \end{enumerate}
+
+    That is,
+    \[
+        \mathbf{v}_i\cdot\mathbf{v}_j =
+        \begin{cases}
+            1, & i=j,     \\
+            0, & i\neq j.
+        \end{cases}
+    \]
+\end{conceptbox}
+
+\begin{noteBox}
+    Orthonormal bases are extremely useful because they simplify dot products:
+    \[
+        \mathbf{x}=c_1\mathbf{u}_1+\cdots+c_n\mathbf{u}_n
+        \quad \Rightarrow \quad
+        c_i=\mathbf{x}\cdot\mathbf{u}_i
+    \]
+    when $\{\mathbf{u}_1,\dots,\mathbf{u}_n\}$ is orthonormal.
+\end{noteBox}
+
+The \textbf{Gram-Schmidt process} is an algorithm that converts a set of linearly independent vectors
+into an orthogonal (or orthonormal) set spanning the same subspace.

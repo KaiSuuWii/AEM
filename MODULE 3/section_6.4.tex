@@ -1,0 +1,54 @@
+\subsection{Orthonormalization}
+
+The Gram-Schmidt process produces an \textbf{orthogonal set}.
+To convert this into an \textbf{orthonormal set}, we simply normalize each vector.
+
+\subsubsection{Normalization}
+
+\begin{conceptbox}
+    Given a nonzero vector $\mathbf{u}$, its corresponding unit vector is:
+    \[
+        \mathbf{e}=\frac{\mathbf{u}}{\|\mathbf{u}\|}.
+    \]
+\end{conceptbox}
+
+Thus, if Gram-Schmidt produces:
+\[
+    \mathbf{u}_1,\mathbf{u}_2,\dots,\mathbf{u}_n,
+\]
+then the orthonormal vectors are:
+\[
+    \mathbf{e}_1=\frac{\mathbf{u}_1}{\|\mathbf{u}_1\|},\quad
+    \mathbf{e}_2=\frac{\mathbf{u}_2}{\|\mathbf{u}_2\|},\quad \dots,\quad
+    \mathbf{e}_n=\frac{\mathbf{u}_n}{\|\mathbf{u}_n\|}.
+\]
+
+\begin{noteBox}
+    Orthonormal vectors simplify calculations dramatically because:
+    \[
+        \mathbf{e}_i\cdot\mathbf{e}_j=
+        \begin{cases}
+            1, & i=j     \\
+            0, & i\neq j
+        \end{cases}
+    \]
+\end{noteBox}
+
+\begin{examplebox}
+    Let $\mathbf{u}=[6,-2,3]$.
+
+    Compute its unit vector.
+
+    \[
+        \|\mathbf{u}\|=\sqrt{6^2+(-2)^2+3^2}
+        =\sqrt{36+4+9}
+        =\sqrt{49}=7.
+    \]
+
+    Thus the normalized vector is:
+    \[
+        \mathbf{e}=\frac{1}{7}[6,-2,3]
+        =
+        \left[\frac{6}{7},-\frac{2}{7},\frac{3}{7}\right].
+    \]
+\end{examplebox}

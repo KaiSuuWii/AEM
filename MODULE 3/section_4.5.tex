@@ -1,0 +1,119 @@
+\subsection{Intersections}
+
+In engineering and geometry, intersections represent where objects meet, such as beams meeting at joints,
+or planes cutting through structures.
+
+\subsubsection{Intersection of a Line and a Plane}
+
+To find where a line intersects a plane:
+\begin{enumerate}
+    \item Write the line in parametric form.
+    \item Substitute into the plane equation.
+    \item Solve for the parameter $t$.
+    \item Substitute back to find the intersection point.
+\end{enumerate}
+
+\begin{examplebox}
+    Find the intersection of the line
+    \[
+        x=1+2t,\qquad y=3-t,\qquad z=2+4t
+    \]
+    with the plane
+    \[
+        x+y+z=10.
+    \]
+
+    Substitute into the plane equation:
+    \[
+        (1+2t)+(3-t)+(2+4t)=10.
+    \]
+
+    Simplify:
+    \[
+        1+2t+3-t+2+4t=10
+    \]
+    \[
+        6+5t=10
+    \]
+    \[
+        5t=4
+    \]
+    \[
+        t=\frac{4}{5}.
+    \]
+
+    Substitute back into the parametric equations:
+
+    \[
+        x=1+2\left(\frac{4}{5}\right)=1+\frac{8}{5}=\frac{13}{5}
+    \]
+
+    \[
+        y=3-\frac{4}{5}=\frac{15}{5}-\frac{4}{5}=\frac{11}{5}
+    \]
+
+    \[
+        z=2+4\left(\frac{4}{5}\right)=2+\frac{16}{5}=\frac{26}{5}
+    \]
+
+    Thus, the intersection point is:
+    \[
+        \left(\frac{13}{5},\frac{11}{5},\frac{26}{5}\right).
+    \]
+\end{examplebox}
+
+\subsubsection{Intersection of Two Planes}
+
+Two planes in $\mathbb{R}^3$ generally intersect in a line (unless they are parallel or identical).
+
+\begin{noteBox}
+    If two planes are not parallel, then their intersection is a straight line.
+    This is important in CAD modeling and structural intersection analysis.
+\end{noteBox}
+
+\begin{examplebox}
+    Consider the planes:
+    \[
+        x+y+z=6
+    \]
+    \[
+        2x-y+z=3.
+    \]
+
+    Subtract the second from the first:
+    \[
+        (x+y+z)-(2x-y+z)=6-3
+    \]
+    \[
+        -x+2y=3
+    \]
+    \[
+        x=2y-3.
+    \]
+
+    Let $y=t$, then:
+    \[
+        x=2t-3.
+    \]
+
+    Substitute into the first plane:
+    \[
+        (2t-3)+t+z=6
+    \]
+    \[
+        3t-3+z=6
+    \]
+    \[
+        z=9-3t.
+    \]
+
+    Thus the intersection line is:
+    \[
+        x=2t-3,\qquad y=t,\qquad z=9-3t.
+    \]
+
+    Vector form:
+    \[
+        \mathbf{r}=[-3,0,9]+t[2,1,-3].
+    \]
+\end{examplebox}

@@ -1,0 +1,54 @@
+\subsection{Projection Review}
+
+Before applying Gram-Schmidt, we must recall the concept of projection.
+
+\subsubsection{Vector Projection Formula}
+
+\begin{conceptbox}
+    The projection of $\mathbf{v}$ onto $\mathbf{u}$ is given by:
+    \[
+        \mathrm{proj}_{\mathbf{u}}(\mathbf{v})
+        =
+        \left(\frac{\mathbf{v}\cdot\mathbf{u}}{\mathbf{u}\cdot\mathbf{u}}\right)\mathbf{u}.
+    \]
+\end{conceptbox}
+
+This formula gives the component of $\mathbf{v}$ that lies in the direction of $\mathbf{u}$.
+
+\subsubsection{Geometric Interpretation}
+
+\begin{noteBox}
+    Projection is essentially ``shadowing'' a vector onto another direction.
+    In engineering, projection is used in force decomposition, signal approximation, and coordinate transformations.
+\end{noteBox}
+
+\begin{examplebox}
+    Let
+    \[
+        \mathbf{v}=[3,4],\qquad \mathbf{u}=[1,2].
+    \]
+
+    Compute the projection of $\mathbf{v}$ onto $\mathbf{u}$.
+
+    First compute the dot products:
+    \[
+        \mathbf{v}\cdot\mathbf{u}=3(1)+4(2)=11
+    \]
+    \[
+        \mathbf{u}\cdot\mathbf{u}=1^2+2^2=5.
+    \]
+
+    Thus,
+    \[
+        \mathrm{proj}_{\mathbf{u}}(\mathbf{v})
+        =
+        \left(\frac{11}{5}\right)[1,2]
+        =
+        \left[\frac{11}{5},\frac{22}{5}\right].
+    \]
+
+    So the part of $\mathbf{v}$ in the direction of $\mathbf{u}$ is:
+    \[
+        \mathrm{proj}_{\mathbf{u}}(\mathbf{v})=\left[\frac{11}{5},\frac{22}{5}\right].
+    \]
+\end{examplebox}

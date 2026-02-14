@@ -1,0 +1,64 @@
+\subsection{Span and Linear Combinations}
+
+\subsubsection{Linear Combination}
+
+\begin{conceptbox}
+    A \textbf{linear combination} of vectors $\mathbf{v}_1,\mathbf{v}_2,\dots,\mathbf{v}_k$ is any vector of the form:
+    \[
+        c_1\mathbf{v}_1+c_2\mathbf{v}_2+\dots+c_k\mathbf{v}_k
+    \]
+    where $c_1,c_2,\dots,c_k$ are scalars.
+\end{conceptbox}
+
+\subsubsection{Span}
+
+\begin{conceptbox}
+    The \textbf{span} of vectors $\mathbf{v}_1,\mathbf{v}_2,\dots,\mathbf{v}_k$ is the set of all linear combinations:
+    \[
+        \text{Span}\{\mathbf{v}_1,\mathbf{v}_2,\dots,\mathbf{v}_k\}.
+    \]
+\end{conceptbox}
+
+The span represents all possible vectors that can be formed using the given vectors.
+
+\begin{examplebox}
+    Let
+    \[
+        \mathbf{v}_1=[1,0],\qquad \mathbf{v}_2=[0,1].
+    \]
+
+    Any vector in $\mathbb{R}^2$ can be written as:
+    \[
+        [x,y]=x[1,0]+y[0,1].
+    \]
+
+    Thus,
+    \[
+        \text{Span}\{\mathbf{v}_1,\mathbf{v}_2\}=\mathbb{R}^2.
+    \]
+\end{examplebox}
+
+\begin{examplebox}
+    Let
+    \[
+        \mathbf{v}_1=[2,4],\qquad \mathbf{v}_2=[1,2].
+    \]
+
+    Notice that:
+    \[
+        \mathbf{v}_1 = 2\mathbf{v}_2.
+    \]
+
+    So the span of these vectors is just the set of all multiples of $\mathbf{v}_2$.
+    Hence,
+    \[
+        \text{Span}\{\mathbf{v}_1,\mathbf{v}_2\}
+        =
+        \text{Span}\{\mathbf{v}_2\},
+    \]
+    which forms a line through the origin.
+\end{examplebox}
+
+\begin{noteBox}
+    In engineering, span represents the set of all signals or solutions that can be formed using a given set of basis functions or vectors.
+\end{noteBox}

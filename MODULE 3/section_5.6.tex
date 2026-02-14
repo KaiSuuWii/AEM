@@ -1,0 +1,93 @@
+\subsection{Coordinates Relative to a Basis}
+
+\subsubsection{Coordinate Representation}
+
+\begin{conceptbox}
+    Let $B=\{\mathbf{v}_1,\mathbf{v}_2,\dots,\mathbf{v}_n\}$ be a basis for a vector space $V$.
+    Any vector $\mathbf{x}\in V$ can be written uniquely as:
+    \[
+        \mathbf{x}=c_1\mathbf{v}_1+c_2\mathbf{v}_2+\dots+c_n\mathbf{v}_n.
+    \]
+    The scalars $c_1,c_2,\dots,c_n$ are called the \textbf{coordinates of $\mathbf{x}$ relative to the basis $B$}.
+\end{conceptbox}
+
+We often write the coordinate vector as:
+\[
+    [\mathbf{x}]_B=
+    \begin{bmatrix}
+        c_1    \\
+        c_2    \\
+        \vdots \\
+        c_n
+    \end{bmatrix}.
+\]
+
+\subsubsection{Why Coordinates Change With Basis}
+
+In standard coordinates, vectors are written using $\mathbf{e}_1,\mathbf{e}_2,\dots$.
+But if we use a different basis, the coordinates of the same vector may change.
+
+\begin{examplebox}
+    Let the basis in $\mathbb{R}^2$ be:
+    \[
+        B=\left\{
+        \mathbf{v}_1=[1,1],\;
+        \mathbf{v}_2=[1,-1]
+        \right\}.
+    \]
+
+    Write the vector
+    \[
+        \mathbf{x}=[4,2]
+    \]
+    as a linear combination of $\mathbf{v}_1$ and $\mathbf{v}_2$.
+
+    We want:
+    \[
+        \mathbf{x}=c_1\mathbf{v}_1+c_2\mathbf{v}_2.
+    \]
+
+    Substitute:
+    \[
+        [4,2]=c_1[1,1]+c_2[1,-1].
+    \]
+
+    Component-wise:
+    \[
+        4=c_1+c_2
+    \]
+    \[
+        2=c_1-c_2.
+    \]
+
+    Add the equations:
+    \[
+        4+2=2c_1
+        \Rightarrow 6=2c_1
+        \Rightarrow c_1=3.
+    \]
+
+    Then:
+    \[
+        4=3+c_2
+        \Rightarrow c_2=1.
+    \]
+
+    Thus:
+    \[
+        \mathbf{x}=3\mathbf{v}_1+1\mathbf{v}_2.
+    \]
+
+    So the coordinate vector of $\mathbf{x}$ relative to basis $B$ is:
+    \[
+        [\mathbf{x}]_B=
+        \begin{bmatrix}
+            3 \\
+            1
+        \end{bmatrix}.
+    \]
+\end{examplebox}
+
+\begin{noteBox}
+    In engineering, using different bases is extremely useful. For example, Fourier analysis changes a signal from the time domain basis into a frequency domain basis.
+\end{noteBox}
