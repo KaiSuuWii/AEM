@@ -1,0 +1,86 @@
+\subsection{Cross Product Computation}
+
+Let
+\[
+    \mathbf{a}=[a_1,a_2,a_3],\qquad \mathbf{b}=[b_1,b_2,b_3].
+\]
+
+\subsubsection{Component Formula}
+
+\begin{conceptbox}
+    The cross product in component form is:
+    \[
+        \mathbf{a}\times\mathbf{b}
+        =
+        \Big[
+            a_2b_3-a_3b_2,\;
+            a_3b_1-a_1b_3,\;
+            a_1b_2-a_2b_1
+            \Big].
+    \]
+\end{conceptbox}
+
+\subsubsection{Determinant Method}
+
+A convenient memory tool is the determinant form:
+\[
+    \mathbf{a}\times\mathbf{b}
+    =
+    \begin{vmatrix}
+        \mathbf{i} & \mathbf{j} & \mathbf{k} \\
+        a_1        & a_2        & a_3        \\
+        b_1        & b_2        & b_3
+    \end{vmatrix}.
+\]
+
+Expanding along the first row gives:
+\[
+    \mathbf{a}\times\mathbf{b}
+    =
+    \mathbf{i}(a_2b_3-a_3b_2)
+    -\mathbf{j}(a_1b_3-a_3b_1)
+    +\mathbf{k}(a_1b_2-a_2b_1).
+\]
+
+\begin{examplebox}
+    Compute $\mathbf{a}\times\mathbf{b}$ for
+    \[
+        \mathbf{a}=[1,2,3],\qquad \mathbf{b}=[4,0,-1].
+    \]
+
+    Using the component formula:
+    \[
+        \mathbf{a}\times\mathbf{b}
+        =
+        \big[
+            2(-1)-3(0),\;
+            3(4)-1(-1),\;
+            1(0)-2(4)
+            \big]
+        =
+        [-2,\;13,\;-8].
+    \]
+
+    So,
+    \[
+        \mathbf{a}\times\mathbf{b}=[-2,13,-8].
+    \]
+\end{examplebox}
+
+\begin{examplebox}
+    Verify perpendicularity for the result above by dotting:
+
+    Let $\mathbf{v}=\mathbf{a}\times\mathbf{b}=[-2,13,-8]$.
+
+    \[
+        \mathbf{a}\cdot\mathbf{v} = [1,2,3]\cdot[-2,13,-8]
+        =1(-2)+2(13)+3(-8)=-2+26-24=0.
+    \]
+
+    \[
+        \mathbf{b}\cdot\mathbf{v} = [4,0,-1]\cdot[-2,13,-8]
+        =4(-2)+0(13)+(-1)(-8)=-8+8=0.
+    \]
+
+    Thus $\mathbf{v}$ is perpendicular to both $\mathbf{a}$ and $\mathbf{b}$, as expected.
+\end{examplebox}

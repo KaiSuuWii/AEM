@@ -358,10 +358,10 @@ INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\sy
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx8.tfm
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx6.tfm
+INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\tcrm1200.tfm
 INPUT .\section_1.2.tex
 INPUT .\section_1.2.tex
 INPUT section_1.2.tex
-INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\tcrm1200.tfm
 INPUT .\section_1.3.tex
 INPUT .\section_1.3.tex
 INPUT section_1.3.tex
@@ -387,6 +387,21 @@ INPUT .\section_2.5.tex
 INPUT .\section_2.5.tex
 INPUT section_2.5.tex
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti12.tfm
+INPUT .\section_3.1.tex
+INPUT .\section_3.1.tex
+INPUT section_3.1.tex
+INPUT .\section_3.2.tex
+INPUT .\section_3.2.tex
+INPUT section_3.2.tex
+INPUT .\section_3.3.tex
+INPUT .\section_3.3.tex
+INPUT section_3.3.tex
+INPUT .\section_3.4.tex
+INPUT .\section_3.4.tex
+INPUT section_3.4.tex
+INPUT .\section_3.5.tex
+INPUT .\section_3.5.tex
+INPUT section_3.5.tex
 INPUT main.aux
 INPUT .\main.out
 INPUT .\main.out

@@ -1,0 +1,48 @@
+\subsection{Right-Hand Rule and Orientation}
+
+\subsubsection{Direction of the Cross Product}
+
+\begin{conceptbox}
+    The direction of $\mathbf{a}\times\mathbf{b}$ is determined by the \textbf{Right-Hand Rule}:
+    \begin{itemize}
+        \item Point your right-hand fingers in the direction of $\mathbf{a}$,
+        \item curl them toward $\mathbf{b}$ through the smaller angle,
+        \item your thumb points in the direction of $\mathbf{a}\times\mathbf{b}$.
+    \end{itemize}
+\end{conceptbox}
+
+This means the order matters:
+\[
+    \mathbf{a}\times\mathbf{b} \;\text{points opposite to}\; \mathbf{b}\times\mathbf{a}.
+\]
+
+\subsubsection{Right-Handed Coordinate Systems}
+
+In a standard right-handed Cartesian coordinate system, the unit basis vectors satisfy:
+\[
+    \mathbf{i}\times\mathbf{j}=\mathbf{k},\quad
+    \mathbf{j}\times\mathbf{k}=\mathbf{i},\quad
+    \mathbf{k}\times\mathbf{i}=\mathbf{j}.
+\]
+
+Reversing the order flips the sign:
+\[
+    \mathbf{j}\times\mathbf{i}=-\mathbf{k},\quad
+    \mathbf{k}\times\mathbf{j}=-\mathbf{i},\quad
+    \mathbf{i}\times\mathbf{k}=-\mathbf{j}.
+\]
+
+\begin{examplebox}
+    Compute $\mathbf{j}\times\mathbf{i}$.
+
+    Using the right-handed relationships:
+    \[
+        \mathbf{i}\times\mathbf{j}=\mathbf{k}
+        \quad\Rightarrow\quad
+        \mathbf{j}\times\mathbf{i}=-(\mathbf{i}\times\mathbf{j})=-\mathbf{k}.
+    \]
+\end{examplebox}
+
+\begin{noteBox}
+    Engineering meaning: In torque and rotational motion, changing the order of vectors changes the rotation direction (clockwise vs counterclockwise), so orientation is physically important.
+\end{noteBox}

@@ -1,19 +1,107 @@
 \subsection{Vector Applications}
 
 Vectors appear naturally in engineering and physics because many real-world quantities require both magnitude and direction.
+In practice, vectors are used to model motion, forces, fields, and system behaviors in 2D and 3D space.
 
 \subsubsection{Displacement}
 
+\begin{conceptbox}
+    Displacement is the vector that describes the change in position of an object.
+    It points from the initial position to the final position.
+\end{conceptbox}
+
 A displacement from point $P(x_1,y_1,z_1)$ to point $Q(x_2,y_2,z_2)$ is represented as:
 \[
-    \mathbf{d} = [x_2-x_1,\; y_2-y_1,\; z_2-z_1].
+    \mathbf{d} = \overrightarrow{PQ} = [x_2-x_1,\; y_2-y_1,\; z_2-z_1].
 \]
+
+The magnitude of the displacement vector represents the straight-line distance traveled:
+\[
+    \|\mathbf{d}\| = \sqrt{(x_2-x_1)^2+(y_2-y_1)^2+(z_2-z_1)^2}.
+\]
+
+\begin{examplebox}
+    A robot moves from point
+    \[
+        P(2,-1,4)
+    \]
+    to point
+    \[
+        Q(7,3,1).
+    \]
+
+    The displacement vector is
+    \[
+        \mathbf{d} = [7-2,\;3-(-1),\;1-4] = [5,4,-3].
+    \]
+
+    The distance traveled in a straight line is
+    \[
+        \|\mathbf{d}\| = \sqrt{5^2+4^2+(-3)^2} = \sqrt{25+16+9}=\sqrt{50}.
+    \]
+
+    Thus, the robot displaced by $\mathbf{d}=[5,4,-3]$ and traveled $\sqrt{50}$ units.
+\end{examplebox}
+
+\begin{noteBox}
+    In engineering applications, displacement is important in robotics, navigation systems, CNC motion, and kinematics.
+\end{noteBox}
+
+---
 
 \subsubsection{Velocity}
 
-Velocity is a vector that describes both speed and direction of motion.
+\begin{conceptbox}
+    Velocity is a vector that describes how fast an object is moving \textbf{and} in what direction it is moving.
+\end{conceptbox}
+
+If an object moves with displacement $\mathbf{d}$ over time interval $\Delta t$, then its average velocity is
+\[
+    \mathbf{v}_{avg} = \frac{\mathbf{d}}{\Delta t}.
+\]
+
+The magnitude of velocity is the \textbf{speed}:
+\[
+    \text{speed} = \|\mathbf{v}\|.
+\]
+
+\begin{examplebox}
+    A drone travels with displacement vector
+    \[
+        \mathbf{d} = [12,-4,6] \text{ meters}
+    \]
+    in a time interval of $\Delta t = 3$ seconds.
+
+    The average velocity is
+    \[
+        \mathbf{v}_{avg} = \frac{\mathbf{d}}{3} = \left[\frac{12}{3},\frac{-4}{3},\frac{6}{3}\right]
+        = [4,-\tfrac{4}{3},2] \text{ m/s}.
+    \]
+
+    The speed of the drone is
+    \[
+        \|\mathbf{v}_{avg}\| = \sqrt{4^2+\left(-\tfrac{4}{3}\right)^2+2^2}
+        = \sqrt{16+\frac{16}{9}+4}
+        = \sqrt{\frac{180+16}{9}}
+        = \sqrt{\frac{196}{9}}
+        = \frac{14}{3}\text{ m/s}.
+    \]
+
+    Thus, the drone moves with speed $\frac{14}{3}$ m/s.
+\end{examplebox}
+
+\begin{noteBox}
+    Velocity vectors are heavily used in mechanical engineering, robotics, control systems, fluid flow, and navigation.
+\end{noteBox}
+
+---
 
 \subsubsection{Force and Resultant Force}
+
+\begin{conceptbox}
+    Force is a vector quantity because it has both magnitude and direction.
+    Multiple forces acting on an object can be combined using vector addition.
+\end{conceptbox}
 
 \begin{noteBox}
     In statics and dynamics, forces are vectors. The \textbf{resultant force} is obtained by adding all forces acting on a body:
@@ -23,10 +111,13 @@ Velocity is a vector that describes both speed and direction of motion.
     If $\mathbf{R} = \mathbf{0}$, then the system is in equilibrium.
 \end{noteBox}
 
+\subsubsection{Resultant of Two Forces}
+
 \begin{examplebox}
     Suppose two forces act on an object:
     \[
-        \mathbf{F}_1 = [3,2], \qquad \mathbf{F}_2 = [1,-4].
+        \mathbf{F}_1 = [3,2], \qquad
+        \mathbf{F}_2 = [1,-4].
     \]
 
     Then the resultant force is:
@@ -36,6 +127,86 @@ Velocity is a vector that describes both speed and direction of motion.
 
     The magnitude of the resultant is:
     \[
-        \|\mathbf{R}\| = \sqrt{4^2 + (-2)^2} = \sqrt{20}.
+        \|\mathbf{R}\| = \sqrt{4^2 + (-2)^2} = \sqrt{16+4} = \sqrt{20}.
     \]
 \end{examplebox}
+
+---
+
+\subsubsection{Resultant Force with Three Forces in 3D}
+
+\begin{examplebox}
+    Suppose a mechanical structure is subjected to three forces:
+    \[
+        \mathbf{F}_1=[10,-2,5]\text{ N},\qquad
+        \mathbf{F}_2=[-6,4,1]\text{ N},\qquad
+        \mathbf{F}_3=[2,0,-3]\text{ N}.
+    \]
+
+    The resultant force is
+    \[
+        \mathbf{R}=\mathbf{F}_1+\mathbf{F}_2+\mathbf{F}_3.
+    \]
+
+    Add the components:
+    \[
+        \mathbf{R}=[10-6+2,\;-2+4+0,\;5+1-3]
+        =[6,2,3]\text{ N}.
+    \]
+
+    The magnitude of the resultant force is
+    \[
+        \|\mathbf{R}\|=\sqrt{6^2+2^2+3^2}
+        =\sqrt{36+4+9}
+        =\sqrt{49}=7\text{ N}.
+    \]
+
+    Thus, the net force acting on the structure is $\mathbf{R}=[6,2,3]$ N with magnitude 7 N.
+\end{examplebox}
+
+---
+
+\subsubsection{Equilibrium Condition}
+
+\begin{conceptbox}
+    A body is said to be in \textbf{equilibrium} if the net force acting on it is zero:
+    \[
+        \mathbf{R}=\mathbf{0}.
+    \]
+    This means the object has no acceleration.
+\end{conceptbox}
+
+\begin{examplebox}
+    A box is pulled by two forces:
+    \[
+        \mathbf{F}_1=[8,3]\text{ N}, \qquad \mathbf{F}_2=[-5,-7]\text{ N}.
+    \]
+
+    Find the force $\mathbf{F}_3$ that must be applied so the system is in equilibrium.
+
+    The equilibrium condition is:
+    \[
+        \mathbf{F}_1+\mathbf{F}_2+\mathbf{F}_3=\mathbf{0}.
+    \]
+
+    Thus,
+    \[
+        \mathbf{F}_3=-(\mathbf{F}_1+\mathbf{F}_2).
+    \]
+
+    Compute the resultant of $\mathbf{F}_1$ and $\mathbf{F}_2$:
+    \[
+        \mathbf{F}_1+\mathbf{F}_2=[8-5,\;3-7]=[3,-4].
+    \]
+
+    So the balancing force is:
+    \[
+        \mathbf{F}_3=-[3,-4]=[-3,4]\text{ N}.
+    \]
+
+    Therefore, a force of $[-3,4]$ N must be applied for equilibrium.
+\end{examplebox}
+
+\begin{noteBox}
+    This concept is extremely important in statics problems such as trusses, beams, bridges, and structural design.
+\end{noteBox}

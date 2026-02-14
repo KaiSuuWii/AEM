@@ -1,0 +1,135 @@
+\subsection{Properties of the Cross Product}
+
+Let $\mathbf{a},\mathbf{b},\mathbf{c}\in\mathbb{R}^3$ and $k$ be a scalar.
+
+\subsubsection{Linearity and Distributive Laws}
+
+\begin{conceptbox}
+    Cross product satisfies:
+    \begin{enumerate}[label=(\alph*)]
+        \item \textbf{Scalar Linearity:}
+              \[
+                  (k\mathbf{a})\times\mathbf{b} = k(\mathbf{a}\times\mathbf{b}) = \mathbf{a}\times(k\mathbf{b})
+              \]
+        \item \textbf{Distributive Property:}
+              \[
+                  \mathbf{a}\times(\mathbf{b}+\mathbf{c}) = \mathbf{a}\times\mathbf{b} + \mathbf{a}\times\mathbf{c}
+              \]
+              \[
+                  (\mathbf{a}+\mathbf{b})\times\mathbf{c} = \mathbf{a}\times\mathbf{c} + \mathbf{b}\times\mathbf{c}
+              \]
+    \end{enumerate}
+\end{conceptbox}
+
+\subsubsection{Anti-Commutativity}
+
+\begin{conceptbox}
+    The cross product is \textbf{anti-commutative}:
+    \[
+        \mathbf{a}\times\mathbf{b}=-(\mathbf{b}\times\mathbf{a}).
+    \]
+\end{conceptbox}
+
+\subsubsection{Not Associative}
+
+\begin{noteBox}
+    Cross product is \textbf{not associative}. In general:
+    \[
+        \mathbf{a}\times(\mathbf{b}\times\mathbf{c}) \neq (\mathbf{a}\times\mathbf{b})\times\mathbf{c}.
+    \]
+    So parentheses matter.
+\end{noteBox}
+
+\begin{examplebox}
+    Verify anti-commutativity using an easy pair:
+    \[
+        \mathbf{a}=\mathbf{i}=[1,0,0],\qquad \mathbf{b}=\mathbf{j}=[0,1,0].
+    \]
+
+    We know:
+    \[
+        \mathbf{i}\times\mathbf{j}=\mathbf{k}.
+    \]
+    Switching the order:
+    \[
+        \mathbf{j}\times\mathbf{i}=-\mathbf{k}.
+    \]
+    So,
+    \[
+        \mathbf{i}\times\mathbf{j}=-(\mathbf{j}\times\mathbf{i}).
+    \]
+\end{examplebox}
+
+\begin{examplebox}
+    Demonstrate non-associativity using basis vectors:
+
+    \[
+        \mathbf{i}\times(\mathbf{j}\times\mathbf{k})
+        =
+        \mathbf{i}\times(\mathbf{i})
+        =
+        \mathbf{0}.
+    \]
+
+    But
+    \[
+        (\mathbf{i}\times\mathbf{j})\times\mathbf{k}
+        =
+        \mathbf{k}\times\mathbf{k}
+        =
+        \mathbf{0}.
+    \]
+
+    This example gives equality, so it doesn't disprove associativity.
+
+    To show non-associativity more clearly, use:
+    \[
+        \mathbf{a}=[1,1,0],\quad \mathbf{b}=[1,0,1],\quad \mathbf{c}=[0,1,1].
+    \]
+
+    Compute $\mathbf{b}\times\mathbf{c}$:
+    \[
+        \mathbf{b}\times\mathbf{c}
+        =
+        \big[0\cdot 1-1\cdot 1,\; 1\cdot 0-1\cdot 1,\; 1\cdot 1-0\cdot 0\big]
+        =
+        [-1,-1,1].
+    \]
+    Then
+    \[
+        \mathbf{a}\times(\mathbf{b}\times\mathbf{c})
+        =
+        [1,1,0]\times[-1,-1,1]
+        =
+        [1(-?)-0(-?),\;\dots]
+        =
+        [1,-1,0].
+    \]
+
+    Now compute $\mathbf{a}\times\mathbf{b}$:
+    \[
+        \mathbf{a}\times\mathbf{b}
+        =
+        [1,1,0]\times[1,0,1]
+        =
+        [1\cdot 1-0\cdot 0,\;0\cdot 1-1\cdot 1,\;1\cdot 0-1\cdot 1]
+        =
+        [1,-1,-1].
+    \]
+    Then
+    \[
+        (\mathbf{a}\times\mathbf{b})\times\mathbf{c}
+        =
+        [1,-1,-1]\times[0,1,1]
+        =
+        [0,\,-1,\,1].
+    \]
+
+    Since
+    \[
+        \mathbf{a}\times(\mathbf{b}\times\mathbf{c})=[1,-1,0]
+        \neq
+        (\mathbf{a}\times\mathbf{b})\times\mathbf{c}=[0,-1,1],
+    \]
+    cross product is not associative.
+\end{examplebox}

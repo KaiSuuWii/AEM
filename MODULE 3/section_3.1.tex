@@ -1,0 +1,53 @@
+\section{Cross Product}
+
+\subsection{Definition and Geometric Meaning}
+
+\begin{conceptbox}
+    The \textbf{cross product} (or \textbf{vector product}) of two vectors $\mathbf{a}$ and $\mathbf{b}$ in $\mathbb{R}^3$ is a vector
+    \[
+        \mathbf{a}\times\mathbf{b}
+    \]
+    that is \textbf{perpendicular} to both $\mathbf{a}$ and $\mathbf{b}$.
+\end{conceptbox}
+
+\subsubsection{Magnitude and Area Interpretation}
+
+Let $\gamma$ be the angle between $\mathbf{a}$ and $\mathbf{b}$ (with $0\le \gamma \le \pi$).
+If $\mathbf{a}\neq \mathbf{0}$ and $\mathbf{b}\neq \mathbf{0}$, then:
+\[
+    \|\mathbf{a}\times\mathbf{b}\| = \|\mathbf{a}\|\;\|\mathbf{b}\|\sin\gamma.
+\]
+
+\begin{noteBox}
+    Geometric meaning: $\|\mathbf{a}\times\mathbf{b}\|$ equals the \textbf{area of the parallelogram} formed by $\mathbf{a}$ and $\mathbf{b}$ as adjacent sides.
+\end{noteBox}
+
+\subsubsection{When is the Cross Product Zero?}
+
+If $\mathbf{a}=\mathbf{0}$ or $\mathbf{b}=\mathbf{0}$, then $\mathbf{a}\times\mathbf{b}=\mathbf{0}$.
+
+Also, if $\mathbf{a}$ and $\mathbf{b}$ are parallel (same or opposite direction), then $\gamma=0$ or $\gamma=\pi$,
+so $\sin\gamma = 0$, hence:
+\[
+    \mathbf{a}\times\mathbf{b}=\mathbf{0}.
+\]
+
+\begin{examplebox}
+    Let $\mathbf{a}=[3,0,0]$ and $\mathbf{b}=[5,0,0]$.
+
+    These vectors are parallel (both point along the $x$-axis), so the area of the parallelogram is zero.
+    Therefore,
+    \[
+        \mathbf{a}\times\mathbf{b}=\mathbf{0}.
+    \]
+\end{examplebox}
+
+\begin{examplebox}
+    Suppose $\|\mathbf{a}\|=4$, $\|\mathbf{b}\|=6$, and the angle between them is $\gamma=30^\circ$.
+
+    Then
+    \[
+        \|\mathbf{a}\times\mathbf{b}\| = (4)(6)\sin 30^\circ = 24\left(\frac{1}{2}\right)=12.
+    \]
+    So the parallelogram area formed by $\mathbf{a}$ and $\mathbf{b}$ is 12 square units.
+\end{examplebox}
