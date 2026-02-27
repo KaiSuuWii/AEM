@@ -1,0 +1,106 @@
+\section{Error-Correcting Codes}
+
+\subsection{Linear Codes and Generator Matrices}
+
+Digital communication is subject to noise.
+Error-correcting codes allow detection and correction of transmission errors.
+
+%------------------------------------------------
+\subsubsection*{Finite Field $\mathbb{Z}_2$}
+
+Most classical codes operate over the binary field:
+
+\[
+    \mathbb{Z}_2 = \{0,1\}
+\]
+
+with arithmetic modulo 2:
+
+\[
+    1+1 \equiv 0.
+\]
+
+\begin{conceptbox}
+    Binary linear codes are vector spaces over $\mathbb{Z}_2$.
+\end{conceptbox}
+
+%------------------------------------------------
+\subsubsection*{Definition of a Linear Code}
+
+A linear $(n,k)$ code is a $k$-dimensional subspace of $\mathbb{Z}_2^n$.
+
+\begin{itemize}
+    \item $k$ = number of message bits
+    \item $n$ = number of transmitted bits
+\end{itemize}
+
+Thus:
+
+\[
+    \text{Redundancy} = n-k.
+\]
+
+%------------------------------------------------
+\subsubsection*{Generator Matrix}
+
+\begin{conceptbox}
+    A generator matrix $G$ is a $k \times n$ matrix
+    whose rows form a basis for the code.
+\end{conceptbox}
+
+Encoding is performed by:
+
+\[
+    c = mG
+\]
+
+where:
+\begin{itemize}
+    \item $m$ = message vector (row vector)
+    \item $c$ = codeword
+\end{itemize}
+
+%------------------------------------------------
+\subsubsection*{Example (3,2) Code}
+
+Let:
+
+\[
+    G =
+    \begin{bmatrix}
+        1 & 0 & 1 \\
+        0 & 1 & 1
+    \end{bmatrix}.
+\]
+
+Encode message:
+
+\[
+    m = [1 \; 0].
+\]
+
+\[
+    c = mG =
+    [1 \; 0]
+    \begin{bmatrix}
+        1 & 0 & 1 \\
+        0 & 1 & 1
+    \end{bmatrix}
+    =
+    [1 \; 0 \; 1].
+\]
+
+All arithmetic is modulo 2.
+
+%------------------------------------------------
+\subsubsection*{Geometric View}
+
+Codewords form a subspace of $\mathbb{Z}_2^n$.
+
+\begin{noteBox}
+    Linear algebra structure ensures:
+    \begin{itemize}
+        \item Sum of codewords is a codeword
+        \item Scalar multiples remain in the code
+    \end{itemize}
+\end{noteBox}

@@ -1,0 +1,70 @@
+\subsection{Complex Eigenvalues}
+
+Eigenvalues of real matrices may be complex.
+
+\subsubsection*{Example}
+
+Consider:
+
+\[
+    A =
+    \begin{bmatrix}
+        0 & -1 \\
+        1 & 0
+    \end{bmatrix}.
+\]
+
+Compute:
+
+\[
+    \det(A - \lambda I)
+    =
+    \begin{vmatrix}
+        -\lambda & -1       \\
+        1        & -\lambda
+    \end{vmatrix}
+    =
+    \lambda^2 + 1.
+\]
+
+Solve:
+
+\[
+    \lambda^2 + 1 = 0
+\]
+
+\[
+    \lambda = \pm i.
+\]
+
+\begin{conceptbox}
+    Complex eigenvalues of real matrices occur in conjugate pairs.
+\end{conceptbox}
+
+%----------------------------------------
+
+\subsubsection*{Geometric Meaning}
+
+The matrix
+
+\[
+    \begin{bmatrix}
+        0 & -1 \\
+        1 & 0
+    \end{bmatrix}
+\]
+
+represents a 90° rotation.
+
+\begin{itemize}
+    \item No real invariant directions exist.
+    \item The transformation corresponds to rotation.
+\end{itemize}
+
+\begin{noteBox}
+    If eigenvalues are:
+    \begin{itemize}
+        \item $\lambda = a \pm bi$, the transformation represents rotation combined with scaling.
+        \item $|\lambda| = 1$, pure rotation.
+    \end{itemize}
+\end{noteBox}

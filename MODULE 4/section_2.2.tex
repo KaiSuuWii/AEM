@@ -1,0 +1,126 @@
+\subsection{Eigenvectors and the Structure of the Solution Space}
+
+After computing eigenvalues from
+
+\[
+    \det(A - \lambda I) = 0,
+\]
+
+we determine eigenvectors by solving
+
+\[
+    (A - \lambda I)v = 0.
+\]
+
+\begin{conceptbox}
+    For a fixed eigenvalue $\lambda$, the set of all eigenvectors (together with the zero vector)
+    forms the null space of $(A - \lambda I)$.
+\end{conceptbox}
+
+Thus eigenvectors are obtained by solving a homogeneous linear system.
+
+\subsubsection*{Geometric Meaning of the Equation}
+
+The equation
+
+\[
+    Av = \lambda v
+\]
+
+means:
+
+\begin{itemize}
+    \item $v$ is scaled but not rotated.
+    \item $v$ is an invariant direction under transformation $A$.
+\end{itemize}
+
+If $\lambda > 1$ → stretching \\
+If $0 < \lambda < 1$ → contraction \\
+If $\lambda < 0$ → direction reversal
+
+%----------------------------------------
+
+\subsubsection*{Dimension of the Eigenspace}
+
+\begin{conceptbox}
+    The set
+    \[
+        E_\lambda = \{v \neq 0 \mid (A - \lambda I)v = 0\}
+    \]
+    is called the \textbf{eigenspace} corresponding to $\lambda$.
+\end{conceptbox}
+
+Its dimension equals:
+
+\[
+    \text{dim}(\ker(A - \lambda I)).
+\]
+
+This dimension is crucial for determining diagonalizability.
+
+%----------------------------------------
+
+\subsubsection*{Example: Full Computation}
+
+Let
+
+\[
+    A =
+    \begin{bmatrix}
+        4 & 1 \\
+        2 & 3
+    \end{bmatrix}.
+\]
+
+Eigenvalues:
+
+\[
+    \lambda_1 = 5, \quad \lambda_2 = 2.
+\]
+
+For $\lambda = 5$:
+
+\[
+    A - 5I =
+    \begin{bmatrix}
+        -1 & 1  \\
+        2  & -2
+    \end{bmatrix}.
+\]
+
+Row reduce:
+
+\[
+    \begin{bmatrix}
+        -1 & 1  \\
+        2  & -2
+    \end{bmatrix}
+    \rightarrow
+    \begin{bmatrix}
+        1 & -1 \\
+        0 & 0
+    \end{bmatrix}.
+\]
+
+Thus:
+
+\[
+    x - y = 0 \Rightarrow x = y.
+\]
+
+Eigenvectors:
+
+\[
+    v_1 =
+    \begin{bmatrix}
+        1 \\
+        1
+    \end{bmatrix}.
+\]
+
+We always report eigenvectors up to scalar multiples.
+
+\begin{noteBox}
+    Each eigenvalue produces its own linear subspace.
+    Different eigenspaces intersect only at the zero vector.
+\end{noteBox}

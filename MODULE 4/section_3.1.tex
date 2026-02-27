@@ -1,0 +1,80 @@
+\section{Powers of Matrices}
+
+\subsection{Definition and Basic Properties}
+
+\begin{conceptbox}
+    If $A$ is a square matrix, the $n$th power of $A$ is defined as
+
+    \[
+        A^n = \underbrace{A A A \cdots A}_{n \text{ times}}.
+    \]
+
+    We define:
+    \[
+        A^0 = I.
+    \]
+\end{conceptbox}
+
+\subsubsection*{Important Remarks}
+
+\begin{itemize}
+    \item Matrix powers are defined only for square matrices.
+    \item In general,
+          \[
+              (A+B)^n \neq A^n + B^n.
+          \]
+    \item Matrix multiplication is not commutative, so order matters.
+\end{itemize}
+
+%----------------------------------------
+
+\subsubsection*{Example}
+
+Let
+
+\[
+    A =
+    \begin{bmatrix}
+        1 & 1 \\
+        0 & 1
+    \end{bmatrix}.
+\]
+
+Compute $A^2$:
+
+\[
+    A^2 =
+    \begin{bmatrix}
+        1 & 1 \\
+        0 & 1
+    \end{bmatrix}
+    \begin{bmatrix}
+        1 & 1 \\
+        0 & 1
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        1 & 2 \\
+        0 & 1
+    \end{bmatrix}.
+\]
+
+Compute $A^3$:
+
+\[
+    A^3 =
+    \begin{bmatrix}
+        1 & 3 \\
+        0 & 1
+    \end{bmatrix}.
+\]
+
+Observe the pattern:
+
+\[
+    A^n =
+    \begin{bmatrix}
+        1 & n \\
+        0 & 1
+    \end{bmatrix}.
+\]

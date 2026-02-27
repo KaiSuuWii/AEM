@@ -1,0 +1,191 @@
+\subsection{Security Analysis and Structural Weaknesses}
+
+Although mathematically elegant, the Hill cipher is fundamentally insecure.
+Its weakness comes from the fact that encryption is a \textbf{linear transformation}.
+
+%------------------------------------------------
+\subsubsection*{Linearity of the Cipher}
+
+Encryption is defined as:
+
+\[
+    y \equiv Kx \pmod{26}.
+\]
+
+This is a linear map over $\mathbb{Z}_{26}^n$.
+
+\begin{conceptbox}
+    Because encryption is linear, the entire cipher can be described
+    as solving a system of linear equations.
+\end{conceptbox}
+
+This linearity makes the system vulnerable.
+
+%------------------------------------------------
+\subsubsection*{Known-Plaintext Attack (Core Weakness)}
+
+Suppose an attacker knows:
+
+\[
+    x_1 \mapsto y_1, \quad
+    x_2 \mapsto y_2, \quad
+    \dots, \quad
+    x_n \mapsto y_n.
+\]
+
+Stack these into matrices:
+
+\[
+    X = [x_1 \; x_2 \; \dots \; x_n],
+    \quad
+    Y = [y_1 \; y_2 \; \dots \; y_n].
+\]
+
+From encryption:
+
+\[
+    Y \equiv KX \pmod{26}.
+\]
+
+If $X$ is invertible modulo 26, then:
+
+\[
+    K \equiv YX^{-1} \pmod{26}.
+\]
+
+\begin{conceptbox}
+    If an attacker obtains $n$ independent plaintext–ciphertext pairs
+    (for an $n \times n$ key),
+    they can recover the key matrix exactly.
+\end{conceptbox}
+
+%------------------------------------------------
+\subsubsection*{Concrete Attack Example (2 $\times$ 2 Key)}
+
+Suppose the attacker knows:
+
+Plaintext blocks:
+\[
+    x_1 =
+    \begin{bmatrix}
+        7 \\
+        8
+    \end{bmatrix},
+    \quad
+    x_2 =
+    \begin{bmatrix}
+        4 \\
+        11
+    \end{bmatrix}.
+\]
+
+Ciphertext blocks:
+\[
+    y_1 =
+    \begin{bmatrix}
+        19 \\
+        2
+    \end{bmatrix},
+    \quad
+    y_2 =
+    \begin{bmatrix}
+        7 \\
+        8
+    \end{bmatrix}.
+\]
+
+Construct matrices:
+
+\[
+    X =
+    \begin{bmatrix}
+        7 & 4  \\
+        8 & 11
+    \end{bmatrix},
+    \quad
+    Y =
+    \begin{bmatrix}
+        19 & 7 \\
+        2  & 8
+    \end{bmatrix}.
+\]
+
+Then:
+
+\[
+    K \equiv YX^{-1} \pmod{26}.
+\]
+
+The attacker simply computes a matrix inverse modulo 26 —
+exactly the same operation used for decryption.
+
+Thus the encryption key is fully recovered.
+
+%------------------------------------------------
+\subsubsection*{Why Larger Block Size Does Not Fix It}
+
+One might think using a $3 \times 3$ or $4 \times 4$ matrix improves security.
+
+However:
+
+\begin{itemize}
+    \item A $3 \times 3$ key requires only 3 independent plaintext blocks.
+    \item A $4 \times 4$ key requires only 4 independent blocks.
+\end{itemize}
+
+Once enough linear equations are collected,
+the key is determined uniquely.
+
+\begin{conceptbox}
+    Increasing matrix size increases work slightly,
+    but does not remove the fundamental linear vulnerability.
+\end{conceptbox}
+
+%------------------------------------------------
+\subsubsection*{Structural Reason for Failure}
+
+The Hill cipher operates entirely within:
+
+\[
+    \text{Linear Algebra over } \mathbb{Z}_{26}.
+\]
+
+Modern cryptography avoids purely linear systems because:
+
+\begin{itemize}
+    \item Linear systems are predictable.
+    \item They can be solved with Gaussian elimination.
+    \item They have no avalanche effect (small changes do not create chaotic output).
+\end{itemize}
+
+%------------------------------------------------
+\subsubsection*{Comparison with Modern Cryptography}
+
+Modern systems (AES, RSA, ECC) use:
+
+\begin{itemize}
+    \item Nonlinear substitutions
+    \item Finite field arithmetic
+    \item Modular exponentiation
+    \item Elliptic curves
+\end{itemize}
+
+These prevent direct linear reconstruction.
+
+%------------------------------------------------
+\subsubsection*{Educational Value of the Hill Cipher}
+
+Despite its weakness, the Hill cipher is valuable because it demonstrates:
+
+\begin{itemize}
+    \item Matrix multiplication
+    \item Modular inverses
+    \item Determinant-based invertibility
+    \item Linear transformations
+    \item Real-world application of LU-style solving
+\end{itemize}
+
+\begin{noteBox}
+    The Hill cipher is not secure — but it is a powerful teaching tool
+    for understanding linear algebra in cryptographic systems.
+\end{noteBox}

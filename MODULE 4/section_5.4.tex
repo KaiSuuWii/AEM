@@ -1,0 +1,84 @@
+\subsection{Applications and Structural Meaning}
+
+\subsubsection*{1. Matrix Powers}
+
+Diagonalization simplifies:
+
+\[
+    A^n.
+\]
+
+\subsubsection*{2. Differential Equations}
+
+For
+
+\[
+    x' = Ax,
+\]
+
+if
+
+\[
+    A = P D P^{-1},
+\]
+
+then:
+
+\[
+    x(t) = P e^{Dt} P^{-1} x_0.
+\]
+
+Since:
+
+\[
+    e^{Dt} =
+    \begin{bmatrix}
+        e^{\lambda_1 t} & 0               \\
+        0               & e^{\lambda_2 t}
+    \end{bmatrix}.
+\]
+
+%------------------------------------------------
+
+\subsubsection*{3. Decoupling of Systems}
+
+Diagonalization decouples coupled systems
+into independent scalar equations.
+
+%------------------------------------------------
+
+\subsubsection*{4. Geometric Interpretation}
+
+The transformation:
+
+\[
+    A = P D P^{-1}
+\]
+
+means:
+
+\begin{enumerate}
+    \item Change basis using $P^{-1}$.
+    \item Apply independent scaling using $D$.
+    \item Transform back using $P$.
+\end{enumerate}
+
+\begin{conceptbox}
+    Diagonalization reveals the intrinsic structure of a linear transformation.
+\end{conceptbox}
+
+%------------------------------------------------
+
+\subsubsection*{Engineering Importance}
+
+\begin{noteBox}
+    Diagonalization is fundamental in:
+
+    \begin{itemize}
+        \item Vibrations and modal analysis
+        \item Control theory
+        \item Principal Component Analysis (PCA)
+        \item Quantum mechanics
+        \item Signal processing
+    \end{itemize}
+\end{noteBox}

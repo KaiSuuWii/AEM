@@ -1,0 +1,284 @@
+\section{Cryptography}
+
+\subsection{Hill Cipher Encryption (Matrix-Based Encryption)}
+
+The \textbf{Hill Cipher} is a classical block cipher that uses matrix multiplication
+over modular arithmetic. It is a beautiful application of linear algebra, even though
+it is not secure by modern standards.
+
+%------------------------------------------------
+
+\subsubsection*{Alphabet Mapping and Modular Arithmetic}
+
+We map letters to integers:
+
+\[
+    A=0,\; B=1,\; \dots,\; Z=25.
+\]
+
+All computations are done modulo 26:
+
+\[
+    y \equiv Kx \pmod{26}.
+\]
+
+\begin{conceptbox}
+    In the Hill cipher, encryption is a linear transformation over the ring $\mathbb{Z}_{26}$.
+\end{conceptbox}
+
+\subsubsection*{Handling Negative Values}
+
+When reducing modulo 26, negative numbers are converted by adding 26 repeatedly:
+
+\[
+    -3 \equiv 23 \pmod{26},\quad -29 \equiv -29 + 26 = -3 \equiv 23 \pmod{26}.
+\]
+
+%------------------------------------------------
+
+\subsubsection*{Block Size and Padding}
+
+Choose an $n \times n$ key matrix $K$. The plaintext is grouped into blocks of size $n$.
+
+\begin{itemize}
+    \item If the message length is not a multiple of $n$, we add padding (commonly $X=23$).
+    \item Each block becomes a column vector $x \in \mathbb{Z}_{26}^n$.
+\end{itemize}
+
+Encryption for each block is:
+
+\[
+    y = Kx \pmod{26}.
+\]
+
+%------------------------------------------------
+
+\subsubsection*{Key Matrix Requirement}
+
+Not every matrix works as a key. We must be able to decrypt.
+
+\begin{conceptbox}
+    The key matrix $K$ must be invertible modulo 26, otherwise decryption is impossible.
+\end{conceptbox}
+
+(We will formalize this condition in the next subsection.)
+
+%------------------------------------------------
+\subsubsection*{Example 1 (2 $\times$ 2): Digraph Encryption}
+
+Let
+
+\[
+    K =
+    \begin{bmatrix}
+        3 & 3 \\
+        2 & 5
+    \end{bmatrix}.
+\]
+
+Encrypt the plaintext block ``HI''.
+
+\[
+    H = 7,\quad I = 8
+    \quad\Rightarrow\quad
+    x =
+    \begin{bmatrix}
+        7 \\
+        8
+    \end{bmatrix}.
+\]
+
+Compute:
+
+\[
+    y = Kx =
+    \begin{bmatrix}
+        3 & 3 \\
+        2 & 5
+    \end{bmatrix}
+    \begin{bmatrix}
+        7 \\
+        8
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        45 \\
+        54
+    \end{bmatrix}.
+\]
+
+Reduce mod 26:
+
+\[
+    45 \equiv 19,\quad 54 \equiv 2 \pmod{26}.
+\]
+
+Thus,
+
+\[
+    y =
+    \begin{bmatrix}
+        19 \\
+        2
+    \end{bmatrix}
+    \Rightarrow
+    (T,C).
+\]
+
+Ciphertext is \textbf{TC}.
+
+%------------------------------------------------
+\subsubsection*{Example 2 (2 $\times$ 2): Multi-block Encryption with Padding}
+
+Let the same key matrix $K$ be used. Encrypt ``HELP''.
+
+Convert letters:
+
+\[
+    H=7,\; E=4,\; L=11,\; P=15.
+\]
+
+Block into pairs (since $n=2$):
+
+\[
+    x_1 =
+    \begin{bmatrix}
+        7 \\4
+    \end{bmatrix},
+    \quad
+    x_2 =
+    \begin{bmatrix}
+        11 \\15
+    \end{bmatrix}.
+\]
+
+Encrypt first block:
+
+\[
+    y_1 = Kx_1 =
+    \begin{bmatrix}
+        3(7)+3(4) \\
+        2(7)+5(4)
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        33 \\
+        34
+    \end{bmatrix}
+    \equiv
+    \begin{bmatrix}
+        7 \\
+        8
+    \end{bmatrix}
+    \pmod{26}.
+\]
+
+So $y_1 \Rightarrow (H,I)$.
+
+Encrypt second block:
+
+\[
+    y_2 = Kx_2 =
+    \begin{bmatrix}
+        3(11)+3(15) \\
+        2(11)+5(15)
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        78 \\
+        97
+    \end{bmatrix}
+    \equiv
+    \begin{bmatrix}
+        0 \\
+        19
+    \end{bmatrix}
+    \pmod{26}.
+\]
+
+So $y_2 \Rightarrow (A,T)$.
+
+Ciphertext: \textbf{HIAT}.
+
+\begin{noteBox}
+    This example shows that each plaintext block is transformed independently
+    using the same linear map $K$ in $\mathbb{Z}_{26}^n$.
+\end{noteBox}
+
+%------------------------------------------------
+\subsubsection*{Example 3 (3 $\times$ 3): Trigraph Encryption (More Complex)}
+
+Let the key matrix be:
+
+\[
+    K =
+    \begin{bmatrix}
+        6  & 24 & 1  \\
+        13 & 16 & 10 \\
+        20 & 17 & 15
+    \end{bmatrix}.
+\]
+
+Encrypt the plaintext ``ACT'' (a classic trigraph example).
+
+\[
+    A=0,\quad C=2,\quad T=19
+    \Rightarrow
+    x=
+    \begin{bmatrix}
+        0 \\2\\19
+    \end{bmatrix}.
+\]
+
+Compute $y = Kx$:
+
+\[
+    y =
+    \begin{bmatrix}
+        6(0)+24(2)+1(19)   \\
+        13(0)+16(2)+10(19) \\
+        20(0)+17(2)+15(19)
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        67  \\
+        222 \\
+        319
+    \end{bmatrix}.
+\]
+
+Reduce mod 26:
+
+\[
+    67 \equiv 15,\quad
+    222 \equiv 14,\quad
+    319 \equiv 7
+    \pmod{26}.
+\]
+
+Thus,
+
+\[
+    y=
+    \begin{bmatrix}
+        15 \\
+        14 \\
+        7
+    \end{bmatrix}
+    \Rightarrow (P,O,H).
+\]
+
+Ciphertext is \textbf{POH}.
+
+\begin{conceptbox}
+    A larger block size $n$ increases diffusion: each ciphertext letter depends on multiple plaintext letters.
+\end{conceptbox}
+
+%------------------------------------------------
+\subsubsection*{Practical Implementation Notes}
+
+\begin{itemize}
+    \item Always choose a key matrix $K$ that is invertible modulo 26.
+    \item Agree on block size and padding rule (e.g., pad with X).
+    \item Encryption is fast: it is just matrix multiplication mod 26.
+\end{itemize}

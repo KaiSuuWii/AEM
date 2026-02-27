@@ -1,0 +1,60 @@
+\section{Least Squares}
+
+\subsection{Overdetermined Systems}
+
+Consider a system:
+
+\[
+    Ax = b,
+\]
+
+where $A$ is an $m \times n$ matrix with $m > n$.
+
+Such systems typically have more equations than unknowns.
+
+\begin{conceptbox}
+    An overdetermined system generally has no exact solution.
+\end{conceptbox}
+
+Instead of solving exactly, we seek $x$ that minimizes the error:
+
+\[
+    \|Ax - b\|.
+\]
+
+This leads to the least squares problem:
+
+\[
+    \min_x \|Ax - b\|^2.
+\]
+
+%------------------------------------------------
+\subsubsection*{Example}
+
+Fit a line $y = mx + c$ to data points:
+
+\[
+    (1,1),\; (2,2),\; (3,2).
+\]
+
+System:
+
+\[
+    \begin{bmatrix}
+        1 & 1 \\
+        2 & 1 \\
+        3 & 1
+    \end{bmatrix}
+    \begin{bmatrix}
+        m \\
+        c
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        1 \\
+        2 \\
+        2
+    \end{bmatrix}.
+\]
+
+There is no exact solution — we use least squares.

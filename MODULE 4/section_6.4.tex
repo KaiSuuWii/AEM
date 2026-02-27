@@ -1,0 +1,62 @@
+\subsection{Pivoting and Numerical Stability}
+
+LU without pivoting may fail if a pivot is zero.
+
+\subsubsection*{Example}
+
+\[
+    A =
+    \begin{bmatrix}
+        0 & 2 \\
+        1 & 3
+    \end{bmatrix}.
+\]
+
+The first pivot is zero.
+
+We interchange rows:
+
+\[
+    P A =
+    \begin{bmatrix}
+        1 & 3 \\
+        0 & 2
+    \end{bmatrix}.
+\]
+
+\begin{conceptbox}
+    With pivoting:
+
+    \[
+        PA = LU.
+    \]
+\end{conceptbox}
+
+$P$ is a permutation matrix.
+
+%------------------------------------------------
+
+\subsubsection*{Why Pivoting Is Important}
+
+\begin{itemize}
+    \item Avoids division by zero.
+    \item Reduces round-off error.
+    \item Improves numerical stability.
+\end{itemize}
+
+%------------------------------------------------
+
+\subsubsection*{Partial Pivoting}
+
+Choose the largest absolute value in the pivot column.
+
+This leads to:
+
+\[
+    PA = LU.
+\]
+
+\begin{noteBox}
+    In practical computation (MATLAB, NumPy),
+    LU decomposition always uses pivoting.
+\end{noteBox}

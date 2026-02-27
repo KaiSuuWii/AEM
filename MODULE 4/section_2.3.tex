@@ -1,0 +1,102 @@
+\subsection{Defective Matrices and Diagonalizability}
+
+\subsubsection*{Diagonalizability}
+
+\begin{conceptbox}
+    A matrix $A$ is \textbf{diagonalizable} if there exists an invertible matrix $P$ such that
+
+    \[
+        A = PDP^{-1},
+    \]
+
+    where $D$ is a diagonal matrix containing eigenvalues of $A$.
+\end{conceptbox}
+
+\begin{conceptbox}
+    A matrix is diagonalizable if and only if it has $n$ linearly independent eigenvectors.
+\end{conceptbox}
+
+This means:
+
+\[
+    \text{Geometric multiplicity} = \text{Algebraic multiplicity}
+    \quad \text{for all eigenvalues}.
+\]
+
+
+\subsubsection*{Example: Defective Matrix}
+
+Consider:
+
+\[
+    A =
+    \begin{bmatrix}
+        2 & 1 \\
+        0 & 2
+    \end{bmatrix}.
+\]
+
+Characteristic equation:
+
+\[
+    \det(A - \lambda I)
+    =
+    (2-\lambda)^2.
+\]
+
+So the eigenvalue is:
+
+\[
+    \lambda = 2 \quad \text{(algebraic multiplicity 2)}.
+\]
+
+Now compute eigenvectors:
+
+\[
+    A - 2I =
+    \begin{bmatrix}
+        0 & 1 \\
+        0 & 0
+    \end{bmatrix}.
+\]
+
+Solve:
+
+\[
+    \begin{bmatrix}
+        0 & 1 \\
+        0 & 0
+    \end{bmatrix}
+    \begin{bmatrix}
+        x \\
+        y
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        0 \\
+        0
+    \end{bmatrix}.
+\]
+
+This gives:
+
+\[
+    y = 0.
+\]
+
+Thus eigenvectors are:
+
+\[
+    v =
+    \begin{bmatrix}
+        1 \\
+        0
+    \end{bmatrix}.
+\]
+
+There is only one independent eigenvector.
+
+\begin{conceptbox}
+    Since geometric multiplicity (1) is less than algebraic multiplicity (2),
+    the matrix is \textbf{defective} and not diagonalizable.
+\end{conceptbox}

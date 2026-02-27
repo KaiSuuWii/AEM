@@ -1,0 +1,211 @@
+\subsection{Procedure for Diagonalization}
+
+\subsubsection*{Step-by-Step Method}
+
+\begin{enumerate}
+    \item Find eigenvalues from $\det(A - \lambda I)=0$.
+    \item Compute eigenvectors for each eigenvalue.
+    \item Form matrix $P$ using eigenvectors as columns.
+    \item Form $D$ using eigenvalues along the diagonal.
+\end{enumerate}
+
+%------------------------------------------------
+
+\subsubsection*{Full Example with Verification}
+
+Let
+
+\[
+    A =
+    \begin{bmatrix}
+        4 & 1 \\
+        2 & 3
+    \end{bmatrix}.
+\]
+
+We previously computed:
+
+\[
+    \lambda_1 = 5, \quad \lambda_2 = 2.
+\]
+
+Eigenvectors:
+
+\[
+    v_1 =
+    \begin{bmatrix}
+        1 \\
+        1
+    \end{bmatrix},
+    \quad
+    v_2 =
+    \begin{bmatrix}
+        1 \\
+        -2
+    \end{bmatrix}.
+\]
+
+Construct:
+
+\[
+    P =
+    \begin{bmatrix}
+        1 & 1  \\
+        1 & -2
+    \end{bmatrix},
+    \qquad
+    D =
+    \begin{bmatrix}
+        5 & 0 \\
+        0 & 2
+    \end{bmatrix}.
+\]
+
+Compute determinant of $P$:
+
+\[
+    \det(P) = (1)(-2) - (1)(1) = -3.
+\]
+
+Thus,
+
+\[
+    P^{-1}
+    =
+    \frac{1}{-3}
+    \begin{bmatrix}
+        -2 & -1 \\
+        -1 & 1
+    \end{bmatrix}.
+\]
+
+%------------------------------------------------
+\subsubsection*{Verification of $A = PDP^{-1}$}
+
+First compute $PD$:
+
+\[
+    PD =
+    \begin{bmatrix}
+        1 & 1  \\
+        1 & -2
+    \end{bmatrix}
+    \begin{bmatrix}
+        5 & 0 \\
+        0 & 2
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        5 & 2  \\
+        5 & -4
+    \end{bmatrix}.
+\]
+
+Now multiply by $P^{-1}$:
+
+\[
+    PDP^{-1}
+    =
+    \begin{bmatrix}
+        5 & 2  \\
+        5 & -4
+    \end{bmatrix}
+    \frac{1}{-3}
+    \begin{bmatrix}
+        -2 & -1 \\
+        -1 & 1
+    \end{bmatrix}.
+\]
+
+Compute product inside first:
+
+\[
+    =
+    \frac{1}{-3}
+    \begin{bmatrix}
+        (5)(-2)+(2)(-1)  & (5)(-1)+(2)(1)  \\
+        (5)(-2)+(-4)(-1) & (5)(-1)+(-4)(1)
+    \end{bmatrix}.
+\]
+
+\[
+    =
+    \frac{1}{-3}
+    \begin{bmatrix}
+        -10 -2 & -5 +2 \\
+        -10 +4 & -5 -4
+    \end{bmatrix}.
+\]
+
+\[
+    =
+    \frac{1}{-3}
+    \begin{bmatrix}
+        -12 & -3 \\
+        -6  & -9
+    \end{bmatrix}.
+\]
+
+\[
+    =
+    \begin{bmatrix}
+        4 & 1 \\
+        2 & 3
+    \end{bmatrix}.
+\]
+
+Thus,
+
+\[
+    A = P D P^{-1}.
+\]
+
+\begin{conceptbox}
+    We have verified that $A$ is diagonalizable.
+\end{conceptbox}
+
+%------------------------------------------------
+
+\subsubsection*{Interpretation}
+
+Diagonalization shows that:
+
+\[
+    A = P D P^{-1}
+\]
+
+means:
+
+\begin{enumerate}
+    \item Transform coordinates using $P^{-1}$.
+    \item Apply independent scalings (5 and 2) via $D$.
+    \item Transform back using $P$.
+\end{enumerate}
+
+The transformation $A$ acts as pure scaling in the eigenvector directions.
+
+%------------------------------------------------
+
+\subsubsection*{Power Computation}
+
+Now powers are simple:
+
+\[
+    A^n = P D^n P^{-1}.
+\]
+
+\[
+    =
+    P
+    \begin{bmatrix}
+        5^n & 0   \\
+        0   & 2^n
+    \end{bmatrix}
+    P^{-1}.
+\]
+
+\begin{noteBox}
+    Instead of multiplying $A$ repeatedly,
+    we raise eigenvalues to the $n$th power.
+    This is the primary computational advantage of diagonalization.
+\end{noteBox}

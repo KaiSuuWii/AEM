@@ -1,0 +1,62 @@
+\subsection{Orthonormal Columns and Matrix Structure}
+
+\begin{conceptbox}
+    A matrix $Q$ is orthogonal if and only if
+    its columns form an orthonormal set.
+\end{conceptbox}
+
+That means:
+
+\[
+    q_i^T q_j =
+    \begin{cases}
+        1 & i = j    \\
+        0 & i \neq j
+    \end{cases}
+\]
+
+%------------------------------------------------
+
+\subsubsection*{Proof Sketch}
+
+Let
+
+\[
+    Q = [q_1 \; q_2 \; \dots \; q_n].
+\]
+
+Then:
+
+\[
+    Q^T Q =
+    \begin{bmatrix}
+        q_1^T  \\
+        q_2^T  \\
+        \vdots \\
+        q_n^T
+    \end{bmatrix}
+    [q_1 \; q_2 \; \dots \; q_n].
+\]
+
+The $(i,j)$ entry equals:
+
+\[
+    q_i^T q_j.
+\]
+
+Thus:
+
+\[
+    Q^T Q = I
+\]
+
+if and only if the columns are orthonormal.
+
+%------------------------------------------------
+
+\subsubsection*{Geometric Meaning}
+
+The columns of $Q$ form a rotated coordinate system.
+
+Applying $Q$ transforms coordinates from the standard basis
+to this new orthonormal basis.

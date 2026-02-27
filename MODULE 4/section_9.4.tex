@@ -1,0 +1,55 @@
+\subsection{QR Factorization Method}
+
+Solving normal equations may cause numerical instability.
+
+Instead, use QR factorization:
+
+\[
+    A = QR,
+\]
+
+where:
+
+\begin{itemize}
+    \item $Q$ has orthonormal columns
+    \item $R$ is upper triangular
+\end{itemize}
+
+%------------------------------------------------
+
+Since:
+
+\[
+    Ax = b,
+\]
+
+becomes:
+
+\[
+    QRx = b.
+\]
+
+Multiply by $Q^T$:
+
+\[
+    Rx = Q^T b.
+\]
+
+\begin{conceptbox}
+    Least squares can be solved using:
+
+    \[
+        Rx = Q^T b.
+    \]
+\end{conceptbox}
+
+This avoids computing $A^T A$.
+
+%------------------------------------------------
+\subsubsection*{Why QR is Better}
+
+\begin{itemize}
+    \item More numerically stable
+    \item Avoids squaring condition number
+    \item Used in practical software (MATLAB, NumPy)
+\end{itemize}

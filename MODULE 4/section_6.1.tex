@@ -1,0 +1,66 @@
+\section{LU-Factorization}
+
+\subsection{Motivation and Idea}
+
+When solving a system
+
+\[
+    Ax = b,
+\]
+
+Gaussian elimination transforms $A$ into an upper triangular matrix.
+
+\begin{conceptbox}
+    LU-factorization records the elimination process
+    as a matrix decomposition:
+
+    \[
+        A = LU,
+    \]
+
+    where
+    \begin{itemize}
+        \item $L$ is lower triangular,
+        \item $U$ is upper triangular.
+    \end{itemize}
+\end{conceptbox}
+
+%------------------------------------------------
+
+\subsubsection*{Why Is This Useful?}
+
+If we factor:
+
+\[
+    A = LU,
+\]
+
+then solving
+
+\[
+    Ax = b
+\]
+
+becomes:
+
+\[
+    LUx = b.
+\]
+
+Let:
+
+\[
+    Ux = y.
+\]
+
+Then solve in two steps:
+
+\begin{enumerate}
+    \item $Ly = b$ (forward substitution)
+    \item $Ux = y$ (back substitution)
+\end{enumerate}
+
+\begin{noteBox}
+    If multiple right-hand sides $b$ are given,
+    LU-factorization avoids repeating elimination.
+\end{noteBox}

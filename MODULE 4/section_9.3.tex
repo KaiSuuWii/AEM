@@ -1,0 +1,99 @@
+\subsection{The Normal Equations}
+
+From orthogonality:
+
+\[
+    A^T (b - Ax) = 0.
+\]
+
+Rearrange:
+
+\[
+    A^T A x = A^T b.
+\]
+
+\begin{conceptbox}
+    The equation
+    \[
+        A^T A x = A^T b
+    \]
+    is called the normal equation.
+\end{conceptbox}
+
+%------------------------------------------------
+\subsubsection*{Properties}
+
+\begin{itemize}
+    \item $A^T A$ is symmetric.
+    \item If columns of $A$ are independent,
+          $A^T A$ is invertible.
+\end{itemize}
+
+Thus:
+
+\[
+    x = (A^T A)^{-1} A^T b.
+\]
+
+%------------------------------------------------
+\subsubsection*{Example (Line Fitting)}
+
+Using earlier data:
+
+\[
+    A =
+    \begin{bmatrix}
+        1 & 1 \\
+        2 & 1 \\
+        3 & 1
+    \end{bmatrix},
+    \quad
+    b =
+    \begin{bmatrix}
+        1 \\
+        2 \\
+        2
+    \end{bmatrix}.
+\]
+
+Compute:
+
+\[
+    A^T A =
+    \begin{bmatrix}
+        14 & 6 \\
+        6  & 3
+    \end{bmatrix}.
+\]
+
+\[
+    A^T b =
+    \begin{bmatrix}
+        11 \\
+        5
+    \end{bmatrix}.
+\]
+
+Solve:
+
+\[
+    \begin{bmatrix}
+        14 & 6 \\
+        6  & 3
+    \end{bmatrix}
+    \begin{bmatrix}
+        m \\
+        c
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        11 \\
+        5
+    \end{bmatrix}.
+\]
+
+Solution:
+
+\[
+    m = \frac{1}{2}, \quad c = \frac{2}{3}.
+\]

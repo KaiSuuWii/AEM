@@ -1,0 +1,269 @@
+\subsection{Gaussian Elimination}
+
+Gaussian elimination is a systematic procedure for solving a system of linear equations
+written in matrix form:
+
+\[
+    Ax = b.
+\]
+
+The idea is to transform the augmented matrix $[A \mid b]$ into an upper triangular
+(or row echelon) form using elementary row operations.
+
+\subsubsection*{Elementary Row Operations}
+
+\begin{itemize}
+    \item $R_i \leftrightarrow R_j$ \hfill (Swap two rows)
+    \item $R_i \rightarrow cR_i$, $c \neq 0$ \hfill (Scale a row)
+    \item $R_i \rightarrow R_i + cR_j$ \hfill (Row replacement)
+\end{itemize}
+
+\begin{conceptbox}
+    Gaussian elimination transforms a system into upper triangular form,
+    after which the solution is obtained by back substitution.
+\end{conceptbox}
+
+%-----------------------------------
+\subsubsection*{Example 1: 3 $\times$ 3 System with Unique Solution}
+
+Solve:
+
+\[
+    \begin{aligned}
+        x + y + z  & = 6 \\
+        2x - y + z & = 3 \\
+        x + 2y - z & = 3
+    \end{aligned}
+\]
+
+Augmented matrix:
+
+\[
+    \left[
+        \begin{array}{ccc|c}
+            1 & 1  & 1  & 6 \\
+            2 & -1 & 1  & 3 \\
+            1 & 2  & -1 & 3
+        \end{array}
+        \right]
+\]
+
+Step 1: Eliminate below first pivot
+
+\[
+    R_2 \rightarrow R_2 - 2R_1
+    \quad
+    R_3 \rightarrow R_3 - R_1
+\]
+
+\[
+    \left[
+        \begin{array}{ccc|c}
+            1 & 1  & 1  & 6  \\
+            0 & -3 & -1 & -9 \\
+            0 & 1  & -2 & -3
+        \end{array}
+        \right]
+\]
+
+Step 2: Eliminate below second pivot
+
+\[
+    R_3 \rightarrow R_3 + \frac{1}{3}R_2
+\]
+
+\[
+    \left[
+        \begin{array}{ccc|c}
+            1 & 1  & 1            & 6  \\
+            0 & -3 & -1           & -9 \\
+            0 & 0  & -\frac{7}{3} & -6
+        \end{array}
+        \right]
+\]
+
+Now perform back substitution:
+
+\[
+    z = \frac{18}{7}, \quad
+    y = \frac{9}{7}, \quad
+    x = \frac{15}{7}.
+\]
+
+\begin{noteBox}
+    Since we obtained three pivots (one in each row), the system has a unique solution.
+\end{noteBox}
+
+%-----------------------------------
+\subsubsection*{Example 2: System with Infinitely Many Solutions}
+
+Consider:
+
+\[
+    \begin{aligned}
+        x + y + z    & = 2 \\
+        2x + 2y + 2z & = 4
+    \end{aligned}
+\]
+
+Augmented matrix:
+
+\[
+    \left[
+        \begin{array}{ccc|c}
+            1 & 1 & 1 & 2 \\
+            2 & 2 & 2 & 4
+        \end{array}
+        \right]
+\]
+
+Eliminate:
+
+\[
+    R_2 \rightarrow R_2 - 2R_1
+\]
+
+\[
+    \left[
+        \begin{array}{ccc|c}
+            1 & 1 & 1 & 2 \\
+            0 & 0 & 0 & 0
+        \end{array}
+        \right]
+\]
+
+The second row becomes all zeros.
+
+This corresponds to:
+
+\[
+    x + y + z = 2.
+\]
+
+We may assign free variables:
+
+\[
+    y = s, \quad z = t.
+\]
+
+Then:
+
+\[
+    x = 2 - s - t.
+\]
+
+\begin{conceptbox}
+    If at least one variable is free (no pivot in its column),
+    the system has infinitely many solutions.
+\end{conceptbox}
+
+%-----------------------------------
+\subsubsection*{Example 3: Inconsistent System (No Solution)}
+
+Consider:
+
+\[
+    \begin{aligned}
+        x + y & = 1 \\
+        x + y & = 3
+    \end{aligned}
+\]
+
+Augmented matrix:
+
+\[
+    \left[
+        \begin{array}{cc|c}
+            1 & 1 & 1 \\
+            1 & 1 & 3
+        \end{array}
+        \right]
+\]
+
+Eliminate:
+
+\[
+    R_2 \rightarrow R_2 - R_1
+\]
+
+\[
+    \left[
+        \begin{array}{cc|c}
+            1 & 1 & 1 \\
+            0 & 0 & 2
+        \end{array}
+        \right]
+\]
+
+The second row represents:
+
+\[
+    0 = 2,
+\]
+
+which is impossible.
+
+\begin{conceptbox}
+    If a row reduces to
+    \[
+        [0 \; 0 \; \cdots \; 0 \mid c], \quad c \neq 0,
+    \]
+    the system is inconsistent and has no solution.
+\end{conceptbox}
+
+%-----------------------------------
+\subsubsection*{Pivoting and Numerical Stability}
+
+If a pivot element is zero (or very small), we interchange rows.
+
+\begin{examplebox}
+    \[
+        \left[
+            \begin{array}{cc|c}
+                0 & 1 & 2 \\
+                3 & 4 & 5
+            \end{array}
+            \right]
+    \]
+
+    Swap rows to obtain a nonzero pivot:
+
+    \[
+        R_1 \leftrightarrow R_2.
+    \]
+\end{examplebox}
+
+\begin{noteBox}
+    Row swapping to improve numerical stability is called \textbf{partial pivoting}.
+    It is essential in computational linear algebra.
+\end{noteBox}
+
+%-----------------------------------
+\subsubsection*{Rank and Solution Classification}
+
+\begin{conceptbox}
+    The number of pivots obtained in row echelon form is called the \textbf{rank} of the matrix.
+\end{conceptbox}
+
+Let:
+\[
+    \text{rank}(A) = r.
+\]
+
+\begin{itemize}
+    \item If $r = n$ (number of variables) $\Rightarrow$ unique solution.
+    \item If $r < n$ and consistent $\Rightarrow$ infinitely many solutions.
+    \item If $\text{rank}(A) < \text{rank}([A|b])$ $\Rightarrow$ no solution.
+\end{itemize}
+
+%-----------------------------------
+\subsubsection*{Engineering Interpretation}
+
+\begin{noteBox}
+    In engineering applications:
+    \begin{itemize}
+        \item Unique solution $\Rightarrow$ well-determined physical system.
+        \item Infinite solutions $\Rightarrow$ underdetermined system (degrees of freedom).
+        \item No solution $\Rightarrow$ inconsistent measurements or incompatible constraints.
+    \end{itemize}
+\end{noteBox}

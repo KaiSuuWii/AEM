@@ -1,0 +1,91 @@
+\subsection{Applications to Recurrence Relations and Dynamical Systems}
+
+\subsubsection*{1. Discrete Dynamical Systems}
+
+Consider:
+
+\[
+    x_{k+1} = Ax_k.
+\]
+
+Iterating:
+
+\[
+    x_k = A^k x_0.
+\]
+
+Thus understanding $A^k$ determines the long-term behavior.
+
+%----------------------------------------
+
+\subsubsection*{2. Example: Fibonacci Sequence}
+
+The Fibonacci recurrence:
+
+\[
+    F_{n+1} = F_n + F_{n-1}
+\]
+
+can be written as:
+
+\[
+    \begin{bmatrix}
+        F_{n+1} \\
+        F_n
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        1 & 1 \\
+        1 & 0
+    \end{bmatrix}
+    \begin{bmatrix}
+        F_n \\
+        F_{n-1}
+    \end{bmatrix}.
+\]
+
+Thus:
+
+\[
+    \begin{bmatrix}
+        F_{n} \\
+        F_{n-1}
+    \end{bmatrix}
+    =
+    A^{n-1}
+    \begin{bmatrix}
+        1 \\
+        0
+    \end{bmatrix}.
+\]
+
+Using eigenvalues:
+
+\[
+    \lambda = \frac{1 \pm \sqrt{5}}{2},
+\]
+
+we obtain Binet’s formula.
+
+%----------------------------------------
+
+\subsubsection*{3. Stability Insight}
+
+\begin{conceptbox}
+    If all eigenvalues satisfy $|\lambda| < 1$, then
+
+    \[
+        A^n \rightarrow 0
+        \quad \text{as} \quad n \rightarrow \infty.
+    \]
+\end{conceptbox}
+
+\begin{noteBox}
+    Matrix powers allow prediction of long-term behavior in:
+    \begin{itemize}
+        \item Population models
+        \item Control systems
+        \item Markov chains
+        \item Economic growth models
+    \end{itemize}
+\end{noteBox}

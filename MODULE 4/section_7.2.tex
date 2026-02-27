@@ -1,0 +1,271 @@
+\subsection{Decryption and Modular Matrix Inverses}
+
+To decrypt Hill cipher ciphertext, we need the inverse of the key matrix \emph{in modular arithmetic}.
+
+If encryption is:
+
+\[
+    y \equiv Kx \pmod{26},
+\]
+
+then decryption is:
+
+\[
+    x \equiv K^{-1}y \pmod{26}.
+\]
+
+\begin{conceptbox}
+    Decryption is only possible if $K$ has a modular inverse modulo 26.
+\end{conceptbox}
+
+%------------------------------------------------
+\subsubsection*{Invertibility Condition (Key Feasibility)}
+
+In ordinary linear algebra, $K$ is invertible if $\det(K)\neq 0$.
+
+In modular arithmetic, the correct condition is:
+
+\begin{conceptbox}
+    A matrix $K$ is invertible modulo 26 if and only if
+    \[
+        \gcd(\det K, 26) = 1.
+    \]
+\end{conceptbox}
+
+Why?
+
+Because we need $(\det K)^{-1}$ modulo 26 to compute $K^{-1}$,
+and a modular inverse exists only when the number is relatively prime to 26.
+
+\begin{noteBox}
+    If $\gcd(\det K, 26)\neq 1$, then $\det K$ has no modular inverse,
+    so $K^{-1}$ does not exist in $\mathbb{Z}_{26}$.
+\end{noteBox}
+
+%------------------------------------------------
+\subsubsection*{Modular Inverse of an Integer (Extended Euclidean Idea)}
+
+To find $a^{-1} \pmod{26}$, we want a number $t$ such that:
+
+\[
+    at \equiv 1 \pmod{26}.
+\]
+
+This is equivalent to:
+
+\[
+    at - 26k = 1
+\]
+
+for some integer $k$. This is what the extended Euclidean algorithm finds.
+
+\begin{examplebox}
+    Find $9^{-1} \pmod{26}$.
+
+    We test multiples:
+    \[
+        9\cdot 3 = 27 \equiv 1 \pmod{26}.
+    \]
+
+    Thus:
+    \[
+        9^{-1} \equiv 3 \pmod{26}.
+    \]
+\end{examplebox}
+
+%------------------------------------------------
+\subsubsection*{Inverse of a $2 \times 2$ Matrix Modulo 26}
+
+Let
+
+\[
+    K=
+    \begin{bmatrix}
+        a & b \\
+        c & d
+    \end{bmatrix}.
+\]
+
+In ordinary algebra:
+
+\[
+    K^{-1}=\frac{1}{ad-bc}
+    \begin{bmatrix}
+        d  & -b \\
+        -c & a
+    \end{bmatrix}.
+\]
+
+In modular arithmetic we replace division by multiplication with the modular inverse of the determinant:
+
+\begin{conceptbox}
+    \[
+        K^{-1} \equiv (\det K)^{-1}\,\operatorname{adj}(K) \pmod{26}.
+    \]
+\end{conceptbox}
+
+where:
+
+\[
+    \det K = ad-bc,
+    \quad
+    \operatorname{adj}(K)=
+    \begin{bmatrix}
+        d  & -b \\
+        -c & a
+    \end{bmatrix}.
+\]
+
+%------------------------------------------------
+\subsubsection*{Example: Full Decryption for the $2 \times 2$ Key}
+
+Use the key:
+
+\[
+    K=
+    \begin{bmatrix}
+        3 & 3 \\
+        2 & 5
+    \end{bmatrix},
+    \quad
+    \det K = 9.
+\]
+
+We already found:
+
+\[
+    9^{-1}\equiv 3 \pmod{26}.
+\]
+
+Adjugate matrix:
+
+\[
+    \operatorname{adj}(K)=
+    \begin{bmatrix}
+        5  & -3 \\
+        -2 & 3
+    \end{bmatrix}.
+\]
+
+Now compute $K^{-1}$:
+
+\[
+    K^{-1} \equiv 3
+    \begin{bmatrix}
+        5  & -3 \\
+        -2 & 3
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        15 & -9 \\
+        -6 & 9
+    \end{bmatrix}
+    \pmod{26}.
+\]
+
+Reduce each entry mod 26:
+
+\[
+    15\equiv 15,\quad
+    -9\equiv 17,\quad
+    -6\equiv 20,\quad
+    9\equiv 9.
+\]
+
+Thus:
+
+\[
+    K^{-1}\equiv
+    \begin{bmatrix}
+        15 & 17 \\
+        20 & 9
+    \end{bmatrix}
+    \pmod{26}.
+\]
+
+\begin{examplebox}
+    Decrypt the ciphertext block ``TC''.
+
+    \[
+        T=19,\quad C=2
+        \Rightarrow
+        y=
+        \begin{bmatrix}
+            19 \\2
+        \end{bmatrix}.
+    \]
+
+    Compute:
+
+    \[
+        x \equiv K^{-1}y
+        =
+        \begin{bmatrix}
+            15 & 17 \\
+            20 & 9
+        \end{bmatrix}
+        \begin{bmatrix}
+            19 \\2
+        \end{bmatrix}
+        =
+        \begin{bmatrix}
+            15(19)+17(2) \\
+            20(19)+9(2)
+        \end{bmatrix}
+        =
+        \begin{bmatrix}
+            319 \\
+            398
+        \end{bmatrix}
+        \pmod{26}.
+    \]
+
+    Reduce:
+
+    \[
+        319 \equiv 7,\quad 398 \equiv 8 \pmod{26}.
+    \]
+
+    So:
+
+    \[
+        x=
+        \begin{bmatrix}
+            7 \\8
+        \end{bmatrix}
+        \Rightarrow (H,I).
+    \]
+
+    We recovered the plaintext \textbf{HI}.
+\end{examplebox}
+
+%------------------------------------------------
+\subsubsection*{How About $3 \times 3$ Inverses? (Important Insight)}
+
+For a $3\times 3$ key matrix, the same principle holds:
+
+\[
+    K^{-1} \equiv (\det K)^{-1}\,\operatorname{adj}(K)\pmod{26}.
+\]
+
+But now:
+\begin{itemize}
+    \item $\det K$ is computed from the $3\times 3$ determinant formula,
+    \item $\operatorname{adj}(K)$ requires cofactors (a full cofactor matrix transpose),
+    \item then multiply by $(\det K)^{-1}$ modulo 26.
+\end{itemize}
+
+\begin{noteBox}
+    Conceptually, decryption is still ``multiply by the inverse,'' but
+    the computation is heavier for larger block sizes.
+    That is why computers are used in practice.
+\end{noteBox}
+
+%------------------------------------------------
+\subsubsection*{Common Student Pitfalls}
+
+\begin{itemize}
+    \item Forgetting to reduce values modulo 26 at the end.
+    \item Mishandling negative entries (always convert to $0$--$25$).
+    \item Choosing a key matrix with $\gcd(\det K, 26)\neq 1$ (non-invertible).
+\end{itemize}

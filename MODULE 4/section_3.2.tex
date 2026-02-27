@@ -1,0 +1,64 @@
+\subsection{Powers of Special Matrices}
+
+\subsubsection*{1. Diagonal Matrices}
+
+\begin{conceptbox}
+    If
+    \[
+        D =
+        \begin{bmatrix}
+            \lambda_1 & 0         \\
+            0         & \lambda_2
+        \end{bmatrix},
+    \]
+    then
+    \[
+        D^n =
+        \begin{bmatrix}
+            \lambda_1^n & 0           \\
+            0           & \lambda_2^n
+        \end{bmatrix}.
+    \]
+\end{conceptbox}
+
+Powers of diagonal matrices are computed by raising each diagonal entry to the $n$th power.
+
+%----------------------------------------
+
+\subsubsection*{2. Identity Matrix}
+
+\[
+    I^n = I.
+\]
+
+%----------------------------------------
+
+\subsubsection*{3. Nilpotent Matrix}
+
+\begin{conceptbox}
+    A matrix $N$ is \textbf{nilpotent} if
+    \[
+        N^k = 0
+    \]
+    for some positive integer $k$.
+\end{conceptbox}
+
+\begin{examplebox}
+    \[
+        N =
+        \begin{bmatrix}
+            0 & 1 \\
+            0 & 0
+        \end{bmatrix}.
+    \]
+
+    \[
+        N^2 =
+        \begin{bmatrix}
+            0 & 0 \\
+            0 & 0
+        \end{bmatrix}.
+    \]
+
+    Thus $N$ is nilpotent of index 2.
+\end{examplebox}

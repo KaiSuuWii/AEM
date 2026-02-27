@@ -1,0 +1,36 @@
+\subsection{Orthogonal Projection Interpretation}
+
+The vector $Ax$ lies in the column space of $A$.
+
+If $b$ is not in the column space,
+we project $b$ onto $\text{Col}(A)$.
+
+\begin{conceptbox}
+    The least squares solution makes the error vector
+    \[
+        e = b - Ax
+    \]
+    orthogonal to $\text{Col}(A)$.
+\end{conceptbox}
+
+Thus:
+
+\[
+    A^T (b - Ax) = 0.
+\]
+
+Geometrically:
+
+\begin{itemize}
+    \item $Ax$ is the orthogonal projection of $b$.
+    \item The residual is perpendicular to the column space.
+\end{itemize}
+
+%------------------------------------------------
+\subsubsection*{Projection Formula}
+
+If columns of $A$ are independent:
+
+\[
+    \hat{x} = (A^T A)^{-1} A^T b.
+\]

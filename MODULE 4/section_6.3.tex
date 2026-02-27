@@ -1,0 +1,131 @@
+\subsection{Solving Systems Using LU}
+
+Given:
+
+\[
+    A = LU,
+    \quad
+    Ax = b,
+\]
+
+we solve:
+
+\[
+    LUx = b.
+\]
+
+Let:
+
+\[
+    Ux = y.
+\]
+
+First solve:
+
+\[
+    Ly = b.
+\]
+
+Since $L$ is lower triangular, use forward substitution.
+
+%------------------------------------------------
+
+\subsubsection*{Example}
+
+Let:
+
+\[
+    L =
+    \begin{bmatrix}
+        1 & 0 \\
+        2 & 1
+    \end{bmatrix},
+    \quad
+    U =
+    \begin{bmatrix}
+        2 & 3 \\
+        0 & 1
+    \end{bmatrix},
+    \quad
+    b =
+    \begin{bmatrix}
+        5 \\
+        11
+    \end{bmatrix}.
+\]
+
+Step 1: Solve $Ly = b$.
+
+\[
+    \begin{bmatrix}
+        1 & 0 \\
+        2 & 1
+    \end{bmatrix}
+    \begin{bmatrix}
+        y_1 \\
+        y_2
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        5 \\
+        11
+    \end{bmatrix}.
+\]
+
+From first row:
+
+\[
+    y_1 = 5.
+\]
+
+Second row:
+
+\[
+    2(5) + y_2 = 11
+    \Rightarrow y_2 = 1.
+\]
+
+Thus:
+
+\[
+    y =
+    \begin{bmatrix}
+        5 \\
+        1
+    \end{bmatrix}.
+\]
+
+Step 2: Solve $Ux = y$.
+
+\[
+    \begin{bmatrix}
+        2 & 3 \\
+        0 & 1
+    \end{bmatrix}
+    \begin{bmatrix}
+        x_1 \\
+        x_2
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        5 \\
+        1
+    \end{bmatrix}.
+\]
+
+From second row:
+
+\[
+    x_2 = 1.
+\]
+
+First row:
+
+\[
+    2x_1 + 3(1) = 5
+    \Rightarrow x_1 = 1.
+\]
+
+\begin{conceptbox}
+    LU reduces solving $Ax=b$ to two simpler triangular systems.
+\end{conceptbox}

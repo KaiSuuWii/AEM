@@ -1,0 +1,72 @@
+\section{Orthogonal Matrices}
+
+\subsection{Definition of Orthogonal Matrices}
+
+\begin{conceptbox}
+    A square matrix $Q \in \mathbb{R}^{n \times n}$ is called \textbf{orthogonal} if
+
+    \[
+        Q^T Q = I.
+    \]
+
+    Equivalently,
+
+    \[
+        Q^{-1} = Q^T.
+    \]
+\end{conceptbox}
+
+Thus the transpose of an orthogonal matrix is its inverse.
+
+%------------------------------------------------
+
+\subsubsection*{Interpretation}
+
+If $Q$ is orthogonal, then:
+
+\[
+    Q^T Q = I \Rightarrow Q^T = Q^{-1}.
+\]
+
+This means:
+
+\begin{itemize}
+    \item Applying $Q$ and then $Q^T$ returns the original vector.
+    \item Orthogonal matrices represent reversible transformations.
+\end{itemize}
+
+%------------------------------------------------
+
+\subsubsection*{Example}
+
+Consider
+
+\[
+    Q =
+    \begin{bmatrix}
+        \cos\theta & -\sin\theta \\
+        \sin\theta & \cos\theta
+    \end{bmatrix}.
+\]
+
+Compute:
+
+\[
+    Q^T Q =
+    \begin{bmatrix}
+        \cos\theta  & \sin\theta \\
+        -\sin\theta & \cos\theta
+    \end{bmatrix}
+    \begin{bmatrix}
+        \cos\theta & -\sin\theta \\
+        \sin\theta & \cos\theta
+    \end{bmatrix}
+    =
+    I.
+\]
+
+Thus rotation matrices are orthogonal.
+
+\begin{noteBox}
+    Orthogonal matrices generalize rotations and reflections in $\mathbb{R}^n$.
+\end{noteBox}

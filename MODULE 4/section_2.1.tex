@@ -1,0 +1,116 @@
+\section{Eigenvalues and Eigenvectors}
+
+\subsection{Eigenvalues and the Characteristic Equation}
+
+Consider a square matrix $A \in \mathbb{R}^{n \times n}$.
+
+\begin{conceptbox}
+    A nonzero vector $v$ is called an \textbf{eigenvector} of $A$ if
+    \[
+        Av = \lambda v
+    \]
+    for some scalar $\lambda$.
+
+    The scalar $\lambda$ is called an \textbf{eigenvalue} of $A$.
+\end{conceptbox}
+
+\subsubsection*{Interpretation}
+
+The equation
+
+\[
+    Av = \lambda v
+\]
+
+means:
+
+\begin{itemize}
+    \item The transformation $A$ does not change the direction of $v$.
+    \item It only scales $v$ by the factor $\lambda$.
+\end{itemize}
+
+Thus, eigenvectors represent \textbf{invariant directions} of a linear transformation.
+
+\subsubsection*{Deriving the Characteristic Equation}
+
+Starting from:
+
+\[
+    Av = \lambda v
+\]
+
+\[
+    Av - \lambda v = 0
+\]
+
+\[
+    (A - \lambda I)v = 0
+\]
+
+For a nontrivial solution ($v \neq 0$) to exist, we require:
+
+\[
+    \det(A - \lambda I) = 0.
+\]
+
+\begin{conceptbox}
+    The equation
+    \[
+        \det(A - \lambda I) = 0
+    \]
+    is called the \textbf{characteristic equation}.
+\end{conceptbox}
+
+The resulting polynomial in $\lambda$ is called the \textbf{characteristic polynomial}.
+
+%----------------------------------------
+\subsubsection*{Example: 2 $\times$ 2 Matrix}
+
+Let
+
+\[
+    A =
+    \begin{bmatrix}
+        4 & 1 \\
+        2 & 3
+    \end{bmatrix}.
+\]
+
+Compute:
+
+\[
+    A - \lambda I =
+    \begin{bmatrix}
+        4 - \lambda & 1           \\
+        2           & 3 - \lambda
+    \end{bmatrix}.
+\]
+
+\[
+    \det(A - \lambda I)
+    =
+    (4 - \lambda)(3 - \lambda) - 2.
+\]
+
+\[
+    =
+    \lambda^2 - 7\lambda + 10.
+\]
+
+Set equal to zero:
+
+\[
+    \lambda^2 - 7\lambda + 10 = 0.
+\]
+
+\[
+    (\lambda - 5)(\lambda - 2) = 0.
+\]
+
+\[
+    \lambda_1 = 5, \quad \lambda_2 = 2.
+\]
+
+\begin{noteBox}
+    A $2 \times 2$ matrix always has a quadratic characteristic polynomial.
+\end{noteBox}

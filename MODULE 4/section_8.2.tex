@@ -1,0 +1,85 @@
+\subsection{Parity-Check Matrices and Error Detection}
+
+To detect errors, we introduce a matrix orthogonal to the code.
+
+%------------------------------------------------
+\subsubsection*{Parity-Check Matrix}
+
+\begin{conceptbox}
+    A parity-check matrix $H$ satisfies:
+
+    \[
+        GH^T = 0.
+    \]
+\end{conceptbox}
+
+A vector $c$ is a valid codeword if and only if:
+
+\[
+    Hc^T = 0.
+\]
+
+Thus $H$ defines linear constraints.
+
+%------------------------------------------------
+\subsubsection*{Example (3,2) Code Continued}
+
+For:
+
+\[
+    G =
+    \begin{bmatrix}
+        1 & 0 & 1 \\
+        0 & 1 & 1
+    \end{bmatrix},
+\]
+
+a valid parity-check matrix is:
+
+\[
+    H =
+    \begin{bmatrix}
+        1 & 1 & 1
+    \end{bmatrix}.
+\]
+
+Verify:
+
+\[
+    Hc^T = 0
+\]
+
+for all valid codewords.
+
+%------------------------------------------------
+\subsubsection*{Error Detection}
+
+Suppose transmitted codeword:
+
+\[
+    c = [1 \; 0 \; 1].
+\]
+
+If received vector:
+
+\[
+    r = [1 \; 1 \; 1],
+\]
+
+compute:
+
+\[
+    Hr^T =
+    [1\;1\;1]
+    \begin{bmatrix}
+        1 \\1\\1
+    \end{bmatrix}
+    = 1+1+1 \equiv 1 \pmod{2}.
+\]
+
+Since result is not zero,
+an error occurred.
+
+\begin{conceptbox}
+    If $Hr^T \neq 0$, the received word is not a valid codeword.
+\end{conceptbox}

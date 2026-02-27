@@ -1,0 +1,127 @@
+\documentclass[12pt]{article}
+
+% Packages
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{enumitem}
+\usepackage{physics}
+\usepackage{fix-cm}  
+\usepackage{tcolorbox}
+\usepackage{xcolor}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\tcbuselibrary{breakable,skins}
+
+\geometry{margin=1in}
+\setstretch{1.15}
+
+% Custom boxes for notes
+\tcbset{
+  colback=gray!5,
+  colframe=black!70,
+  arc=3mm,
+  boxrule=0.8pt
+}
+
+\newtcolorbox{conceptbox}{
+    colback=green!5,
+    colframe=green!50!black,
+    title=Key Concept,
+    fonttitle=\bfseries
+}
+
+\newtcolorbox{examplebox}{
+    breakable,
+    enhanced,
+    colback=blue!5,
+    colframe=blue!60!black,
+    title=Example,
+    fonttitle=\bfseries,
+    boxsep=6pt,
+    arc=2mm
+}
+
+\newtcolorbox{noteBox}{
+    colback=yellow!10,
+    colframe=yellow!50!black,
+    title=Engineering Note,
+    fonttitle=\bfseries
+}
+\title{Advanced Engineering Mathematics \\ \large Series}
+\author{\textbf{Engr. Kaiveni Tom Dagcuta} \\ Computer Engineering}
+\date{}
+
+\begin{document}
+
+% Input title page
+\input{title_page.tex}
+
+\newpage
+
+\input{section_1.1.tex}
+\input{section_1.2.tex}
+\input{section_1.3.tex}
+\input{section_1.4.tex}
+\input{section_1.5.tex}
+\input{section_1.6.tex}
+
+\bigskip
+
+\input{section_2.1.tex}
+\input{section_2.2.tex}
+\input{section_2.3.tex}
+\input{section_2.4.tex}
+\input{section_2.5.tex}
+
+\bigskip
+
+\input{section_3.1.tex}
+\input{section_3.2.tex}
+\input{section_3.3.tex}
+\input{section_3.4.tex}
+
+\bigskip
+
+\input{section_4.1.tex}
+\input{section_4.2.tex}
+\input{section_4.3.tex}
+\input{section_4.4.tex}
+
+\bigskip
+
+\input{section_5.1.tex}
+\input{section_5.2.tex}
+\input{section_5.3.tex}
+\input{section_5.4.tex}
+
+\bigskip
+
+\input{section_6.1.tex}
+\input{section_6.2.tex}
+\input{section_6.3.tex}
+\input{section_6.4.tex}
+
+\bigskip
+
+\input{section_7.1.tex}
+\input{section_7.2.tex}
+\input{section_7.3.tex}
+
+\bigskip
+
+\input{section_8.1.tex}
+\input{section_8.2.tex}
+\input{section_8.3.tex}
+\input{section_8.4.tex}
+
+\bigskip
+
+\input{section_9.1.tex}
+\input{section_9.2.tex}
+\input{section_9.3.tex}
+\input{section_9.4.tex}
+\input{section_9.5.tex}
+\end{document}

@@ -1,0 +1,75 @@
+\subsection{Orthogonal Diagonalization and the Spectral Theorem}
+
+Orthogonal matrices play a central role in diagonalizing symmetric matrices.
+
+\begin{conceptbox}
+    \textbf{Spectral Theorem (Real Case)}
+
+    If $A$ is a real symmetric matrix, then:
+
+    \[
+        A = Q D Q^T,
+    \]
+
+    where:
+    \begin{itemize}
+        \item $Q$ is orthogonal,
+        \item $D$ is diagonal,
+        \item The diagonal entries are eigenvalues of $A$.
+    \end{itemize}
+\end{conceptbox}
+
+%------------------------------------------------
+
+\subsubsection*{Why Symmetry Matters}
+
+If $A = A^T$, then:
+
+\begin{itemize}
+    \item All eigenvalues are real.
+    \item Eigenvectors corresponding to distinct eigenvalues are orthogonal.
+\end{itemize}
+
+%------------------------------------------------
+
+\subsubsection*{Energy Interpretation}
+
+For symmetric $A$:
+
+\[
+    x^T A x
+\]
+
+represents a quadratic form.
+
+Orthogonal diagonalization transforms it into:
+
+\[
+    x^T A x
+    =
+    y^T D y.
+\]
+
+This simplifies:
+
+\begin{itemize}
+    \item Principal axis transformation
+    \item Optimization problems
+    \item PCA
+\end{itemize}
+
+%------------------------------------------------
+
+\subsubsection*{Engineering Importance}
+
+\begin{noteBox}
+    Orthogonal diagonalization appears in:
+
+    \begin{itemize}
+        \item Vibration mode analysis
+        \item Structural mechanics
+        \item Principal component analysis
+        \item Image compression
+        \item Least squares methods
+    \end{itemize}
+\end{noteBox}

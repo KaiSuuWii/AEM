@@ -1,0 +1,96 @@
+\subsection{The Hamming (7,4) Code}
+
+The Hamming $(7,4)$ code is a classical single-error-correcting code.
+
+\begin{itemize}
+    \item 4 message bits
+    \item 3 parity bits
+    \item 7 transmitted bits
+\end{itemize}
+
+\begin{conceptbox}
+    The Hamming $(7,4)$ code can detect up to two errors
+    and correct all single-bit errors.
+\end{conceptbox}
+
+%------------------------------------------------
+\subsubsection*{Parity-Check Matrix}
+
+A standard parity-check matrix is:
+
+\[
+    H =
+    \begin{bmatrix}
+        1 & 0 & 1 & 0 & 1 & 0 & 1 \\
+        0 & 1 & 1 & 0 & 0 & 1 & 1 \\
+        0 & 0 & 0 & 1 & 1 & 1 & 1
+    \end{bmatrix}.
+\]
+
+Each column is a distinct nonzero 3-bit binary vector.
+
+\begin{conceptbox}
+    Each column of $H$ corresponds to the binary representation
+    of a bit position.
+\end{conceptbox}
+
+%------------------------------------------------
+\subsubsection*{Generator Matrix}
+
+A compatible generator matrix (transpose form shown) is:
+
+\[
+    G^T =
+    \begin{bmatrix}
+        1 & 1 & 0 & 1 \\
+        1 & 0 & 1 & 1 \\
+        1 & 0 & 0 & 0 \\
+        0 & 1 & 1 & 1 \\
+        0 & 1 & 0 & 0 \\
+        0 & 0 & 1 & 0 \\
+        0 & 0 & 0 & 1
+    \end{bmatrix}.
+\]
+
+Encoding is performed by:
+
+\[
+    x = G^T p \pmod{2}.
+\]
+
+%------------------------------------------------
+\subsubsection*{Encoding Example}
+
+Let the message be:
+
+\[
+    p =
+    \begin{bmatrix}
+        1 \\0\\1\\1
+    \end{bmatrix}.
+\]
+
+Compute:
+
+\[
+    x = G^T p.
+\]
+
+Perform multiplication modulo 2:
+
+\[
+    x =
+    \begin{bmatrix}
+        0 \\1\\1\\0\\0\\1\\1
+    \end{bmatrix}.
+\]
+
+Thus the transmitted codeword is:
+
+\[
+    x = 0110011.
+\]
+
+\begin{noteBox}
+    All arithmetic in Hamming codes is performed modulo 2.
+\end{noteBox}

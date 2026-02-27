@@ -1,0 +1,57 @@
+\section{Diagonalization}
+
+\subsection{Definition of Diagonalization}
+
+\begin{conceptbox}
+    A square matrix $A$ is \textbf{diagonalizable} if there exists an invertible matrix $P$ such that
+
+    \[
+        A = P D P^{-1},
+    \]
+
+    where $D$ is a diagonal matrix.
+\end{conceptbox}
+
+The diagonal entries of $D$ are the eigenvalues of $A$.
+
+%------------------------------------------------
+
+\subsubsection*{Meaning of the Decomposition}
+
+If
+
+\[
+    A = P D P^{-1},
+\]
+
+then:
+
+\[
+    P^{-1} A P = D.
+\]
+
+This means:
+
+\begin{itemize}
+    \item In a new coordinate system defined by $P$,
+    \item The transformation $A$ acts as simple scaling.
+\end{itemize}
+
+Diagonal matrices are easy to compute with:
+
+\[
+    D^n =
+    \begin{bmatrix}
+        \lambda_1^n & 0           & \cdots & 0           \\
+        0           & \lambda_2^n & \cdots & 0           \\
+        \vdots      & \vdots      & \ddots & \vdots      \\
+        0           & 0           & \cdots & \lambda_n^n
+    \end{bmatrix}.
+\]
+
+%------------------------------------------------
+
+\subsubsection*{Interpretation}
+
+Diagonalization transforms a complicated linear transformation
+into independent scaling along eigenvector directions.

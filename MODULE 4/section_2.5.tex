@@ -1,0 +1,76 @@
+\subsection{Eigenvalues in Applications and Stability}
+
+Eigenvalues determine the long-term behavior of systems.
+
+%----------------------------------------
+
+\subsubsection*{Discrete Dynamical Systems}
+
+Consider:
+
+\[
+    x_{k+1} = Ax_k.
+\]
+
+If $A$ has eigenvalues $\lambda_1, \lambda_2, \dots$:
+
+\begin{itemize}
+    \item If $|\lambda_i| < 1$, solutions decay.
+    \item If $|\lambda_i| > 1$, solutions grow.
+    \item If $|\lambda_i| = 1$, oscillatory behavior.
+\end{itemize}
+
+\begin{conceptbox}
+    Stability of the system depends on the magnitude of eigenvalues.
+\end{conceptbox}
+
+%----------------------------------------
+
+\subsubsection*{Vibration and Natural Frequencies}
+
+In mechanical systems:
+
+\[
+    Kx = \lambda Mx,
+\]
+
+where:
+\begin{itemize}
+    \item $K$ = stiffness matrix
+    \item $M$ = mass matrix
+\end{itemize}
+
+Eigenvalues determine natural frequencies:
+
+\[
+    \omega = \sqrt{\lambda}.
+\]
+
+%----------------------------------------
+
+\subsubsection*{Engineering Insight}
+
+\begin{noteBox}
+    Eigenvalues appear in:
+    \begin{itemize}
+        \item Structural analysis
+        \item Control systems
+        \item Signal processing
+        \item Population models
+        \item Machine learning (PCA)
+    \end{itemize}
+\end{noteBox}
+
+%----------------------------------------
+
+\subsubsection*{Summary of Eigenvalue Behavior}
+
+\[
+    \begin{array}{c|c}
+        \textbf{Eigenvalue} & \textbf{Behavior}  \\ \hline
+        |\lambda| < 1       & Decay              \\
+        |\lambda| > 1       & Growth             \\
+        \lambda < 0         & Direction reversal \\
+        \lambda = a \pm bi  & Rotation-scaling
+    \end{array}
+\]

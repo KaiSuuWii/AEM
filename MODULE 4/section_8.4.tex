@@ -1,0 +1,170 @@
+\subsection{Syndrome Detection and Error Correction}
+
+When a codeword is transmitted over a noisy channel,
+errors may occur.
+
+Let:
+
+\[
+    r = x + e,
+\]
+
+where:
+\begin{itemize}
+    \item $x$ = transmitted codeword
+    \item $e$ = error vector
+\end{itemize}
+
+%------------------------------------------------
+\subsubsection*{Syndrome Definition}
+
+\begin{conceptbox}
+    The syndrome is defined as:
+
+    \[
+        s = Hr \pmod{2}.
+    \]
+\end{conceptbox}
+
+If $r$ is a valid codeword, then:
+
+\[
+    Hr = 0.
+\]
+
+If $Hr \neq 0$, an error occurred.
+
+%------------------------------------------------
+\subsubsection*{Example 1: Single-Bit Error Correction}
+
+Suppose the transmitted codeword was:
+
+\[
+    x = 0110011.
+\]
+
+Assume bit 6 flips during transmission:
+
+\[
+    r = 0110001.
+\]
+
+Compute syndrome:
+
+\[
+    s = Hr.
+\]
+
+Using:
+
+\[
+    H =
+    \begin{bmatrix}
+        1 & 0 & 1 & 0 & 1 & 0 & 1 \\
+        0 & 1 & 1 & 0 & 0 & 1 & 1 \\
+        0 & 0 & 0 & 1 & 1 & 1 & 1
+    \end{bmatrix},
+    \quad
+    r =
+    \begin{bmatrix}
+        0 \\1\\1\\0\\0\\0\\1
+    \end{bmatrix}.
+\]
+
+Compute row-by-row (mod 2).
+
+\paragraph{First syndrome bit:}
+\[
+    s_1 = r_1 + r_3 + r_5 + r_7
+    = 0 + 1 + 0 + 1
+    = 2 \equiv 0.
+\]
+
+\paragraph{Second syndrome bit:}
+\[
+    s_2 = r_2 + r_3 + r_6 + r_7
+    = 1 + 1 + 0 + 1
+    = 3 \equiv 1.
+\]
+
+\paragraph{Third syndrome bit:}
+\[
+    s_3 = r_4 + r_5 + r_6 + r_7
+    = 0 + 0 + 0 + 1
+    = 1.
+\]
+
+Thus:
+
+\[
+    s =
+    \begin{bmatrix}
+        0 \\1\\1
+    \end{bmatrix}.
+\]
+
+Now compare with columns of $H$.
+
+Column 6 of $H$ is:
+
+\[
+    \begin{bmatrix}
+        0 \\1\\1
+    \end{bmatrix}.
+\]
+
+\begin{conceptbox}
+    The syndrome equals the column of $H$ corresponding
+    to the error position.
+\end{conceptbox}
+
+Therefore, error occurred in bit 6.
+
+Correct the error by flipping bit 6:
+
+\[
+    0110001 \rightarrow 0110011.
+\]
+
+Recovered codeword is correct.
+
+%------------------------------------------------
+\subsubsection*{Example 2: No Error Case}
+
+If:
+
+\[
+    r = 0110011,
+\]
+
+then:
+
+\[
+    s = Hr = 0.
+\]
+
+Thus no detected error.
+
+%------------------------------------------------
+\subsubsection*{Example 3: Double Error Case}
+
+Suppose two bits flip:
+
+\[
+    r = 0010001.
+\]
+
+Compute:
+
+\[
+    s = Hr.
+\]
+
+The syndrome will be nonzero,
+but it will correspond to a single column of $H$,
+causing incorrect correction.
+
+\begin{noteBox}
+    Hamming (7,4) corrects all single-bit errors,
+    but may mis-correct double-bit errors.
+\end{noteBox}

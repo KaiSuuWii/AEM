@@ -1,0 +1,81 @@
+\subsection{Fundamental Properties of Orthogonal Matrices}
+
+\subsubsection*{1. Length Preservation}
+
+Let $Q$ be orthogonal and $x \in \mathbb{R}^n$.
+
+\[
+    \|Qx\|^2 = (Qx)^T(Qx).
+\]
+
+\[
+    = x^T Q^T Q x.
+\]
+
+\[
+    = x^T I x = \|x\|^2.
+\]
+
+\begin{conceptbox}
+    Orthogonal transformations preserve vector length.
+\end{conceptbox}
+
+%------------------------------------------------
+
+\subsubsection*{2. Inner Product Preservation}
+
+\[
+    (Qx)^T(Qy)
+    =
+    x^T Q^T Q y
+    =
+    x^T y.
+\]
+
+\begin{conceptbox}
+    Orthogonal matrices preserve inner products.
+\end{conceptbox}
+
+Thus:
+
+\begin{itemize}
+    \item Angles are preserved.
+    \item Orthogonality is preserved.
+\end{itemize}
+
+%------------------------------------------------
+
+\subsubsection*{3. Determinant}
+
+Since
+
+\[
+    Q^T Q = I,
+\]
+
+taking determinants:
+
+\[
+    \det(Q)^2 = 1.
+\]
+
+\[
+    \det(Q) = \pm 1.
+\]
+
+\begin{conceptbox}
+    If $\det(Q) = 1$, $Q$ is a rotation.
+    If $\det(Q) = -1$, $Q$ includes a reflection.
+\end{conceptbox}
+
+%------------------------------------------------
+
+\subsubsection*{4. Stability Advantage}
+
+Orthogonal matrices are numerically stable because:
+
+\[
+    \|Qx\| = \|x\|.
+\]
+
+No amplification of rounding errors occurs.
