@@ -1,0 +1,278 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[a4paper, top=2cm, bottom=1.8cm, left=1.5cm, right=1.5cm]{geometry}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{mdframed}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{parskip}
+
+% ─── Colors ──────────────────────────────────────────────────────────────────
+\definecolor{darkblue}{RGB}{0,51,102}
+\definecolor{lightgray}{RGB}{240,240,240}
+\definecolor{accentred}{RGB}{180,0,0}
+
+% ─── Page style ──────────────────────────────────────────────────────────────
+\pagestyle{fancy}
+\fancyhf{}
+\setlength{\headheight}{14pt}
+\renewcommand{\headrulewidth}{1.2pt}
+\fancyhead[L]{\small\textcolor{darkblue}{\textbf{Department of Computer Engineering}}}
+\fancyhead[R]{\small\textcolor{darkblue}{Page \thepage}}
+\fancyfoot[C]{\small\textcolor{gray}{\textit{--- End of Page \thepage\ ---}}}
+
+% ─── Part Section banner ─────────────────────────────────────────────────────
+\newcommand{\partsection}[1]{%
+  \vspace{5pt}%
+  \noindent\colorbox{darkblue}{%
+    \makebox[\dimexpr\columnwidth-2\fboxsep][c]{%
+      \bfseries\color{white}\small #1%
+    }%
+  }%
+  \vspace{4pt}\par%
+}
+
+
+% ─── Instruction box ─────────────────────────────────────────────────────────
+\newmdenv[
+  linecolor=darkblue,
+  linewidth=1pt,
+  backgroundcolor=lightgray,
+  innertopmargin=5pt,
+  innerbottommargin=5pt,
+  innerleftmargin=7pt,
+  innerrightmargin=7pt,
+  skipabove=3pt,
+  skipbelow=3pt
+]{instructbox}
+
+\setlength{\columnsep}{1cm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2pt}
+\setlist[enumerate]{topsep=2pt, itemsep=1pt, parsep=0pt, leftmargin=1.5em}
+
+% =============================================================================
+\begin{document}
+% =============================================================================
+
+% ── HEADER BLOCK ─────────────────────────────────────────────────────────────
+\begin{center}
+    {\Large\bfseries\color{darkblue} MIDTERM EXAMINATION IN ADVANCED ENGINEERING MATHEMATICS}\\[4pt]
+    {\small\color{black} Bachelor of Science in Computer Engineering \quad|\quad Academic Year 2025--2026}\\[6pt]
+    \begin{tabular}{@{}p{0.46\textwidth} p{0.46\textwidth}@{}}
+        \textbf{Name:}\enspace\underline{\hfill\hspace{6cm}}    &
+        \textbf{Date:}\enspace\underline{\hfill\hspace{6cm}}      \\[6pt]
+        \textbf{Section:}\enspace\underline{\hfill\hspace{6cm}} &
+        \textbf{Score:}\enspace\underline{\hfill\hspace{6cm}}     \\
+    \end{tabular}
+\end{center}
+
+\vspace{5pt}
+
+\textbf{GENERAL INSTRUCTIONS:} This examination contains \textbf{20 items}. Show \textbf{all work} clearly and in a logical, step-by-step manner. Unsupported final answers will not receive full credit. Put your final answers in a \textbf{box}.
+
+\vspace{4pt}
+\begin{multicols}{2}
+
+    %% ═══════════════════════════════════════════════════════════
+    %%  PART I – SERIES
+    %% ═══════════════════════════════════════════════════════════
+    \noindent Items 1--2: Determine whether the given series converges or diverges. If it converges, find the \textbf{Radius of Convergence (RoC)} and \textbf{Interval of Convergence (IoC)}, testing endpoints explicitly.
+
+    \medskip
+    \noindent\textbf{1.}
+    \[
+        \sum_{n=1}^{\infty} \frac{(-1)^{n}(x-3)^{n}}{n\cdot 4^{n}}
+    \]
+
+    \medskip
+    \noindent\textbf{2.}
+    \[
+        \sum_{n=0}^{\infty} \frac{n!\,(2x-1)^{n}}{(3n)!}
+    \]
+
+    \medskip
+
+    \textbf{3.} Find the \textbf{Taylor series} of $f(x)=\sin x$ centered at $a=\dfrac{\pi}{4}$. Write the \textbf{first four nonzero terms} and the general term. Simplify all coefficients.
+
+    \medskip
+
+    \textbf{4.} Find the \textbf{Maclaurin series} of $f(x)=x^{2}e^{-3x}$. Write the \textbf{first four nonzero terms} and the general term of the series.
+
+    \vspace{3pt}
+    %% ═══════════════════════════════════════════════════════════
+    %%  PART II – SERIES SOLUTIONS
+    %% ═══════════════════════════════════════════════════════════
+    \noindent Items 5--9 (4 pts each): Classify $x=0$ as an \textbf{Ordinary Point (OP)}, \textbf{Regular Singular Point (RSP)}, or \textbf{Irregular Singular Point (ISP)}. Justify rigorously using the analyticity of $xp(x)$ and $x^{2}q(x)$, or the analyticity of $P(x)$ and $Q(x)$ in the standard form $y''+P(x)y'+Q(x)y=0$.
+
+    \medskip
+    \noindent\textbf{5.}
+    \[
+        (x^{2}+4)\,y'' + 3x\,y' - y = 0
+    \]
+
+    \medskip
+    \noindent\textbf{6.}
+    \[
+        x^{2}y'' + (x+x^{3})\,y' + (x-1)\,y = 0
+    \]
+
+    \medskip
+    \noindent\textbf{7.}
+    \[
+        x^{3}y'' + \cos(x)\,y' + x\,y = 0
+    \]
+
+    \medskip
+    \noindent\textbf{8.}
+    \[
+        (x-3)^{2}y'' + (x-3)\,y' + (x^{2}-9)\,y = 0
+    \]
+
+    \medskip
+    \noindent\textbf{9.}
+    \[
+        2x\,y'' + y' + x\,y = 0
+    \]
+
+    \medskip
+
+    \textbf{10.} Using the power series method $y=\displaystyle\sum_{n=0}^{\infty}a_{n}x^{n}$ about $x=0$:
+    \[
+        (1-x^{2})\,y'' - x\,y' + 4\,y = 0
+    \]
+    \begin{enumerate}[label=(\alph*)]
+        \item Substitute into the ODE and derive the \textbf{recurrence relation}.
+        \item Write the \textbf{first four nonzero terms} of each linearly independent solution $y_{1}$ and $y_{2}$ (with $y_1$ corresponding to $a_0\neq 0,\,a_1=0$ and $y_2$ to $a_0=0,\,a_1\neq 0$).
+    \end{enumerate}
+
+
+    \medskip
+    \textbf{11.}
+    \[
+        4x\,y'' + 2\,y' + y = 0
+    \]
+    \begin{enumerate}[label=(\alph*)]
+        \item Confirm $x=0$ is a \textbf{regular singular point}.
+        \item Derive the \textbf{indicial equation} and solve for the indicial roots $r_1, r_2$.
+        \item Using Frobenius series $y=\displaystyle\sum_{n=0}^{\infty}a_n x^{n+r}$, find the \textbf{first three nonzero terms} for each independent solution.
+    \end{enumerate}
+
+    \medskip
+    \noindent\textbf{12.}
+    \[
+        x^{2}y'' - x\,y' + y = 0
+    \]
+    \begin{enumerate}[label=(\alph*)]
+        \item Apply the Frobenius method to obtain the \textbf{indicial equation}. Identify the \textbf{repeated root}.
+        \item Write the \textbf{first solution} $y_1$ from the Frobenius series.
+        \item State the \textbf{second linearly independent solution} $y_2$ (use the reduction of order / logarithmic form).
+        \item Verify both solutions using the substitution $y=x^m$ for the standard Cauchy--Euler method.
+    \end{enumerate}
+
+
+    \vspace{3pt}
+    %% ═══════════════════════════════════════════════════════════
+    %%  PART III – VECTORS
+    %% ═══════════════════════════════════════════════════════════
+
+    \textbf{13.} A particle moves from point $A(1,-2,3)$ to point $B(4,2,-1)$.
+    \begin{enumerate}[label=(\alph*)]
+        \item Find the \textbf{displacement vector} $\overrightarrow{AB}$.
+        \item Compute the \textbf{magnitude} $\|\overrightarrow{AB}\|$.
+        \item Find the \textbf{direction angle} $\alpha$ that $\overrightarrow{AB}$ makes with the positive $x$-axis (to the nearest tenth of a degree).
+    \end{enumerate}
+
+    \medskip
+
+    \textbf{14.} Given $\mathbf{u}=\langle 3,-1,2\rangle$ and $\mathbf{v}=\langle -1,4,2\rangle$:
+    \begin{enumerate}[label=(\alph*)]
+        \item Compute $\mathbf{u}\cdot\mathbf{v}$.
+        \item Find the \textbf{angle} $\theta$ between $\mathbf{u}$ and $\mathbf{v}$ (to the nearest tenth of a degree).
+        \item Classify the relationship: \textit{orthogonal}, \textit{parallel}, or \textit{neither}. Justify.
+    \end{enumerate}
+
+    \medskip
+
+    \textbf{15.} Given $\mathbf{u}=\langle 1,2,-1\rangle$ and $\mathbf{v}=\langle 3,-1,2\rangle$:
+    \begin{enumerate}[label=(\alph*)]
+        \item Compute $\mathbf{u}\times\mathbf{v}$ via the determinant expansion.
+        \item Verify orthogonality: show $(\mathbf{u}\times\mathbf{v})\cdot\mathbf{u}=0$ and $(\mathbf{u}\times\mathbf{v})\cdot\mathbf{v}=0$.
+        \item Find the \textbf{unit normal vector} $\hat{n}=\dfrac{\mathbf{u}\times\mathbf{v}}{\|\mathbf{u}\times\mathbf{v}\|}$.
+    \end{enumerate}
+
+    \medskip
+
+    \textbf{16.} Apply the \textbf{Gram--Schmidt process} to the linearly independent set
+    \[
+        \mathbf{v}_1=\langle 1,1,0\rangle,\quad
+        \mathbf{v}_2=\langle 1,0,1\rangle,\quad
+        \mathbf{v}_3=\langle 0,1,1\rangle
+    \]
+    to produce an \textbf{orthonormal basis} $\{\hat{\mathbf{e}}_1, \hat{\mathbf{e}}_2, \hat{\mathbf{e}}_3\}$ for $\mathbb{R}^{3}$. Show all intermediate orthogonal vectors.
+
+    \vspace{3pt}
+    %% ═══════════════════════════════════════════════════════════
+    %%  PART IV – MATRICES
+    %% ═══════════════════════════════════════════════════════════
+
+    \textbf{17.} Solve the system using \textbf{Gaussian elimination with back-substitution}. Write the augmented matrix and clearly label each row operation performed.
+    \[
+        \begin{cases}
+            \phantom{-}x + 2y - z = \phantom{-}6 \\
+            2x - y + 3z = -3                     \\
+            -x + 3y - 2z = 14
+        \end{cases}
+    \]
+
+    \medskip
+
+    \textbf{18.} For the matrix below, find all \textbf{eigenvalues} $\lambda$ and their corresponding \textbf{eigenvectors}. Write the characteristic equation, factor it, and solve for each eigenspace.
+    \[
+        A = \begin{bmatrix} 4 & 1 & 0 \\ 2 & 3 & 0 \\ 0 & 0 & 5 \end{bmatrix}
+    \]
+
+    \medskip
+
+    \textbf{19.} The ciphertext \textbf{``UNGJMUKA''} was encrypted using the \textbf{Hill Cipher} with key matrix
+    \[
+        K = \begin{bmatrix} 3 & 2 \\ 5 & 7 \end{bmatrix}, \quad A=0,\;B=1,\;\ldots,\;Z=25.
+    \]
+    \begin{enumerate}[label=(\alph*)]
+        \item Compute $K^{-1}\pmod{26}$ using the adjugate method.
+        \item Decrypt the ciphertext letter-pair by letter-pair, showing the full modular matrix multiplication for each block.
+    \end{enumerate}
+
+    \medskip
+
+    \textbf{20.}  A message was sent and was encoded using \textbf{Hamming (7,4)}. The received codeword is $\mathbf{r}=[\,0,\;1,\;1,\;0,\;1,\;1,\;1\,]$.
+    \begin{enumerate}[label=(\alph*)]
+        \item Calculate each \textbf{syndrome check bit} $c_1$, $c_2$, $c_3$ from $\mathbf{r}$.
+        \item Interpret the syndrome $[c_3\,c_2\,c_1]$ in binary to \textbf{locate the erroneous bit}.
+        \item Write the \textbf{corrected codeword}.
+    \end{enumerate}
+
+\end{multicols}
+
+\vspace{5pt}
+\noindent\textcolor{darkblue}{\rule{\linewidth}{1.2pt}}
+\begin{center}
+    \small\textit{``The measure of intelligence is the ability to change.''} ---
+    \textcolor{darkblue}{\textbf{--- END OF EXAMINATION ---}}
+\end{center}
+
+
+\vspace{20pt}
+\noindent
+\begin{tabular}{@{}>{\centering\arraybackslash}p{0.45\textwidth}
+    @{\hspace{0.1\textwidth}}
+    >{\centering\arraybackslash}p{0.45\textwidth}@{}}
+    Prepared By:                             & Approved By:                                   \\[22pt]
+    \underline{\textbf{KAIVENI TOM DAGCUTA}} & \underline{\textbf{ENGR. RODESITA S. ESTENZO}} \\
+    \textit{Instructor}                      & \textit{Department Head}                       \\
+\end{tabular}
+
+\end{document}
