@@ -1,0 +1,39 @@
+\section*{1 Vector Functions}
+\subsection*{1.1 Definition and Representation of Vector Functions}
+
+\begin{conceptbox}
+    A vector-valued function assigns a vector to each scalar input:
+    \begin{equation*}
+        \mathbf{r}(t) = \langle x(t), y(t), z(t) \rangle = x(t)\mathbf{i} + y(t)\mathbf{j} + z(t)\mathbf{k}
+    \end{equation*}
+\end{conceptbox}
+
+A vector function describes motion or geometry in space. Each component function determines behavior along one axis.
+
+\begin{examplebox}
+    Write the vector function for motion where $x=t$, $y=t^2$, $z=t^3$.
+    \newline
+    \textbf{Solution:} \newline Given motion where $x=t$, $y=t^2$, $z=t^3$:
+    \begin{align*}
+        \mathbf{r}(t) = \langle t, t^2, t^3 \rangle
+    \end{align*}
+\end{examplebox}
+
+\begin{examplebox}
+    Evaluate $\mathbf{r}(2)$ for $\mathbf{r}(t)=\langle t^2, \sin t, e^t\rangle$.
+    \newline \textbf{Solution:}
+    \begin{align*}
+        \mathbf{r}(2) & = \langle 2^2, \sin 2, e^2 \rangle \\
+                      & = \langle 4, \sin 2, e^2 \rangle
+    \end{align*}
+\end{examplebox}
+
+\begin{examplebox}
+    Determine if $\mathbf{r}(t)=\langle \cos t, \sin t, 1\rangle$ lies on a cylinder.
+    \newline \textbf{Solution:}
+    \begin{align*}
+        x^2 + y^2 & = \cos^2 t + \sin^2 t \\
+                  & = 1
+    \end{align*}
+    Thus, the curve lies on the cylinder $x^2 + y^2 = 1$.
+\end{examplebox}

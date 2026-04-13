@@ -1,0 +1,28 @@
+\subsection*{1.2 Limits and Continuity of Vector Functions}
+
+\begin{conceptbox}
+    A vector function is continuous if each component function is continuous:
+    \begin{equation*}
+        \lim_{t \to a} \mathbf{r}(t) = \langle \lim x(t), \lim y(t), \lim z(t) \rangle
+    \end{equation*}
+\end{conceptbox}
+
+\begin{examplebox}
+    Evaluate $\lim_{t\to 0} \langle \sin t/t, t^2, e^t \rangle$.
+    \newline \textbf{Solution:}
+    \begin{align*}
+        \lim_{t\to 0} \langle \frac{\sin t}{t}, t^2, e^t \rangle
+        = \langle 1, 0, 1 \rangle
+    \end{align*}
+\end{examplebox}
+
+\begin{examplebox}
+    Determine continuity of $\mathbf{r}(t)=\langle t^2, \sqrt{t}, \ln t \rangle$.
+    \newline \textbf{Solution:}
+    \begin{align*}
+        t^2 \text{ is continuous for all } t        \\
+        \sqrt{t} \text{ is continuous for } t \ge 0 \\
+        \ln t \text{ is continuous for } t>0
+    \end{align*}
+    Thus, the function is continuous only for $t>0$.
+\end{examplebox}

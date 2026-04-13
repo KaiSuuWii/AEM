@@ -1,0 +1,26 @@
+\subsection*{1.4 Integration of Vector Functions}
+
+\begin{conceptbox}
+    Integration is performed component-wise:
+    \begin{equation*}
+        \int \mathbf{r}(t) dt = \left\langle \int x(t)dt, \int y(t)dt, \int z(t)dt \right\rangle
+    \end{equation*}
+\end{conceptbox}
+
+\begin{examplebox}
+    Integrate $\mathbf{r}(t)=\langle t, 2t, 3t\rangle$.
+    \newline \textbf{Solution:}
+    \begin{align*}
+        \int \mathbf{r}(t)dt
+        = \left\langle \frac{t^2}{2}, t^2, \frac{3t^2}{2} \right\rangle + \mathbf{C}
+    \end{align*}
+\end{examplebox}
+
+\begin{examplebox}
+    Solve for $\mathbf{r}(t)$ given $\mathbf{r}'(t)=\langle 2t, \cos t, e^t\rangle$.
+    \newline \textbf{Solution:}
+    \begin{align*}
+        \mathbf{r}(t) & = \int \langle 2t, \cos t, e^t \rangle dt       \\
+                      & = \langle t^2, \sin t, e^t \rangle + \mathbf{C}
+    \end{align*}
+\end{examplebox}

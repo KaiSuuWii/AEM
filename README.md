@@ -9,6 +9,8 @@ This is my repository for the Advanced Engineering Mathematics class which will 
 - **MODULE 1**: Series (Taylor series, power series, and more)
 - **MODULE 2**: Series Solutions (Solutions About Ordinary Points , Power Series Solutions, and more)
 - **MODULE 3**: Vectors (Vectors, Dot Product, Cross Product and more)
+- **MODULE 4**: Matrices (Matrix Addition, Matrix Multiplication, Solving Systems of equations and more)
+- **MODULE 5**: Vector Calculus ()
 - **Reference Books**: Additional resources and references
 
 ## About
@@ -19,4 +21,3 @@ This repository serves as a comprehensive learning resource for students taking 
 
 **Engr. Kaiveni Tom Dagcuta**  
 Computer Engineering Department
-
