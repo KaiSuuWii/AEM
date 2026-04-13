@@ -369,9 +369,27 @@ INPUT section_1.6.tex
 INPUT .\section_1.7.tex
 INPUT .\section_1.7.tex
 INPUT section_1.7.tex
+INPUT .\section_2.1.tex
+INPUT .\section_2.1.tex
+INPUT section_2.1.tex
+INPUT .\section_2.2.tex
+INPUT .\section_2.2.tex
+INPUT section_2.2.tex
+INPUT .\section_2.3.tex
+INPUT .\section_2.3.tex
+INPUT section_2.3.tex
+INPUT .\section_2.4.tex
+INPUT .\section_2.4.tex
+INPUT section_2.4.tex
+INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\tcrm1200.tfm
+INPUT .\section_2.5.tex
+INPUT .\section_2.5.tex
+INPUT section_2.5.tex
 INPUT main.aux
 INPUT .\main.out
 INPUT .\main.out
+INPUT C:\Users\USER 1\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1200.pk
+INPUT C:\Users\USER 1\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1200.pk
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmex10.pfb
@@ -384,6 +402,8 @@ INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr12.pfb
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr17.pfb
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr17.pfb
+INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr6.pfb
+INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr6.pfb
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr8.pfb
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr8.pfb
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb

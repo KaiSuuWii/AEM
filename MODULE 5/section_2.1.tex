@@ -1,0 +1,39 @@
+\section*{2 Partial Derivatives}
+
+\subsection*{2.1 Definition of Partial Derivatives}
+
+\begin{conceptbox}
+    A partial derivative measures the rate of change of a multivariable function with respect to one variable while holding all other variables constant:
+    \begin{equation*}
+        \frac{\partial f}{\partial x} = \lim_{h \to 0} \frac{f(x+h, y, z) - f(x, y, z)}{h}
+    \end{equation*}
+\end{conceptbox}
+
+Partial derivatives extend the idea of ordinary derivatives to higher dimensions. Instead of a slope along a line, we now measure slopes along coordinate directions.
+
+\begin{examplebox}
+    Find $\frac{\partial f}{\partial x}$ for $f(x,y)=x^2y+3y^2$.
+    \newline \textbf{Solution:}
+    \begin{align*}
+        \frac{\partial f}{\partial x} & = \frac{\partial}{\partial x}(x^2y+3y^2) \\
+                                      & = 2xy + 0                                \\
+                                      & = 2xy
+    \end{align*}
+\end{examplebox}
+
+\begin{examplebox}
+    Find $\frac{\partial f}{\partial y}$ for the same function.
+    \newline \textbf{Solution:}
+    \begin{align*}
+        \frac{\partial f}{\partial y} & = \frac{\partial}{\partial y}(x^2y+3y^2) \\
+                                      & = x^2 + 6y
+    \end{align*}
+\end{examplebox}
+
+\begin{examplebox}
+    Evaluate $\frac{\partial f}{\partial x}$ at $(1,2)$.
+    \newline \textbf{Solution:}
+    \begin{align*}
+        \frac{\partial f}{\partial x} = 2xy = 2(1)(2)=4
+    \end{align*}
+\end{examplebox}

@@ -1,0 +1,129 @@
+\subsection*{2.2 Higher-Order Partial Derivatives}
+
+\begin{conceptbox}
+    Higher-order partial derivatives are obtained by differentiating multiple times:
+    \begin{equation*}
+        \frac{\partial^2 f}{\partial x^2}, \quad \frac{\partial^2 f}{\partial x \partial y}
+    \end{equation*}
+\end{conceptbox}
+
+\begin{examplebox}
+    Find $\frac{\partial^2 f}{\partial x^2}$ for $f=x^2y$.
+    \begin{align*}
+        \frac{\partial f}{\partial x}     & = 2xy \\
+        \frac{\partial^2 f}{\partial x^2} & = 2y
+    \end{align*}
+\end{examplebox}
+
+\begin{examplebox}
+    \begin{equation*}
+        f(x,y) = x^2y
+    \end{equation*}
+
+    We are asked to compute the mixed partial derivative:
+    \begin{equation*}
+        \frac{\partial^2 f}{\partial y \partial x}
+    \end{equation*}
+
+    \textbf{Step 1: Differentiate with respect to $x$}
+
+    Treat $y$ as a constant:
+    \begin{align*}
+        \frac{\partial f}{\partial x}
+         & = \frac{\partial}{\partial x}(x^2y) \\
+         & = y \cdot \frac{d}{dx}(x^2)         \\
+         & = y(2x)                             \\
+         & = 2xy
+    \end{align*}
+
+    \textbf{Step 2: Differentiate the result with respect to $y$}
+
+    Now treat $x$ as a constant:
+    \begin{align*}
+        \frac{\partial}{\partial y}(2xy)
+         & = 2x \cdot \frac{d}{dy}(y) \\
+         & = 2x
+    \end{align*}
+
+    \textbf{Final Answer:}
+    \begin{equation*}
+        \frac{\partial^2 f}{\partial y \partial x} = 2x
+    \end{equation*}
+\end{examplebox}
+
+\begin{examplebox}
+    Let:
+    \begin{equation*}
+        f(x,y) = xy^2
+    \end{equation*}
+
+    We will compute both:
+    \[
+        \frac{\partial^2 f}{\partial x \partial y}
+        \quad \text{and} \quad
+        \frac{\partial^2 f}{\partial y \partial x}
+    \]
+
+    \textbf{Step 1: Compute $\frac{\partial^2 f}{\partial x \partial y}$}
+
+    First differentiate with respect to $y$:
+    \begin{align*}
+        \frac{\partial f}{\partial y}
+         & = \frac{\partial}{\partial y}(xy^2) \\
+         & = x \cdot \frac{d}{dy}(y^2)         \\
+         & = x(2y)                             \\
+         & = 2xy
+    \end{align*}
+
+    Now differentiate with respect to $x$:
+    \begin{align*}
+        \frac{\partial}{\partial x}(2xy)
+         & = 2y
+    \end{align*}
+
+    Thus:
+    \begin{equation*}
+        \frac{\partial^2 f}{\partial x \partial y} = 2y
+    \end{equation*}
+
+    ---
+
+    \textbf{Step 2: Compute $\frac{\partial^2 f}{\partial y \partial x}$}
+
+    First differentiate with respect to $x$:
+    \begin{align*}
+        \frac{\partial f}{\partial x}
+         & = \frac{\partial}{\partial x}(xy^2) \\
+         & = y^2
+    \end{align*}
+
+    Now differentiate with respect to $y$:
+    \begin{align*}
+        \frac{\partial}{\partial y}(y^2)
+         & = 2y
+    \end{align*}
+
+    Thus:
+    \begin{equation*}
+        \frac{\partial^2 f}{\partial y \partial x} = 2y
+    \end{equation*}
+
+    ---
+
+    \textbf{Final Conclusion:}
+    \begin{equation*}
+        \frac{\partial^2 f}{\partial x \partial y}
+        =
+        \frac{\partial^2 f}{\partial y \partial x}
+        =
+        2y
+    \end{equation*}
+
+    \textbf{Important Insight (Clairaut's Theorem):}
+    If a function has continuous second-order partial derivatives, then the mixed partial derivatives are equal:
+    \[
+        \frac{\partial^2 f}{\partial x \partial y}
+        =
+        \frac{\partial^2 f}{\partial y \partial x}
+    \]
+\end{examplebox}
