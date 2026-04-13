@@ -1,0 +1,100 @@
+\subsection*{3.2 Maximum and Minimum Directional Derivatives}
+
+\begin{conceptbox}
+    The directional derivative satisfies:
+    \begin{align*}
+        \max D_{\mathbf{u}} f & = |\nabla f| \quad \text{(in direction of } \nabla f\text{)}           \\
+        \min D_{\mathbf{u}} f & = -|\nabla f| \quad \text{(in direction opposite to } \nabla f\text{)}
+    \end{align*}
+\end{conceptbox}
+\begin{examplebox} Find the maximum rate of change of $f=x^2+y^2$ at $(1,1)$.
+    \textbf{Step 1: Compute gradient}
+    \begin{align*}
+        \nabla f = \langle 2x,2y\rangle
+    \end{align*}
+    \textbf{Step 2: Evaluate at $(1,1)$}
+    \begin{align*}
+        \nabla f = \langle2,2\rangle
+    \end{align*}
+    \textbf{Step 3: Compute magnitude}
+    \begin{align*}
+        |\nabla f| = \sqrt{2^2+2^2} = \sqrt{8} = 2\sqrt{2}
+    \end{align*}
+    \textbf{Final Answer:}
+    Maximum rate of change is $2\sqrt{2}$.
+\end{examplebox}
+\begin{examplebox}
+    Find the direction of maximum increase.
+    \textbf{Solution:}
+    \begin{align*}
+        \mathbf{u} = \frac{\nabla f}{|\nabla f|} = \frac{\langle2,2\rangle}{2\sqrt{2}} = \left\langle \frac{1}{\sqrt{2}}, \frac{1}{\sqrt{2}} \right\rangle
+    \end{align*}
+\end{examplebox}
+\begin{examplebox}
+    Find the minimum rate of change of $f=x^2+y^2$ at $(1,1)$.
+
+    \textbf{Step 1: Compute the gradient}
+    \begin{align*}
+        \nabla f = \langle 2x, 2y \rangle
+    \end{align*}
+
+    \textbf{Step 2: Evaluate at $(1,1)$}
+    \begin{align*}
+        \nabla f = \langle 2,2 \rangle
+    \end{align*}
+
+    \textbf{Step 3: Compute the magnitude}
+    \begin{align*}
+        |\nabla f| = \sqrt{2^2 + 2^2} = \sqrt{8} = 2\sqrt{2}
+    \end{align*}
+
+    \textbf{Step 4: Determine the minimum value}
+    \begin{align*}
+        \min D_{\mathbf{u}} f = -|\nabla f| = -2\sqrt{2}
+    \end{align*}
+
+    \textbf{Final Answer:} Minimum rate of change is $-2\sqrt{2}$.
+\end{examplebox}
+
+\begin{examplebox}
+    Find the direction of minimum change.
+
+    \textbf{Step 1: Recall direction of maximum increase}
+    \begin{align*}
+        \mathbf{u}_{\max} = \frac{\nabla f}{|\nabla f|} = \left\langle \frac{1}{\sqrt{2}}, \frac{1}{\sqrt{2}} \right\rangle
+    \end{align*}
+
+    \textbf{Step 2: Reverse the direction}
+    \begin{align*}
+        \mathbf{u}_{\min} = -\mathbf{u}_{\max} = \left\langle -\frac{1}{\sqrt{2}}, -\frac{1}{\sqrt{2}} \right\rangle
+    \end{align*}
+
+    \textbf{Final Answer:} Direction of steepest decrease is
+    \[
+        \left\langle -\frac{1}{\sqrt{2}}, -\frac{1}{\sqrt{2}} \right\rangle
+    \]
+\end{examplebox}
+
+\textbf{Key Insight:}
+\begin{itemize}
+    \item The gradient $\nabla f$ always points in the direction of \textbf{maximum increase}.
+    \item The opposite direction $-\nabla f$ points toward \textbf{maximum decrease}.
+    \item The magnitude $|\nabla f|$ gives how fast the function increases or decreases.
+\end{itemize}
+
+
+\textbf{Geometric Interpretation:}
+
+At any point on a surface:
+\begin{itemize}
+    \item Moving along $\nabla f$ → climb uphill fastest
+    \item Moving opposite $\nabla f$ → go downhill fastest
+\end{itemize}
+
+\textbf{One-line Summary:}
+\[
+    \boxed{
+        \text{Maximum change } = |\nabla f|,\quad
+        \text{Minimum change } = -|\nabla f|
+    }
+\]

@@ -1,0 +1,37 @@
+\subsection*{3.3 Directional Derivative in Three Dimensions}
+
+\begin{conceptbox}
+    For $f(x,y,z)$, the directional derivative is:
+    \begin{equation*}
+        D_{\mathbf{u}} f = f_x u_1 + f_y u_2 + f_z u_3
+    \end{equation*}
+\end{conceptbox}
+
+\begin{examplebox}
+    Find the directional derivative of $f=x^2+y^2+z^2$ at $(1,2,2)$ in the direction of $\mathbf{v}=\langle1,2,2\rangle$.
+
+    \textbf{Step 1: Normalize direction vector}
+    \begin{align*}
+        |\mathbf{v}| = \sqrt{1+4+4} = 3
+    \end{align*}
+    \begin{align*}
+        \mathbf{u} = \left\langle \frac{1}{3}, \frac{2}{3}, \frac{2}{3} \right\rangle
+    \end{align*}
+
+    \textbf{Step 2: Compute gradient}
+    \begin{align*}
+        \nabla f = \langle 2x,2y,2z \rangle
+    \end{align*}
+
+    \textbf{Step 3: Evaluate at $(1,2,2)$}
+    \begin{align*}
+        \nabla f = \langle2,4,4\rangle
+    \end{align*}
+
+    \textbf{Step 4: Dot product}
+    \begin{align*}
+        D_{\mathbf{u}} f & = \langle2,4,4\rangle \cdot \left\langle \frac{1}{3}, \frac{2}{3}, \frac{2}{3} \right\rangle \\
+                         & = \frac{2}{3} + \frac{8}{3} + \frac{8}{3}                                                    \\
+                         & = \frac{18}{3} = 6
+    \end{align*}
+\end{examplebox}

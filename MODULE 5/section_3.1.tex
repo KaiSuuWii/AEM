@@ -1,0 +1,37 @@
+\section*{3 Directional Derivatives}
+
+\subsection*{3.1 Definition of Directional Derivatives}
+
+\begin{conceptbox}
+    The directional derivative of a scalar function $f(x,y,z)$ in the direction of a unit vector $\mathbf{u}$ is defined as:
+    \begin{equation*}
+        D_{\mathbf{u}} f = \nabla f \cdot \mathbf{u}
+    \end{equation*}
+\end{conceptbox}
+
+The directional derivative measures how a function changes as we move in a specific direction. Unlike partial derivatives, which only measure change along coordinate axes, directional derivatives allow us to measure change in any direction.
+
+\begin{examplebox}
+    Find the directional derivative of $f(x,y)=x^2+y^2$ at $(1,1)$ in the direction of $\mathbf{v}=\langle1,0\rangle$.
+
+    \textbf{Step 1: Normalize the direction vector}
+    \begin{align*}
+        |\mathbf{v}| = \sqrt{1^2+0^2} = 1
+    \end{align*}
+    Thus, $\mathbf{u} = \langle1,0\rangle$
+
+    \textbf{Step 2: Compute the gradient}
+    \begin{align*}
+        \nabla f = \langle 2x, 2y \rangle
+    \end{align*}
+
+    \textbf{Step 3: Evaluate at $(1,1)$}
+    \begin{align*}
+        \nabla f(1,1) = \langle 2,2 \rangle
+    \end{align*}
+
+    \textbf{Step 4: Compute dot product}
+    \begin{align*}
+        D_{\mathbf{u}} f = \langle 2,2 \rangle \cdot \langle 1,0 \rangle = 2
+    \end{align*}
+\end{examplebox}

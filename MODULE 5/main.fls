@@ -385,6 +385,18 @@ INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\tcrm12
 INPUT .\section_2.5.tex
 INPUT .\section_2.5.tex
 INPUT section_2.5.tex
+INPUT .\section_3.1.tex
+INPUT .\section_3.1.tex
+INPUT section_3.1.tex
+INPUT .\section_3.2.tex
+INPUT .\section_3.2.tex
+INPUT section_3.2.tex
+INPUT .\section_3.3.tex
+INPUT .\section_3.3.tex
+INPUT section_3.3.tex
+INPUT .\section_3.4.tex
+INPUT .\section_3.4.tex
+INPUT section_3.4.tex
 INPUT main.aux
 INPUT .\main.out
 INPUT .\main.out
@@ -392,6 +404,8 @@ INPUT C:\Users\USER 1\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tc
 INPUT C:\Users\USER 1\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1200.pk
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb
+INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx8.pfb
+INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx8.pfb
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmex10.pfb
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmex10.pfb
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi12.pfb
