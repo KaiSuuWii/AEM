@@ -1,0 +1,161 @@
+\subsection*{4.3 Curl of a Vector Field}
+
+\begin{conceptbox}
+    The curl measures the tendency of a vector field to rotate:
+    \begin{equation*}
+        \nabla \times \mathbf{F} =
+        \begin{vmatrix}
+            \mathbf{i}                  & \mathbf{j}                  & \mathbf{k}                  \\
+            \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\
+            P                           & Q                           & R
+        \end{vmatrix}
+    \end{equation*}
+\end{conceptbox}
+
+\begin{examplebox}
+    Find the curl of $\mathbf{F}=\langle y, -x, 0 \rangle$.
+
+    \textbf{Step 1: Identify components}
+    \begin{align*}
+        P=y,\quad Q=-x,\quad R=0
+    \end{align*}
+
+    \textbf{Step 2: Compute determinant}
+    \begin{align*}
+        \nabla \times \mathbf{F}
+         & =
+        \begin{vmatrix}
+            \mathbf{i} & \mathbf{j} & \mathbf{k} \\
+            \partial_x & \partial_y & \partial_z \\
+            y          & -x         & 0
+        \end{vmatrix}
+    \end{align*}
+
+    \textbf{Step 3: Expand determinant}
+    \begin{align*}
+        \nabla \times \mathbf{F}
+         & = \mathbf{i}(0-0)
+        - \mathbf{j}(0-0)
+        + \mathbf{k}(-1 - 1)        \\
+         & = \langle 0,0,-2 \rangle
+    \end{align*}
+
+    \textbf{Interpretation:} The field rotates about the $z$-axis.
+\end{examplebox}
+
+\begin{examplebox}
+
+    We are given the vector field:
+    \begin{equation*}
+        \mathbf{F}(x,y,z) = \langle P, Q, R \rangle = \langle xz, yz, xy \rangle
+    \end{equation*}
+
+    Find curl of $\mathbf{F}=\langle xz, yz, xy \rangle$.
+
+    \textbf{Step 1: Recall the definition of curl}
+
+    \begin{equation*}
+        \nabla \times \mathbf{F} =
+        \begin{vmatrix}
+            \mathbf{i}                  & \mathbf{j}                  & \mathbf{k}                  \\
+            \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\
+            P                           & Q                           & R
+        \end{vmatrix}
+    \end{equation*}
+
+    Expanding this determinant gives:
+    \begin{align*}
+        \nabla \times \mathbf{F}
+        = \left\langle
+        \frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z},
+        \frac{\partial P}{\partial z} - \frac{\partial R}{\partial x},
+        \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}
+        \right\rangle
+    \end{align*}
+
+    \textbf{Step 2: Identify the components}
+
+    \begin{align*}
+        P = xz, \quad Q = yz, \quad R = xy
+    \end{align*}
+
+    \textbf{Step 3: Compute each component carefully}
+
+    \textbf{First component:}
+    \begin{align*}
+        \frac{\partial R}{\partial y}      & = \frac{\partial}{\partial y}(xy) = x \\
+        \frac{\partial Q}{\partial z}      & = \frac{\partial}{\partial z}(yz) = y \\
+        \Rightarrow \text{First component} & = x - y
+    \end{align*}
+
+    \textbf{Second component:}
+    \begin{align*}
+        \frac{\partial P}{\partial z}       & = \frac{\partial}{\partial z}(xz) = x \\
+        \frac{\partial R}{\partial x}       & = \frac{\partial}{\partial x}(xy) = y \\
+        \Rightarrow \text{Second component} & = x - y
+    \end{align*}
+
+    \textbf{Third component:}
+    \begin{align*}
+        \frac{\partial Q}{\partial x}      & = \frac{\partial}{\partial x}(yz) = 0 \\
+        \frac{\partial P}{\partial y}      & = \frac{\partial}{\partial y}(xz) = 0 \\
+        \Rightarrow \text{Third component} & = 0 - 0 = 0
+    \end{align*}
+
+    \textbf{Step 4: Combine results}
+
+    \begin{align*}
+        \nabla \times \mathbf{F} = \langle x - y,\ x - y,\ 0 \rangle
+    \end{align*}
+
+    \textbf{Final Answer:}
+    \begin{equation*}
+        \nabla \times \mathbf{F} = \langle x - y,\ x - y,\ 0 \rangle
+    \end{equation*}
+
+\end{examplebox}
+\begin{conceptbox}
+    Divergence and curl provide physical meaning:
+    \begin{itemize}
+        \item Divergence: source or sink strength
+        \item Curl: rotational tendency
+    \end{itemize}
+\end{conceptbox}
+
+\begin{examplebox}
+    Fluid flow interpretation:
+    \begin{itemize}
+        \item If $\nabla \cdot \mathbf{v} > 0$: fluid expands (source)
+        \item If $\nabla \cdot \mathbf{v} < 0$: fluid compresses (sink)
+    \end{itemize}
+    Rotation example:
+
+    A whirlpool has nonzero curl, indicating rotation in the flow field.
+\end{examplebox}
+\begin{conceptbox}
+    A vector field is:
+    \begin{itemize}
+        \item Conservative if $\nabla \times \mathbf{F} = 0$
+        \item Solenoidal if $\nabla \cdot \mathbf{F} = 0$
+    \end{itemize}
+\end{conceptbox}
+
+\begin{examplebox}
+    Check if $\mathbf{F}=\langle 2x,2y,2z\rangle$ is conservative.
+
+    \begin{align*}
+        \nabla \times \mathbf{F} = \mathbf{0}
+    \end{align*}
+
+    Thus, it is conservative.
+\end{examplebox}
+
+\begin{examplebox}
+    Check if $\mathbf{F}=\langle -y,x,0\rangle$ is solenoidal.
+
+    \begin{align*}
+        \nabla \cdot \mathbf{F} = 0
+    \end{align*}
+
+    Thus, it has no sources or sinks.
+\end{examplebox}

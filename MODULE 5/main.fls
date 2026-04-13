@@ -397,6 +397,15 @@ INPUT section_3.3.tex
 INPUT .\section_3.4.tex
 INPUT .\section_3.4.tex
 INPUT section_3.4.tex
+INPUT .\section_4.1.tex
+INPUT .\section_4.1.tex
+INPUT section_4.1.tex
+INPUT .\section_4.2.tex
+INPUT .\section_4.2.tex
+INPUT section_4.2.tex
+INPUT .\section_4.3.tex
+INPUT .\section_4.3.tex
+INPUT section_4.3.tex
 INPUT main.aux
 INPUT .\main.out
 INPUT .\main.out
