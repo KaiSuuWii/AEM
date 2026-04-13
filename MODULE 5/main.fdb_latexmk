@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1776046713.72792 "c:/Users/USER 1/OneDrive/Desktop/USTP-Instructor/2025-2026 2nd sem/ES207/Modules/MODULE 5/main.tex" "main.pdf" "main" 1776046716.07043 0
+["pdflatex"] 1776055063.43828 "c:/Users/USER 1/OneDrive/Desktop/USTP-Instructor/2025-2026 2nd sem/ES207/Modules/MODULE 5/main.tex" "main.pdf" "main" 1776055066.57847 0
   "C:/Users/USER" 1709884038 19148 013e94a827d08c3fa77f8035c991e252 ""
   "C:/Users/USER 1/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1773061826 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/USER 1/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk" 1731399259 14064 fa86831697447cf26bd07f257639a709 ""
@@ -212,10 +212,10 @@
   "C:/Users/USER 1/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/USER 1/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "c:/Users/USER" 1709884038 19148 013e94a827d08c3fa77f8035c991e252 ""
-  "c:/Users/USER 1/OneDrive/Desktop/USTP-Instructor/2025-2026 2nd sem/ES207/Modules/MODULE 5/main.tex" 1776046710 2365 ae916c71a1ed2b401a718ad037de99d2 ""
-  "main.aux" 1776046715 163 0096784b87ac525888010bee043e6f52 "pdflatex"
-  "main.out" 1776046714 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "main.tex" 1776046710 2365 ae916c71a1ed2b401a718ad037de99d2 ""
+  "c:/Users/USER 1/OneDrive/Desktop/USTP-Instructor/2025-2026 2nd sem/ES207/Modules/MODULE 5/main.tex" 1776054999 1958 dbf08856d08b45ee11405bcfea023f67 ""
+  "main.aux" 1776055066 163 f20fc0c2890fbc1a859f5ccccf32ba2d "pdflatex"
+  "main.out" 1776055064 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "main.tex" 1776054999 1958 dbf08856d08b45ee11405bcfea023f67 ""
   "section_1.1.tex" 1776013118 1418 0a2204dd3ff7ff598e48c13623b491c7 ""
   "section_1.2.tex" 1776013470 994 7a18ae328f451038ed4f801485b3a598 ""
   "section_1.3.tex" 1776013656 1103 634456d29885ba70b8a9e6d68bbbcd7b ""
@@ -229,7 +229,7 @@
   "section_2.4.tex" 1776043981 3195 08286886e43be1e35f79e13f154e2e94 ""
   "section_2.5.tex" 1776044043 945 d8a3e886e8c7bdc3c399d69b4cbd4e81 ""
   "section_3.1.tex" 1776044189 1358 a88a55fe3f3698a925908103147b0d29 ""
-  "section_3.2.tex" 1776044725 3326 8b85e37f31eb24b54106b03627c9fb9d ""
+  "section_3.2.tex" 1776053669 3324 fd97a63fba3d006bf356378b0fb0cd1b ""
   "section_3.3.tex" 1776044462 1289 53a046857aa3e11cd601404a2a7b8f62 ""
   "section_3.4.tex" 1776044816 801 e2bde22006af8b848cb4677d044566b1 ""
   "section_4.1.tex" 1776044931 741 939e834c60c26a81e71cf63129ae7e85 ""
@@ -238,6 +238,10 @@
   "section_5.1.tex" 1776046167 4245 7c8d3885c970336b10ff7fdf78aad61b ""
   "section_5.2.tex" 1776046541 3564 0ea948f44112b0c806e083d9bea5cfe1 ""
   "section_5.3.tex" 1776046705 5111 9c894b5e6abb9132ee6f2df67fbbef62 ""
+  "section_6.1.tex" 1776049602 7215 29c56bfafb1e99ff63a6ce747788f0db ""
+  "section_6.2.tex" 1776053503 4044 109f72b78c321fc573ab322827960cc8 ""
+  "section_6.3.tex" 1776054111 3856 7331a37f4eb9ae07c8e25f6d0622ba1f ""
+  "section_6.4.tex" 1776055058 3894 0bca7f7a7b9d53281d161baf29c9f512 ""
   "title_page.tex" 1776011060 344 4b8122b2c1d65e52fa01f2164b6c7121 ""
   (generated)
   "main.aux"

@@ -1,0 +1,142 @@
+\subsection*{6.4 Divergence Theorem}
+
+\begin{conceptbox}
+    \begin{equation*}
+        \iiint_V (\nabla \cdot \mathbf{F})\, dV = \iint_S \mathbf{F}\cdot d\mathbf{S}
+    \end{equation*}
+\end{conceptbox}
+
+\begin{itemize}
+    \item Volume integral $\rightarrow$ total source (how much the field is “generated” inside)
+    \item Surface integral $\rightarrow$ total flux (how much exits the boundary)
+\end{itemize}
+
+The Divergence Theorem states that the total outward flow (flux) of a vector field across a closed surface is equal to the total amount of “source” inside the volume.
+
+Instead of computing a difficult surface integral directly, we can:
+\begin{itemize}
+    \item compute the divergence (a scalar function),
+    \item integrate it over the volume,
+    \item and obtain the same result.
+\end{itemize}
+
+\[
+    \boxed{\text{Flux out of surface = Total expansion inside volume}}
+\]
+
+\begin{examplebox}
+    Compute the flux of $\mathbf{F}=\langle x^3,y^3,z^3\rangle$ over the sphere $x^2+y^2+z^2\le1$.
+
+    \textbf{Step 1: Understand the problem}
+
+    We are asked to compute:
+    \[
+        \iint_S \mathbf{F}\cdot d\mathbf{S}
+    \]
+
+    where $S$ is the surface of the unit sphere.
+
+    Direct computation would require parametrizing the sphere and computing a surface integral, which is complicated.
+
+    Instead, we apply the Divergence Theorem:
+    \[
+        \iint_S \mathbf{F}\cdot d\mathbf{S}
+        =
+        \iiint_V (\nabla \cdot \mathbf{F})\, dV
+    \]
+
+    \textbf{Step 2: Compute the divergence}
+
+    Given:
+    \[
+        \mathbf{F} = \langle x^3,y^3,z^3\rangle
+    \]
+
+    Compute divergence:
+    \begin{align*}
+        \nabla \cdot \mathbf{F}
+         & = \frac{\partial}{\partial x}(x^3) + \frac{\partial}{\partial y}(y^3) + \frac{\partial}{\partial z}(z^3) \\
+         & = 3x^2 + 3y^2 + 3z^2
+    \end{align*}
+
+    Factor:
+    \begin{align*}
+        \nabla \cdot \mathbf{F} = 3(x^2+y^2+z^2)
+    \end{align*}
+
+    Since:
+    \[
+        x^2+y^2+z^2 = r^2
+    \]
+
+    we get:
+    \[
+        \nabla \cdot \mathbf{F} = 3r^2
+    \]
+
+    \textbf{Step 3: Convert to spherical coordinates}
+
+    The region is a sphere:
+    \[
+        x^2+y^2+z^2 \le 1
+    \]
+
+    So we use spherical coordinates:
+
+    \begin{align*}
+        x & = r\sin\theta\cos\phi \\
+        y & = r\sin\theta\sin\phi \\
+        z & = r\cos\theta
+    \end{align*}
+
+    Volume element:
+    \[
+        dV = r^2\sin\theta\,dr\,d\theta\,d\phi
+    \]
+
+    \textbf{Step 4: Substitute into the integral}
+
+    \begin{align*}
+        \iiint_V (\nabla \cdot \mathbf{F})\, dV
+         & = \iiint_V 3r^2\, dV                                                           \\
+         & = \int_0^{2\pi}\int_0^\pi\int_0^1 3r^2 \cdot r^2\sin\theta\,dr\,d\theta\,d\phi \\
+         & = \int_0^{2\pi}\int_0^\pi\int_0^1 3r^4\sin\theta\,dr\,d\theta\,d\phi
+    \end{align*}
+    \textbf{Step 5: Separate the integrals}
+
+    Because the variables are independent:
+    \begin{align*}
+        = 3 \left(\int_0^1 r^4\,dr\right)
+        \left(\int_0^\pi \sin\theta\,d\theta\right)
+        \left(\int_0^{2\pi} d\phi\right)
+    \end{align*}
+
+    \textbf{Step 6: Evaluate each integral}
+
+    \textbf{Radial part:}
+    \begin{align*}
+        \int_0^1 r^4\,dr = \left[\frac{r^5}{5}\right]_0^1 = \frac{1}{5}
+    \end{align*}
+
+    \textbf{Angular ($\theta$):}
+    \begin{align*}
+        \int_0^\pi \sin\theta\,d\theta = [-\cos\theta]_0^\pi = 2
+    \end{align*}
+
+    \textbf{Azimuthal ($\phi$):}
+    \begin{align*}
+        \int_0^{2\pi} d\phi = 2\pi
+    \end{align*}
+
+    \textbf{Step 7: Multiply results}
+
+    \begin{align*}
+        3 \cdot \frac{1}{5} \cdot 2 \cdot 2\pi = \frac{12\pi}{5}
+    \end{align*}
+
+    \textbf{Final Answer:}
+    \[
+        \boxed{\frac{12\pi}{5}}
+    \]
+
+\end{examplebox}

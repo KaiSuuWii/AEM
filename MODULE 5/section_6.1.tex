@@ -1,0 +1,236 @@
+\section*{6 Surface and Volume Integrals: From Flux to Global Theorems}
+
+\subsection*{6.1 Surface Integrals}
+\begin{conceptbox}
+    The surface integral of a vector field over a surface $S$ is:
+    \begin{equation*}
+        \iint_S \mathbf{F} \cdot d\mathbf{S}
+    \end{equation*}
+\end{conceptbox}
+
+This measures the \textbf{flux} of a vector field through a surface.
+
+A surface is parametrized as:
+\begin{equation*}
+    \mathbf{r}(u,v)
+\end{equation*}
+
+Then:
+\begin{equation*}
+    d\mathbf{S} = (\mathbf{r}_u \times \mathbf{r}_v)\, dA
+\end{equation*}
+
+\begin{examplebox}
+    Compute the flux of $\mathbf{F}=\langle x,y,z \rangle$ through the surface $z=4-x^2-y^2$, $z\ge0$.
+
+
+    \textbf{Step 1: Understand the surface and determine its projection}
+
+    The equation of the surface is
+    \begin{equation*}
+        z=4-x^2-y^2
+    \end{equation*}
+
+    Because the surface satisfies $z\ge 0$, we impose
+    \begin{align*}
+        4-x^2-y^2 & \ge 0 \\
+        x^2+y^2   & \le 4
+    \end{align*}
+
+    So the projection of the surface onto the $xy$-plane is the disk
+    \begin{equation*}
+        x^2+y^2 \le 4
+    \end{equation*}
+    which is a circle of radius $2$ centered at the origin.
+
+    This tells us the region of integration in the plane.
+
+    \textbf{Step 2: Parametrize the surface}
+
+    Since the surface is already given as $z$ in terms of $x$ and $y$, the natural parametrization is
+    \begin{equation*}
+        \mathbf{r}(x,y)=\langle x,\; y,\; 4-x^2-y^2\rangle
+    \end{equation*}
+
+    Here:
+    \begin{itemize}
+        \item the first component is the $x$-coordinate
+        \item the second component is the $y$-coordinate
+        \item the third component is the corresponding $z$-value on the surface
+    \end{itemize}
+
+    So every point $(x,y)$ in the disk $x^2+y^2\le 4$ gives a point on the surface.
+
+    \textbf{Step 3: Compute the partial derivatives of the parametrization}
+
+    To find the oriented surface element, we compute the tangent vectors:
+    \begin{align*}
+        \mathbf{r}_x
+         & = \frac{\partial}{\partial x}\langle x,\; y,\; 4-x^2-y^2\rangle                                                                       \\
+         & = \left\langle \frac{\partial x}{\partial x},\; \frac{\partial y}{\partial x},\; \frac{\partial}{\partial x}(4-x^2-y^2) \right\rangle \\
+         & = \langle 1,\; 0,\; -2x \rangle
+    \end{align*}
+
+    Similarly,
+    \begin{align*}
+        \mathbf{r}_y
+         & = \frac{\partial}{\partial y}\langle x,\; y,\; 4-x^2-y^2\rangle                                                                       \\
+         & = \left\langle \frac{\partial x}{\partial y},\; \frac{\partial y}{\partial y},\; \frac{\partial}{\partial y}(4-x^2-y^2) \right\rangle \\
+         & = \langle 0,\; 1,\; -2y \rangle
+    \end{align*}
+
+    These two vectors lie tangent to the surface.
+
+    \textbf{Step 4: Compute the cross product $\mathbf{r}_x \times \mathbf{r}_y$}
+
+    The cross product gives a normal vector to the surface:
+    \begin{equation*}
+        \mathbf{r}_x \times \mathbf{r}_y =
+        \begin{vmatrix}
+            \mathbf{i} & \mathbf{j} & \mathbf{k} \\
+            1          & 0          & -2x        \\
+            0          & 1          & -2y
+        \end{vmatrix}
+    \end{equation*}
+
+    Expand the determinant:
+
+    \begin{align*}
+        \mathbf{r}_x \times \mathbf{r}_y
+         & =
+        \mathbf{i}
+        \begin{vmatrix}
+            0 & -2x \\
+            1 & -2y
+        \end{vmatrix}
+        -
+        \mathbf{j}
+        \begin{vmatrix}
+            1 & -2x \\
+            0 & -2y
+        \end{vmatrix}
+        +
+        \mathbf{k}
+        \begin{vmatrix}
+            1 & 0 \\
+            0 & 1
+        \end{vmatrix}                               \\
+         & =
+        \mathbf{i}\bigl(0(-2y)-(-2x)(1)\bigr)
+        -
+        \mathbf{j}\bigl(1(-2y)-(-2x)(0)\bigr)
+        +
+        \mathbf{k}(1\cdot 1-0\cdot 0)                \\
+         & =
+        \mathbf{i}(2x)-\mathbf{j}(-2y)+\mathbf{k}(1) \\
+         & =
+        \langle 2x,\; 2y,\; 1\rangle
+    \end{align*}
+
+    So the vector surface element is
+    \begin{equation*}
+        d\mathbf{S} = (\mathbf{r}_x \times \mathbf{r}_y)\, dA
+        = \langle 2x,\; 2y,\; 1\rangle dA
+    \end{equation*}
+
+    This normal points upward because its $k$-component is positive.
+
+    \textbf{Step 5: Evaluate the vector field on the surface}
+
+    The field is
+    \begin{equation*}
+        \mathbf{F}(x,y,z)=\langle x,y,z\rangle
+    \end{equation*}
+
+    But on the surface, $z=4-x^2-y^2$. So substitute this into $\mathbf{F}$:
+    \begin{align*}
+        \mathbf{F}(\mathbf{r}(x,y))
+         & = \left\langle x,\; y,\; 4-x^2-y^2 \right\rangle
+    \end{align*}
+
+    \textbf{Step 6: Compute the dot product $\mathbf{F}\cdot (\mathbf{r}_x \times \mathbf{r}_y)$}
+
+    The flux integrand is:
+    \begin{align*}
+        \mathbf{F}\cdot (\mathbf{r}_x \times \mathbf{r}_y)
+         & =
+        \left\langle x,\; y,\; 4-x^2-y^2 \right\rangle
+        \cdot
+        \langle 2x,\; 2y,\; 1\rangle    \\
+         & = x(2x)+y(2y)+(4-x^2-y^2)(1) \\
+         & = 2x^2+2y^2+4-x^2-y^2        \\
+         & = x^2+y^2+4
+    \end{align*}
+
+    Therefore the flux integral becomes
+    \begin{equation*}
+        \iint_S \mathbf{F}\cdot d\mathbf{S}
+        =
+        \iint_R (x^2+y^2+4)\, dA
+    \end{equation*}
+    where $R$ is the disk $x^2+y^2\le 4$.
+
+    \textbf{Step 7: Convert the integral to polar coordinates}
+
+    Because the region $R$ is a disk, polar coordinates are the natural choice:
+    \begin{align*}
+        x       & = r\cos\theta    \\
+        y       & = r\sin\theta    \\
+        x^2+y^2 & = r^2            \\
+        dA      & = r\,dr\,d\theta
+    \end{align*}
+
+    The disk $x^2+y^2\le 4$ becomes
+    \begin{align*}
+        0 \le r \le 2, \qquad 0 \le \theta \le 2\pi
+    \end{align*}
+
+    Substitute into the integral:
+    \begin{align*}
+        \iint_R (x^2+y^2+4)\, dA
+         & =
+        \int_0^{2\pi}\int_0^2 (r^2+4)\,r\,dr\,d\theta
+    \end{align*}
+
+    \textbf{Step 8: Simplify the integrand}
+
+    Distribute the $r$:
+    \begin{align*}
+        (r^2+4)r = r^3+4r
+    \end{align*}
+
+    So:
+    \begin{align*}
+        \int_0^{2\pi}\int_0^2 (r^3+4r)\,dr\,d\theta
+    \end{align*}
+
+    \textbf{Step 9: Integrate with respect to $r$}
+
+    \begin{align*}
+        \int_0^2 (r^3+4r)\,dr
+         & =
+        \left[\frac{r^4}{4}+2r^2\right]_0^2                \\
+         & =
+        \left(\frac{2^4}{4}+2(2^2)\right)-\left(0+0\right) \\
+         & =
+        \left(\frac{16}{4}+8\right)                        \\
+         & =
+        4+8                                                \\
+         & =
+        12
+    \end{align*}
+
+    \textbf{Step 10: Integrate with respect to $\theta$}
+
+    \begin{align*}
+        \int_0^{2\pi} 12\, d\theta
+         & = 12[\theta]_0^{2\pi} \\
+         & = 12(2\pi)            \\
+         & = 24\pi
+    \end{align*}
+
+    \textbf{Final Answer:}
+    \begin{equation*}
+        \boxed{24\pi}
+    \end{equation*}
+\end{examplebox}

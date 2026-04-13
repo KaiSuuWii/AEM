@@ -1,0 +1,137 @@
+\subsection*{6.2 Stokes' Theorem}
+
+\subsubsection*{6.2.1 Conceptual Explanation}
+
+\begin{conceptbox}
+    Stokes' Theorem states that the circulation of a vector field along a closed curve $C$ is equal to the total curl (rotation) of the field over the surface $S$ bounded by $C$:
+    \begin{equation*}
+        \oint_C \mathbf{F} \cdot d\mathbf{r}
+        =
+        \iint_S (\nabla \times \mathbf{F}) \cdot d\mathbf{S}
+    \end{equation*}
+\end{conceptbox}
+
+In simple terms:
+\begin{itemize}
+    \item The left side measures how much the vector field “flows around” the boundary $C$
+    \item The right side measures how much the field “rotates” across the entire surface $S$
+\end{itemize}
+
+\textbf{Key Idea:}
+\[
+    \boxed{\text{Total circulation around a boundary = total curl inside the surface}}
+\]
+
+This is extremely useful because:
+\begin{itemize}
+    \item A complicated line integral can be replaced with an easier surface integral
+    \item We only need the curl, not the full path traversal
+\end{itemize}
+
+\begin{examplebox}
+    Evaluate $\oint_C \mathbf{F}\cdot d\mathbf{r}$ where $\mathbf{F}=\langle -y,x,z\rangle$ and $C$ is the boundary of the disk $x^2+y^2\le1$ in the plane $z=1$.
+
+    \textbf{Step 1: Understand the geometry}
+
+    - The curve $C$ is a circle of radius 1
+    - It lies in the plane $z=1$
+    - The surface $S$ is the flat disk bounded by this circle
+
+    Instead of computing the line integral directly (which would be complicated), we apply Stokes’ Theorem and convert it into a surface integral.
+
+    \textbf{Step 2: Compute the curl of the vector field}
+
+    Given:
+    \[
+        \mathbf{F} = \langle -y,\; x,\; z \rangle
+    \]
+
+    Compute:
+    \[
+        \nabla \times \mathbf{F}
+        =
+        \begin{vmatrix}
+            \mathbf{i} & \mathbf{j} & \mathbf{k} \\
+            \partial_x & \partial_y & \partial_z \\
+            -y         & x          & z
+        \end{vmatrix}
+    \]
+
+    Expand determinant:
+
+    \begin{align*}
+        \nabla \times \mathbf{F}
+         & = \mathbf{i}\left(\frac{\partial z}{\partial y} - \frac{\partial x}{\partial z}\right)
+        - \mathbf{j}\left(\frac{\partial z}{\partial x} - \frac{\partial (-y)}{\partial z}\right)
+        + \mathbf{k}\left(\frac{\partial x}{\partial x} - \frac{\partial (-y)}{\partial y}\right)
+    \end{align*}
+
+    Compute each term:
+
+    \begin{align*}
+        \frac{\partial z}{\partial y} & = 0, \quad \frac{\partial x}{\partial z} = 0     \\
+        \frac{\partial z}{\partial x} & = 0, \quad \frac{\partial (-y)}{\partial z} = 0  \\
+        \frac{\partial x}{\partial x} & = 1, \quad \frac{\partial (-y)}{\partial y} = -1
+    \end{align*}
+
+    So:
+    \begin{align*}
+        \nabla \times \mathbf{F}
+         & = \langle 0,\; 0,\; 1 - (-1) \rangle \\
+         & = \langle 0,\; 0,\; 2 \rangle
+    \end{align*}
+
+    \textbf{Step 3: Determine the surface normal}
+
+    The surface is a flat disk in the plane $z=1$.
+
+    - The upward normal vector is:
+    \[
+        \mathbf{n} = \langle 0,0,1 \rangle
+    \]
+
+    Thus:
+    \[
+        d\mathbf{S} = \mathbf{n}\, dA = \langle 0,0,1 \rangle dA
+    \]
+
+    \textbf{Step 4: Compute the dot product}
+
+    \begin{align*}
+        (\nabla \times \mathbf{F}) \cdot d\mathbf{S}
+         & = \langle 0,0,2 \rangle \cdot \langle 0,0,1 \rangle dA \\
+         & = 2\, dA
+    \end{align*}
+
+    So the surface integral becomes:
+    \[
+        \iint_S 2\, dA
+    \]
+
+    \textbf{Step 5: Evaluate the surface integral}
+
+    Since the integrand is constant (2), we can factor it out:
+    \begin{align*}
+        \iint_S 2\, dA = 2 \iint_S dA
+    \end{align*}
+
+    But:
+    \[
+        \iint_S dA = \text{Area of the disk}
+    \]
+
+    The disk has radius 1:
+    \[
+        \text{Area} = \pi (1)^2 = \pi
+    \]
+
+    Thus:
+    \begin{align*}
+        \iint_S 2\, dA = 2\pi
+    \end{align*}
+
+    \textbf{Final Answer:}
+    \[
+        \boxed{2\pi}
+    \]
+\end{examplebox}

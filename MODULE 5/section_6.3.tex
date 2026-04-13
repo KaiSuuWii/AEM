@@ -1,0 +1,135 @@
+\subsection*{6.3 Triple Integrals}
+
+\begin{conceptbox}
+    The triple integral of a scalar function over a volume $V$ is defined as:
+    \begin{equation*}
+        \iiint_V f(x,y,z)\, dV
+    \end{equation*}
+\end{conceptbox}
+
+\textbf{Expanded Explanation:}
+
+A triple integral represents the accumulation of a quantity throughout a three-dimensional region.
+
+To understand this, imagine dividing the volume $V$ into many tiny rectangular boxes of volume $\Delta V$. At each small box, the function $f(x,y,z)$ gives a value (such as density, temperature, or intensity).
+
+We approximate the total accumulation by:
+\begin{equation*}
+    \sum f(x_i,y_i,z_i)\,\Delta V
+\end{equation*}
+
+As the size of these boxes shrinks to zero, the sum becomes the triple integral:
+\begin{equation*}
+    \iiint_V f(x,y,z)\, dV
+\end{equation*}
+
+\textbf{Interpretations in Engineering:}
+\begin{itemize}
+    \item If $f(x,y,z)=1$, the integral gives \textbf{volume}
+    \item If $f(x,y,z)$ is density, the integral gives \textbf{mass}
+    \item If $f(x,y,z)$ is energy density, the integral gives \textbf{total energy}
+\end{itemize}
+
+\textbf{Why Change Coordinates?}
+
+For symmetric regions like spheres or cylinders, Cartesian coordinates become complicated. In such cases, we switch to:
+\begin{itemize}
+    \item Cylindrical coordinates
+    \item Spherical coordinates
+\end{itemize}
+
+because they simplify both the region and the integrand.
+
+\begin{examplebox}
+    Evaluate $\iiint_V (x^2+y^2+z^2)\, dV$ over the sphere $x^2+y^2+z^2\le1$.
+
+    \textbf{Step 1: Recognize symmetry}
+
+    The region is a sphere centered at the origin:
+    \[
+        x^2+y^2+z^2 \le 1
+    \]
+
+    This suggests using \textbf{spherical coordinates}, where:
+    \begin{align*}
+        x & = r\sin\theta\cos\phi \\
+        y & = r\sin\theta\sin\phi \\
+        z & = r\cos\theta
+    \end{align*}
+
+    Most importantly:
+    \[
+        x^2+y^2+z^2 = r^2
+    \]
+
+    So the integrand simplifies significantly.
+
+    \textbf{Step 2: Determine bounds}
+
+    For a unit sphere:
+    \begin{align*}
+        0 \le r \le 1        \\
+        0 \le \theta \le \pi \\
+        0 \le \phi \le 2\pi
+    \end{align*}
+
+    \textbf{Step 3: Volume element}
+
+    In spherical coordinates:
+    \begin{equation*}
+        dV = r^2\sin\theta\,dr\,d\theta\,d\phi
+    \end{equation*}
+
+    This factor $r^2\sin\theta$ accounts for the distortion when converting from Cartesian coordinates.
+
+    \textbf{Step 4: Substitute into the integral}
+
+    The integrand becomes:
+    \[
+        x^2+y^2+z^2 = r^2
+    \]
+
+    Thus:
+    \begin{align*}
+        \iiint_V (x^2+y^2+z^2)\, dV
+         & = \int_0^{2\pi}\int_0^\pi\int_0^1 r^2 \cdot r^2\sin\theta\,dr\,d\theta\,d\phi \\
+         & = \int_0^{2\pi}\int_0^\pi\int_0^1 r^4\sin\theta\,dr\,d\theta\,d\phi
+    \end{align*}
+
+    \textbf{Step 5: Separate the integrals}
+
+    Because the variables are independent:
+    \begin{align*}
+        = \left(\int_0^1 r^4\,dr\right)
+        \left(\int_0^\pi \sin\theta\,d\theta\right)
+        \left(\int_0^{2\pi} d\phi\right)
+    \end{align*}
+
+    \textbf{Step 6: Evaluate each integral}
+
+    \textbf{Radial integral:}
+    \begin{align*}
+        \int_0^1 r^4\,dr = \left[\frac{r^5}{5}\right]_0^1 = \frac{1}{5}
+    \end{align*}
+
+    \textbf{Angular ($\theta$) integral:}
+    \begin{align*}
+        \int_0^\pi \sin\theta\,d\theta = [-\cos\theta]_0^\pi = (-(-1)) - (-1) = 2
+    \end{align*}
+
+    \textbf{Azimuthal ($\phi$) integral:}
+    \begin{align*}
+        \int_0^{2\pi} d\phi = 2\pi
+    \end{align*}
+
+    \textbf{Step 7: Multiply results}
+
+    \begin{align*}
+        \frac{1}{5} \cdot 2 \cdot 2\pi = \frac{4\pi}{5}
+    \end{align*}
+
+    \textbf{Final Answer:}
+    \[
+        \boxed{\frac{4\pi}{5}}
+    \]
+\end{examplebox}
