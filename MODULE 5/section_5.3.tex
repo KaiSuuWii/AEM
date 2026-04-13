@@ -1,0 +1,184 @@
+\subsection*{5.3 Green's Theorem}
+
+\subsubsection*{5.3.1 Statement of Green's Theorem}
+
+\begin{conceptbox}
+    Green's Theorem relates a line integral around a closed curve $C$ to a double integral over region $R$:
+    \begin{equation*}
+        \oint_C (Pdx + Qdy) = \iint_R \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right) dA
+    \end{equation*}
+\end{conceptbox}
+
+\subsubsection*{5.3.2 Interpretation}
+
+\begin{itemize}
+    \item Left side: circulation along boundary
+    \item Right side: total rotation inside region
+\end{itemize}
+
+\begin{examplebox}
+    Apply Green's Theorem to compute
+    \begin{equation*}
+        \oint_C (y^3\,dx + x^3\,dy)
+    \end{equation*}
+    where $C$ is the circle $x^2 + y^2 = 4$.
+
+    \textbf{Step 1: Identify components}
+    \begin{align*}
+        P = y^3, \quad Q = x^3
+    \end{align*}
+
+    \textbf{Step 2: Compute partial derivatives}
+    \begin{align*}
+        \frac{\partial Q}{\partial x} = 3x^2, \quad
+        \frac{\partial P}{\partial y} = 3y^2
+    \end{align*}
+
+    \textbf{Step 3: Apply Green's Theorem}
+    \begin{align*}
+        \oint_C (Pdx + Qdy)
+         & = \iint_R (3x^2 - 3y^2)\, dA \\
+         & = 3 \iint_R (x^2 - y^2)\, dA
+    \end{align*}
+
+    \textbf{Step 4: Convert to polar coordinates}
+
+    Since the region is a circle:
+    \begin{align*}
+        x = r\cos\theta, \quad y = r\sin\theta
+    \end{align*}
+
+    Then:
+    \begin{align*}
+        x^2 - y^2 & = r^2(\cos^2\theta - \sin^2\theta) = r^2\cos(2\theta)
+    \end{align*}
+
+    The Jacobian gives $dA = r\,dr\,d\theta$.
+
+    \textbf{Step 5: Set up integral}
+    \begin{align*}
+        3 \int_0^{2\pi} \int_0^2 r^2\cos(2\theta)\cdot r\,dr\,d\theta
+        = 3 \int_0^{2\pi} \int_0^2 r^3 \cos(2\theta)\,dr\,d\theta
+    \end{align*}
+
+    \textbf{Step 6: Separate integrals}
+    \begin{align*}
+        = 3 \left( \int_0^2 r^3\,dr \right)\left( \int_0^{2\pi} \cos(2\theta)\,d\theta \right)
+    \end{align*}
+
+    \textbf{Step 7: Evaluate}
+    \begin{align*}
+        \int_0^2 r^3\,dr = \frac{16}{4} = 4, \quad
+        \int_0^{2\pi} \cos(2\theta)\,d\theta = 0
+    \end{align*}
+
+    \textbf{Final Answer:}
+    \begin{equation*}
+        \boxed{0}
+    \end{equation*}
+
+    \textbf{Insight:} Symmetry of the region causes cancellation.
+\end{examplebox}
+
+\begin{examplebox}
+    Evaluate
+    \begin{equation*}
+        \oint_C (x^2y\,dx + xy^2\,dy)
+    \end{equation*}
+    where $C$ bounds the triangular region with vertices $(0,0)$, $(1,0)$, and $(1,2)$.
+
+    \textbf{Step 1: Identify components}
+    \begin{align*}
+        P = x^2y, \quad Q = xy^2
+    \end{align*}
+
+    \textbf{Step 2: Compute derivatives}
+    \begin{align*}
+        \frac{\partial Q}{\partial x} = y^2, \quad
+        \frac{\partial P}{\partial y} = x^2
+    \end{align*}
+
+    \textbf{Step 3: Apply Green's Theorem}
+    \begin{align*}
+        \oint_C (Pdx + Qdy)
+        = \iint_R (y^2 - x^2)\, dA
+    \end{align*}
+
+    \textbf{Step 4: Describe the region}
+
+    The triangle is bounded by:
+    \begin{align*}
+        0 \le x \le 1, \quad 0 \le y \le 2x
+    \end{align*}
+
+    \textbf{Step 5: Set up integral}
+    \begin{align*}
+        \int_0^1 \int_0^{2x} (y^2 - x^2)\, dy\, dx
+    \end{align*}
+
+    \textbf{Step 6: Integrate with respect to $y$}
+    \begin{align*}
+        \int_0^{2x} (y^2 - x^2)\,dy
+         & = \left[\frac{y^3}{3} - x^2 y \right]_0^{2x} \\
+         & = \frac{8x^3}{3} - 2x^3                      \\
+         & = \frac{2x^3}{3}
+    \end{align*}
+
+    \textbf{Step 7: Integrate with respect to $x$}
+    \begin{align*}
+        \int_0^1 \frac{2x^3}{3}\,dx
+        = \frac{2}{3}\cdot \frac{1}{4}
+        = \frac{1}{6}
+    \end{align*}
+
+    \textbf{Final Answer:}
+    \begin{equation*}
+        \boxed{\frac{1}{6}}
+    \end{equation*}
+\end{examplebox}
+
+\begin{examplebox}
+    Evaluate
+    \begin{equation*}
+        \oint_C (e^x\cos y\,dx + e^x\sin y\,dy)
+    \end{equation*}
+    where $C$ is the rectangle $0 \le x \le 1$, $0 \le y \le \pi$.
+
+    \textbf{Step 1: Identify components}
+    \begin{align*}
+        P = e^x \cos y, \quad Q = e^x \sin y
+    \end{align*}
+
+    \textbf{Step 2: Compute derivatives}
+    \begin{align*}
+        \frac{\partial Q}{\partial x} = e^x \sin y, \quad
+        \frac{\partial P}{\partial y} = -e^x \sin y
+    \end{align*}
+
+    \textbf{Step 3: Apply Green's Theorem}
+    \begin{align*}
+        \iint_R (e^x \sin y - (-e^x \sin y))\, dA
+        = \iint_R 2e^x \sin y\, dA
+    \end{align*}
+
+    \textbf{Step 4: Set up integral}
+    \begin{align*}
+        \int_0^1 \int_0^\pi 2e^x \sin y\, dy\, dx
+    \end{align*}
+
+    \textbf{Step 5: Separate variables}
+    \begin{align*}
+        2 \int_0^1 e^x\,dx \int_0^\pi \sin y\,dy
+    \end{align*}
+
+    \textbf{Step 6: Evaluate}
+    \begin{align*}
+        \int_0^1 e^x dx = e - 1, \quad
+        \int_0^\pi \sin y dy = 2
+    \end{align*}
+
+    \textbf{Final Answer:}
+    \begin{align*}
+        2(e-1)(2) = \boxed{4(e-1)}
+    \end{align*}
+\end{examplebox}

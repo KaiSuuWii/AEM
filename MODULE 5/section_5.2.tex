@@ -1,0 +1,128 @@
+\subsection*{5.2 Double Integrals}
+\begin{conceptbox}
+    A double integral over a region $R$ is:
+    \begin{equation*}
+        \iint_R f(x,y)\, dA
+    \end{equation*}
+\end{conceptbox}
+
+This represents accumulation over an area.
+\subsubsection*{Iterated Integrals}
+
+Double integrals are computed as iterated integrals:
+\begin{equation*}
+    \int_a^b \int_c^d f(x,y)\, dx\, dy
+\end{equation*}
+
+\begin{examplebox}
+    Evaluate the accumulation of the function $f(x,y)=x+y$ over the region $R=[0,1]\times[0,1]$.
+
+    \textbf{Step 1: Conceptual understanding (before writing the integral)}
+
+    We interpret this as adding up the values of $x+y$ over the entire square region.
+
+    Imagine dividing the region into many tiny rectangles of area $\Delta A$.
+
+    The total accumulation is approximated by:
+    \begin{equation*}
+        \sum f(x_i,y_i)\,\Delta A
+    \end{equation*}
+
+    As the rectangles become infinitely small, this becomes a double integral.
+
+    \textbf{Step 2: Write the double integral}
+
+    \begin{align*}
+        \iint_R (x+y)\, dA
+    \end{align*}
+
+    Since $R$ is a rectangle, we convert it into an iterated integral:
+
+    \begin{align*}
+        \int_0^1 \int_0^1 (x+y)\, dx\, dy
+    \end{align*}
+
+    \textbf{Step 3: Integrate with respect to $x$}
+
+    Treat $y$ as constant:
+    \begin{align*}
+        \int_0^1 (x+y)\, dx
+         & = \int_0^1 x\,dx + \int_0^1 y\,dx           \\
+         & = \left[\frac{x^2}{2}\right]_0^1 + y[x]_0^1 \\
+         & = \frac{1}{2} + y
+    \end{align*}
+
+    \textbf{Step 4: Integrate with respect to $y$}
+
+    \begin{align*}
+        \int_0^1 \left(\frac{1}{2} + y\right) dy
+         & = \left[\frac{y}{2} + \frac{y^2}{2}\right]_0^1 \\
+         & = \frac{1}{2} + \frac{1}{2}                    \\
+         & = 1
+    \end{align*}
+
+    \textbf{Final Answer:} $\boxed{1}$
+\end{examplebox}
+
+\begin{examplebox}
+    We are given the function:
+    \begin{equation*}
+        f(x,y) = 1
+    \end{equation*}
+    over the region:
+    \begin{equation*}
+        R = [0,2] \times [0,3]
+    \end{equation*}
+
+    This region represents a rectangle in the $xy$-plane with:
+    \begin{itemize}
+        \item width in the $x$-direction: $2 - 0 = 2$
+        \item height in the $y$-direction: $3 - 0 = 3$
+    \end{itemize}
+
+    Thus, geometrically, we already expect the area to be:
+    \[
+        \text{Area} = 2 \times 3 = 6
+    \]
+
+    \textbf{Step 1: Interpret the double integral}
+
+    The double integral
+    \begin{equation*}
+        \iint_R 1\, dA
+    \end{equation*}
+    represents the accumulation of the constant value $1$ over the region $R$.
+
+    Conceptually, this means:
+    \begin{itemize}
+        \item we are summing many small pieces of area $\Delta A$
+        \item each piece contributes exactly its area (since $f=1$)
+    \end{itemize}
+
+    So this integral directly computes the \textbf{area of the region}.
+
+    \textbf{Step 2: Convert to an iterated integral}
+
+    Since $R$ is a rectangle, we write:
+    \begin{align*}
+        \iint_R 1\, dA = \int_0^3 \int_0^2 1\, dx\, dy
+    \end{align*}
+
+    \textbf{Step 3: Integrate with respect to $x$}
+
+    Treat $y$ as constant:
+    \begin{align*}
+        \int_0^2 1\, dx = [x]_0^2 = 2
+    \end{align*}
+
+    \textbf{Step 4: Integrate with respect to $y$}
+
+    \begin{align*}
+        \int_0^3 2\, dy = [2y]_0^3 = 6
+    \end{align*}
+
+    \textbf{Final Answer:}
+    \begin{equation*}
+        \boxed{6}
+    \end{equation*}
+\end{examplebox}

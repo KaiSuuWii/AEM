@@ -1,0 +1,127 @@
+\section*{5 Integral Concepts in Vector Calculus}
+
+\subsection*{5.1 Line Integrals}
+\begin{conceptbox}
+    A line integral of a vector field along a curve $C$ is defined as:
+    \begin{equation*}
+        \int_C \mathbf{F} \cdot d\mathbf{r} = \int_a^b \mathbf{F}(\mathbf{r}(t)) \cdot \mathbf{r}'(t)\, dt
+    \end{equation*}
+\end{conceptbox}
+This represents the accumulation of a quantity along a path. In physics, it commonly represents \textbf{work done by a force}.
+\newline
+To evaluate a line integral, we parametrize the curve:
+\begin{equation*}
+    \mathbf{r}(t) = \langle x(t), y(t), z(t) \rangle
+\end{equation*}
+\begin{examplebox}
+    Evaluate $\int_C \mathbf{F} \cdot d\mathbf{r}$ where $\mathbf{F}=\langle x,y\rangle$ and $C$ is the line from $(0,0)$ to $(1,1)$.
+
+    \textbf{Step 1: Parametrize the curve}
+    \begin{align*}
+        \mathbf{r}(t) = \langle t,t \rangle, \quad 0 \le t \le 1
+    \end{align*}
+
+    \textbf{Step 2: Compute derivative}
+    \begin{align*}
+        \mathbf{r}'(t) = \langle 1,1 \rangle
+    \end{align*}
+
+    \textbf{Step 3: Evaluate vector field along path}
+    \begin{align*}
+        \mathbf{F}(\mathbf{r}(t)) = \langle t,t \rangle
+    \end{align*}
+
+    \textbf{Step 4: Compute dot product}
+    \begin{align*}
+        \mathbf{F} \cdot \mathbf{r}' = t(1) + t(1) = 2t
+    \end{align*}
+
+    \textbf{Step 5: Integrate}
+    \begin{align*}
+        \int_0^1 2t\, dt = \left[t^2\right]_0^1 = 1
+    \end{align*}
+
+    \textbf{Final Answer:} $\boxed{1}$
+\end{examplebox}
+\begin{examplebox}
+    Evaluate the work done by the vector field
+    \begin{equation*}
+        \mathbf{F}(x,y,z)=\langle yz,\; xz,\; xy \rangle
+    \end{equation*}
+    along the curve
+    \begin{equation*}
+        \mathbf{r}(t)=\langle t,\; t^2,\; t^3 \rangle, \qquad 0 \le t \le 1.
+    \end{equation*}
+
+    \textbf{Step 1: Recall the formula for work}
+
+    The work done by a vector field along a curve is given by the line integral
+    \begin{equation*}
+        W=\int_C \mathbf{F}\cdot d\mathbf{r}
+        =\int_a^b \mathbf{F}(\mathbf{r}(t))\cdot \mathbf{r}'(t)\,dt
+    \end{equation*}
+
+    Thus, we must first compute $\mathbf{r}'(t)$ and then evaluate the vector field along the path.
+
+    \textbf{Step 2: Differentiate the parametrization}
+
+    Since
+    \begin{equation*}
+        \mathbf{r}(t)=\langle t,\; t^2,\; t^3 \rangle,
+    \end{equation*}
+    we differentiate component-wise:
+    \begin{align*}
+        \mathbf{r}'(t)
+         & = \left\langle \frac{d}{dt}(t),\; \frac{d}{dt}(t^2),\; \frac{d}{dt}(t^3) \right\rangle \\
+         & = \langle 1,\; 2t,\; 3t^2 \rangle
+    \end{align*}
+
+    \textbf{Step 3: Evaluate the vector field along the curve}
+
+    The field is
+    \begin{equation*}
+        \mathbf{F}(x,y,z)=\langle yz,\; xz,\; xy \rangle
+    \end{equation*}
+
+    Along the path $\mathbf{r}(t)=\langle t,\; t^2,\; t^3 \rangle$, we substitute
+    \begin{equation*}
+        x=t,\qquad y=t^2,\qquad z=t^3
+    \end{equation*}
+
+    Therefore,
+    \begin{align*}
+        \mathbf{F}(\mathbf{r}(t))
+         & = \langle yz,\; xz,\; xy \rangle                     \\
+         & = \langle (t^2)(t^3),\; (t)(t^3),\; (t)(t^2) \rangle \\
+         & = \langle t^5,\; t^4,\; t^3 \rangle
+    \end{align*}
+
+    \textbf{Step 4: Compute the dot product}
+
+    Now compute
+    \begin{align*}
+        \mathbf{F}(\mathbf{r}(t))\cdot \mathbf{r}'(t)
+         & = \langle t^5,\; t^4,\; t^3 \rangle \cdot \langle 1,\; 2t,\; 3t^2 \rangle \\
+         & = t^5(1) + t^4(2t) + t^3(3t^2)                                            \\
+         & = t^5 + 2t^5 + 3t^5                                                       \\
+         & = 6t^5
+    \end{align*}
+
+    \textbf{Step 5: Integrate over the interval}
+
+    Hence the work is
+    \begin{align*}
+        W
+         & = \int_0^1 6t^5\,dt               \\
+         & = 6\int_0^1 t^5\,dt               \\
+         & = 6\left[\frac{t^6}{6}\right]_0^1 \\
+         & = \left[t^6\right]_0^1            \\
+         & = 1-0                             \\
+         & = 1
+    \end{align*}
+
+    \textbf{Final Answer:}
+    \begin{equation*}
+        \boxed{1}
+    \end{equation*}
+\end{examplebox}
