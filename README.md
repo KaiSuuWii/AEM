@@ -10,7 +10,7 @@ This is my repository for the Advanced Engineering Mathematics class which will 
 - **MODULE 2**: Series Solutions (Solutions About Ordinary Points , Power Series Solutions, and more)
 - **MODULE 3**: Vectors (Vectors, Dot Product, Cross Product and more)
 - **MODULE 4**: Matrices (Matrix Addition, Matrix Multiplication, Solving Systems of equations and more)
-- **MODULE 5**: Vector Calculus ()
+- **MODULE 5**: Vector Calculus (Vector Functions, Partial Dervatives, Curl and Divergence, and more)
 - **Reference Books**: Additional resources and references
 
 ## About
