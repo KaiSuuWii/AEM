@@ -1,0 +1,198 @@
+% === quiz_solutions.tex ===
+\section*{Answer Key: Vector Calculus and Integral Theorems Activity}
+
+\begin{enumerate}
+    \item Let
+          \[
+              f(x,y)=x^2+xy+y^2.
+          \]
+          First compute the gradient:
+          \[
+              \nabla f=\left\langle 2x+y,\; x+2y\right\rangle
+          \]
+          At $(1,2)$:
+          \[
+              \nabla f(1,2)=\langle 4,\; 5\rangle
+          \]
+          The magnitude of $\langle 3,4\rangle$ is
+          \[
+              \sqrt{3^2+4^2}=5
+          \]
+          so the unit vector is
+          \[
+              \mathbf{u}=\left\langle \frac35,\; \frac45\right\rangle
+          \]
+          Hence the directional derivative is
+          \[
+              D_{\mathbf{u}}f=\nabla f\cdot \mathbf{u}
+              =\langle 4,5\rangle\cdot \left\langle \frac35,\frac45\right\rangle
+              =\frac{12}{5}+\frac{20}{5}
+              =\frac{32}{5}
+          \]
+          \[
+              \boxed{\textcolor{red}{\frac{32}{5}}}
+          \]
+
+    \item We are given
+          \[
+              \mathbf{F}(x,y)=\langle y,\; x\rangle,\qquad
+              \mathbf{r}(t)=\langle t,\; t^2\rangle,\quad 0\le t\le 1
+          \]
+          Differentiate the curve:
+          \[
+              \mathbf{r}'(t)=\langle 1,\; 2t\rangle
+          \]
+          Evaluate the vector field along the curve:
+          \[
+              \mathbf{F}(\mathbf{r}(t))=\langle t^2,\; t\rangle
+          \]
+          Compute the dot product:
+          \[
+              \mathbf{F}(\mathbf{r}(t))\cdot \mathbf{r}'(t)=t^2(1)+t(2t)=3t^2
+          \]
+          Therefore,
+          \[
+              \int_C \mathbf{F}\cdot d\mathbf{r}
+              =\int_0^1 3t^2\,dt
+              =\left[t^3\right]_0^1
+              =1
+          \]
+          \[
+              \boxed{\textcolor{red}{1}}
+          \]
+
+    \item By Green's Theorem,
+          \[
+              \oint_C (P\,dx+Q\,dy)=\iint_R \left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right)\,dA
+          \]
+          where
+          \[
+              P=x^2y,\qquad Q=xy^2
+          \]
+          Compute the needed partial derivatives:
+          \[
+              \frac{\partial Q}{\partial x}=y^2,\qquad
+              \frac{\partial P}{\partial y}=x^2
+          \]
+          Hence,
+          \[
+              \oint_C (x^2y\,dx+xy^2\,dy)=\iint_R (y^2-x^2)\,dA
+          \]
+          The triangular region is bounded by
+          \[
+              0\le x\le 1,\qquad 0\le y\le 2x
+          \]
+          so
+          \[
+              \iint_R (y^2-x^2)\,dA
+              =
+              \int_0^1\int_0^{2x}(y^2-x^2)\,dy\,dx
+          \]
+          Evaluate the inner integral:
+          \[
+              \int_0^{2x}(y^2-x^2)\,dy
+              =
+              \left[\frac{y^3}{3}-x^2y\right]_0^{2x}
+              =\frac{8x^3}{3}-2x^3
+              =\frac{2x^3}{3}
+          \]
+          Then
+          \[
+              \int_0^1 \frac{2x^3}{3}\,dx
+              =\frac23\left[\frac{x^4}{4}\right]_0^1
+              =\frac{1}{6}
+          \]
+          \[
+              \boxed{\textcolor{red}{\frac16}}
+          \]
+
+    \item By Stokes’ Theorem,
+          \[
+              \oint_C \mathbf{F}\cdot d\mathbf{r}
+              =
+              \iint_S (\nabla\times \mathbf{F})\cdot d\mathbf{S}
+          \]
+          where
+          \[
+              \mathbf{F}=\langle -y,\; x,\; z\rangle
+          \]
+          Compute the curl:
+          \[
+              \nabla\times \mathbf{F}
+              =
+              \begin{vmatrix}
+                  \mathbf{i} & \mathbf{j} & \mathbf{k} \\
+                  \partial_x & \partial_y & \partial_z \\
+                  -y         & x          & z
+              \end{vmatrix}
+              =\langle 0,\; 0,\; 2\rangle
+          \]
+          The surface $S$ is the disk $x^2+y^2\le 1$ in the plane $z=1$, oriented upward, so
+          \[
+              \mathbf{n}=\langle 0,0,1\rangle
+          \]
+          and
+          \[
+              (\nabla\times \mathbf{F})\cdot \mathbf{n}
+              =\langle 0,0,2\rangle\cdot \langle 0,0,1\rangle
+              =2
+          \]
+          Therefore,
+          \[
+              \iint_S (\nabla\times \mathbf{F})\cdot d\mathbf{S}
+              =\iint_S 2\,dA
+              =2(\text{area of unit disk})
+              =2\pi
+          \]
+          \[
+              \boxed{\textcolor{red}{2\pi}}
+          \]
+
+    \item By the Divergence Theorem,
+          \[
+              \iint_S \mathbf{F}\cdot d\mathbf{S}
+              =
+              \iiint_V (\nabla\cdot \mathbf{F})\,dV
+          \]
+          where
+          \[
+              \mathbf{F}=\langle x^3,\; y^3,\; z^3\rangle
+          \]
+          Compute the divergence:
+          \[
+              \nabla\cdot \mathbf{F}
+              =
+              \frac{\partial}{\partial x}(x^3)+\frac{\partial}{\partial y}(y^3)+\frac{\partial}{\partial z}(z^3)
+              =3x^2+3y^2+3z^2
+          \]
+          On the unit sphere, spherical coordinates are convenient:
+          \[
+              x^2+y^2+z^2=r^2,\qquad dV=r^2\sin\theta\,dr\,d\theta\,d\phi
+          \]
+          Thus,
+          \[
+              \iiint_V (\nabla\cdot \mathbf{F})\,dV
+              =
+              \int_0^{2\pi}\int_0^\pi\int_0^1 3r^2(r^2\sin\theta)\,dr\,d\theta\,d\phi
+          \]
+          \[
+              =
+              3\left(\int_0^1 r^4\,dr\right)
+              \left(\int_0^\pi \sin\theta\,d\theta\right)
+              \left(\int_0^{2\pi} d\phi\right)
+          \]
+          Evaluate each integral:
+          \[
+              \int_0^1 r^4\,dr=\frac15,\qquad
+              \int_0^\pi \sin\theta\,d\theta=2,\qquad
+              \int_0^{2\pi} d\phi=2\pi
+          \]
+          Therefore,
+          \[
+              3\cdot \frac15\cdot 2\cdot 2\pi
+              =\frac{12\pi}{5}
+          \]
+          \[
+              \boxed{\textcolor{red}{\frac{12\pi}{5}}}
+          \]
+\end{enumerate}

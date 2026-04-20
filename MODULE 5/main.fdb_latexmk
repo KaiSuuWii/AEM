@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1776055063.43828 "c:/Users/USER 1/OneDrive/Desktop/USTP-Instructor/2025-2026 2nd sem/ES207/Modules/MODULE 5/main.tex" "main.pdf" "main" 1776055066.57847 0
+["pdflatex"] 1776658530.6023 "c:/Users/USER 1/OneDrive/Desktop/USTP-Instructor/2025-2026 2nd sem/ES207/Modules/MODULE 5/main.tex" "main.pdf" "main" 1776658533.64946 0
   "C:/Users/USER" 1709884038 19148 013e94a827d08c3fa77f8035c991e252 ""
   "C:/Users/USER 1/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1773061826 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/USER 1/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk" 1731399259 14064 fa86831697447cf26bd07f257639a709 ""
@@ -212,10 +212,12 @@
   "C:/Users/USER 1/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/USER 1/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "c:/Users/USER" 1709884038 19148 013e94a827d08c3fa77f8035c991e252 ""
-  "c:/Users/USER 1/OneDrive/Desktop/USTP-Instructor/2025-2026 2nd sem/ES207/Modules/MODULE 5/main.tex" 1776054999 1958 dbf08856d08b45ee11405bcfea023f67 ""
-  "main.aux" 1776055066 163 f20fc0c2890fbc1a859f5ccccf32ba2d "pdflatex"
-  "main.out" 1776055064 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "main.tex" 1776054999 1958 dbf08856d08b45ee11405bcfea023f67 ""
+  "c:/Users/USER 1/OneDrive/Desktop/USTP-Instructor/2025-2026 2nd sem/ES207/Modules/MODULE 5/main.tex" 1776658388 2032 53ce852e71b39a84b505297f47e50f29 ""
+  "main.aux" 1776658533 163 37de383b063804c3350c60011970b867 "pdflatex"
+  "main.out" 1776658531 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "main.tex" 1776658388 2032 53ce852e71b39a84b505297f47e50f29 ""
+  "quiz.tex" 1776658343 1338 860eb36da0cb690b82362d7aea877a52 ""
+  "quiz_solutions.tex" 1776658529 4628 c0da5443ead1f6cfd195ef02277c8b8c ""
   "section_1.1.tex" 1776013118 1418 0a2204dd3ff7ff598e48c13623b491c7 ""
   "section_1.2.tex" 1776013470 994 7a18ae328f451038ed4f801485b3a598 ""
   "section_1.3.tex" 1776013656 1103 634456d29885ba70b8a9e6d68bbbcd7b ""

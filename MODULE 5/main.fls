@@ -427,6 +427,12 @@ INPUT section_6.3.tex
 INPUT .\section_6.4.tex
 INPUT .\section_6.4.tex
 INPUT section_6.4.tex
+INPUT .\quiz.tex
+INPUT .\quiz.tex
+INPUT quiz.tex
+INPUT .\quiz_solutions.tex
+INPUT .\quiz_solutions.tex
+INPUT quiz_solutions.tex
 INPUT main.aux
 INPUT .\main.out
 INPUT .\main.out
