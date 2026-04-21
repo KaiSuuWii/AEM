@@ -1,0 +1,107 @@
+\section{Complex Differentiation}
+
+\begin{conceptbox}
+    Let $f:\mathbb{C}\to\mathbb{C}$. The derivative of $f$ at $z$ is defined by
+    \[
+        f'(z)=\lim_{\Delta z\to 0}\frac{f(z+\Delta z)-f(z)}{\Delta z},
+    \]
+    provided the limit exists and is independent of the direction of approach.
+\end{conceptbox}
+
+\subsection*{Motivation / Intuition}
+
+Although the definition resembles that of real calculus, the key difference is that $\Delta z$ can approach $0$ from infinitely many directions in the complex plane.
+
+This makes complex differentiability much more restrictive than real differentiability.
+
+\subsection*{Practical Differentiation Rules}
+
+In practice, once a function is analytic, differentiation proceeds exactly like in real calculus.
+
+\begin{conceptbox}
+    If $f$ and $g$ are analytic, then:
+    \[
+        (f\pm g)'=f'\pm g',
+    \]
+    \[
+        (fg)'=f'g+fg',
+    \]
+    \[
+        \left(\frac{f}{g}\right)'=\frac{f'g-fg'}{g^2}, \quad g\neq 0,
+    \]
+    \[
+        (f\circ g)'=(f'\circ g)\,g'.
+    \]
+\end{conceptbox}
+
+\subsection*{Analytic Functions}
+
+\begin{conceptbox}
+    A function $f$ is \textbf{analytic} at $z_0$ if it is differentiable in a neighborhood of $z_0$.
+
+    If $f$ is analytic everywhere in $\mathbb{C}$, it is called \textbf{entire}.
+\end{conceptbox}
+
+\subsection*{Key Observations}
+
+\begin{itemize}
+    \item Polynomials are entire.
+    \item Rational functions are analytic wherever their denominators are nonzero.
+    \item Functions involving $z^*$ are generally not analytic.
+\end{itemize}
+
+\begin{examplebox}
+    \textbf{Example 1: Differentiate a polynomial}
+
+    Find the derivative of
+    \[
+        f(z)=z^2+3z+1.
+    \]
+
+    Using standard rules:
+    \[
+        f'(z)=2z+3.
+    \]
+\end{examplebox}
+
+\begin{examplebox}
+    \textbf{Example 2: Differentiate a rational function}
+
+    Find
+    \[
+        \frac{d}{dz}\left(\frac{1}{z}\right).
+    \]
+
+    Rewrite:
+    \[
+        \frac{1}{z}=z^{-1}.
+    \]
+
+    Differentiate:
+    \[
+        \frac{d}{dz}(z^{-1})=-z^{-2}=-\frac{1}{z^2}, \quad z\neq 0.
+    \]
+\end{examplebox}
+
+\begin{examplebox}
+    \textbf{Example 3: Non-analytic function}
+
+    Let
+    \[
+        f(z)=|z|^2=x^2+y^2.
+    \]
+
+    This function cannot be differentiated using standard complex rules and is not analytic (except trivially at $z=0$).
+\end{examplebox}
+
+\begin{noteBox}
+    In engineering applications, once analyticity is established, differentiation becomes straightforward and behaves exactly like real calculus. The real challenge is determining whether a function is analytic—this is where the Cauchy--Riemann equations become essential.
+\end{noteBox}
+
+\subsection*{Common Mistakes / Notes}
+
+\begin{itemize}
+    \item Do not apply differentiation rules unless the function is analytic.
+    \item The presence of $z^*$ usually indicates non-analytic behavior.
+    \item Complex differentiation is stricter than real differentiation due to direction independence.
+\end{itemize}

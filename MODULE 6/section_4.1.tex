@@ -1,0 +1,171 @@
+% Primary and supplementary source basis: :contentReference[oaicite:7]{index=7} :contentReference[oaicite:8]{index=8}
+
+\section{Complex Functions}
+
+\begin{conceptbox}
+    A \textbf{complex function} is a mapping
+    \[
+        f:\mathbb{C}\to\mathbb{C}.
+    \]
+    If
+    \[
+        z=x+iy,
+    \]
+    then a complex function can be written as
+    \[
+        w=f(z)=u(x,y)+iv(x,y),
+    \]
+    where $u$ and $v$ are real-valued functions of two real variables.
+\end{conceptbox}
+
+\subsection*{Motivation / Intuition}
+
+A real function maps a line to a line. A complex function maps a plane to a plane. That means a complex function can move, rotate, stretch, fold, or invert regions of the plane.
+
+This is why visualizing complex functions often involves studying how curves and regions in the $z$-plane map into the $w$-plane.
+
+\subsection*{Geometric Interpretation}
+
+Useful curves in the complex plane include:
+\[
+    z=x+iy_0 \quad \text{(horizontal line)},
+\]
+\[
+    z=x_0+iy \quad \text{(vertical line)},
+\]
+\[
+    z=re^{i\theta_0}, \quad r\ge 0 \quad \text{(ray)},
+\]
+\[
+    |z-c|=R \quad \text{(circle)}.
+\]
+
+A complex mapping may turn these simple curves into other lines, circles, spirals, or more complicated shapes.
+
+\subsection*{Key Properties and Observations}
+
+\begin{conceptbox}
+    If
+    \[
+        f(z)=a+bz,
+    \]
+    then:
+    \begin{itemize}
+        \item adding $a$ translates points,
+        \item multiplying by a real $b$ dilates the plane,
+        \item multiplying by a complex number $b=\rho e^{i\phi}$ both dilates by $\rho$ and rotates by $\phi$.
+    \end{itemize}
+\end{conceptbox}
+
+\begin{conceptbox}
+    If
+    \[
+        f(z)=z^2,
+    \]
+    then
+    \[
+        z=re^{i\theta}
+        \quad \Longrightarrow \quad
+        w=r^2e^{i2\theta}.
+    \]
+    So the magnitude is squared and the argument is doubled.
+\end{conceptbox}
+
+\begin{conceptbox}
+    If
+    \[
+        f(z)=\frac{1}{z},
+    \]
+    then
+    \[
+        z=re^{i\theta}
+        \quad \Longrightarrow \quad
+        w=\frac{1}{r}e^{-i\theta}.
+    \]
+    So magnitudes are inverted and angles change sign.
+\end{conceptbox}
+
+\begin{examplebox}
+    \textbf{Example 1: Translation and rotation}
+
+    Consider
+    \[
+        f(z)=2e^{i\pi/6}z+1.
+    \]
+
+    Let
+    \[
+        z=re^{i\theta}.
+    \]
+
+    Then
+    \[
+        f(z)=2re^{i(\theta+\pi/6)}+1.
+    \]
+
+    Interpretation:
+    \begin{enumerate}
+        \item multiply distances from the origin by $2$,
+        \item rotate every point by $\pi/6$,
+        \item then translate the entire image one unit to the right.
+    \end{enumerate}
+\end{examplebox}
+
+\begin{examplebox}
+    \textbf{Example 2: Mapping under $w=z^2$}
+
+    Let
+    \[
+        z=e^{i\theta}, \qquad 0\le \theta \le \pi.
+    \]
+
+    These points trace the upper semicircle of the unit circle.
+
+    Under
+    \[
+        w=z^2,
+    \]
+    we get
+    \[
+        w=e^{i2\theta}.
+    \]
+
+    As $\theta$ goes from $0$ to $\pi$, the angle $2\theta$ goes from $0$ to $2\pi$.
+
+    Therefore, the upper semicircle maps onto the entire unit circle.
+\end{examplebox}
+
+\begin{examplebox}
+    \textbf{Example 3: Write $1/z$ in rectangular components}
+
+    Let
+    \[
+        w=\frac{1}{z}, \qquad z=x+iy.
+    \]
+
+    Then
+    \[
+        w=\frac{1}{x+iy}\cdot \frac{x-iy}{x-iy}
+        =
+        \frac{x-iy}{x^2+y^2}.
+    \]
+
+    Hence
+    \[
+        u(x,y)=\frac{x}{x^2+y^2},
+        \qquad
+        v(x,y)= -\frac{y}{x^2+y^2}.
+    \]
+\end{examplebox}
+
+\begin{noteBox}
+    Complex mappings are fundamental in engineering because they connect geometry with system behavior. For example, mappings between the $s$-plane and the $z$-plane are central in control systems and digital signal processing.
+\end{noteBox}
+
+\subsection*{Common Mistakes / Notes}
+
+\begin{itemize}
+    \item A complex function is not just a pair of unrelated real functions; $u$ and $v$ are linked when differentiability is required.
+    \item The map $z^2$ is not one-to-one on the whole plane.
+    \item The map $1/z$ is undefined at $z=0$ and has singular behavior there.
+\end{itemize}
