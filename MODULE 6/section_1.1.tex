@@ -1,0 +1,194 @@
+% Primary and supplementary source basis: :contentReference[oaicite:0]{index=0} :contentReference[oaicite:1]{index=1} :contentReference[oaicite:2]{index=2}
+
+\section{Complex Numbers}
+
+\begin{conceptbox}
+    A \textbf{complex number} is written in rectangular form as
+    \[
+        z = x + iy,
+    \]
+    where $x,y \in \mathbb{R}$ and $i^2 = -1$.
+
+    The quantities
+    \[
+        \Re(z)=x, \qquad \Im(z)=y
+    \]
+    are called the \textbf{real part} and \textbf{imaginary part} of $z$, respectively.
+
+    The \textbf{complex conjugate} of $z$ is
+    \[
+        z^* = x - iy,
+    \]
+    and the \textbf{modulus} of $z$ is
+    \[
+        |z| = \sqrt{x^2+y^2}.
+    \]
+\end{conceptbox}
+
+Complex numbers extend the real number system in a natural way. In earlier engineering mathematics, variables were often real-valued. Now the independent or dependent variable may be complex. This is important because many engineering tools, especially the Laplace transform and the $Z$-transform, use complex variables.
+
+A useful viewpoint is geometric: the number
+\[
+    z=x+iy
+\]
+is represented by the point $(x,y)$ in the complex plane. The horizontal axis is the real axis, and the vertical axis is the imaginary axis.
+
+\begin{conceptbox}
+    For
+    \[
+        z_1=x_1+iy_1, \qquad z_2=x_2+iy_2,
+    \]
+    the basic operations are
+    \[
+        z_1+z_2=(x_1+x_2)+i(y_1+y_2),
+    \]
+    \[
+        z_1-z_2=(x_1-x_2)+i(y_1-y_2),
+    \]
+    \[
+        z_1z_2=(x_1x_2-y_1y_2)+i(x_1y_2+x_2y_1),
+    \]
+    and if $z_2\neq 0$,
+    \[
+        \frac{z_1}{z_2}
+        =
+        \frac{(x_1+iy_1)(x_2-iy_2)}{x_2^2+y_2^2}.
+    \]
+    Also,
+    \[
+        zz^*=|z|^2=x^2+y^2,
+        \qquad
+        \Re(z)=\frac{z+z^*}{2},
+        \qquad
+        \Im(z)=\frac{z-z^*}{2i}.
+    \]
+\end{conceptbox}
+
+\subsection*{Motivation and Intuition}
+
+Why do we need complex numbers in engineering? A sinusoid such as
+\[
+    A\cos(\omega t+\phi)
+\]
+can be handled much more efficiently through
+\[
+    Ae^{i(\omega t+\phi)}.
+\]
+Instead of separating magnitude and phase repeatedly, complex numbers allow both to be carried at once in a single expression.
+
+\subsection*{Geometric Interpretation}
+
+If $z=x+iy$, then:
+
+\begin{itemize}
+    \item $|z|$ is the distance from the origin to the point $z$.
+    \item $z^*$ is the reflection of $z$ across the real axis.
+    \item Addition corresponds to vector addition in the plane.
+    \item Multiplication has a deeper geometric meaning that becomes clearer in polar form.
+\end{itemize}
+
+\subsection*{Key Properties}
+
+\begin{conceptbox}
+    Important modulus properties:
+    \[
+        |z_1z_2|=|z_1||z_2|,
+        \qquad
+        \left|\frac{z_1}{z_2}\right|=\frac{|z_1|}{|z_2|} \quad (z_2\neq 0),
+    \]
+    \[
+        |z_1+z_2|\le |z_1|+|z_2|
+    \]
+    (the triangle inequality).
+\end{conceptbox}
+
+These are frequently used in complex analysis, signal processing, and control.
+
+\begin{examplebox}
+    \textbf{Example 1: Simplify a quotient}
+
+    Simplify
+    \[
+        \frac{3-2i}{-1+i}.
+    \]
+
+    Multiply numerator and denominator by the conjugate of the denominator:
+    \[
+        \frac{3-2i}{-1+i}\cdot \frac{-1-i}{-1-i}
+        =
+        \frac{(3-2i)(-1-i)}{(-1+i)(-1-i)}.
+    \]
+
+    Compute the numerator:
+    \[
+        (3-2i)(-1-i)= -3-3i+2i+2i^2.
+    \]
+    Since $i^2=-1$,
+    \[
+        -3-3i+2i+2(-1) = -5-i.
+    \]
+
+    Compute the denominator:
+    \[
+        (-1+i)(-1-i)=(-1)^2-i^2 = 1-(-1)=2.
+    \]
+
+    Hence,
+    \[
+        \frac{3-2i}{-1+i}=\frac{-5-i}{2}=-\frac{5}{2}-\frac{1}{2}i.
+    \]
+\end{examplebox}
+
+\begin{examplebox}
+    \textbf{Example 2: Use the conjugate to find real and imaginary parts}
+
+    Let
+    \[
+        z=4-3i.
+    \]
+
+    Then
+    \[
+        z^*=4+3i.
+    \]
+
+    Now,
+    \[
+        \Re(z)=\frac{z+z^*}{2}
+        =
+        \frac{(4-3i)+(4+3i)}{2}
+        =
+        \frac{8}{2}=4,
+    \]
+    and
+    \[
+        \Im(z)=\frac{z-z^*}{2i}
+        =
+        \frac{(4-3i)-(4+3i)}{2i}
+        =
+        \frac{-6i}{2i}=-3.
+    \]
+\end{examplebox}
+
+\begin{noteBox}
+    In AC circuit analysis, impedance is written as a complex number:
+    \[
+        Z=R+iX,
+    \]
+    where $R$ is resistance and $X$ is reactance. This compact form allows algebraic handling of phase shifts and amplitudes in one framework.
+\end{noteBox}
+
+\subsection*{Common Mistakes / Notes}
+
+\begin{itemize}
+    \item Do not confuse $z^2$ with $|z|^2$. In general,
+          \[
+              z^2=(x+iy)^2=x^2-y^2+i2xy,
+          \]
+          whereas
+          \[
+              |z|^2=x^2+y^2.
+          \]
+    \item The imaginary part of $z=x+iy$ is $y$, not $iy$.
+    \item When dividing complex numbers, always rationalize the denominator using the conjugate.
+\end{itemize}
