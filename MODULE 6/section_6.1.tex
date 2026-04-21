@@ -1,0 +1,185 @@
+% Primary and supplementary source basis: :contentReference[oaicite:12]{index=12} :contentReference[oaicite:13]{index=13}
+
+\section{Complex Integration}
+
+\begin{conceptbox}
+    If a contour $C$ is parametrized by
+    \[
+        z(t)=x(t)+iy(t), \qquad a\le t\le b,
+    \]
+    then
+    \[
+        dz = z'(t)\,dt = \big(x'(t)+iy'(t)\big)\,dt,
+    \]
+    and the contour integral of $f(z)$ along $C$ is
+    \[
+        \int_C f(z)\,dz = \int_a^b f(z(t))\,z'(t)\,dt.
+    \]
+\end{conceptbox}
+
+\subsection*{Motivation / Intuition}
+
+In real calculus, we integrate along an interval. In complex analysis, we integrate along a path in the complex plane. Thus, both the function and the path matter.
+
+For nonanalytic functions, the value may depend on the chosen path. For analytic functions in suitable domains, a remarkable simplification occurs: the integral becomes path independent.
+
+\subsection*{Geometric / Physical Interpretation}
+
+You may think of a contour integral as accumulating the values of a complex field along a directed path. Orientation matters. Reversing the direction changes the sign of the integral.
+
+\subsection*{Key Properties / Theorems}
+
+\begin{conceptbox}
+    If $f$ is analytic on and inside a simple closed contour $C$, then
+    \[
+        \oint_C f(z)\,dz = 0.
+    \]
+    This is the \textbf{Cauchy--Goursat theorem}.
+\end{conceptbox}
+
+\begin{conceptbox}
+    If $f$ is analytic in a domain, then integrals between two points in that domain are \textbf{path independent}. In particular, if $F'(z)=f(z)$, then
+    \[
+        \int_a^b f(z)\,dz = F(b)-F(a).
+    \]
+    This is the complex version of the fundamental theorem of calculus.
+\end{conceptbox}
+
+\subsection*{Worked Examples}
+
+\begin{examplebox}
+    \textbf{Example 1: Direct contour integration}
+
+    Evaluate
+    \[
+        \int_C z^2\,dz
+    \]
+    where $C$ is the line segment from $0$ to $2+i$ given by
+    \[
+        z(t)=(2+i)t,\qquad 0\le t\le 1.
+    \]
+
+    Differentiate:
+    \[
+        dz=(2+i)\,dt.
+    \]
+
+    Also,
+    \[
+        z^2(t)=\big((2+i)t\big)^2=(2+i)^2t^2=(3+4i)t^2.
+    \]
+
+    Therefore,
+    \[
+        \int_C z^2\,dz
+        =
+        \int_0^1 (3+4i)t^2(2+i)\,dt.
+    \]
+
+    Multiply:
+    \[
+        (3+4i)(2+i)=6+3i+8i+4i^2=2+11i.
+    \]
+
+    So
+    \[
+        \int_C z^2\,dz
+        =
+        \int_0^1 (2+11i)t^2\,dt
+        =
+        (2+11i)\int_0^1 t^2\,dt
+        =
+        (2+11i)\left[\frac{t^3}{3}\right]_0^1.
+    \]
+
+    Hence,
+    \[
+        \int_C z^2\,dz=\frac{2}{3}+\frac{11}{3}i.
+    \]
+\end{examplebox}
+
+\begin{examplebox}
+    \textbf{Example 2: Use an antiderivative}
+
+    Evaluate
+    \[
+        \int_C z^2\,dz
+    \]
+    for any contour from $0$ to $2+i$.
+
+    Since
+    \[
+        f(z)=z^2
+    \]
+    is entire, an antiderivative is
+    \[
+        F(z)=\frac{z^3}{3}.
+    \]
+
+    Therefore,
+    \[
+        \int_C z^2\,dz = F(2+i)-F(0)=\frac{(2+i)^3}{3}.
+    \]
+
+    Compute:
+    \[
+        (2+i)^2=3+4i,
+    \]
+    \[
+        (2+i)^3=(3+4i)(2+i)=2+11i.
+    \]
+
+    Hence,
+    \[
+        \int_C z^2\,dz=\frac{2+11i}{3}
+        =
+        \frac{2}{3}+\frac{11}{3}i.
+    \]
+
+    The answer is the same for every contour joining the same endpoints, because $z^2$ is analytic everywhere.
+\end{examplebox}
+
+\begin{examplebox}
+    \textbf{Example 3: Integral of $1/z$ around a circle}
+
+    Evaluate
+    \[
+        \oint_{|z|=r}\frac{1}{z}\,dz
+    \]
+    counterclockwise.
+
+    Parametrize the circle by
+    \[
+        z=re^{i\theta}, \qquad 0\le \theta\le 2\pi.
+    \]
+
+    Then
+    \[
+        dz=ire^{i\theta}\,d\theta.
+    \]
+
+    Substitute:
+    \[
+        \oint_{|z|=r}\frac{1}{z}\,dz
+        =
+        \int_0^{2\pi}\frac{1}{re^{i\theta}}\big(ire^{i\theta}\big)\,d\theta
+        =
+        i\int_0^{2\pi} d\theta
+        =
+        2\pi i.
+    \]
+
+    This is a foundational result in complex analysis.
+\end{examplebox}
+
+\begin{noteBox}
+    Contour integration is one of the most useful tools in engineering mathematics. It is used to evaluate inverse Laplace transforms, compute real integrals, analyze poles of transfer functions, and derive frequency-domain results.
+\end{noteBox}
+
+\subsection*{Common Mistakes / Notes}
+
+\begin{itemize}
+    \item Always parametrize the contour carefully and compute $dz$ correctly.
+    \item Path independence requires analyticity on a suitable domain.
+    \item The integral of $1/z$ around a closed contour enclosing the origin is not zero because $1/z$ is not analytic at $z=0$.
+\end{itemize}

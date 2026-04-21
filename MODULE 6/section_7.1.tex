@@ -1,0 +1,217 @@
+% Primary and supplementary source basis: :contentReference[oaicite:14]{index=14} :contentReference[oaicite:15]{index=15} :contentReference[oaicite:16]{index=16}
+
+\section{Cauchy--Riemann Equations}
+
+\begin{conceptbox}
+    Let
+    \[
+        f(z)=u(x,y)+iv(x,y), \qquad z=x+iy.
+    \]
+    If $f$ is differentiable at a point, then
+    \[
+        \frac{\partial u}{\partial x}=\frac{\partial v}{\partial y},
+        \qquad
+        \frac{\partial u}{\partial y}=-\frac{\partial v}{\partial x}.
+    \]
+    These are the \textbf{Cauchy--Riemann equations}.
+\end{conceptbox}
+
+\subsection*{Motivation / Intuition}
+
+Because the derivative in the complex plane must be independent of direction, differentiating in the $x$-direction and in the $y$-direction must give the same result. That compatibility condition is exactly what produces the Cauchy--Riemann equations.
+
+\subsection*{Derivation}
+
+Starting from
+\[
+    f'(z)=\lim_{\Delta z\to 0}\frac{\Delta w}{\Delta z},
+\]
+take $\Delta z=\Delta x$ first. Then
+\[
+    f'(z)=\frac{\partial u}{\partial x}+i\frac{\partial v}{\partial x}.
+\]
+
+Now take $\Delta z=i\Delta y$. Then
+\[
+    f'(z)=\frac{\partial v}{\partial y}-i\frac{\partial u}{\partial y}.
+\]
+
+Since both expressions must be equal,
+\[
+    \frac{\partial u}{\partial x}+i\frac{\partial v}{\partial x}
+    =
+    \frac{\partial v}{\partial y}-i\frac{\partial u}{\partial y}.
+\]
+
+Equating real and imaginary parts gives
+\[
+    \frac{\partial u}{\partial x}=\frac{\partial v}{\partial y},
+    \qquad
+    \frac{\partial v}{\partial x}=-\frac{\partial u}{\partial y}.
+\]
+
+\begin{conceptbox}
+    If the partial derivatives are continuous in a neighborhood and the Cauchy--Riemann equations hold there, then $f$ is differentiable there.
+\end{conceptbox}
+
+\subsection*{Polar Form}
+
+If
+\[
+    f(z)=u(r,\theta)+iv(r,\theta),
+\]
+then the Cauchy--Riemann equations in polar coordinates are
+\[
+    \frac{\partial u}{\partial r}
+    =
+    \frac{1}{r}\frac{\partial v}{\partial \theta},
+    \qquad
+    \frac{\partial v}{\partial r}
+    =
+    -\frac{1}{r}\frac{\partial u}{\partial \theta}.
+\]
+
+These are useful when the function is naturally expressed in polar form.
+
+\subsection*{Worked Examples}
+
+\begin{examplebox}
+    \textbf{Example 1: Verify analyticity of $f(z)=z^2$}
+
+    Write
+    \[
+        z^2=(x+iy)^2=(x^2-y^2)+i(2xy).
+    \]
+
+    So
+    \[
+        u(x,y)=x^2-y^2,
+        \qquad
+        v(x,y)=2xy.
+    \]
+
+    Now compute the partial derivatives:
+    \[
+        u_x=2x,
+        \qquad
+        u_y=-2y,
+        \qquad
+        v_x=2y,
+        \qquad
+        v_y=2x.
+    \]
+
+    Check the Cauchy--Riemann equations:
+    \[
+        u_x=v_y \quad \Rightarrow \quad 2x=2x,
+    \]
+    \[
+        u_y=-v_x \quad \Rightarrow \quad -2y=-2y.
+    \]
+
+    They hold everywhere, and the partial derivatives are continuous everywhere. Therefore, $z^2$ is entire.
+
+    The derivative is
+    \[
+        f'(z)=u_x+iv_x=2x+i2y=2z.
+    \]
+\end{examplebox}
+
+\begin{examplebox}
+    \textbf{Example 2: Test $f(z)=|z|^2$}
+
+    Write
+    \[
+        |z|^2=x^2+y^2+i0.
+    \]
+
+    Thus
+    \[
+        u=x^2+y^2,
+        \qquad
+        v=0.
+    \]
+
+    Compute:
+    \[
+        u_x=2x,
+        \qquad
+        u_y=2y,
+        \qquad
+        v_x=0,
+        \qquad
+        v_y=0.
+    \]
+
+    The equations require
+    \[
+        2x=0,
+        \qquad
+        2y=0.
+    \]
+
+    So they hold only at $(0,0)$. Hence $|z|^2$ is not analytic in any neighborhood of any point, and therefore is not analytic anywhere.
+\end{examplebox}
+
+\begin{examplebox}
+    \textbf{Example 3: Use the polar form for $f(z)=1/z$}
+
+    Write
+    \[
+        f(z)=\frac{1}{z}=\frac{1}{r}e^{-i\theta}
+        =
+        \frac{\cos\theta}{r}
+        -i\frac{\sin\theta}{r}.
+    \]
+
+    So
+    \[
+        u(r,\theta)=\frac{\cos\theta}{r},
+        \qquad
+        v(r,\theta)=-\frac{\sin\theta}{r}.
+    \]
+
+    Compute:
+    \[
+        u_r=-\frac{\cos\theta}{r^2},
+        \qquad
+        v_\theta=-\frac{\cos\theta}{r},
+    \]
+    hence
+    \[
+        \frac{1}{r}v_\theta
+        =
+        -\frac{\cos\theta}{r^2}
+        =
+        u_r.
+    \]
+
+    Also,
+    \[
+        v_r=\frac{\sin\theta}{r^2},
+        \qquad
+        u_\theta=-\frac{\sin\theta}{r},
+    \]
+    so
+    \[
+        -\frac{1}{r}u_\theta
+        =
+        \frac{\sin\theta}{r^2}
+        =
+        v_r.
+    \]
+
+    Thus the polar Cauchy--Riemann equations hold for $r\neq 0$. Therefore, $1/z$ is analytic for $z\neq 0$.
+\end{examplebox}
+
+\begin{noteBox}
+    The Cauchy--Riemann equations are among the most important tests in engineering complex analysis. They help detect whether a candidate field can behave like a valid complex potential, analytic transfer function, or conformal mapping.
+\end{noteBox}
+
+\subsection*{Common Mistakes / Notes}
+
+\begin{itemize}
+    \item Satisfying the Cauchy--Riemann equations at a single point does not guarantee analyticity there.
+    \item Continuity of the partial derivatives in a neighborhood is the standard practical condition used with the equations.
+    \item The equations test complex differentiability, not ordinary differentiability in $\mathbb{R}^2$.
+\end{itemize}

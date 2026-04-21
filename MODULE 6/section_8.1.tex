@@ -1,0 +1,233 @@
+\section{Exponential and Logarithmic Functions}
+
+\subsection{The Complex Exponential}
+
+\begin{conceptbox}
+    The complex exponential is defined by
+    \[
+        e^z = e^{x+iy}=e^x(\cos y+i\sin y),
+        \qquad z=x+iy.
+    \]
+\end{conceptbox}
+
+\subsection*{Motivation / Intuition}
+
+The real exponential controls growth and decay. The imaginary exponential controls rotation and oscillation. In the complex exponential, both effects occur simultaneously.
+
+\subsection*{Key Properties}
+
+\begin{conceptbox}
+    For all complex numbers $z,w$,
+    \[
+        e^{z+w}=e^ze^w.
+    \]
+    Also,
+    \[
+        e^{iy}=\cos y+i\sin y.
+    \]
+\end{conceptbox}
+
+\begin{conceptbox}
+    The function $e^z$ is \textbf{entire}.
+\end{conceptbox}
+
+To verify analyticity, write
+\[
+    e^{x+iy}=e^x\cos y+i e^x\sin y.
+\]
+Thus
+\[
+    u(x,y)=e^x\cos y,
+    \qquad
+    v(x,y)=e^x\sin y.
+\]
+Then
+\[
+    u_x=e^x\cos y=v_y,
+    \qquad
+    u_y=-e^x\sin y=-v_x.
+\]
+So the Cauchy--Riemann equations hold everywhere.
+
+\begin{examplebox}
+    \textbf{Example 1: Evaluate a complex exponential}
+
+    Compute
+    \[
+        e^{2+i\pi/3}.
+    \]
+
+    Using
+    \[
+        e^{x+iy}=e^x(\cos y+i\sin y),
+    \]
+    we get
+    \[
+        e^{2+i\pi/3}
+        =
+        e^2\left(\cos\frac{\pi}{3}+i\sin\frac{\pi}{3}\right).
+    \]
+
+    Now
+    \[
+        \cos\frac{\pi}{3}=\frac12,
+        \qquad
+        \sin\frac{\pi}{3}=\frac{\sqrt{3}}{2}.
+    \]
+
+    Therefore,
+    \[
+        e^{2+i\pi/3}
+        =
+        e^2\left(\frac12+i\frac{\sqrt{3}}{2}\right).
+    \]
+\end{examplebox}
+
+\subsection{The Complex Logarithm}
+
+\begin{conceptbox}
+    The complex logarithm is defined implicitly by
+    \[
+        z=e^{\log z}.
+    \]
+    If
+    \[
+        z=re^{i\theta},
+    \]
+    then
+    \[
+        \log z = \ln r + i\theta = \ln|z| + i\arg z.
+    \]
+\end{conceptbox}
+
+\subsection*{Why the Logarithm is Different}
+
+Unlike the exponential, the logarithm is \textbf{multivalued}, because the argument is multivalued:
+\[
+    \arg z = \theta + 2k\pi,
+    \qquad k\in\mathbb{Z}.
+\]
+
+Hence,
+\[
+    \log z = \ln|z| + i(\theta+2k\pi), \qquad k\in\mathbb{Z}.
+\]
+
+So one complex number has infinitely many logarithms.
+
+\begin{conceptbox}
+    The \textbf{principal logarithm} is
+    \[
+        \operatorname{Log} z = \ln|z| + i\operatorname{Arg} z,
+    \]
+    where usually
+    \[
+        -\pi<\operatorname{Arg} z\le \pi.
+    \]
+\end{conceptbox}
+
+\subsection*{Branch Cuts and Analyticity}
+
+To make the logarithm single-valued, we restrict the domain. For the principal branch, the standard branch cut is along the nonpositive real axis.
+
+Thus $\operatorname{Log} z$ is analytic on
+\[
+    \mathbb{C}\setminus (-\infty,0].
+\]
+
+\begin{conceptbox}
+    For the principal branch,
+    \[
+        \frac{d}{dz}\operatorname{Log} z = \frac{1}{z},
+    \]
+    provided $z$ stays in the chosen branch domain.
+\end{conceptbox}
+
+\begin{examplebox}
+    \textbf{Example 2: Find all logarithms of $1$, $-1$, and $i$}
+
+    For $1$:
+    \[
+        1=e^{i2k\pi},
+        \qquad k\in\mathbb{Z}.
+    \]
+    Hence
+    \[
+        \log 1 = i2k\pi.
+    \]
+
+    For $-1$:
+    \[
+        -1=e^{i(\pi+2k\pi)},
+    \]
+    so
+    \[
+        \log(-1)=i(\pi+2k\pi).
+    \]
+
+    For $i$:
+    \[
+        i=e^{i(\pi/2+2k\pi)},
+    \]
+    hence
+    \[
+        \log i = i\left(\frac{\pi}{2}+2k\pi\right).
+    \]
+\end{examplebox}
+
+\begin{examplebox}
+    \textbf{Example 3: Compute the principal logarithm of $-1+i$}
+
+    First write
+    \[
+        -1+i=\sqrt{2}\,e^{i3\pi/4}.
+    \]
+
+    Because
+    \[
+        \operatorname{Arg}(-1+i)=\frac{3\pi}{4},
+    \]
+    the principal logarithm is
+    \[
+        \operatorname{Log}(-1+i)=\ln(\sqrt{2})+i\frac{3\pi}{4}.
+    \]
+
+    Since
+    \[
+        \ln(\sqrt{2})=\frac12\ln 2,
+    \]
+    we obtain
+    \[
+        \operatorname{Log}(-1+i)=\frac12\ln 2+i\frac{3\pi}{4}.
+    \]
+\end{examplebox}
+
+\subsection*{Functions Derived from the Logarithm}
+
+Once the logarithm is available, many inverse and power functions can be defined:
+\[
+    z^\alpha = e^{\alpha \log z}.
+\]
+This includes fractional powers and roots.
+
+For example,
+\[
+    z^{1/n}=e^{\frac1n\log z}.
+\]
+Because $\log z$ is multivalued, roots are also multivalued unless a branch is chosen.
+
+\begin{noteBox}
+    The complex exponential is indispensable in engineering because it unifies sinusoidal motion, phasors, damping, and oscillation. The logarithm is equally important in inverse mappings, stability analysis, phase unwrapping, and defining powers such as $z^\alpha$.
+\end{noteBox}
+
+\subsection*{Common Mistakes / Notes}
+
+\begin{itemize}
+    \item Do not treat $\log z$ as single-valued unless a branch has been specified.
+    \item The identity
+          \[
+              \log(z_1z_2)=\log z_1+\log z_2
+          \]
+          must be used carefully in the complex setting because branch choices matter.
+    \item The logarithm is undefined at $z=0$ and discontinuous across its branch cut.
+\end{itemize}

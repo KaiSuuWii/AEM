@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1776760703.19291 "c:/Users/USER 1/OneDrive/Desktop/USTP-Instructor/2025-2026 2nd sem/ES207/Modules/MODULE 6/main.tex" "main.pdf" "main" 1776760705.54452 0
+["pdflatex"] 1776761418.43326 "c:/Users/USER 1/OneDrive/Desktop/USTP-Instructor/2025-2026 2nd sem/ES207/Modules/MODULE 6/main.tex" "main.pdf" "main" 1776761421.07961 0
   "C:/Users/USER" 1709884038 19148 013e94a827d08c3fa77f8035c991e252 ""
   "C:/Users/USER 1/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1773061826 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/USER 1/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk" 1731399259 14064 fa86831697447cf26bd07f257639a709 ""
@@ -211,15 +211,18 @@
   "C:/Users/USER 1/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/USER 1/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "c:/Users/USER" 1709884038 19148 013e94a827d08c3fa77f8035c991e252 ""
-  "c:/Users/USER 1/OneDrive/Desktop/USTP-Instructor/2025-2026 2nd sem/ES207/Modules/MODULE 6/main.tex" 1776760473 1625 b2cc6f4537b78eb26fac6fcc2ee519b4 ""
-  "main.aux" 1776760705 732 114bbd921b249760e33ffe0608bbcf17 "pdflatex"
-  "main.out" 1776760705 640 90a4456d57b1f3e01bc4b6b88cfde9b4 "pdflatex"
-  "main.tex" 1776760473 1625 b2cc6f4537b78eb26fac6fcc2ee519b4 ""
+  "c:/Users/USER 1/OneDrive/Desktop/USTP-Instructor/2025-2026 2nd sem/ES207/Modules/MODULE 6/main.tex" 1776761175 1618 c76e82b208fbe36fde97dd0908419b8d ""
+  "main.aux" 1776761420 1367 f80d5cdf7767be9d1289ede4943d42c4 "pdflatex"
+  "main.out" 1776761420 1534 62149747c0778d6316a948d4053a1574 "pdflatex"
+  "main.tex" 1776761175 1618 c76e82b208fbe36fde97dd0908419b8d ""
   "section_1.1.tex" 1776759271 4891 bdb6c1d3e87cb5d1f43d24b4aa3f8695 ""
   "section_2.1.tex" 1776759901 5306 a97f1d35b7d1e08274c029b47250f192 ""
   "section_3.1.tex" 1776760047 3804 cacdf3f0ab91b53e96159a6ec7362082 ""
   "section_4.1.tex" 1776760302 4223 89d944ac4708137dd8379e3e79419a8f ""
   "section_5.1.tex" 1776760700 3071 f942dc76b221a37b798b61b658e80b7b ""
+  "section_6.1.tex" 1776761091 4635 7253ed0d6341923983fc2ca4d4ed77ab ""
+  "section_7.1.tex" 1776761161 5328 1dec23f61074898400aa8b237f3fe736 ""
+  "section_8.1.tex" 1776761417 5153 507a6c57ca48cda4d929cc7c11852386 ""
   "title_page.tex" 1776759172 344 821c84d5110e92e77166a97cfca5f6ad ""
   (generated)
   "main.aux"
