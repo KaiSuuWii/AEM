@@ -56,15 +56,7 @@ Assume students:
 
 \### TOPICS TO COVER
 
-\- Complex Analysis
-7.1\. Numbers
-7.2\. Polar Form
-7.3\. Variables
-7.4\. Functions
-7.5\. Differentiation
-7.6\. Integration
-7.7\. Cauchy-Riemann Equations
-7.8\. Exponential and Logarithmic
+\- (Topics to be covered)
 
 \### PREREQUISITES (ALREADY TAUGHT)
 
@@ -111,6 +103,15 @@ Assume students:
 6.9\. Stokes’ Theorem
 6.10\. Triple Integrals
 6.11\. Divergence Theorem
+7\. Complex Analysis
+7.1\. Numbers
+7.2\. Polar Form
+7.3\. Variables
+7.4\. Functions
+7.5\. Differentiation
+7.6\. Integration
+7.7\. Cauchy-Riemann Equations
+7.8\. Exponential and Logarithmic
 
 \### INSTRUCTIONS
 

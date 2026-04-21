@@ -1,0 +1,118 @@
+% Primary and supplementary source basis: :contentReference[oaicite:5]{index=5} :contentReference[oaicite:6]{index=6}
+
+\section{Complex Variables}
+
+\begin{conceptbox}
+    A \textbf{complex variable} is a variable of the form
+    \[
+        z=x+iy,
+    \]
+    where both $x$ and $y$ may vary independently over subsets of $\mathbb{R}$.
+\end{conceptbox}
+
+Unlike a real variable, which moves along a line, a complex variable moves in a plane. This makes the behavior of complex functions richer and also more restrictive when differentiability is required.
+
+\subsection*{Motivation / Intuition}
+
+In real calculus, a variable changes along one direction. In complex analysis, a variable can approach a point from infinitely many directions. This extra geometric freedom is the reason the theory becomes both more subtle and more powerful.
+
+\subsection*{Formal Definitions}
+
+\begin{conceptbox}
+    A \textbf{neighborhood} of $z_0$ is a disk
+    \[
+        \{z: |z-z_0|<\varepsilon\}, \qquad \varepsilon>0.
+    \]
+
+    A \textbf{deleted neighborhood} of $z_0$ is
+    \[
+        \{z: 0<|z-z_0|<\varepsilon\}.
+    \]
+
+    A set is \textbf{open} if every point in it has a neighborhood contained in the set.
+
+    A set is \textbf{connected} if any two points in it can be joined by a path lying entirely in the set.
+
+    A \textbf{domain} is an open, connected set.
+\end{conceptbox}
+
+These ideas are needed because analyticity is not defined at just one isolated point. It is defined in neighborhoods and domains.
+
+\subsection*{Geometric Interpretation}
+
+\begin{itemize}
+    \item The set
+          \[
+              |z|<1
+          \]
+          is the open unit disk.
+    \item The set
+          \[
+              |z|\le 1
+          \]
+          contains the boundary circle and is not open.
+    \item The set
+          \[
+              0<|z|<1
+          \]
+          is punctured at the origin but is still connected.
+\end{itemize}
+
+\subsection*{Key Ideas}
+
+\begin{conceptbox}
+    Complex analysis is local. To say a function behaves well at a point, we usually require good behavior not just at that point but in some neighborhood around it.
+\end{conceptbox}
+
+This is why concepts such as open sets and domains are not merely formal language. They are essential.
+
+\begin{examplebox}
+    \textbf{Example 1: Identify a domain}
+
+    Determine whether
+    \[
+        D=\{z: |z|<2\}
+    \]
+    is a domain.
+
+    The set consists of all points inside the circle of radius $2$ centered at the origin.
+
+    It is open because each interior point has a small disk around it that still lies inside $D$.
+
+    It is connected because any two points inside the disk can be joined by a line segment lying inside the disk.
+
+    Hence,
+    \[
+        D
+    \]
+    is a domain.
+\end{examplebox}
+
+\begin{examplebox}
+    \textbf{Example 2: A set that is not a domain}
+
+    Consider
+    \[
+        S=\{z: |z|<1\}\cup\{z: |z-4|<1\}.
+    \]
+
+    This is the union of two disjoint open disks.
+
+    It is open, because each disk is open.
+
+    However, it is not connected: a point in the first disk cannot be joined to a point in the second disk by a path staying entirely inside $S$.
+
+    Therefore, $S$ is not a domain.
+\end{examplebox}
+
+\begin{noteBox}
+    In engineering, domains arise naturally when discussing where a transfer function is valid, where a logarithm is single-valued, or where a conformal map can be used safely.
+\end{noteBox}
+
+\subsection*{Common Mistakes / Notes}
+
+\begin{itemize}
+    \item A set can be open without being connected.
+    \item A set can be connected even if it has a hole.
+    \item Analyticity is always discussed with respect to a domain, not just isolated points.
+\end{itemize}

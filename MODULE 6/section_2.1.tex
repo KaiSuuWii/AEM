@@ -1,0 +1,228 @@
+% Primary and supplementary source basis: :contentReference[oaicite:3]{index=3} :contentReference[oaicite:4]{index=4}
+
+\section{Polar Form}
+
+\begin{conceptbox}
+    If
+    \[
+        z=x+iy,
+    \]
+    then we may also write it in polar form as
+    \[
+        z=r(\cos\theta+i\sin\theta)=re^{i\theta},
+    \]
+    where
+    \[
+        r=|z|=\sqrt{x^2+y^2},
+        \qquad
+        x=r\cos\theta,
+        \qquad
+        y=r\sin\theta.
+    \]
+    Here $r$ is the \textbf{modulus} and $\theta$ is an \textbf{argument} of $z$.
+\end{conceptbox}
+
+Polar form is especially useful because multiplication, division, powers, and roots become much simpler than in rectangular form.
+
+\subsection*{Motivation / Intuition}
+
+In rectangular form, multiplication mixes real and imaginary parts. In polar form, multiplication becomes:
+
+\[
+    r_1e^{i\theta_1}\cdot r_2e^{i\theta_2}
+    =
+    (r_1r_2)e^{i(\theta_1+\theta_2)}.
+\]
+
+So multiplication means:
+
+\begin{itemize}
+    \item multiply the magnitudes,
+    \item add the angles.
+\end{itemize}
+
+That is exactly why polar form is powerful in engineering applications involving gain and phase.
+
+\subsection*{Geometric Interpretation}
+
+The number $z=re^{i\theta}$ is the point whose distance from the origin is $r$ and whose angle from the positive real axis is $\theta$.
+
+Because angles differing by multiples of $2\pi$ represent the same direction,
+\[
+    \theta,\quad \theta+2\pi,\quad \theta+4\pi,\dots
+\]
+all correspond to the same complex number.
+
+\begin{conceptbox}
+    The argument is \textbf{not unique}. If $\theta$ is one argument of $z\neq 0$, then every argument is
+    \[
+        \theta+2k\pi, \qquad k\in\mathbb{Z}.
+    \]
+    A commonly chosen value is the \textbf{principal argument}, denoted $\mathrm{Arg}\,z$.
+\end{conceptbox}
+
+\subsection*{Key Properties / Theorems}
+
+\begin{conceptbox}
+    Euler's formula:
+    \[
+        e^{i\theta}=\cos\theta+i\sin\theta.
+    \]
+
+    De Moivre's theorem:
+    \[
+        (re^{i\theta})^n = r^n e^{in\theta}
+        = r^n\big(\cos(n\theta)+i\sin(n\theta)\big).
+    \]
+\end{conceptbox}
+
+\begin{conceptbox}
+    For nonzero complex numbers,
+    \[
+        z_1=r_1e^{i\theta_1}, \qquad z_2=r_2e^{i\theta_2},
+    \]
+    we have
+    \[
+        z_1z_2=r_1r_2e^{i(\theta_1+\theta_2)},
+    \]
+    \[
+        \frac{z_1}{z_2}=\frac{r_1}{r_2}e^{i(\theta_1-\theta_2)}.
+    \]
+\end{conceptbox}
+
+\begin{examplebox}
+    \textbf{Example 1: Convert to polar form}
+
+    Express
+    \[
+        z=-\sqrt{6}-i\sqrt{2}
+    \]
+    in polar form.
+
+    First compute the modulus:
+    \[
+        r=\sqrt{(-\sqrt{6})^2+(-\sqrt{2})^2}
+        =
+        \sqrt{6+2}
+        =
+        2\sqrt{2}.
+    \]
+
+    Now determine the argument. Since
+    \[
+        \tan\theta=\frac{-\sqrt{2}}{-\sqrt{6}}=\frac{1}{\sqrt{3}},
+    \]
+    the reference angle is
+    \[
+        \frac{\pi}{6}.
+    \]
+
+    Because $z$ lies in the third quadrant, the correct argument is
+    \[
+        \theta=\pi+\frac{\pi}{6}=\frac{7\pi}{6}.
+    \]
+
+    Hence,
+    \[
+        z=2\sqrt{2}\,e^{i7\pi/6}.
+    \]
+\end{examplebox}
+
+\begin{examplebox}
+    \textbf{Example 2: Compute a power using De Moivre's theorem}
+
+    Find
+    \[
+        (1+i)^4.
+    \]
+
+    First convert $1+i$ to polar form.
+
+    Its modulus is
+    \[
+        r=\sqrt{1^2+1^2}=\sqrt{2},
+    \]
+    and its argument is
+    \[
+        \theta=\frac{\pi}{4}.
+    \]
+
+    Thus,
+    \[
+        1+i=\sqrt{2}\,e^{i\pi/4}.
+    \]
+
+    Raise to the fourth power:
+    \[
+        (1+i)^4 = \left(\sqrt{2}\,e^{i\pi/4}\right)^4
+        = (\sqrt{2})^4 e^{i\pi}
+        =4(-1)=-4.
+    \]
+\end{examplebox}
+
+\begin{examplebox}
+    \textbf{Example 3: Find cube roots}
+
+    Find all cube roots of
+    \[
+        -1+i.
+    \]
+
+    Write the number in polar form. Its modulus is
+    \[
+        r=\sqrt{(-1)^2+1^2}=\sqrt{2},
+    \]
+    and one argument is
+    \[
+        \phi=\frac{3\pi}{4}.
+    \]
+
+    So
+    \[
+        -1+i=\sqrt{2}\,e^{i3\pi/4}.
+    \]
+
+    The cube roots are
+    \[
+        z_k = r^{1/3} e^{i(\phi+2k\pi)/3},
+        \qquad k=0,1,2.
+    \]
+
+    Since
+    \[
+        r^{1/3}=(\sqrt{2})^{1/3}=2^{1/6},
+    \]
+    we obtain
+    \[
+        z_k = 2^{1/6} e^{i\left(\frac{3\pi}{4}+2k\pi\right)/3},
+        \qquad k=0,1,2.
+    \]
+
+    Thus:
+    \[
+        z_0=2^{1/6}e^{i\pi/4},
+        \qquad
+        z_1=2^{1/6}e^{i11\pi/12},
+        \qquad
+        z_2=2^{1/6}e^{i19\pi/12}.
+    \]
+\end{examplebox}
+
+\begin{noteBox}
+    In frequency-response analysis, a transfer function value is often written as
+    \[
+        H(i\omega)=|H(i\omega)|e^{i\phi(\omega)}.
+    \]
+    The modulus gives gain and the argument gives phase shift. This is one reason polar form is central in electrical and control engineering.
+\end{noteBox}
+
+\subsection*{Common Mistakes / Notes}
+
+\begin{itemize}
+    \item Do not determine $\theta$ using only $\tan^{-1}(y/x)$ without checking the quadrant.
+    \item Remember that the argument is multivalued:
+          \[
+              \arg z = \theta + 2k\pi.
+          \]
+    \item For roots, do not stop at one answer. An $n$th root problem has $n$ distinct roots.
+\end{itemize}
