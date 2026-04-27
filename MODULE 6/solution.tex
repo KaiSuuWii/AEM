@@ -1,0 +1,454 @@
+\section*{Solutions: Complex Numbers and Complex Functions Quiz}
+
+\begin{enumerate}
+    \item \textbf{Polar Form, Powers, and Roots}
+
+    Given
+    \[
+        z=-8+8\sqrt{3}\,i.
+    \]
+
+    First compute the modulus:
+    \[
+        r=\sqrt{(-8)^2+(8\sqrt{3})^2}
+        =
+        \sqrt{64+192}
+        =
+        \sqrt{256}
+        =
+        16.
+    \]
+
+    Since $x=-8<0$ and $y=8\sqrt{3}>0$, the point lies in Quadrant II. Also,
+    \[
+        \tan\theta=\frac{8\sqrt{3}}{-8}=-\sqrt{3}.
+    \]
+    The reference angle is $\pi/3$, so the principal argument is
+    \[
+        \theta=\frac{2\pi}{3}.
+    \]
+
+    Hence,
+    \[
+        z=16e^{i2\pi/3}.
+    \]
+
+    We now solve
+    \[
+        w^4=16e^{i2\pi/3}.
+    \]
+
+    Write
+    \[
+        w=\rho e^{i\phi}.
+    \]
+    Then
+    \[
+        w^4=\rho^4e^{i4\phi}.
+    \]
+
+    Therefore,
+    \[
+        \rho^4=16,
+        \qquad
+        4\phi=\frac{2\pi}{3}+2k\pi.
+    \]
+
+    Thus,
+    \[
+        \rho=2,
+    \]
+    and
+    \[
+        \phi_k=\frac{1}{4}\left(\frac{2\pi}{3}+2k\pi\right)
+        =
+        \frac{\pi}{6}+\frac{k\pi}{2},
+        \qquad k=0,1,2,3.
+    \]
+
+    Therefore, the four roots are
+    \[
+        w_k=2e^{i\left(\frac{\pi}{6}+\frac{k\pi}{2}\right)},
+        \qquad k=0,1,2,3.
+    \]
+
+    Explicitly:
+    \[
+        w_0=2e^{i\pi/6},
+        \qquad
+        w_1=2e^{i2\pi/3},
+    \]
+    \[
+        w_2=2e^{i7\pi/6},
+        \qquad
+        w_3=2e^{i5\pi/3}.
+    \]
+
+    Geometrically, the roots lie on the circle
+    \[
+        |w|=2
+    \]
+    and are equally spaced by
+    \[
+        \frac{2\pi}{4}=\frac{\pi}{2}.
+    \]
+    Hence, they form the vertices of a square centered at the origin.
+
+    \item \textbf{Complex Mapping}
+
+    We are given
+    \[
+        w=\frac{1}{z-i}
+    \]
+    and
+    \[
+        z=x+2i.
+    \]
+
+    Substitute into the mapping:
+    \[
+        w=\frac{1}{x+2i-i}
+        =
+        \frac{1}{x+i}.
+    \]
+
+    Rationalize:
+    \[
+        w=\frac{1}{x+i}\cdot \frac{x-i}{x-i}
+        =
+        \frac{x-i}{x^2+1}.
+    \]
+
+    Write
+    \[
+        w=u+iv.
+    \]
+    Then
+    \[
+        u=\frac{x}{x^2+1},
+        \qquad
+        v=-\frac{1}{x^2+1}.
+    \]
+
+    We eliminate $x$. Divide $u$ by $v$:
+    \[
+        \frac{u}{v}
+        =
+        \frac{x/(x^2+1)}{-1/(x^2+1)}
+        =
+        -x.
+    \]
+    Hence,
+    \[
+        x=-\frac{u}{v}.
+    \]
+
+    Since
+    \[
+        v=-\frac{1}{x^2+1},
+    \]
+    substitute $x=-u/v$:
+    \[
+        v=-\frac{1}{(u^2/v^2)+1}.
+    \]
+
+    Simplify:
+    \[
+        v=-\frac{v^2}{u^2+v^2}.
+    \]
+
+    Since $v\neq 0$ on the image curve, divide by $v$:
+    \[
+        1=-\frac{v}{u^2+v^2}.
+    \]
+
+    Therefore,
+    \[
+        u^2+v^2=-v.
+    \]
+
+    Rearranging:
+    \[
+        u^2+v^2+v=0.
+    \]
+
+    Complete the square:
+    \[
+        u^2+\left(v+\frac12\right)^2=\frac14.
+    \]
+
+    Hence, the image is the circle
+    \[
+        u^2+\left(v+\frac12\right)^2=\left(\frac12\right)^2.
+    \]
+
+    This is a circle of radius $1/2$ centered at
+    \[
+        0-\frac12 i.
+    \]
+
+    \item \textbf{Analyticity and the Cauchy--Riemann Equations}
+
+    We are given
+    \[
+        u(x,y)=x^3-3xy^2+2x,
+        \qquad
+        v(x,y)=3x^2y-y^3+ay.
+    \]
+
+    Compute the partial derivatives:
+    \[
+        u_x=3x^2-3y^2+2,
+        \qquad
+        u_y=-6xy,
+    \]
+    \[
+        v_x=6xy,
+        \qquad
+        v_y=3x^2-3y^2+a.
+    \]
+
+    The Cauchy--Riemann equations require
+    \[
+        u_x=v_y,
+        \qquad
+        u_y=-v_x.
+    \]
+
+    The second equation gives
+    \[
+        -6xy=-6xy,
+    \]
+    which is automatically satisfied.
+
+    The first equation gives
+    \[
+        3x^2-3y^2+2=3x^2-3y^2+a.
+    \]
+
+    Therefore,
+    \[
+        a=2.
+    \]
+
+    With $a=2$,
+    \[
+        v(x,y)=3x^2y-y^3+2y.
+    \]
+
+    Now observe that
+    \[
+        z^3=(x+iy)^3
+        =
+        x^3+3x^2iy+3x(iy)^2+(iy)^3.
+    \]
+
+    Since $i^2=-1$ and $i^3=-i$,
+    \[
+        z^3=x^3+3ix^2y-3xy^2-iy^3.
+    \]
+
+    Hence,
+    \[
+        z^3=(x^3-3xy^2)+i(3x^2y-y^3).
+    \]
+
+    Also,
+    \[
+        2z=2x+i2y.
+    \]
+
+    Therefore,
+    \[
+        z^3+2z
+        =
+        (x^3-3xy^2+2x)
+        +
+        i(3x^2y-y^3+2y).
+    \]
+
+    Thus,
+    \[
+        f(z)=z^3+2z.
+    \]
+
+    \item \textbf{Complex Integration}
+
+    We evaluate
+    \[
+        \int_C \overline{z}\,dz.
+    \]
+
+    \textbf{Path $C_1$:} Let
+    \[
+        z(t)=(1+i)t,
+        \qquad 0\le t\le 1.
+    \]
+
+    Then
+    \[
+        \overline{z(t)}=(1-i)t,
+        \qquad
+        dz=(1+i)\,dt.
+    \]
+
+    Thus,
+    \[
+        \int_{C_1}\overline{z}\,dz
+        =
+        \int_0^1 (1-i)t(1+i)\,dt.
+    \]
+
+    Since
+    \[
+        (1-i)(1+i)=1-i^2=2,
+    \]
+    we get
+    \[
+        \int_{C_1}\overline{z}\,dz
+        =
+        \int_0^1 2t\,dt
+        =
+        \left[t^2\right]_0^1
+        =
+        1.
+    \]
+
+    \textbf{Path $C_2$:} This path has two segments.
+
+    First segment: from $0$ to $1$,
+    \[
+        z(t)=t,
+        \qquad 0\le t\le 1.
+    \]
+    Then
+    \[
+        \overline{z}=t,
+        \qquad
+        dz=dt.
+    \]
+    Thus,
+    \[
+        \int_{0}^{1} \overline{z}\,dz
+        =
+        \int_0^1 t\,dt
+        =
+        \frac12.
+    \]
+
+    Second segment: from $1$ to $1+i$,
+    \[
+        z(t)=1+it,
+        \qquad 0\le t\le 1.
+    \]
+    Then
+    \[
+        \overline{z}=1-it,
+        \qquad
+        dz=i\,dt.
+    \]
+
+    Therefore,
+    \[
+        \int (1-it)i\,dt
+        =
+        \int (i+t)\,dt.
+    \]
+
+    Hence,
+    \[
+        \int_0^1 (i+t)\,dt
+        =
+        i+\frac12.
+    \]
+
+    Adding both segments:
+    \[
+        \int_{C_2}\overline{z}\,dz
+        =
+        \frac12+\left(i+\frac12\right)
+        =
+        1+i.
+    \]
+
+    Since
+    \[
+        \int_{C_1}\overline{z}\,dz=1
+    \]
+    but
+    \[
+        \int_{C_2}\overline{z}\,dz=1+i,
+    \]
+    the integral depends on the path.
+
+    Therefore, $\overline{z}$ does not have path-independent integrals.
+
+    \item \textbf{Complex Exponential and Logarithm}
+
+    We solve
+    \[
+        e^z=-2+2i.
+    \]
+
+    First express the right-hand side in polar form:
+    \[
+        -2+2i=2\sqrt{2}\,e^{i3\pi/4}.
+    \]
+
+    Since the argument is multivalued,
+    \[
+        -2+2i=2\sqrt{2}\,e^{i(3\pi/4+2k\pi)},
+        \qquad k\in\mathbb{Z}.
+    \]
+
+    Let
+    \[
+        z=x+iy.
+    \]
+    Then
+    \[
+        e^z=e^{x+iy}=e^xe^{iy}.
+    \]
+
+    Matching modulus and argument gives
+    \[
+        e^x=2\sqrt{2},
+        \qquad
+        y=\frac{3\pi}{4}+2k\pi.
+    \]
+
+    Therefore,
+    \[
+        x=\ln(2\sqrt{2}).
+    \]
+
+    Hence all solutions are
+    \[
+        z=\ln(2\sqrt{2})+i\left(\frac{3\pi}{4}+2k\pi\right),
+        \qquad k\in\mathbb{Z}.
+    \]
+
+    Since
+    \[
+        \ln(2\sqrt{2})
+        =
+        \ln(2^{3/2})
+        =
+        \frac32\ln 2,
+    \]
+    we may also write
+    \[
+        z=\frac32\ln 2+i\left(\frac{3\pi}{4}+2k\pi\right),
+        \qquad k\in\mathbb{Z}.
+    \]
+
+    The principal solution uses
+    \[
+        \operatorname{Arg}(-2+2i)=\frac{3\pi}{4}.
+    \]
+
+    Therefore,
+    \[
+        z_{\text{principal}}=\frac32\ln 2+i\frac{3\pi}{4}.
+    \]
+\end{enumerate}

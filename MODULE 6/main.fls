@@ -371,6 +371,12 @@ INPUT section_7.1.tex
 INPUT .\section_8.1.tex
 INPUT .\section_8.1.tex
 INPUT section_8.1.tex
+INPUT .\quiz.tex
+INPUT .\quiz.tex
+INPUT quiz.tex
+INPUT .\solution.tex
+INPUT .\solution.tex
+INPUT solution.tex
 INPUT main.aux
 INPUT .\main.out
 INPUT .\main.out
