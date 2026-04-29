@@ -1,0 +1,125 @@
+\section{Filters}
+
+\subsubsection*{Motivation and Intuition}
+
+Fourier series allow us to view a signal as a collection of frequency components. A filter changes a signal by keeping, reducing, or removing selected frequencies.
+
+\begin{conceptbox}
+    A filter modifies the Fourier coefficients of a signal. If
+    \[
+        f(x)=\sum_{n=-\infty}^{\infty}
+        c_n e^{i2\pi nx/L},
+    \]
+    then a filter produces an output
+    \[
+        y(x)=\sum_{n=-\infty}^{\infty}
+        H_n c_n e^{i2\pi nx/L},
+    \]
+    where $H_n$ is the gain applied to the $n$th harmonic.
+\end{conceptbox}
+
+\subsubsection*{Physical Interpretation}
+
+A filter does not usually change all frequencies equally. Instead, it may pass low frequencies, remove high frequencies, isolate a band of frequencies, or remove unwanted oscillations.
+
+\begin{conceptbox}
+    Common filters:
+    \begin{enumerate}
+        \item Low-pass filter: keeps low frequencies and reduces high frequencies.
+        \item High-pass filter: keeps high frequencies and reduces low frequencies.
+        \item Band-pass filter: keeps frequencies within a selected range.
+        \item Band-stop filter: removes frequencies within a selected range.
+    \end{enumerate}
+\end{conceptbox}
+
+\subsubsection*{Low-Pass Filtering}
+
+A low-pass filter keeps the slow-varying part of a signal. In Fourier series form, this means retaining small values of $|n|$ and removing large values of $|n|$.
+
+For an ideal low-pass filter with cutoff harmonic $N$,
+\[
+    H_n=
+    \begin{cases}
+        1, & |n|\leq N, \\
+        0, & |n|>N.
+    \end{cases}
+\]
+
+Thus,
+\[
+    y(x)=\sum_{n=-N}^{N}c_n e^{i2\pi nx/L}.
+\]
+
+\subsubsection*{Worked Example}
+
+\begin{examplebox}
+    Suppose a periodic signal has the exponential Fourier series
+    \[
+        f(x)=3+2\cos\left(\frac{2\pi x}{L}\right)
+        +\cos\left(\frac{6\pi x}{L}\right)
+        +0.5\cos\left(\frac{20\pi x}{L}\right).
+    \]
+
+    Identify the harmonics:
+    \[
+        3 \quad \text{is the DC component},
+    \]
+    \[
+        2\cos\left(\frac{2\pi x}{L}\right)
+        \quad \text{is the first harmonic},
+    \]
+    \[
+        \cos\left(\frac{6\pi x}{L}\right)
+        \quad \text{is the third harmonic},
+    \]
+    \[
+        0.5\cos\left(\frac{20\pi x}{L}\right)
+        \quad \text{is the tenth harmonic}.
+    \]
+
+    Now pass the signal through an ideal low-pass filter that keeps harmonics up to $n=3$.
+
+    The DC, first harmonic, and third harmonic remain. The tenth harmonic is removed.
+
+    Therefore, the filtered output is
+    \[
+        y(x)=3+2\cos\left(\frac{2\pi x}{L}\right)
+        +\cos\left(\frac{6\pi x}{L}\right).
+    \]
+\end{examplebox}
+
+\subsubsection*{Engineering Insight}
+
+\begin{noteBox}
+    Filtering is used in audio processing, communications, power electronics, instrumentation, and data analysis. For example, a rectifier converts AC to a waveform with a DC component and oscillatory components. A low-pass filter can remove the oscillatory harmonics and keep the DC value.
+\end{noteBox}
+
+\subsubsection*{Connection to Average Value}
+
+The DC component is the zero-frequency part of a signal. In the exponential Fourier series, it is
+\[
+    c_0=\frac{1}{L}\int_0^L f(x)\,dx.
+\]
+
+In the trigonometric Fourier series, it corresponds to
+\[
+    \frac{a_0}{2}.
+\]
+
+A perfect low-pass filter that removes all oscillatory components leaves only the average value of the signal.
+
+\[
+    y(x)=c_0.
+\]
+
+\subsubsection*{Common Mistakes and Notes}
+
+\begin{conceptbox}
+    Common mistakes:
+    \begin{enumerate}
+        \item Thinking a filter changes the time domain directly without considering frequency components.
+        \item Forgetting that removing high harmonics smooths the waveform.
+        \item Forgetting that the DC component is the average value of the signal.
+        \item Assuming ideal filters exist physically. Real filters approximate ideal behavior.
+    \end{enumerate}
+\end{conceptbox}

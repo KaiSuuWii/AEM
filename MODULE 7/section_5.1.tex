@@ -1,0 +1,142 @@
+\section{Exponential Fourier Series}
+
+\subsubsection*{Motivation and Intuition}
+
+The trigonometric Fourier series uses sine and cosine functions. However, using Euler's formula,
+\[
+    e^{i\theta}=\cos\theta+i\sin\theta,
+\]
+we can rewrite Fourier series in terms of complex exponentials.
+
+This form is especially powerful in signal processing, communications, and systems analysis.
+
+\begin{conceptbox}
+    For a function $f(x)$ with period $L$, the exponential Fourier series is
+    \[
+        f(x)=\sum_{n=-\infty}^{\infty}
+        c_n \exp\left(i\frac{2\pi n x}{L}\right),
+    \]
+    where
+    \[
+        c_n=\frac{1}{L}\int_0^L
+        f(x)\exp\left(-i\frac{2\pi n x}{L}\right)\,dx,
+        \qquad n\in\mathbb{Z}.
+    \]
+\end{conceptbox}
+
+\subsubsection*{Interpretation}
+
+The coefficient $c_n$ measures the contribution of the complex exponential with frequency
+\[
+    \nu_n=\frac{n}{L}.
+\]
+
+Positive values of $n$ correspond to positive frequency components, while negative values of $n$ correspond to negative frequency components.
+
+For real-valued signals,
+\[
+    c_{-n}=\overline{c_n}.
+\]
+
+\subsubsection*{Relationship with Trigonometric Coefficients}
+
+\begin{conceptbox}
+    For $n\geq 1$, the trigonometric coefficients and exponential coefficients are related by
+    \[
+        c_n=\frac{a_n-ib_n}{2},
+    \]
+    \[
+        c_{-n}=\frac{a_n+ib_n}{2},
+    \]
+    and
+    \[
+        c_0=\frac{a_0}{2}.
+    \]
+    Equivalently,
+    \[
+        a_n=c_n+c_{-n},
+    \]
+    and
+    \[
+        b_n=i(c_n-c_{-n}).
+    \]
+\end{conceptbox}
+
+\subsubsection*{Worked Example}
+
+\begin{examplebox}
+    Find the exponential Fourier series coefficients of
+    \[
+        f(x)=\cos\left(\frac{2\pi x}{L}\right).
+    \]
+
+    Using Euler's formula,
+    \[
+        \cos\left(\frac{2\pi x}{L}\right)
+        =
+        \frac{1}{2}
+        \left[
+            \exp\left(i\frac{2\pi x}{L}\right)
+            +
+            \exp\left(-i\frac{2\pi x}{L}\right)
+            \right].
+    \]
+
+    Compare this with
+    \[
+        f(x)=\sum_{n=-\infty}^{\infty}
+        c_n\exp\left(i\frac{2\pi n x}{L}\right).
+    \]
+
+    The term
+    \[
+        \exp\left(i\frac{2\pi x}{L}\right)
+    \]
+    corresponds to $n=1$, so
+    \[
+        c_1=\frac{1}{2}.
+    \]
+
+    The term
+    \[
+        \exp\left(-i\frac{2\pi x}{L}\right)
+    \]
+    corresponds to $n=-1$, so
+    \[
+        c_{-1}=\frac{1}{2}.
+    \]
+
+    All other coefficients are zero:
+    \[
+        c_n=0,\qquad n\neq \pm 1.
+    \]
+
+    Therefore,
+    \[
+        \cos\left(\frac{2\pi x}{L}\right)
+        =
+        \frac{1}{2}\exp\left(i\frac{2\pi x}{L}\right)
+        +
+        \frac{1}{2}\exp\left(-i\frac{2\pi x}{L}\right).
+    \]
+\end{examplebox}
+
+\subsubsection*{Engineering Insight}
+
+\begin{noteBox}
+    The exponential Fourier series is widely used in electrical engineering because linear systems act simply on complex exponentials. If an input has Fourier coefficients $c_n$, then a linear time-invariant system modifies each frequency component independently.
+\end{noteBox}
+
+\subsubsection*{Common Mistakes and Notes}
+
+\begin{conceptbox}
+    Common mistakes:
+    \begin{enumerate}
+        \item Forgetting that the exponential series sums from $n=-\infty$ to $\infty$.
+        \item Confusing the period $L$ with $2L$. In the exponential form above, the period is $L$.
+        \item Forgetting the negative sign in the coefficient formula:
+              \[
+                  c_n=\frac{1}{L}\int_0^L f(x)e^{-i2\pi nx/L}\,dx.
+              \]
+    \end{enumerate}
+\end{conceptbox}

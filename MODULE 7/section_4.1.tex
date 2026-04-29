@@ -1,0 +1,140 @@
+\section{Half-Wave Symmetry}
+
+\subsubsection*{Motivation and Intuition}
+
+Many periodic engineering signals have additional symmetry beyond being even or odd. One important type is half-wave symmetry.
+
+A waveform has half-wave symmetry if shifting it by half a period reverses its sign.
+
+\begin{conceptbox}
+Let $f(x)$ be periodic with period $2L$. The function has half-wave symmetry if
+\[
+f(x+L)=-f(x).
+\]
+\end{conceptbox}
+
+This means the second half of the waveform is the negative of the first half.
+
+\subsubsection*{Physical Interpretation}
+
+Half-wave symmetry commonly occurs in AC waveforms, square waves, inverter outputs, and switching circuits. It implies that the positive and negative halves of the waveform balance each other.
+
+\begin{noteBox}
+If a signal has half-wave symmetry, its average value over one period is zero. Therefore, its DC component is absent:
+\[
+a_0=0.
+\]
+\end{noteBox}
+
+\subsubsection*{Key Property}
+
+\begin{conceptbox}
+If $f(x)$ has half-wave symmetry, then all even harmonics vanish. That is,
+\[
+a_{2n}=0,\qquad b_{2n}=0.
+\]
+Only odd harmonics may remain.
+\end{conceptbox}
+
+\subsubsection*{Worked Example}
+
+\begin{examplebox}
+Consider the square wave
+\[
+f(x)=
+\begin{cases}
+k, & 0<x<\pi,\\
+-k, & -\pi<x<0,
+\end{cases}
+\]
+with period $2\pi$.
+
+This function is odd, so
+\[
+a_0=0,\qquad a_n=0.
+\]
+
+We compute
+\[
+b_n=\frac{1}{\pi}\int_{-\pi}^{\pi}f(x)\sin(nx)\,dx.
+\]
+
+Since $f(x)$ is odd and $\sin(nx)$ is odd, their product is even:
+\[
+b_n=\frac{2}{\pi}\int_0^\pi k\sin(nx)\,dx.
+\]
+
+Thus,
+\[
+b_n=\frac{2k}{\pi}
+\int_0^\pi \sin(nx)\,dx.
+\]
+
+Compute:
+\[
+b_n=
+\frac{2k}{\pi}
+\left[
+-\frac{\cos(nx)}{n}
+\right]_0^\pi.
+\]
+
+So,
+\[
+b_n=
+\frac{2k}{n\pi}
+\left[1-\cos(n\pi)\right].
+\]
+
+Since
+\[
+\cos(n\pi)=(-1)^n,
+\]
+we have
+\[
+b_n=
+\frac{2k}{n\pi}\left[1-(-1)^n\right].
+\]
+
+If $n$ is even,
+\[
+b_n=0.
+\]
+
+If $n$ is odd,
+\[
+b_n=\frac{4k}{n\pi}.
+\]
+
+Therefore,
+\[
+f(x)=\frac{4k}{\pi}
+\left[
+\sin x+\frac{1}{3}\sin(3x)+\frac{1}{5}\sin(5x)+\cdots
+\right].
+\]
+\end{examplebox}
+
+\subsubsection*{Engineering Insight}
+
+\begin{noteBox}
+Half-wave symmetry is important in power electronics. If an inverter output has half-wave symmetry, then even harmonics are absent. This simplifies harmonic analysis and reduces certain types of distortion.
+\end{noteBox}
+
+\subsubsection*{Common Mistakes and Notes}
+
+\begin{conceptbox}
+Half-wave symmetry is not the same as odd symmetry.
+
+Odd symmetry means
+\[
+f(-x)=-f(x).
+\]
+
+Half-wave symmetry means
+\[
+f(x+L)=-f(x).
+\]
+
+A function may have one, both, or neither.
+\end{conceptbox}

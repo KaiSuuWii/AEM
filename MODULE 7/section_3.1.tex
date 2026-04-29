@@ -1,0 +1,123 @@
+\section{Fourier Sine Series}
+
+\subsubsection*{Motivation and Intuition}
+
+If a function is odd, then it is symmetric through the origin. Since sine functions are odd, an odd function can be represented using only sine terms.
+
+\begin{conceptbox}
+    If $f(x)$ is odd on $[-L,L]$, then
+    \[
+        a_0=0,\qquad a_n=0
+    \]
+    for all $n$, and the Fourier series becomes
+    \[
+        f(x)=\sum_{n=1}^{\infty}
+        b_n\sin\left(\frac{n\pi x}{L}\right),
+    \]
+    where
+    \[
+        b_n=\frac{2}{L}\int_0^L
+        f(x)\sin\left(\frac{n\pi x}{L}\right)\,dx.
+    \]
+\end{conceptbox}
+
+\subsubsection*{Geometric and Physical Interpretation}
+
+A Fourier sine series represents an odd periodic extension of a function defined on $0<x<L$.
+
+\[
+    f(-x)=-f(x)
+\]
+
+This is useful when boundary values are naturally zero, such as vibrating strings fixed at both ends.
+
+\subsubsection*{Worked Example}
+
+\begin{examplebox}
+    Find the Fourier sine series of
+    \[
+        f(x)=1,\qquad 0<x<\pi.
+    \]
+
+    For a half-range sine expansion on $(0,\pi)$, we use
+    \[
+        f(x)=\sum_{n=1}^{\infty}b_n\sin(nx),
+    \]
+    where
+    \[
+        b_n=\frac{2}{\pi}\int_0^\pi 1\cdot \sin(nx)\,dx.
+    \]
+
+    Thus,
+    \[
+        b_n=\frac{2}{\pi}\int_0^\pi \sin(nx)\,dx.
+    \]
+
+    Compute the integral:
+    \[
+        \int \sin(nx)\,dx=-\frac{\cos(nx)}{n}.
+    \]
+
+    Therefore,
+    \[
+        b_n=
+        \frac{2}{\pi}
+        \left[
+            -\frac{\cos(nx)}{n}
+            \right]_0^\pi.
+    \]
+
+    Evaluate:
+    \[
+        b_n=
+        \frac{2}{\pi}
+        \left[
+            -\frac{\cos(n\pi)}{n}
+            +
+            \frac{\cos(0)}{n}
+            \right].
+    \]
+
+    Since
+    \[
+        \cos(n\pi)=(-1)^n,\qquad \cos(0)=1,
+    \]
+    we get
+    \[
+        b_n=
+        \frac{2}{n\pi}
+        \left[1-(-1)^n\right].
+    \]
+
+    If $n$ is even, then $(-1)^n=1$, so
+    \[
+        b_n=0.
+    \]
+
+    If $n$ is odd, then $(-1)^n=-1$, so
+    \[
+        b_n=\frac{4}{n\pi}.
+    \]
+
+    Thus,
+    \[
+        1=
+        \frac{4}{\pi}
+        \left[
+            \sin x+\frac{1}{3}\sin(3x)+\frac{1}{5}\sin(5x)+\cdots
+            \right],
+        \qquad 0<x<\pi.
+    \]
+\end{examplebox}
+
+\subsubsection*{Engineering Insight}
+
+\begin{noteBox}
+    Fourier sine series naturally appear in vibration and wave problems where the endpoints are fixed. For example, a string fixed at both ends has displacement zero at the boundaries, and sine functions automatically satisfy this condition.
+\end{noteBox}
+
+\subsubsection*{Common Mistakes and Notes}
+
+\begin{conceptbox}
+    A Fourier sine series represents an odd extension. At $x=0$ and $x=L$, the sine series evaluates to zero. Therefore, if the original function has nonzero endpoint values, the sine series may still represent the function on the open interval $(0,L)$ but not necessarily at the endpoints.
+\end{conceptbox}

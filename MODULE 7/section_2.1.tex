@@ -1,0 +1,178 @@
+\section{Fourier Cosine Series}
+
+\subsubsection*{Motivation and Intuition}
+
+If a function is even, then it is symmetric about the vertical axis. Since cosine functions are also even, an even function can be represented using only cosine terms.
+
+This reduces the work needed to compute the Fourier series.
+
+\begin{conceptbox}
+    If $f(x)$ is even on $[-L,L]$, then
+    \[
+        b_n=0
+    \]
+    for all $n$, and the Fourier series becomes
+    \[
+        f(x)=\frac{a_0}{2}+\sum_{n=1}^{\infty}
+        a_n\cos\left(\frac{n\pi x}{L}\right),
+    \]
+    where
+    \[
+        a_0=\frac{2}{L}\int_0^L f(x)\,dx,
+    \]
+    and
+    \[
+        a_n=\frac{2}{L}\int_0^L
+        f(x)\cos\left(\frac{n\pi x}{L}\right)\,dx.
+    \]
+\end{conceptbox}
+
+\subsubsection*{Geometric and Physical Interpretation}
+
+A Fourier cosine series represents an even periodic extension of a function. If the original function is defined only on $0<x<L$, then choosing a cosine series reflects it evenly across the vertical axis.
+
+\[
+    f(-x)=f(x)
+\]
+
+This is useful when the physical problem has symmetry, such as temperature distribution in a rod with symmetric boundary behavior.
+
+\subsubsection*{Worked Example}
+
+\begin{examplebox}
+    Find the Fourier cosine series of
+    \[
+        f(x)=x,\qquad 0<x<\pi.
+    \]
+
+    For a half-range cosine expansion on $(0,\pi)$, we take $L=\pi$ and write
+    \[
+        f(x)=\frac{a_0}{2}+\sum_{n=1}^{\infty}a_n\cos(nx).
+    \]
+
+    Compute $a_0$:
+    \[
+        a_0=\frac{2}{\pi}\int_0^\pi x\,dx.
+    \]
+
+    Thus,
+    \[
+        a_0=\frac{2}{\pi}\left[\frac{x^2}{2}\right]_0^\pi
+        =
+        \frac{2}{\pi}\cdot\frac{\pi^2}{2}
+        =
+        \pi.
+    \]
+
+    So,
+    \[
+        \frac{a_0}{2}=\frac{\pi}{2}.
+    \]
+
+    Now compute $a_n$:
+    \[
+        a_n=\frac{2}{\pi}\int_0^\pi x\cos(nx)\,dx.
+    \]
+
+    Use integration by parts:
+    \[
+        u=x,\qquad dv=\cos(nx)\,dx.
+    \]
+    Then
+    \[
+        du=dx,\qquad v=\frac{\sin(nx)}{n}.
+    \]
+
+    Therefore,
+    \[
+        \int x\cos(nx)\,dx
+        =
+        \frac{x\sin(nx)}{n}
+        -
+        \frac{1}{n}\int \sin(nx)\,dx.
+    \]
+
+    Since
+    \[
+        \int \sin(nx)\,dx=-\frac{\cos(nx)}{n},
+    \]
+    we get
+    \[
+        \int x\cos(nx)\,dx
+        =
+        \frac{x\sin(nx)}{n}
+        +
+        \frac{\cos(nx)}{n^2}.
+    \]
+
+    Evaluate:
+    \[
+        \int_0^\pi x\cos(nx)\,dx
+        =
+        \left[
+            \frac{x\sin(nx)}{n}
+            +
+            \frac{\cos(nx)}{n^2}
+            \right]_0^\pi.
+    \]
+
+    At $x=\pi$:
+    \[
+        \frac{\pi\sin(n\pi)}{n}+\frac{\cos(n\pi)}{n^2}
+        =
+        \frac{(-1)^n}{n^2}.
+    \]
+
+    At $x=0$:
+    \[
+        0+\frac{\cos(0)}{n^2}
+        =
+        \frac{1}{n^2}.
+    \]
+
+    Hence,
+    \[
+        \int_0^\pi x\cos(nx)\,dx
+        =
+        \frac{(-1)^n-1}{n^2}.
+    \]
+
+    Thus,
+    \[
+        a_n=
+        \frac{2}{\pi}
+        \cdot
+        \frac{(-1)^n-1}{n^2}.
+    \]
+
+    Therefore,
+    \[
+        x=\frac{\pi}{2}
+        +
+        \sum_{n=1}^{\infty}
+        \frac{2\left[(-1)^n-1\right]}{\pi n^2}
+        \cos(nx),
+        \qquad 0<x<\pi.
+    \]
+
+    Since $(-1)^n-1=0$ for even $n$ and $-2$ for odd $n$,
+    \[
+        x=\frac{\pi}{2}
+        -
+        \frac{4}{\pi}
+        \sum_{m=1}^{\infty}
+        \frac{\cos\left((2m-1)x\right)}{(2m-1)^2}.
+    \]
+\end{examplebox}
+
+\subsubsection*{Engineering Insight}
+
+\begin{noteBox}
+    Fourier cosine series are especially useful in heat conduction problems on a finite rod when the boundary conditions naturally produce even extensions. They are also closely related to cosine transforms used in image compression and signal processing.
+\end{noteBox}
+
+\subsubsection*{Common Mistakes and Notes}
+
+\begin{conceptbox}
+    A Fourier cosine series does not mean the original function must already be even on $(0,L)$. It means we choose to extend the function evenly to $(-L,L)$.
+\end{conceptbox}

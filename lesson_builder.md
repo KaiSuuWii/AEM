@@ -56,7 +56,14 @@ Assume students:
 
 \### TOPICS TO COVER
 
-\- (Topics to be covered)
+\-
+8\. Fourier Series
+8.1\. Trigonometric Fourier Series
+8.2\. Fourier Cosine Series
+8.3\. Fourier Sine Series
+8.4\. Half-Wave Symmetry
+8.5\. Exponential Fourier Series
+8.6\. Filters
 
 \### PREREQUISITES (ALREADY TAUGHT)
 
