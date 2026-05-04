@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.1.23)  29 APR 2026 16:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.1.23)  4 MAY 2026 14:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -762,7 +762,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has b
 <to be read again> 
                    \relax 
 l.61 
-      [1] [2] [3] [4]) (section_2.1.tex [5] [6] [7]) (section_3.1.tex [8] [9]) (section_4.1.tex [10] [11] [12]) (section_5.1.tex [13] [14] [15]) (section_6.1.tex [16] [17]) [18] [19] (main.aux)
+      [1] [2] [3] [4] [5] [6]) [7] (section_2.1.tex [8] [9]) [10] (section_3.1.tex [11] [12]) (section_4.1.tex [13] [14]) (section_5.1.tex [15] [16] [17]) (section_6.1.tex [18] [19] [20]) [21] (main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-29>
@@ -771,17 +771,17 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 43329DE4866F726F3B5E0A90CCBE5138;1010.
  ) 
 Here is how much of TeX's memory you used:
- 35367 strings out of 467871
- 845378 string characters out of 5417856
- 1354930 words of memory out of 5000000
- 63634 multiletter control sequences out of 15000+600000
+ 35818 strings out of 467871
+ 858230 string characters out of 5417856
+ 1435388 words of memory out of 5000000
+ 64082 multiletter control sequences out of 15000+600000
  634789 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 98i,8n,118p,817b,1081s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 98i,10n,118p,817b,2272s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/USER 1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/USER 1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/USER 1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/USER 1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/USER 1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/USER 1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/USER 1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/USER 1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/USER 1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/USER 1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/USER 1/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (20 pages, 188924 bytes).
+Output written on main.pdf (22 pages, 205909 bytes).
 PDF statistics:
- 243 PDF objects out of 1000 (max. 8388607)
- 77 named destinations out of 1000 (max. 500000)
+ 253 PDF objects out of 1000 (max. 8388607)
+ 80 named destinations out of 1000 (max. 500000)
  69 words of extra memory for PDF output out of 10000 (max. 10000000)
 

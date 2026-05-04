@@ -90,6 +90,179 @@ at jump discontinuities.
     At a discontinuity, the Fourier series does not choose the left-hand value or the right-hand value. It converges to the average of the two limiting values. This is important when analyzing square waves, pulse signals, and switching circuits.
 \end{noteBox}
 
+\subsubsection*{Determining Whether a Function is Even or Odd}
+
+\begin{conceptbox}
+    To determine whether a function is even or odd, replace $x$ with $-x$ and simplify.
+
+    A function is \textbf{even} if
+    \[
+        f(-x)=f(x).
+    \]
+
+    A function is \textbf{odd} if
+    \[
+        f(-x)=-f(x).
+    \]
+
+    If neither condition is satisfied, then the function is \textbf{neither even nor odd}.
+\end{conceptbox}
+
+Geometrically, an even function is symmetric about the $y$-axis. This means the left side of the graph is a mirror image of the right side.
+
+An odd function is symmetric about the origin. This means that if the graph is rotated $180^\circ$ about the origin, it looks the same.
+
+\begin{examplebox}
+    Determine whether
+    \[
+        f(x)=x^2
+    \]
+    is even or odd.
+
+    Replace $x$ with $-x$:
+    \[
+        f(-x)=(-x)^2.
+    \]
+
+    Simplify:
+    \[
+        f(-x)=x^2.
+    \]
+
+    Since
+    \[
+        f(-x)=f(x),
+    \]
+    the function is \textbf{even}.
+
+    \begin{center}
+        \begin{tikzpicture}
+            \begin{axis}[
+                    axis lines=middle,
+                    xlabel={$x$},
+                    ylabel={$f(x)$},
+                    xmin=-3, xmax=3,
+                    ymin=-1, ymax=9,
+                    grid=both,
+                    width=10cm,
+                    height=6cm,
+                    samples=100,
+                    domain=-3:3
+                ]
+                \addplot[thick] {x^2};
+            \end{axis}
+        \end{tikzpicture}
+    \end{center}
+    The graph is symmetric about the $y$-axis.
+\end{examplebox}
+
+\begin{examplebox}
+    Determine whether
+    \[
+        f(x)=x^3
+    \]
+    is even or odd.
+
+    Replace $x$ with $-x$:
+    \[
+        f(-x)=(-x)^3.
+    \]
+
+    Simplify:
+    \[
+        f(-x)=-x^3.
+    \]
+
+    Since
+    \[
+        f(-x)=-f(x),
+    \]
+    the function is \textbf{odd}.
+
+    \begin{center}
+        \begin{tikzpicture}
+            \begin{axis}[
+                    axis lines=middle,
+                    xlabel={$x$},
+                    ylabel={$f(x)$},
+                    xmin=-3, xmax=3,
+                    ymin=-10, ymax=10,
+                    grid=both,
+                    width=10cm,
+                    height=6cm,
+                    samples=100,
+                    domain=-3:3
+                ]
+                \addplot {x^3};
+            \end{axis}
+        \end{tikzpicture}
+    \end{center}
+
+    The graph is symmetric about the origin.
+\end{examplebox}
+
+\begin{examplebox}
+    Determine whether
+    \[
+        f(x)=x+1
+    \]
+    is even, odd, or neither.
+
+    Replace $x$ with $-x$:
+    \[
+        f(-x)=-x+1.
+    \]
+
+    Compare with $f(x)$:
+    \[
+        f(x)=x+1.
+    \]
+
+    Since
+    \[
+        -x+1\neq x+1,
+    \]
+    the function is not even.
+
+    Now compare with $-f(x)$:
+    \[
+        -f(x)=-(x+1)=-x-1.
+    \]
+
+    Since
+    \[
+        -x+1\neq -x-1,
+    \]
+    the function is not odd.
+
+    Therefore,
+    \[
+        f(x)=x+1
+    \]
+    is \textbf{neither even nor odd}.
+
+    \begin{center}
+        \begin{tikzpicture}
+            \begin{axis}[
+                    axis lines=middle,
+                    xlabel={$x$},
+                    ylabel={$f(x)$},
+                    xmin=-3, xmax=3,
+                    ymin=-4, ymax=4,
+                    grid=both,
+                    width=10cm,
+                    height=6cm,
+                    samples=100,
+                    domain=-3:3
+                ]
+                \addplot [thick] {x+1};
+            \end{axis}
+        \end{tikzpicture}
+    \end{center}
+
+    The graph is not symmetric about the $y$-axis and is not symmetric about the origin.
+\end{examplebox}
+
 \subsubsection*{Worked Example}
 
 \begin{examplebox}

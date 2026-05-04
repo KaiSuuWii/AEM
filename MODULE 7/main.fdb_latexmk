@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1777450284.32144 "c:/Users/USER 1/OneDrive/Desktop/USTP-Instructor/2025-2026 2nd sem/ES207/Modules/MODULE 7/main.tex" "main.pdf" "main" 1777450285.87486 0
+["pdflatex"] 1777877001.6192 "c:/Users/USER 1/OneDrive/Desktop/USTP-Instructor/2025-2026 2nd sem/ES207/Modules/MODULE 7/main.tex" "main.pdf" "main" 1777877003.96339 0
   "C:/Users/USER" 1709884038 19148 013e94a827d08c3fa77f8035c991e252 ""
   "C:/Users/USER 1/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1773061826 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/USER 1/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1769117747 13334007 614f687e2243fff81d7651365165a2b1 ""
@@ -208,11 +208,11 @@
   "C:/Users/USER 1/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/USER 1/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "c:/Users/USER" 1709884038 19148 013e94a827d08c3fa77f8035c991e252 ""
-  "c:/Users/USER 1/OneDrive/Desktop/USTP-Instructor/2025-2026 2nd sem/ES207/Modules/MODULE 7/main.tex" 1777450281 1646 708137001d8be2bc959db674bd4b023c ""
-  "main.aux" 1777450285 988 e1e888ee2974278493381c33dfb28bca "pdflatex"
-  "main.out" 1777450285 1010 43329de4866f726f3b5e0a90ccbe5138 "pdflatex"
-  "main.tex" 1777450281 1646 708137001d8be2bc959db674bd4b023c ""
-  "section_1.1.tex" 1777449390 6878 982f99a319f93ad5cc155fef5662f446 ""
+  "c:/Users/USER 1/OneDrive/Desktop/USTP-Instructor/2025-2026 2nd sem/ES207/Modules/MODULE 7/main.tex" 1777450448 1646 708137001d8be2bc959db674bd4b023c ""
+  "main.aux" 1777877003 989 4da294e8572cd1e0453448a498cb74a5 "pdflatex"
+  "main.out" 1777877003 1010 43329de4866f726f3b5e0a90ccbe5138 "pdflatex"
+  "main.tex" 1777450448 1646 708137001d8be2bc959db674bd4b023c ""
+  "section_1.1.tex" 1777876998 10708 ac429d10d3cbfa694629301b6c9b283d ""
   "section_2.1.tex" 1777449391 4075 7db5bf9d4cb234774ad8b6a8504f1dfb ""
   "section_3.1.tex" 1777449421 2997 b3cbb3dc81a6b7cd03f84141e10b5f87 ""
   "section_4.1.tex" 1777449464 2669 09e5e20b76fb55e440cee6ac6e43c720 ""
