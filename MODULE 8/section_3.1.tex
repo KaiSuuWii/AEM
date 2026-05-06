@@ -1,0 +1,404 @@
+\subsection{Fourier Transform}
+
+\subsubsection*{Motivation and Intuition}
+
+Fourier series represent periodic functions as sums of sine and cosine functions. However, many engineering signals are not periodic. The Fourier transform extends the idea of Fourier series to aperiodic functions by allowing a continuous range of frequencies.
+
+Instead of writing a signal as a discrete sum of harmonics, the Fourier transform represents the signal as a continuous superposition of complex exponentials.
+
+\begin{conceptbox}
+    The Fourier transform of $f(t)$ is
+    \[
+        F(\omega)=\int_{-\infty}^{\infty} f(t)e^{-i\omega t}\,dt.
+    \]
+
+    The inverse Fourier transform is
+    \[
+        f(t)=\frac{1}{2\pi}\int_{-\infty}^{\infty}F(\omega)e^{i\omega t}\,d\omega.
+    \]
+\end{conceptbox}
+
+The variable $\omega$ represents angular frequency. The function $F(\omega)$ describes how much of each frequency is present in $f(t)$.
+
+\subsubsection*{Physical Interpretation}
+
+\begin{noteBox}
+    A useful analogy is that the Fourier transform acts like a prism. A prism separates white light into colors; the Fourier transform separates a signal into its frequency components. The inverse Fourier transform recombines those components to reconstruct the original signal.
+\end{noteBox}
+
+The magnitude
+\[
+    |F(\omega)|
+\]
+is called the amplitude spectrum, while the argument
+\[
+    \arg F(\omega)
+\]
+is the phase spectrum.
+
+\subsubsection*{Key Properties}
+
+\begin{conceptbox}
+    \textbf{Linearity}
+    \[
+        \mathcal{F}[c_1f(t)+c_2g(t)]
+        =
+        c_1F(\omega)+c_2G(\omega).
+    \]
+\end{conceptbox}
+
+\begin{conceptbox}
+    \textbf{Time Shifting}
+    If
+    \[
+        \mathcal{F}[f(t)]=F(\omega),
+    \]
+    then
+    \[
+        \mathcal{F}[f(t-\tau)]
+        =
+        e^{-i\omega\tau}F(\omega).
+    \]
+\end{conceptbox}
+
+\begin{conceptbox}
+    \textbf{Scaling}
+    If $k$ is a nonzero real constant, then
+    \[
+        \mathcal{F}[f(kt)]
+        =
+        \frac{1}{|k|}F\left(\frac{\omega}{k}\right).
+    \]
+\end{conceptbox}
+
+\begin{conceptbox}
+    \textbf{Differentiation}
+    If
+    \[
+        \mathcal{F}[f(t)]=F(\omega),
+    \]
+    then
+    \[
+        \mathcal{F}[f'(t)] = i\omega F(\omega).
+    \]
+    More generally,
+    \[
+        \mathcal{F}[f^{(n)}(t)] = (i\omega)^nF(\omega).
+    \]
+\end{conceptbox}
+
+\begin{conceptbox}
+    \textbf{Parseval's Equality}
+    \[
+        \int_{-\infty}^{\infty}|f(t)|^2\,dt
+        =
+        \frac{1}{2\pi}
+        \int_{-\infty}^{\infty}|F(\omega)|^2\,d\omega.
+    \]
+    This connects energy in the time domain with energy in the frequency domain.
+\end{conceptbox}
+
+\subsubsection*{Fourier Transforms of Common Functions}
+
+\begin{conceptbox}
+    Using the convention
+    \[
+        F(\omega)=\int_{-\infty}^{\infty}f(t)e^{-i\omega t}\,dt,
+    \]
+    some commonly encountered Fourier transform pairs are:
+
+    \[
+        \begin{array}{c|c}
+            \textbf{Function } f(t)                 & \textbf{Fourier Transform } F(\omega)                       \\ \hline \\[1pt]
+            e^{-at}H(t),\ a>0                       & \dfrac{1}{a+i\omega}                                        \\[8pt]
+            e^{at}H(-t),\ a>0                       & \dfrac{1}{a-i\omega}                                        \\[8pt]
+            te^{-at}H(t),\ a>0                      & \dfrac{1}{(a+i\omega)^2}                                    \\[8pt]
+            t^ne^{-at}H(t),\ \operatorname{Re}(a)>0 & \dfrac{n!}{(a+i\omega)^{n+1}}                               \\[8pt]
+            e^{-a|t|},\ a>0                         & \dfrac{2a}{\omega^2+a^2}                                    \\[8pt]
+            te^{-a|t|},\ a>0                        & \dfrac{-4a\omega i}{(\omega^2+a^2)^2}                       \\[8pt]
+            \dfrac{1}{1+a^2t^2}                     & \dfrac{\pi}{|a|}e^{-|\omega/a|}                             \\[10pt]
+            \begin{cases}
+                1, & |t|<a, \\
+                0, & |t|>a
+            \end{cases}
+                                                    & \dfrac{2\sin(\omega a)}{\omega}                             \\[14pt]
+            \dfrac{\sin(at)}{at}                    &
+            \begin{cases}
+                \dfrac{\pi}{a}, & |\omega|<a, \\
+                0,              & |\omega|>a
+            \end{cases}                                                                         \\[16pt]
+            e^{-at^2},\ a>0                         & \sqrt{\dfrac{\pi}{a}}\exp\left(-\dfrac{\omega^2}{4a}\right)
+        \end{array}
+    \]
+\end{conceptbox}
+
+\begin{conceptbox}
+    Some Fourier transforms require the Dirac delta function:
+    \[
+        \begin{array}{c|c}
+            \textbf{Function } f(t) & \textbf{Fourier Transform } F(\omega)                           \\ \hline \\[1pt]
+            1                       & 2\pi\delta(\omega)                                              \\[6pt]
+            e^{i\omega_0t}          & 2\pi\delta(\omega-\omega_0)                                     \\[6pt]
+            \cos(\omega_0t)         & \pi\left[\delta(\omega-\omega_0)+\delta(\omega+\omega_0)\right] \\[8pt]
+            \sin(\omega_0t)         & -\pi i\delta(\omega-\omega_0)+\pi i\delta(\omega+\omega_0)      \\[8pt]
+            H(t)                    & \pi\delta(\omega)+\dfrac{1}{i\omega}
+        \end{array}
+    \]
+\end{conceptbox}
+
+\begin{noteBox}
+    The Fourier transform table helps engineers quickly identify the frequency content of signals. For example, rectangular pulses transform into sinc-type functions, while pure sinusoids transform into impulses at their frequencies.
+\end{noteBox}
+
+\subsubsection*{Worked Examples}
+
+\begin{examplebox}
+    \textbf{Example 1: Fourier transform of a rectangular pulse}
+
+    Let
+    \[
+        f(t)=
+        \begin{cases}
+            1, & |t|<a, \\
+            0, & |t|>a.
+        \end{cases}
+    \]
+
+    Using the definition,
+    \[
+        F(\omega)
+        =
+        \int_{-\infty}^{\infty}f(t)e^{-i\omega t}\,dt.
+    \]
+
+    Since $f(t)=1$ only on $-a<t<a$,
+    \[
+        F(\omega)
+        =
+        \int_{-a}^{a}e^{-i\omega t}\,dt.
+    \]
+
+    Integrate:
+    \[
+        F(\omega)
+        =
+        \left[
+            \frac{e^{-i\omega t}}{-i\omega}
+            \right]_{-a}^{a}.
+    \]
+
+    Substitute the limits:
+    \[
+        F(\omega)
+        =
+        \frac{e^{-i\omega a}-e^{i\omega a}}{-i\omega}.
+    \]
+
+    Using
+    \[
+        e^{i\theta}-e^{-i\theta}=2i\sin\theta,
+    \]
+    we get
+    \[
+        e^{-i\omega a}-e^{i\omega a}
+        =
+        -2i\sin(\omega a).
+    \]
+
+    Therefore,
+    \[
+        F(\omega)
+        =
+        \frac{-2i\sin(\omega a)}{-i\omega}
+        =
+        \frac{2\sin(\omega a)}{\omega}.
+    \]
+
+    Thus,
+    \[
+        \boxed{
+            F(\omega)=\frac{2\sin(\omega a)}{\omega}
+        }.
+    \]
+
+    At $\omega=0$, the expression has the indeterminate form $0/0$. Using the limit,
+    \[
+        F(0)=\lim_{\omega\to 0}\frac{2\sin(\omega a)}{\omega}=2a.
+    \]
+\end{examplebox}
+
+\begin{examplebox}
+    \textbf{Example 2: Fourier transform of $e^{-a|t|}$, $a>0$}
+
+    Let
+    \[
+        f(t)=e^{-a|t|}, \qquad a>0.
+    \]
+
+    Because
+    \[
+        |t|=
+        \begin{cases}
+            -t, & t<0, \\
+            t,  & t>0,
+        \end{cases}
+    \]
+    we write
+    \[
+        e^{-a|t|}
+        =
+        \begin{cases}
+            e^{at},  & t<0, \\
+            e^{-at}, & t>0.
+        \end{cases}
+    \]
+
+    Using the Fourier transform definition,
+    \[
+        F(\omega)
+        =
+        \int_{-\infty}^{0}e^{at}e^{-i\omega t}\,dt
+        +
+        \int_0^\infty e^{-at}e^{-i\omega t}\,dt.
+    \]
+
+    For the first integral,
+    \[
+        \int_{-\infty}^{0}e^{(a-i\omega)t}\,dt
+        =
+        \left[
+            \frac{e^{(a-i\omega)t}}{a-i\omega}
+            \right]_{-\infty}^{0}
+        =
+        \frac{1}{a-i\omega}.
+    \]
+
+    For the second integral,
+    \[
+        \int_0^\infty e^{-(a+i\omega)t}\,dt
+        =
+        \left[
+            \frac{e^{-(a+i\omega)t}}{-(a+i\omega)}
+            \right]_0^\infty
+        =
+        \frac{1}{a+i\omega}.
+    \]
+
+    Therefore,
+    \[
+        F(\omega)
+        =
+        \frac{1}{a-i\omega}
+        +
+        \frac{1}{a+i\omega}.
+    \]
+
+    Combine the fractions:
+    \[
+        F(\omega)
+        =
+        \frac{(a+i\omega)+(a-i\omega)}
+        {(a-i\omega)(a+i\omega)}.
+    \]
+
+    \[
+        F(\omega)
+        =
+        \frac{2a}{a^2+\omega^2}.
+    \]
+
+    Thus,
+    \[
+        \boxed{
+            F(\omega)=\frac{2a}{\omega^2+a^2}
+        }.
+    \]
+\end{examplebox}
+
+\begin{examplebox}
+    \textbf{Example 3: Modulation of a rectangular pulse}
+
+    Let
+    \[
+        f(t)=
+        \begin{cases}
+            1, & |t|<a, \\
+            0, & |t|>a.
+        \end{cases}
+    \]
+    From Example 1,
+    \[
+        F(\omega)=\frac{2\sin(\omega a)}{\omega}.
+    \]
+
+    Now consider the modulated signal
+    \[
+        g(t)=f(t)\cos(\omega_0t).
+    \]
+
+    Using
+    \[
+        \cos(\omega_0t)=\frac{1}{2}
+        \left(e^{i\omega_0t}+e^{-i\omega_0t}\right),
+    \]
+    we have
+    \[
+        g(t)
+        =
+        \frac{1}{2}f(t)e^{i\omega_0t}
+        +
+        \frac{1}{2}f(t)e^{-i\omega_0t}.
+    \]
+
+    Using the frequency translation property,
+    \[
+        \mathcal{F}[f(t)e^{i\omega_0t}]
+        =
+        F(\omega-\omega_0),
+    \]
+    and
+    \[
+        \mathcal{F}[f(t)e^{-i\omega_0t}]
+        =
+        F(\omega+\omega_0).
+    \]
+
+    Thus,
+    \[
+        G(\omega)
+        =
+        \frac{1}{2}F(\omega-\omega_0)
+        +
+        \frac{1}{2}F(\omega+\omega_0).
+    \]
+
+    Substitute the rectangular pulse transform:
+    \[
+        G(\omega)
+        =
+        \frac{\sin[(\omega-\omega_0)a]}{\omega-\omega_0}
+        +
+        \frac{\sin[(\omega+\omega_0)a]}{\omega+\omega_0}.
+    \]
+\end{examplebox}
+
+\subsubsection*{Engineering Insight}
+
+\begin{noteBox}
+    The Fourier transform is central to signal processing. It allows engineers to identify which frequencies are present in a signal. Filtering, modulation, noise reduction, image compression, and vibration analysis all depend on understanding how signals behave in the frequency domain.
+\end{noteBox}
+
+\subsubsection*{Common Mistakes}
+
+\begin{conceptbox}
+    Common mistakes in Fourier transforms include:
+    \[
+        \begin{aligned}
+             & \text{1. Forgetting the factor } \frac{1}{2\pi} \text{ in the inverse transform.} \\
+             & \text{2. Confusing } \omega \text{ with ordinary frequency } f.                   \\
+             & \text{3. Assuming every function has an ordinary Fourier transform.}              \\
+             & \text{4. Ignoring phase and looking only at amplitude.}                           \\
+             & \text{5. Forgetting that time shifting changes phase but not magnitude.}
+        \end{aligned}
+    \]
+\end{conceptbox}
