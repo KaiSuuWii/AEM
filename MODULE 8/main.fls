@@ -357,6 +357,9 @@ INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx6.tf
 INPUT .\section_3.1.tex
 INPUT .\section_3.1.tex
 INPUT section_3.1.tex
+INPUT .\section_4.1.tex
+INPUT .\section_4.1.tex
+INPUT section_4.1.tex
 INPUT main.aux
 INPUT .\main.out
 INPUT .\main.out

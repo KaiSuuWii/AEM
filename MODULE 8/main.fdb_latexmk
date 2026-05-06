@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1778051219.23664 "c:/Users/USER 1/OneDrive/Desktop/USTP-Instructor/2025-2026 2nd sem/ES207/Modules/MODULE 8/main.tex" "main.pdf" "main" 1778051221.36881 0
+["pdflatex"] 1778051724.28375 "c:/Users/USER 1/OneDrive/Desktop/USTP-Instructor/2025-2026 2nd sem/ES207/Modules/MODULE 8/main.tex" "main.pdf" "main" 1778051726.21314 0
   "C:/Users/USER" 1709884038 19148 013e94a827d08c3fa77f8035c991e252 ""
   "C:/Users/USER 1/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1773061826 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/USER 1/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1769117747 13334007 614f687e2243fff81d7651365165a2b1 ""
@@ -209,13 +209,14 @@
   "C:/Users/USER 1/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/USER 1/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "c:/Users/USER" 1709884038 19148 013e94a827d08c3fa77f8035c991e252 ""
-  "c:/Users/USER 1/OneDrive/Desktop/USTP-Instructor/2025-2026 2nd sem/ES207/Modules/MODULE 8/main.tex" 1778051153 1656 e73bad64d2e732a99e49ebf37a377a76 ""
-  "main.aux" 1778051221 534 c83984bb6fb4de44f968d8c47a85abd5 "pdflatex"
-  "main.out" 1778051221 469 b22e8889f7b52a9a4bd0c19c7b932bbf "pdflatex"
-  "main.tex" 1778051153 1656 e73bad64d2e732a99e49ebf37a377a76 ""
+  "c:/Users/USER 1/OneDrive/Desktop/USTP-Instructor/2025-2026 2nd sem/ES207/Modules/MODULE 8/main.tex" 1778051357 1652 efbd224664a66e4e67e9ef4db8af053f ""
+  "main.aux" 1778051725 659 28d1bce0736eafce1dda668e2aa82228 "pdflatex"
+  "main.out" 1778051725 614 98959150fe5a7642da470d0f15d24242 "pdflatex"
+  "main.tex" 1778051357 1652 efbd224664a66e4e67e9ef4db8af053f ""
   "section_1.1.tex" 1778050548 4866 83e457df32d6e89384523a36437fd90e ""
   "section_2.1.tex" 1778051073 6859 ffad86b27681b87107f800daa56ae419 ""
   "section_3.1.tex" 1778051218 11203 7e27ffbc243f0990952346e3553efcfb ""
+  "section_4.1.tex" 1778051723 7879 abfd73f85d20276659ca892764a65bee ""
   "title_page.tex" 1778050478 355 782078be3b169f31176fab5f65516495 ""
   (generated)
   "main.aux"
