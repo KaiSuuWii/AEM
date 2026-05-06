@@ -1,0 +1,448 @@
+\subsection{Z Transform}
+
+\subsubsection*{Motivation and Intuition}
+
+The Z transform is the discrete-time counterpart of the Laplace transform. It is used for sequences rather than continuous functions. This makes it essential in digital signal processing, sampled-data systems, digital control, and difference equations.
+
+Where the Laplace transform analyzes continuous-time systems, the Z transform analyzes discrete-time systems.
+
+\begin{conceptbox}
+    For a sequence $f_n$, the one-sided Z transform is defined by
+    \[
+        F(z)=Z[f_n]=\sum_{n=0}^{\infty}f_nz^{-n}.
+    \]
+    The inverse Z transform is written as
+    \[
+        f_n=Z^{-1}[F(z)].
+    \]
+\end{conceptbox}
+
+Here, $z$ is a complex variable. Since the Z transform is a power series in $z^{-1}$, it has a region of convergence.
+
+\begin{conceptbox}
+    The region of convergence is the set of values of $z$ for which
+    \[
+        \sum_{n=0}^{\infty}f_nz^{-n}
+    \]
+    converges.
+\end{conceptbox}
+
+\subsubsection*{Connection to the Laplace Transform}
+
+If a continuous signal is sampled at intervals of length $T$, then we obtain values
+\[
+    f(0), f(T), f(2T), \ldots.
+\]
+
+Let
+\[
+    f_n=f(nT).
+\]
+
+The Z transform is then used to analyze the sequence:
+\[
+    F(z)=\sum_{n=0}^{\infty}f_nz^{-n}.
+\]
+
+The connection with the Laplace transform is commonly expressed through
+\[
+    z=e^{sT}.
+\]
+
+\subsubsection*{Basic Z Transforms}
+
+\[
+    \begin{aligned}
+        Z[1]     & = \frac{z}{z-1}, \qquad |z|>1, \\
+        Z[a^n]   & = \frac{1}{1-az^{-1}}
+        = \frac{z}{z-a}, \qquad |z|>|a|,          \\
+        Z[n a^n] & = \frac{az}{(z-a)^2}.
+    \end{aligned}
+\]
+
+\subsubsection*{Z Transforms of Common Sequences}
+
+\begin{conceptbox}
+    For a sequence $f_n$, $n\geq 0$, the one-sided Z transform is
+    \[
+        F(z)=Z[f_n]=\sum_{n=0}^{\infty}f_nz^{-n}.
+    \]
+
+    Commonly used Z transform pairs are:
+
+    \[
+        \begin{array}{c|c|c}
+            \textbf{Sequence } f_n,\ n\geq 0                    & \textbf{Z Transform } F(z) & \textbf{Region of Convergence} \\ \hline
+            1                                                   & \dfrac{z}{z-1}             & |z|>1                          \\[8pt]
+            a^n                                                 & \dfrac{z}{z-a}             & |z|>|a|                        \\[8pt]
+            na^n                                                & \dfrac{az}{(z-a)^2}        & |z|>|a|                        \\[8pt]
+            n                                                   & \dfrac{z}{(z-1)^2}         & |z|>1                          \\[8pt]
+            \delta_n                                            &
+            1                                                   & |z|>0                                                       \\[8pt]
+            \delta_{n-m}                                        &
+            z^{-m}                                              & |z|>0                                                       \\[8pt]
+            \sin(n\omega T)                                     &
+            \dfrac{z\sin(\omega T)}{z^2-2z\cos(\omega T)+1}     & |z|>1                                                       \\[12pt]
+            \cos(n\omega T)                                     &
+            \dfrac{z[z-\cos(\omega T)]}{z^2-2z\cos(\omega T)+1} & |z|>1
+        \end{array}
+    \]
+\end{conceptbox}
+
+\begin{noteBox}
+    The Z transform table is the discrete-time counterpart of the Laplace transform table. It is especially useful when solving difference equations, analyzing digital filters, and studying sampled systems.
+\end{noteBox}
+
+\subsubsection*{Key Properties}
+
+\begin{conceptbox}
+    \textbf{Linearity}
+    \[
+        Z[c_1f_n+c_2g_n]
+        =
+        c_1F(z)+c_2G(z).
+    \]
+\end{conceptbox}
+
+\begin{conceptbox}
+    \textbf{Multiplication by $n$}
+    If
+    \[
+        Z[f_n]=F(z),
+    \]
+    then
+    \[
+        Z[nf_n]
+        =
+        -z\frac{dF(z)}{dz}.
+    \]
+\end{conceptbox}
+
+\begin{conceptbox}
+    \textbf{Discrete Convolution}
+    If
+    \[
+        w_n=\sum_{k=0}^{n}f_kg_{n-k},
+    \]
+    then
+    \[
+        W(z)=F(z)G(z).
+    \]
+\end{conceptbox}
+
+\subsubsection*{Worked Examples}
+
+\begin{examplebox}
+    \textbf{Example 1: Z transform of the unit sequence}
+
+    Let
+    \[
+        f_n=1, \qquad n\geq 0.
+    \]
+
+    Using the definition,
+    \[
+        F(z)=\sum_{n=0}^{\infty}1\cdot z^{-n}.
+    \]
+
+    So,
+    \[
+        F(z)=\sum_{n=0}^{\infty}z^{-n}.
+    \]
+
+    This is a geometric series with common ratio $z^{-1}$:
+    \[
+        F(z)=1+z^{-1}+z^{-2}+z^{-3}+\cdots.
+    \]
+
+    For $|z^{-1}|<1$, or equivalently $|z|>1$, the sum is
+    \[
+        F(z)=\frac{1}{1-z^{-1}}.
+    \]
+
+    Multiplying numerator and denominator by $z$,
+    \[
+        F(z)=\frac{z}{z-1}.
+    \]
+
+    Therefore,
+    \[
+        \boxed{
+            Z[1]=\frac{z}{z-1}, \qquad |z|>1.
+        }
+    \]
+\end{examplebox}
+
+\begin{examplebox}
+    \textbf{Example 2: Z transform of $a^n$}
+
+    Let
+    \[
+        f_n=a^n, \qquad n\geq 0.
+    \]
+
+    Using the definition,
+    \[
+        F(z)=\sum_{n=0}^{\infty}a^nz^{-n}.
+    \]
+
+    Rewrite the product:
+    \[
+        a^nz^{-n}=(az^{-1})^n.
+    \]
+
+    Therefore,
+    \[
+        F(z)=\sum_{n=0}^{\infty}(az^{-1})^n.
+    \]
+
+    This is a geometric series with common ratio $az^{-1}$. It converges if
+    \[
+        |az^{-1}|<1.
+    \]
+
+    Thus,
+    \[
+        |z|>|a|.
+    \]
+
+    The sum is
+    \[
+        F(z)=\frac{1}{1-az^{-1}}.
+    \]
+
+    Multiplying numerator and denominator by $z$,
+    \[
+        F(z)=\frac{z}{z-a}.
+    \]
+
+    Therefore,
+    \[
+        \boxed{
+            Z[a^n]=\frac{1}{1-az^{-1}}=\frac{z}{z-a}, \qquad |z|>|a|.
+        }
+    \]
+\end{examplebox}
+
+\begin{examplebox}
+    \textbf{Example 3: Z transform of $\cos(nx)$}
+
+    Using Euler's formula,
+    \[
+        \cos(nx)=\frac{1}{2}\left(e^{inx}+e^{-inx}\right).
+    \]
+
+    Apply linearity:
+    \[
+        Z[\cos(nx)]
+        =
+        \frac{1}{2}Z[e^{inx}]
+        +
+        \frac{1}{2}Z[e^{-inx}].
+    \]
+
+    Since
+    \[
+        Z[a^n]=\frac{1}{1-az^{-1}},
+    \]
+    we use
+    \[
+        a=e^{ix}
+    \]
+    and
+    \[
+        a=e^{-ix}.
+    \]
+
+    Thus,
+    \[
+        Z[e^{inx}]
+        =
+        \frac{1}{1-e^{ix}z^{-1}},
+    \]
+    and
+    \[
+        Z[e^{-inx}]
+        =
+        \frac{1}{1-e^{-ix}z^{-1}}.
+    \]
+
+    Therefore,
+    \[
+        F(z)
+        =
+        \frac{1}{2}
+        \frac{1}{1-e^{ix}z^{-1}}
+        +
+        \frac{1}{2}
+        \frac{1}{1-e^{-ix}z^{-1}}.
+    \]
+
+    Use a common denominator:
+    \[
+        F(z)
+        =
+        \frac{1}{2}
+        \frac{1-e^{-ix}z^{-1}+1-e^{ix}z^{-1}}
+        {(1-e^{ix}z^{-1})(1-e^{-ix}z^{-1})}.
+    \]
+
+    Simplify the numerator:
+    \[
+        1-e^{-ix}z^{-1}+1-e^{ix}z^{-1}
+        =
+        2-(e^{ix}+e^{-ix})z^{-1}.
+    \]
+
+    Since
+    \[
+        e^{ix}+e^{-ix}=2\cos x,
+    \]
+    the numerator becomes
+    \[
+        2-2\cos(x)z^{-1}.
+    \]
+
+    Including the factor $\frac{1}{2}$:
+    \[
+        \text{numerator}=1-\cos(x)z^{-1}.
+    \]
+
+    Now simplify the denominator:
+    \[
+        (1-e^{ix}z^{-1})(1-e^{-ix}z^{-1})
+    \]
+    \[
+        =
+        1-(e^{ix}+e^{-ix})z^{-1}+e^{ix}e^{-ix}z^{-2}.
+    \]
+
+    Since
+    \[
+        e^{ix}e^{-ix}=1,
+    \]
+    we get
+    \[
+        1-2\cos(x)z^{-1}+z^{-2}.
+    \]
+
+    Therefore,
+    \[
+        \boxed{
+            Z[\cos(nx)]
+            =
+            \frac{1-\cos(x)z^{-1}}
+            {1-2\cos(x)z^{-1}+z^{-2}}
+        }.
+    \]
+\end{examplebox}
+
+\begin{examplebox}
+    \textbf{Example 4: Inverse Z transform using partial fractions}
+
+    Find the inverse Z transform of
+    \[
+        F(z)=\frac{2z^2}{(z+2)(z+1)^2}.
+    \]
+
+    The standard method is to expand $\dfrac{F(z)}{z}$:
+    \[
+        \frac{F(z)}{z}
+        =
+        \frac{2z}{(z+2)(z+1)^2}.
+    \]
+
+    Write
+    \[
+        \frac{2z}{(z+2)(z+1)^2}
+        =
+        \frac{A}{z+2}
+        +
+        \frac{B}{z+1}
+        +
+        \frac{C}{(z+1)^2}.
+    \]
+
+    Multiply both sides by $(z+2)(z+1)^2$:
+    \[
+        2z=A(z+1)^2+B(z+2)(z+1)+C(z+2).
+    \]
+
+    From partial fraction computation,
+    \[
+        A=-4,\qquad B=4,\qquad C=-2.
+    \]
+
+    Thus,
+    \[
+        \frac{F(z)}{z}
+        =
+        \frac{-4}{z+2}
+        +
+        \frac{4}{z+1}
+        -
+        \frac{2}{(z+1)^2}.
+    \]
+
+    Multiplying by $z$,
+    \[
+        F(z)
+        =
+        -\frac{4z}{z+2}
+        +
+        \frac{4z}{z+1}
+        -
+        \frac{2z}{(z+1)^2}.
+    \]
+
+    Using known inverse transforms:
+    \[
+        Z^{-1}\left[\frac{z}{z+2}\right]=(-2)^n,
+    \]
+    \[
+        Z^{-1}\left[\frac{z}{z+1}\right]=(-1)^n,
+    \]
+    and
+    \[
+        Z^{-1}\left[\frac{z}{(z+1)^2}\right]=n(-1)^{n+1}.
+    \]
+
+    Therefore,
+    \[
+        f_n
+        =
+        -4(-2)^n
+        +
+        4(-1)^n
+        -
+        2n(-1)^{n+1}.
+    \]
+
+    So,
+    \[
+        \boxed{
+            f_n=4(-1)^n-4(-2)^n-2n(-1)^{n+1}
+        }.
+    \]
+\end{examplebox}
+
+\subsubsection*{Engineering Insight}
+
+\begin{noteBox}
+    The Z transform is fundamental in digital signal processing. Difference equations, digital filters, and sampled control systems are usually analyzed using the Z transform. Stability is often determined by the location of poles in the complex $z$-plane.
+\end{noteBox}
+
+\subsubsection*{Common Mistakes}
+
+\begin{conceptbox}
+    Common mistakes in Z transforms include:
+    \[
+        \begin{aligned}
+             & \text{1. Forgetting that the Z transform is for sequences, not continuous functions.}              \\
+             & \text{2. Ignoring the region of convergence.}                                                      \\
+             & \text{3. Confusing } z^{-1} \text{ notation with ordinary negative powers without interpretation.} \\
+             & \text{4. Expanding } F(z) \text{ instead of } \frac{F(z)}{z} \text{ during inverse transforms.}    \\
+             & \text{5. Treating discrete convolution like ordinary multiplication in time.}
+        \end{aligned}
+    \]
+\end{conceptbox}
