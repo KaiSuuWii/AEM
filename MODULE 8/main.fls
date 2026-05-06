@@ -349,6 +349,11 @@ INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\umsb.fd
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
 INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
+INPUT .\section_2.1.tex
+INPUT .\section_2.1.tex
+INPUT section_2.1.tex
+INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx8.tfm
+INPUT C:\Users\USER 1\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx6.tfm
 INPUT main.aux
 INPUT .\main.out
 INPUT .\main.out

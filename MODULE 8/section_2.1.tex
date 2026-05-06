@@ -1,0 +1,238 @@
+\subsection{Laplace Transform}
+
+\subsubsection*{Motivation and Intuition}
+
+The Laplace transform is designed for functions that begin at $t=0$ and are usually taken to be zero for $t<0$. This makes it natural for engineering systems that start operating at a particular time, such as circuits after a switch is closed, mechanical systems after a force is applied, or control systems after an input signal begins.
+
+The main advantage is that it converts differentiation into multiplication by $s$, while also carrying initial conditions into the transformed equation.
+
+\begin{conceptbox}
+    For a function $f(t)$ such that $f(t)=0$ for $t<0$, the Laplace transform is defined by
+    \[
+        L[f(t)] = F(s)=\int_0^\infty f(t)e^{-st}\,dt.
+    \]
+    The inverse transform is written as
+    \[
+        L^{-1}[F(s)] = f(t).
+    \]
+\end{conceptbox}
+
+The factor $e^{-st}$ acts like a damping or weighting factor. If $f(t)$ grows too quickly, the integral may not converge. Therefore, functions are usually required to be piecewise continuous and of exponential order.
+
+\begin{conceptbox}
+    A function $f(t)$ is of exponential order if there exist constants $M$ and $k$ such that
+    \[
+        |f(t)|\leq Me^{kt}, \qquad t>0.
+    \]
+\end{conceptbox}
+
+\subsubsection*{Laplace Transforms of Common Functions}
+
+\begin{conceptbox}
+    The following table summarizes commonly used Laplace transforms. These are especially useful when solving initial-value problems and circuit/system models.
+
+    \[
+        \begin{array}{c|c}
+            \textbf{Function } f(t),\ t\geq 0 & \textbf{Laplace Transform } F(s)=L[f(t)] \\ \hline \\[1pt]
+            1                                 & \dfrac{1}{s}                             \\[10pt]
+            e^{-at}                           & \dfrac{1}{s+a}                           \\[10pt]
+            e^{at}                            & \dfrac{1}{s-a}                           \\[10pt]
+            t                                 & \dfrac{1}{s^2}                           \\[10pt]
+            t^n,\ n=1,2,3,\ldots              & \dfrac{n!}{s^{n+1}}                      \\[10pt]
+            \sin(at)                          & \dfrac{a}{s^2+a^2}                       \\[10pt]
+            \cos(at)                          & \dfrac{s}{s^2+a^2}                       \\[10pt]
+            \sinh(at)                         & \dfrac{a}{s^2-a^2}                       \\[10pt]
+            \cosh(at)                         & \dfrac{s}{s^2-a^2}                       \\[10pt]
+            H(t-a)                            & \dfrac{e^{-as}}{s}                       \\[10pt]
+            \delta(t-a)                       & e^{-as}
+        \end{array}
+    \]
+\end{conceptbox}
+
+\begin{noteBox}
+    The Laplace transform table is most useful when the function is causal, meaning the system response begins at $t=0$. In engineering, this matches switched circuits, forced mechanical systems, and control-system inputs.
+\end{noteBox}
+\subsubsection*{Key Properties}
+
+\begin{conceptbox}
+    \textbf{Linearity}
+    \[
+        L[c_1f(t)+c_2g(t)]
+        =
+        c_1L[f(t)]+c_2L[g(t)].
+    \]
+\end{conceptbox}
+
+\begin{conceptbox}
+    \textbf{Derivative Property}
+    If $F(s)=L[f(t)]$, then
+    \[
+        L[f'(t)] = sF(s)-f(0).
+    \]
+    For the second derivative,
+    \[
+        L[f''(t)] = s^2F(s)-sf(0)-f'(0).
+    \]
+\end{conceptbox}
+
+This property is the reason Laplace transforms are especially effective for initial-value problems.
+
+\begin{examplebox}
+    \textbf{Example 1: Find the Laplace transform of $f(t)=3e^{2t}-4\sin(5t)$.}
+
+    Using linearity,
+    \[
+        L[3e^{2t}-4\sin(5t)]
+        =
+        3L[e^{2t}]-4L[\sin(5t)].
+    \]
+
+    From the basic transform formulas,
+    \[
+        L[e^{2t}]=\frac{1}{s-2},
+    \]
+    and
+    \[
+        L[\sin(5t)]=\frac{5}{s^2+25}.
+    \]
+
+    Therefore,
+    \[
+        F(s)=\frac{3}{s-2}-\frac{20}{s^2+25}.
+    \]
+\end{examplebox}
+
+\begin{examplebox}
+    \textbf{Example 2: Find $L^{-1}\left[\dfrac{s+2}{s^2+1}\right]$.}
+
+    Separate the expression:
+    \[
+        \frac{s+2}{s^2+1}
+        =
+        \frac{s}{s^2+1}
+        +
+        \frac{2}{s^2+1}.
+    \]
+
+    Using the table,
+    \[
+        L[\cos t]=\frac{s}{s^2+1},
+    \]
+    and
+    \[
+        L[\sin t]=\frac{1}{s^2+1}.
+    \]
+
+    Thus,
+    \[
+        L^{-1}\left[\frac{s}{s^2+1}\right]=\cos t,
+    \]
+    and
+    \[
+        L^{-1}\left[\frac{2}{s^2+1}\right]=2\sin t.
+    \]
+
+    Therefore,
+    \[
+        f(t)=\cos t+2\sin t.
+    \]
+\end{examplebox}
+
+\begin{examplebox}
+    \textbf{Example 3: Solve the initial-value problem}
+    \[
+        y'(t)+2y(t)=e^{-t}, \qquad y(0)=3.
+    \]
+
+    Apply the Laplace transform:
+    \[
+        L[y'(t)] + 2L[y(t)] = L[e^{-t}].
+    \]
+
+    Using
+    \[
+        L[y'(t)] = sY(s)-y(0),
+    \]
+    we get
+    \[
+        sY(s)-3+2Y(s)=\frac{1}{s+1}.
+    \]
+
+    Combine the $Y(s)$ terms:
+    \[
+        (s+2)Y(s)-3=\frac{1}{s+1}.
+    \]
+
+    Solve for $Y(s)$:
+    \[
+        (s+2)Y(s)=3+\frac{1}{s+1}.
+    \]
+
+    \[
+        Y(s)=\frac{3}{s+2}+\frac{1}{(s+1)(s+2)}.
+    \]
+
+    Use partial fractions:
+    \[
+        \frac{1}{(s+1)(s+2)}
+        =
+        \frac{A}{s+1}+\frac{B}{s+2}.
+    \]
+
+    Multiplying by $(s+1)(s+2)$ gives
+    \[
+        1=A(s+2)+B(s+1).
+    \]
+
+    Set $s=-1$:
+    \[
+        1=A(1),
+    \]
+    so
+    \[
+        A=1.
+    \]
+
+    Set $s=-2$:
+    \[
+        1=B(-1),
+    \]
+    so
+    \[
+        B=-1.
+    \]
+
+    Therefore,
+    \[
+        Y(s)=\frac{3}{s+2}+\frac{1}{s+1}-\frac{1}{s+2}.
+    \]
+
+    \[
+        Y(s)=\frac{1}{s+1}+\frac{2}{s+2}.
+    \]
+
+    Taking the inverse Laplace transform,
+    \[
+        y(t)=e^{-t}+2e^{-2t}.
+    \]
+\end{examplebox}
+
+\subsubsection*{Engineering Insight}
+
+\begin{noteBox}
+    In circuit analysis, capacitors and inductors produce differential equations. The Laplace transform converts these equations into algebraic equations involving impedances. For example, differentiation in time corresponds to multiplication by $s$, allowing engineers to analyze transient and steady-state behavior in one framework.
+\end{noteBox}
+
+\subsubsection*{Common Mistakes}
+
+\begin{conceptbox}
+    Common mistakes in the Laplace transform include:
+    \[
+        \begin{aligned}
+             & \text{1. Forgetting initial conditions in } L[y'(t)] \text{ and } L[y''(t)].  \\
+             & \text{2. Writing } L[e^{at}]=\frac{1}{s+a} \text{ instead of } \frac{1}{s-a}. \\
+             & \text{3. Applying transform formulas without checking convergence.}           \\
+             & \text{4. Forgetting to decompose rational functions before inversion.}
+        \end{aligned}
+    \]
+\end{conceptbox}
