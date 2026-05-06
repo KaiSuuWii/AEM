@@ -57,13 +57,11 @@ Assume students:
 \### TOPICS TO COVER
 
 \-
-8\. Fourier Series
-8.1\. Trigonometric Fourier Series
-8.2\. Fourier Cosine Series
-8.3\. Fourier Sine Series
-8.4\. Half-Wave Symmetry
-8.5\. Exponential Fourier Series
-8.6\. Filters
+9\.Integral Transform Methods
+9.1\. Laplace Transform
+9.2\. Fourier Transform
+9.3\. Hilbert Transform
+9.4\. Z Transform
 
 \### PREREQUISITES (ALREADY TAUGHT)
 
@@ -119,6 +117,13 @@ Assume students:
 7.6\. Integration
 7.7\. Cauchy-Riemann Equations
 7.8\. Exponential and Logarithmic
+8\. Fourier Series
+8.1\. Trigonometric Fourier Series
+8.2\. Fourier Cosine Series
+8.3\. Fourier Sine Series
+8.4\. Half-Wave Symmetry
+8.5\. Exponential Fourier Series
+8.6\. Filters
 
 \### INSTRUCTIONS
 
@@ -144,7 +149,7 @@ For EACH section, follow this flow:
 
 4\. Key Properties / Theorems
 
-5\. Worked Examples (step-by-step, no skipped steps)
+5\. Worked Examples (step-by-step, no skipped steps, take from source)
 
 6\. Engineering Insight (real-world relevance)
 

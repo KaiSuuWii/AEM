@@ -1,0 +1,114 @@
+\section{Integral Transform Methods}
+
+\begin{conceptbox}
+    An integral transform converts a function from one domain into another domain by integrating it against a kernel:
+    \[
+        F(\lambda)=\int_a^b K(\lambda,t)f(t)\,dt.
+    \]
+    Here, $f(t)$ is the original function, $K(\lambda,t)$ is the kernel, and $F(\lambda)$ is the transformed function.
+\end{conceptbox}
+
+Integral transform methods are powerful because they replace difficult operations in the original domain with simpler operations in the transform domain. In engineering mathematics, the most common use is to convert differential equations, convolution problems, and signal-processing problems into algebraic or spectral forms.
+
+The central idea is:
+\[
+    \text{difficult problem in } t
+    \quad \longrightarrow \quad
+    \text{simpler problem in transform variable}
+    \quad \longrightarrow \quad
+    \text{inverse transform}.
+\]
+
+\begin{noteBox}
+    In engineering, transform methods are used in circuit analysis, control systems, signal processing, vibration analysis, communication systems, image processing, and numerical solution of differential equations.
+\end{noteBox}
+
+\subsection*{General Workflow}
+
+\[
+    \boxed{
+        f(t)
+        \xrightarrow{\text{transform}}
+        F(\lambda)
+        \xrightarrow{\text{solve or analyze}}
+        \text{simpler expression}
+        \xrightarrow{\text{inverse transform}}
+        f(t)
+    }
+\]
+
+\begin{conceptbox}
+    The four transform methods in this lecture are:
+    \[
+        \begin{aligned}
+            \text{Laplace Transform} & \quad \text{for causal systems and initial-value problems},           \\
+            \text{Fourier Transform} & \quad \text{for frequency analysis of aperiodic signals},             \\
+            \text{Hilbert Transform} & \quad \text{for phase, analytic signals, and spectral relationships}, \\
+            \text{Z Transform}       & \quad \text{for discrete-time sequences and digital systems}.
+        \end{aligned}
+    \]
+\end{conceptbox}
+
+\subsection*{Connection to Previous Topics}
+
+Fourier series expanded periodic functions as sums of sine and cosine waves. Integral transforms extend this idea to broader classes of functions.
+
+Fourier series handles periodic signals, while the Fourier transform handles aperiodic signals. The Laplace transform extends this further by adding exponential damping through $e^{-st}$, making it especially useful for functions defined for $t>0$.
+
+\begin{noteBox}
+    A useful way to remember the difference is:
+    \[
+        \begin{aligned}
+            \text{Fourier Series}    & :\text{ periodic signal } \rightarrow \text{ discrete frequencies},             \\
+            \text{Fourier Transform} & :\text{ aperiodic signal } \rightarrow \text{ continuous frequencies},          \\
+            \text{Laplace Transform} & :\text{ causal signal } \rightarrow \text{ complex-frequency model},            \\
+            \text{Z Transform}       & :\text{ discrete signal } \rightarrow \text{ complex discrete-frequency model}.
+        \end{aligned}
+    \]
+\end{noteBox}
+
+\begin{examplebox}
+    \textbf{Example: Why transforms are useful}
+
+    Suppose an engineering system is modeled by
+    \[
+        y''(t)+3y'(t)+2y(t)=x(t).
+    \]
+
+    In the time domain, this is a differential equation. After applying a transform, derivatives become algebraic factors. For example, under the Laplace transform,
+    \[
+        L[y'(t)] = sY(s)-y(0),
+    \]
+    and
+    \[
+        L[y''(t)] = s^2Y(s)-sy(0)-y'(0).
+    \]
+
+    Thus, the differential equation becomes an algebraic equation in $Y(s)$:
+    \[
+        \left(s^2Y(s)-sy(0)-y'(0)\right)
+        +3\left(sY(s)-y(0)\right)
+        +2Y(s)=X(s).
+    \]
+
+    Solving for $Y(s)$ is often easier than solving directly for $y(t)$.
+\end{examplebox}
+
+\subsection*{Common Mistakes}
+
+\begin{conceptbox}
+    Common mistakes in transform methods include:
+    \[
+        \begin{aligned}
+             & \text{1. Forgetting the domain of the transform variable.}                         \\
+             & \text{2. Ignoring convergence conditions.}                                         \\
+             & \text{3. Applying inverse transforms without checking the form.}                   \\
+             & \text{4. Confusing continuous-time transforms with discrete-time transforms.}      \\
+             & \text{5. Treating transform tables as formulas without understanding assumptions.}
+        \end{aligned}
+    \]
+\end{conceptbox}
+
+\begin{noteBox}
+    The transform is not just a computational shortcut. It changes the viewpoint of a problem. In engineering, this is often the difference between analyzing a signal in time and analyzing the same signal in frequency, stability, or pole-zero form.
+\end{noteBox}
